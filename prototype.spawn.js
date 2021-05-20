@@ -594,7 +594,7 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 }
 
 
-StructureSpawn.prototype.createtowerdrainer = function(targetRoom, attackRoom) {
+StructureSpawn.prototype.createtowerdrainer = function(healRoom1, healRoom2, healRoom3, healRoom4, healRoom5, attackRoom) {
     var body = [];
     for (let i = 0; i < 4; i++) {
         //for (let i = 0; i < 12; i++) {
@@ -612,7 +612,12 @@ StructureSpawn.prototype.createtowerdrainer = function(targetRoom, attackRoom) {
         undefined,
         {
            role: 'towerdrainer',
-            targetRoom: targetRoom,
+            healRoom1: healRoom1,
+	     healRoom2: healRoom2,
+	     healRoom3: healRoom3,
+	     healRoom4: healRoom4,
+	     healRoom5: healRoom5,
+	    
             attackRoom: attackRoom,
         });
 }
