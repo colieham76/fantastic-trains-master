@@ -40,8 +40,8 @@ Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 0};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 1, rampartrepairer: 0};
 
-Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, lorry: 1};
-Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W8S8: 2};
+//Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, lorry: 1};
+//Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W8S8: 2};
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
