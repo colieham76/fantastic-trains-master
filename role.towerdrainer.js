@@ -91,7 +91,7 @@ console.log('towerdrainer arrived at healRoom5...')
     const attackDirection4 = roomflag4.findExitTo(attackRoom);
     const attackDirection5 = roomflag5.findExitTo(attackRoom);    
     
-    const restDirection = RoomPosition.oppositeDirection(attackDirection);// remove/rewrite this?
+    const restDirection = RoomPosition.oppositeDirection(attackDirection);// remove/rewrite this? move creep four spaces opposite x axis
     const occupiedPositions = {};
     _.filter(Game.creeps, (c) => c.memory.role === 'towerdrainer' && c.memory.restPosition).forEach((c) => {
       occupiedPositions[c.memory.restPosition.x + c.memory.restPosition.y] = c.id;
