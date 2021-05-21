@@ -1,6 +1,3 @@
-require('myFunctions');
-
-
 'use strict';
 
 /**
@@ -15,7 +12,7 @@ require('myFunctions');
  * @example
  * Game.rooms.E17N1.memory.queue.push({role: 'towerdrainer', routing: {targetRoom: 'E16N0'}, attackRoom: 'E16N1'})
  */
-/*
+
 roles.towerdrainer = {};
 
 roles.towerdrainer.settings = {
@@ -23,75 +20,16 @@ roles.towerdrainer.settings = {
   amount: [3, 5, 2], // attack RCL 5
   // amount: [2, 3, 1], // attack RCL 3
   maxLayoutAmount: 1,
-};*/
+};
 
-//roles.towerdrainer.getRestPosition = function(creep) {// remove this?
-  /*
-  if (!creep.memory.healRoom1) {
-            creep.travelTo(Game.flags['healRoom1']);
-            if (creep.pos.isNearTo(Game.flags['healRoom1'])) {
-                creep.memory.healRoom1 = true;
-            }
-            return;
-        }
-console.log('towerdrainer arrived at healRoom1...')
-  
-   if (!creep.memory.healRoom2) {
-            creep.travelTo(Game.flags['healRoom2']);
-            if (creep.pos.isNearTo(Game.flags['healRoom2'])) {
-                creep.memory.healRoom2 = true;
-            }
-            return;
-        }
-console.log('towerdrainer arrived at healRoom2...')
-  
-   if (!creep.memory.healRoom3) {
-            creep.travelTo(Game.flags['healRoom3']);
-            if (creep.pos.isNearTo(Game.flags['healRoom3'])) {
-                creep.memory.healRoom3 = true;
-            }
-            return;
-        }
-console.log('towerdrainer arrived at healRoom3...')
-  
-  if (!creep.memory.healRoom4) {
-            creep.travelTo(Game.flags['healRoom4']);
-            if (creep.pos.isNearTo(Game.flags['healRoom4'])) {
-                creep.memory.healRoom4 = true;
-            }
-            return;
-        }
-console.log('towerdrainer arrived at healRoom4...')
-  
-   if (!creep.memory.healRoom5) {
-            creep.travelTo(Game.flags['healRoom5']);
-            if (creep.pos.isNearTo(Game.flags['healRoom5'])) {
-                creep.memory.healRoom5 = true;
-            }
-            return;
-        }
-console.log('towerdrainer arrived at healRoom5...')
-  
-  const restRoom1 = creep.memory.healRoom1;  
-  const restRoom2 = creep.memory.healRoom2;
-  const restRoom3 = creep.memory.healRoom3;
-  const restRoom4 = creep.memory.healRoom4;
-  const restRoom5 = creep.memory.healRoom5;
+roles.towerdrainer.getRestPosition = function(creep) {
+  const restRoom = creep.memory.routing.targetRoom;
   const attackRoom = creep.memory.attackRoom;
   if (!creep.memory.restPosition) {
     creep.notifyWhenAttacked(false);
-    const room1 = Game.rooms[restRoom1];
-     const room2 = Game.rooms[restRoom2];
-     const room3 = Game.rooms[restRoom3];
-     const room4 = Game.rooms[restRoom4];
-     const room5 = Game.rooms[restRoom5];
-    const attackDirection1 = room1.findExitTo(attackRoom);
-    const attackDirection2 = room1.findExitTo(attackRoom);
-    const attackDirection3 = room1.findExitTo(attackRoom);
-    const attackDirection4 = room1.findExitTo(attackRoom);
-    const attackDirection5 = room1.findExitTo(attackRoom);    
-    
-    const restDirection = RoomPosition.oppositeDirection(attackDirection);// remove/rewrite this?
+    const room = Game.rooms[restRoom];
+    const attackDirection = room.findExitTo(attackRoom);
+    const restDirection = RoomPosition.oppositeDirection(attackDirection);
     const occupiedPositions = {};
     _.filter(Game.creeps, (c) => c.memory.role === 'towerdrainer' && c.memory.restPosition).forEach((c) => {
       occupiedPositions[c.memory.restPosition.x + c.memory.restPosition.y] = c.id;
@@ -101,18 +39,18 @@ console.log('towerdrainer arrived at healRoom5...')
       const pos = exit.getAdjacentPosition(restDirection);
       if (!pos.checkForWall() && !pos.checkForObstacleStructure() && !occupiedPositions[pos.x + pos.y]) {
         creep.memory.restPosition = pos;
-        creep.memory.attackDirrection = attackDirection;// remove/rewrite this?
-        creep.memory.restDirrection = restDirection;// remove/rewrite this?
+        creep.memory.attackDirrection = attackDirection;
+        creep.memory.restDirrection = restDirection;
         break;
       }
     }
   }
   return creep.memory.restPosition;
-//};
+};
 
-roles.towerdrainer.action = function(creep) {// remove/rewrite this?
+roles.towerdrainer.action = function(creep) {
   const attackRoom = creep.memory.attackRoom;
-  const restPos = roles.towerdrainer.getRestPosition(creep);// remove/rewrite this?
+  const restPos = roles.towerdrainer.getRestPosition(creep);
   if (!restPos) {
     creep.log('no position');
     creep.moveRandom();
@@ -130,4 +68,3 @@ roles.towerdrainer.action = function(creep) {// remove/rewrite this?
 
   return true;
 };
-*/
