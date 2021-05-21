@@ -80,12 +80,17 @@ console.log('towerdrainer arrived at healRoom5...')
   const attackRoom = creep.memory.attackRoom;
   if (!creep.memory.restPosition) {
     creep.notifyWhenAttacked(false);
-    const room = Game.rooms[restRoom1];
-     const room = Game.rooms[restRoom2];
-     const room = Game.rooms[restRoom3];
-     const room = Game.rooms[restRoom4];
-     const room = Game.rooms[restRoom5];
-    const attackDirection = room.findExitTo(attackRoom);
+    const room1 = Game.rooms[restRoom1];
+     const room2 = Game.rooms[restRoom2];
+     const room3 = Game.rooms[restRoom3];
+     const room4 = Game.rooms[restRoom4];
+     const room5 = Game.rooms[restRoom5];
+    const attackDirection1 = room1.findExitTo(attackRoom);
+    const attackDirection2 = room1.findExitTo(attackRoom);
+    const attackDirection3 = room1.findExitTo(attackRoom);
+    const attackDirection4 = room1.findExitTo(attackRoom);
+    const attackDirection5 = room1.findExitTo(attackRoom);    
+    
     const restDirection = RoomPosition.oppositeDirection(attackDirection);// remove/rewrite this?
     const occupiedPositions = {};
     _.filter(Game.creeps, (c) => c.memory.role === 'towerdrainer' && c.memory.restPosition).forEach((c) => {
