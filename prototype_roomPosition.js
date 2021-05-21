@@ -1,3 +1,6 @@
+require('prototype_roomPosition');
+
+
 'use strict';
 /**
  * Get the position adjacent to this position in a specific direction
