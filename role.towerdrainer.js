@@ -108,7 +108,7 @@ console.log('towerdrainer arrived at healRoom5...')
     }
   }
   return creep.memory.restPosition;
-};
+//};
 
 roles.towerdrainer.action = function(creep) {// remove/rewrite this?
   const attackRoom = creep.memory.attackRoom;
