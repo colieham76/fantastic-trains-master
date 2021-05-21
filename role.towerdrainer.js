@@ -26,7 +26,7 @@ roles.towerdrainer.settings = {
 };*/
 
 //roles.towerdrainer.getRestPosition = function(creep) {// remove this?
-  
+  /*
   if (!creep.memory.healRoom1) {
             creep.travelTo(Game.flags['healRoom1']);
             if (creep.pos.isNearTo(Game.flags['healRoom1'])) {
@@ -130,3 +130,4 @@ roles.towerdrainer.action = function(creep) {// remove/rewrite this?
 
   return true;
 };
+*/
