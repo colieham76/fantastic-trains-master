@@ -23,7 +23,7 @@ RoomPosition.prototype =
      *
      * @type {string}
      */
-   // roomName: "",
+    roomName: "",
 
     /**
      * X position in the room.
@@ -32,7 +32,7 @@ RoomPosition.prototype =
      *
      * @type {number}
      */
-  //  x: 0,
+    x: 0,
 
     /**
      * Y position in the room.
@@ -41,7 +41,7 @@ RoomPosition.prototype =
      *
      * @type {number}
      */
-  //  y: 0,
+    y: 0,
 
     /**
      * Create new ConstructionSite at the specified location.
