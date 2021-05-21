@@ -1,5 +1,5 @@
 module.exports.loop = function() {
-
+require('prototype_roomPosition');
 
 
 	/*for(var i in Memory.creeps) {
@@ -87,7 +87,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	require('prototype_creep_heal');
 	require('prototype_creep_move');
 	require('prototype_creep_squad');
-	require('prototype_roomPosition');
+	
 	require('prototype_room_memory');
 	require	('prototype_room_init');
 	require('prototype_creep_routing');
