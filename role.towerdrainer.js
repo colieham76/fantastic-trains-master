@@ -25,7 +25,7 @@ roles.towerdrainer.settings = {
   maxLayoutAmount: 1,
 };*/
 
-roles.towerdrainer.getRestPosition = function(creep) {// remove this?
+//roles.towerdrainer.getRestPosition = function(creep) {// remove this?
   
   if (!creep.memory.healRoom1) {
             creep.travelTo(Game.flags['healRoom1']);
