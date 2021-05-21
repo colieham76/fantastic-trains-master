@@ -1,3 +1,6 @@
+require('myFunctions');
+
+
 'use strict';
 
 /**
