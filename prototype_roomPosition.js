@@ -1,4 +1,3 @@
-require('prototype_roomPosition');
 
 
 'use strict';
