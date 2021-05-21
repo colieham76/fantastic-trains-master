@@ -1,3 +1,10 @@
+global.RoomPosition = function (x, y, roomName) {
+  this.x = x;
+  this.y = y;
+  this.roomName = roomName;
+};
+
+
 global.roles = {};
 
 
