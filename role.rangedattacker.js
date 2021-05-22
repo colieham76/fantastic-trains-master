@@ -3,7 +3,7 @@ module.exports = {
     /** @param {Creep} creep */
     run: function (creep) {
 
-		if (!creep.memory.W3S7 && creep.room.name === 'W3S8') {
+		if (!creep.memory.W3S7 && creep.room.name === 'W3S7') {
 			creep.travelTo(Game.flags['W3S7']);
 			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
 				creep.memory.W3S7 = true;
