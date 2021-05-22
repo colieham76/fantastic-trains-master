@@ -47,7 +47,7 @@ require('prototype_roomPosition');
         }
         
 	if (Game.time % 1250 === 0) Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
-	if (Game.time % 50 === 0) Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
+	if (Game.time % 5 === 0) Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
 	if (Game.time % 150 === 0) Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
 
 };
