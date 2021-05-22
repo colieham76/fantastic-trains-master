@@ -31,7 +31,7 @@ require('prototype_roomPosition');
 			if (Game.time % 1250 === 0) 
 				Game.spawns.Spawn3.memory.reserveRoom = 'W3S7',
 					Game.spawns.Spawn5.memory.reserveRoom = 'W1S7',
-					Game.spawns.Spawn2.memory.reserveRoom = 'W1S9',
+					Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
 					
 	else 
        {
