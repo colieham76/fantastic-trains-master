@@ -226,7 +226,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                     }
                 }
 		    // check for rangedattacker order
-            /*    if (role == 'rangedattacker' && this.memory.rangedattackerRoom != undefined) {
+               if (role == 'rangedattacker' && this.memory.rangedattackerRoom != undefined) {
                     // try to spawn a rangedattacker
                     name = this.createrangedattacker(this.memory.rangedattackerRoom);
                     // if that worked
@@ -234,7 +234,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         // delete the rangedattacker order
                         delete this.memory.rangedattackerRoom;
                     }
-                }*/
+                }
                    	
 
                 // if no claim or dismantle order was found, check other roles
@@ -254,7 +254,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         }
 	  // if none of the above caused a spawn command check for rangedattackers
         /** @type {Object.<string, number>} */
-   /*     let numberOfRangedAttackers = {};
+        let numberOfRangedAttackers = {};
         if (name == undefined) {
             // count the number of long distance harvesters globally
             for (let roomName in this.memory.minrangedattackers) {
@@ -264,7 +264,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                 if (numberOfRangedAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
                     name = this.createrangedattacker(room.name, roomName)}
             }
-        }*/
+        }
 
         // if none of the above caused a spawn command check for LongDistanceHarvesters
         /** @type {Object.<string, number>} */
@@ -629,7 +629,7 @@ StructureSpawn.prototype.createtowerdrainer = function(healRoom1, healRoom2, hea
     };*/
 
 // create a new function for StructureSpawn
-/*StructureSpawn.prototype.createrangedattacker =
+StructureSpawn.prototype.createrangedattacker =
     function (home, target, getBoostkh) {
 
         let homeRm = this.room.name;
@@ -642,7 +642,7 @@ MOVE, MOVE, MOVE, MOVE, MOVE,
 	      target: target, 
 	  getBoostkh: false
 	      });
-    };*/
+    };
 	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
