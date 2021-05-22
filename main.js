@@ -28,8 +28,8 @@ require('prototype_roomPosition');
 
 	// run creep logic
 	for (let name in Game.creeps) 
-	//	if (Game.time % 1250 === 0) Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
-	//else 
+			if (Game.time % 1250 === 0) Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
+	else 
        {
 			Game.creeps[name].runRole();
 		}
