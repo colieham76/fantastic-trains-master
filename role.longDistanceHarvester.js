@@ -25,7 +25,7 @@ module.exports = {
                     // a property called filter which can be a function
                     // we use the arrow operator to define it
                     filter: (s) => (s.structureType === STRUCTURE_SPAWN
-                            && s.structureType === STRUCTURE_EXTENSION
+                            || s.structureType === STRUCTURE_EXTENSION
                             || s.structureType === STRUCTURE_LINK
                             || s.structureType === STRUCTURE_STORAGE
                             || s.structureType === STRUCTURE_TOWER
