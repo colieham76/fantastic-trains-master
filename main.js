@@ -28,15 +28,9 @@ require('prototype_roomPosition');
 
 	// run creep logic
 	for (let name in Game.creeps) 
-			if (Game.time % 1250 === 0) 
-				Game.spawns.Spawn3.memory.reserveRoom = 'W3S7',
-					Game.spawns.Spawn5.memory.reserveRoom = 'W1S7',
-					Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
-					
-	else 
-       {
-			Game.creeps[name].runRole();
-		}
+
+		Game.creeps[name].runRole();
+
 
 	// find all towers
         var towers = _.filter(Game.structures, s => s.structureType == STRUCTURE_TOWER);
@@ -51,6 +45,11 @@ require('prototype_roomPosition');
                 // run spawn logic
                 Game.spawns[spawnName].spawnCreepsIfNecessary();
         }
+        
+	if (Game.time % 1250 === 0) Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
+	if (Game.time % 50 === 0) Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
+	if (Game.time % 150 === 0) Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
+
 };
 
 // activate safe mode
@@ -357,3 +356,4 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
                 }
                 previousCPU = calculateCPUUsageOfProcesses(previousCPU, 'Check and spawn roles');
 */
+
