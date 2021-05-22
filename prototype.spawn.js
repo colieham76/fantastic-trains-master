@@ -226,7 +226,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         delete this.memory.mugRoom;
                     }
                 }
-		    // check for rangedattacker order
+/*		    // check for rangedattacker order
                if (role == 'rangedattacker' && this.memory.rangedattackerRoom != undefined) {
                     // try to spawn a rangedattacker
                     name = this.createrangedattacker(this.memory.rangedattackerRoom);
@@ -235,7 +235,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         // delete the rangedattacker order
                         delete this.memory.rangedattackerRoom;
                     }
-                }
+                }*/
                    	
 
                 // if no claim or dismantle order was found, check other roles
