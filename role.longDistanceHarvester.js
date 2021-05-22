@@ -25,12 +25,12 @@ module.exports = {
                     // a property called filter which can be a function
                     // we use the arrow operator to define it
                     filter: (s) => (s.structureType === STRUCTURE_SPAWN
-                            || s.structureType === STRUCTURE_EXTENSION
+                            && s.structureType === STRUCTURE_EXTENSION
                             || s.structureType === STRUCTURE_LINK
                             || s.structureType === STRUCTURE_STORAGE
                             || s.structureType === STRUCTURE_TOWER
                         )
-                        && s.energy < s.energyCapacity * 0.6
+                        && s.energy < s.energyCapacity * 0.1
                 });
             
                     if (_.sum(creep.carry) > 0) {
@@ -134,7 +134,7 @@ module.exports = {
 
         // pickup dropped energy in target room
         var dropedEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 500
+            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 50
         });
         if (dropedEnergy) {
             if (creep.pickup(dropedEnergy) === ERR_NOT_IN_RANGE) {
@@ -145,4 +145,3 @@ module.exports = {
 
     }
 };
-
