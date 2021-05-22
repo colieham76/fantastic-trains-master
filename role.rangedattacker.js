@@ -10,15 +10,15 @@ module.exports = {
 			}
 			return;
 		}
-/*
-		if (!creep.memory.attackinvader2 && creep.room.name === 'W65N63') {
-			creep.moveTo(Game.flags['attackinvader2']);
-			if (creep.pos.isNearTo(Game.flags['attackinvader2'])) {
-				creep.memory.attackinvader2 = true;
+
+		if (!creep.memory.W1S7 && creep.room.name === 'W1S8') {
+			creep.moveTo(Game.flags['W1S7']);
+			if (creep.pos.isNearTo(Game.flags['W1S7'])) {
+				creep.memory.W1S7 = true;
 			}
 			return;
 		}
-
+/*
 		if (!creep.memory.invader1 && creep.room.name === 'W62N69') {
 			creep.moveTo(Game.flags['invader1']);
 			if (creep.pos.isNearTo(Game.flags['invader1'])) {
