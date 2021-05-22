@@ -134,7 +134,7 @@ module.exports = {
 
         // pickup dropped energy in target room
         var dropedEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 50
+            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 250
         });
         if (dropedEnergy) {
             if (creep.pickup(dropedEnergy) === ERR_NOT_IN_RANGE) {
