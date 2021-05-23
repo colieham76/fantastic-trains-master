@@ -1,49 +1,36 @@
-var actionRunAway = require('action.flee');
-
 module.exports = {
-    run: function(creep) {
-        if (creep.room.name != creep.memory.target) {
-
-
-         // go to target room
-             if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
-			creep.moveTo(Game.flags['ReserveW3S7']);
-			if (creep.pos.isNearTo(Game.flags['ReserveW3S7'])) {
-				creep.memory.W3S7 = true;
+	run: function(creep) {
+		if (creep.room.name != creep.memory.target) {
+			if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
+				creep.moveTo(Game.flags['ReserveW3S7']);
+				if (creep.pos.isNearTo(Game.flags['ReserveW3S7'])) {
+					creep.memory.W3S7 = true;
+				}
+				return;
 			}
-			return;
-             }
-
-			 else {
-				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
-					 creep.travelTo(creep.room.controller, {
-						 maxRooms: 4
-					 });
-				 }
-				 actionRunAway.run(creep)
-			 }
-             
-             
-            if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
-			creep.moveTo(Game.flags['ReserverW1S7']);
-			if (creep.pos.isNearTo(Game.flags['ReserverW1S7'])) {
-				creep.memory.W1S7 = true;
-			}
-			return;
-		}
-
 			else {
-				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
 					creep.travelTo(creep.room.controller, {
 						maxRooms: 4
 					});
 				}
-				actionRunAway.run(creep)
 			}
-
-            
-             if (!creep.memory.W1S9 && creep.room.name === 'W1S9'|| creep.room.name === 'W1S8') {
-			creep.moveTo(Game.flags['ReserverW1S9']);
+			if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
+				creep.moveTo(Game.flags['ReserverW1S7']);
+				if (creep.pos.isNearTo(Game.flags['ReserverW1S7'])) {
+					creep.memory.W1S7 = true;
+				}
+				return;
+			}
+			else {
+				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+					creep.travelTo(creep.room.controller, {
+						maxRooms: 4
+					});
+				}				
+			}
+			if (!creep.memory.W1S9 && creep.room.name === 'W1S9'|| creep.room.name === 'W1S8') {
+			creep.travelTo(Game.flags['ReserverW1S9']);
 			if (creep.pos.isNearTo(Game.flags['ReserverW1S9'])) {
 				creep.memory.W1S9 = true;
 			}
@@ -56,7 +43,7 @@ module.exports = {
 						 maxRooms: 4
 					 });
 				 }
-				 actionRunAway.run(creep)
+				 
 			 }
              
             
@@ -74,7 +61,7 @@ module.exports = {
 						 maxRooms: 4
 					 });
 				 }
-				 actionRunAway.run(creep)
+				
 			 }
              
               if (!creep.memory.W7S9 && creep.room.name === 'W7S9'|| creep.room.name === 'W7S8') {
@@ -83,21 +70,14 @@ module.exports = {
 				creep.memory.W7S9 = true;
 			}
 			return;
-		}  
-            
-                       
-            //var exit = creep.room.findExitTo(creep.memory.target);
-            //creep.moveTo(creep.pos.findClosestByRange(exit));
-            //creep.moveTo(Game.flags[creep.memory.target].pos);
-           // creep.travelTo(new RoomPosition(25, 25, creep.memory.target));
-        }
+		}        
         else {
-            if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
-                creep.travelTo(creep.room.controller, {
-                    maxRooms: 4
-                });
-            }
-            actionRunAway.run(creep)
+				  if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+					  creep.travelTo(creep.room.controller, {
+						  maxRooms: 4
+					  });
+				  }
+        }
         }
     }
 };
