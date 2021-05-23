@@ -32,17 +32,19 @@ Game.spawns.Spawn1.memory.minCreeps = {wallRepairer: 0, rampartrepairer: 0, leme
 Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 2};
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 2, upgrader: 0, harvester: 0,
                                         wallRepairer: 0, rampartrepairer: 0, harvester: 0};
-Game.spawns.Spawn5.memory.minCreeps = {repairer: 0, builder: 3, lorry: 1, towerlorry: 0, upgrader: 0, harvester: 0,
-                                        wallRepairer: 0, rampartrepairer: 0, harvester: 1};
+Game.spawns.Spawn5.memory.minCreeps = {repairer: 0, builder: 0, lorry: 1, towerlorry: 0, upgrader: 1, harvester: 0,
+                                        wallRepairer: 0, rampartrepairer: 0, harvester: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 2};
 Game.spawns.Spawn5.memory.mintowerdrainers = {W2S8: 0};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 3};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 2}
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
-                                       towerlorry: 1, upgrader: 3, rampartrepairer: 0};
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 2, wallRepairer: 0,
+                                       towerlorry: 1, upgrader: 3, rampartrepairer: 1};
 
 Game.spawns.W7S8.memory.minCreeps = {harvester: 0, lorry: 1};
 Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W8S8: 2};
+Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W7S9: 2};
+
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
