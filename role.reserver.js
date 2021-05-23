@@ -12,15 +12,35 @@ module.exports = {
 				creep.memory.W3S7 = true;
 			}
 			return;
-		}
-            
+             }
+
+			 else {
+				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+					 creep.travelTo(creep.room.controller, {
+						 maxRooms: 4
+					 });
+				 }
+				 actionRunAway.run(creep)
+			 }
+             
+             
             if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
 			creep.moveTo(Game.flags['ReserverW1S7']);
 			if (creep.pos.isNearTo(Game.flags['ReserverW1S7'])) {
 				creep.memory.W1S7 = true;
 			}
 			return;
-		}         
+		}
+
+			else {
+				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+					creep.travelTo(creep.room.controller, {
+						maxRooms: 4
+					});
+				}
+				actionRunAway.run(creep)
+			}
+
             
              if (!creep.memory.W1S9 && creep.room.name === 'W1S9'|| creep.room.name === 'W1S8') {
 			creep.moveTo(Game.flags['ReserverW1S9']);
@@ -29,6 +49,16 @@ module.exports = {
 			}
 			return;
 		}
+
+			 else {
+				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+					 creep.travelTo(creep.room.controller, {
+						 maxRooms: 4
+					 });
+				 }
+				 actionRunAway.run(creep)
+			 }
+             
             
              if (!creep.memory.W8S8 && creep.room.name === 'W8S8'|| creep.room.name === 'W7S8') {
 			creep.moveTo(Game.flags['ReserverW8S8']);
@@ -37,6 +67,16 @@ module.exports = {
 			}
 			return;
 		}
+
+			 else {
+				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
+					 creep.travelTo(creep.room.controller, {
+						 maxRooms: 4
+					 });
+				 }
+				 actionRunAway.run(creep)
+			 }
+             
               if (!creep.memory.W7S9 && creep.room.name === 'W7S9'|| creep.room.name === 'W7S8') {
 			creep.moveTo(Game.flags['ReserverW7S9']);
 			if (creep.pos.isNearTo(Game.flags['ReserverW7S9'])) {
@@ -54,7 +94,7 @@ module.exports = {
         else {
             if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {// changed reserve controller to atttackCont
                 creep.travelTo(creep.room.controller, {
-                    maxRooms: 1 
+                    maxRooms: 4
                 });
             }
             actionRunAway.run(creep)
