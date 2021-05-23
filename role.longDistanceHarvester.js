@@ -78,7 +78,7 @@ module.exports = {
                     // move towards the source
                     creep.travelTo(source);
                 }
-
+/*
                 let invaderStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
                 if(invaderStructure){
                     if (creep.room.name === 'W3S7' && Game.time % 20 === 0) {
@@ -86,7 +86,7 @@ module.exports = {
                         // Game.spawns.Spawn21.memory.rangedattackerRoom = 'W64N63'
                     }
                 }
-
+*/
                 /*
                                 if (creep.room.name === 'W78N64' && Game.time % 500 === 0) {
                                     Game.spawns.Spawn20.memory.rangedattackerRoom = 'W78N64';
