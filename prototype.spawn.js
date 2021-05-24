@@ -308,7 +308,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
 
-                if (numberOfreservers[reserveRoom] < this.memory.numberOfreservers[reserveRoom]) {
+                if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]) {
                     name = this.createReserver(room.name, reserveRoom);
                 }
             }
