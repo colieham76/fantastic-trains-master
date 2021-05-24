@@ -10,7 +10,7 @@ module.exports = {
 		//	}
 		//	else {
 				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					creep.travelTo(creep.room.controller);
+					creep.moveTo(creep.room.controller);
 				}
 		//	}
 		//	if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
@@ -22,7 +22,7 @@ module.exports = {
 		//	}
 		//	else {
 				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					creep.travelTo(creep.room.controller);
+					creep.moveTo(creep.room.controller);
 				}				
 		//	}
 		//	if (!creep.memory.W1S9 && creep.room.name === 'W1S9'|| creep.room.name === 'W1S8') {
@@ -34,7 +34,7 @@ module.exports = {
 		//	}
 		//	else {
 				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					 creep.travelTo(creep.room.controller);
+					 creep.moveTo(creep.room.controller);
 				 }
 		//	 }
 		//	if (!creep.memory.W8S8 && creep.room.name === 'W8S8'|| creep.room.name === 'W7S8') {
@@ -46,7 +46,7 @@ module.exports = {
 		//	}
 		//	 else {
 				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					 creep.travelTo(creep.room.controller);
+					 creep.moveTo(creep.room.controller);
 				 }
 		//	 }
 		//	 if (!creep.memory.W7S9 && creep.room.name === 'W7S9'|| creep.room.name === 'W7S8') {
@@ -58,7 +58,7 @@ module.exports = {
 		//	 }
 		//	 else {
 			 	if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-			 		creep.travelTo(creep.room.controller);
+			 		creep.moveTo(creep.room.controller);
 			 	}
 		//	 }
 		}
