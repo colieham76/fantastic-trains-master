@@ -1,18 +1,5 @@
 module.exports.loop = function() {
-require('prototype_roomPosition');
 
-
-	/*for(var i in Memory.creeps) {
-		var minReserver    = 2;
-		var minimumNumberOfReservers = minReserver;
-		var numberOfReservers = _.sum(Game.creeps, (c) => c.memory.role === 'reserver');
-
-		if (numberOfReservers > minimumNumberOfReservers) {
-			if (Game.creeps[i].memory.role === 'reserver') {
-				Game.creeps[i].suicide();
-			}
-		}
-	}*/
 
 		// clear memory
         for (let name in Memory.creeps) {
@@ -88,29 +75,12 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	require('prototype.spawn');
 	require('prototype.creep');
 	require('prototype.tower');
-	
-	require('prototype_creep_heal');
-	require('prototype_creep_move');
-	require('prototype_creep_squad');
-	
-	require('prototype_room_memory');
-	require	('prototype_room_init');
-	require('prototype_creep_routing');
-	
 	require('myFunctions');
 	require('funcAlly');
 	require('myTrading');
-	require('functionSpawn');
-	require('functionLab');
-	require('functionPathFinding');
+	
 	var Traveler = require('Traveler');
-	require('functionKeeperMining');
-	require('functionObserve');
-	require('functionWar');
-	require('functionRemoteMining');
-	require('funcExpand');
-	require('funcBuildingPlanner')
-
+	
 	//const profiler = require('screeps-profiler');
 	//profiler.enable();
 /*
