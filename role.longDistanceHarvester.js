@@ -130,15 +130,16 @@ module.exports = {
                 creep.travelTo(creep.pos.findClosestByRange(exit));
             }
         }
-
+        if(creep.memory.working && creep.store.energy == 0) {
         // pickup dropped energy in target room
         var dropedEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 250
+            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 900
         });
         if (dropedEnergy) {
             if (creep.pickup(dropedEnergy) === ERR_NOT_IN_RANGE) {
                 creep.travelTo(dropedEnergy, {visualizePathStyle: {stroke: '#e70808'}});
                 creep.say('Kprs');
+            }
             }
         }
 
