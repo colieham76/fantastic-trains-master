@@ -309,7 +309,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
 
                 if (numberOfreservers[reserveRoom] < this.memory.numberOfreservers[reserveRoom]) {
-                    name = this.createreserver(room.name, reserveRoom);
+                    name = this.createReserver(room.name, reserveRoom);
                 }
             }
         }    	
