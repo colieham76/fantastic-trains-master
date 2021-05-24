@@ -30,7 +30,7 @@ module.exports = {
                             || s.structureType === STRUCTURE_STORAGE
                             || s.structureType === STRUCTURE_TOWER
                         )
-                        && s.energy < s.energyCapacity * 0.1
+                        && s.energy < s.energyCapacity
                 });
 
                 if (_.sum(creep.carry) > 0) {
