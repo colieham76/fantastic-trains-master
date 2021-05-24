@@ -88,8 +88,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	require('prototype.spawn');
 	require('prototype.creep');
 	require('prototype.tower');
-	require('prototype.room');
-
+	
 	require('prototype_creep_heal');
 	require('prototype_creep_move');
 	require('prototype_creep_squad');
