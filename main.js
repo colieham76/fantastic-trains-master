@@ -34,11 +34,11 @@ module.exports.loop = function() {
         }
         
 	if (Game.time % 10 === 0) {
-        Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
-	Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
-	Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
-	Game.spawns.Spawn1.memory.reserveRoom = 'W8S8'
-	Game.spawns.W7S8.memory.reserveRoom = 'W7S9'
+        Game.spawns.Spawn3.memory.minreserver = {W3S7: 1}
+	Game.spawns.Spawn5.memory.minreserver = {W1S7: 1}
+	Game.spawns.Spawn2.memory.minreserver = {W1S9: 1}
+	Game.spawns.Spawn1.memory.minreserver = {W8S8: 1}
+	Game.spawns.W7S8.memory.minreserver = {W7S9: 1}
 	}
 };
 
