@@ -46,11 +46,13 @@ require('prototype_roomPosition');
                 Game.spawns[spawnName].spawnCreepsIfNecessary();
         }
         
-	if (Game.time % 1250 === 0) Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
-	if (Game.time % 1300 === 0) Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
-	if (Game.time % 1100 === 0) Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
-	if (Game.time % 1150 === 0) Game.spawns.Spawn1.memory.reserveRoom = 'W8S8'
-	if (Game.time % 1350 === 0) Game.spawns.W7S8.memory.reserveRoom = 'W7S9'
+	if (Game.time % 10 === 0) {
+        Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
+	Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
+	Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
+	Game.spawns.Spawn1.memory.reserveRoom = 'W8S8'
+	Game.spawns.W7S8.memory.reserveRoom = 'W7S9'
+	}
 };
 
 // activate safe mode
