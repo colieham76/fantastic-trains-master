@@ -33,7 +33,7 @@ module.exports.loop = function() {
                 Game.spawns[spawnName].spawnCreepsIfNecessary();
         }
         
-	if (Game.time % 1000 === 0) {
+	if (Game.time % 10 === 0) {
         Game.spawns.Spawn3.memory.reserveRoom = 'W3S7'
 	Game.spawns.Spawn5.memory.reserveRoom = 'W1S7'
 	Game.spawns.Spawn2.memory.reserveRoom = 'W1S9'
