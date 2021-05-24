@@ -157,7 +157,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         delete this.memory.dismantleRoom;
                     }
                 }
-
+/*
          else if (role == 'reserver' && this.memory.reserveRoom != undefined) {
                     name = this.createReserver(this.memory.reserveRoom);
                     //attacking controller on one room w3s7 temporarily
@@ -166,7 +166,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         delete this.memory.reserveRoom;
                     }
                 }
-
+*/
           else if (role == 'captain' && this.memory.captainRoom != undefined) {
                 // try to spawn a captain
                 name = this.createCaptain(this.memory.captainRoom);
@@ -299,7 +299,20 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
             }
         }
 	
-        	
+    // if none of the above caused a spawn command check for reservers
+        /** @type {Object.<string, number>} */
+        let numberOfreservers = {};
+        if (name == undefined) {
+            // count the number of long distance harvesters globally
+            for (let reserveRoom in this.memory.minreservers) {
+                numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'reserver' && c.memory.target == reserveRoom);
+
+                if (numberOfreservers[reserveRoom] < this.memory.numberOfreservers[reserveRoom]) {
+                    name = this.createreserver(room.name, reserveRoom);
+                }
+            }
+        }    	
   // print name to console if spawning was a success
         if (name != undefined && _.isString(name)) {
             console.log(this.name + " spawned new creep: " + name + " (" + Game.creeps[name].memory.role + ")");
