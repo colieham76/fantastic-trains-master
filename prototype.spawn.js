@@ -304,7 +304,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         let numberOfreservers = {};
         if (name == undefined) {
             // count the number of long distance harvesters globally
-            for (let reserveRoom in this.memory.minreservers) {
+            for (let reserveRoom in this.memory.minNumberOfreservers) {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
 
