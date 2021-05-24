@@ -25,27 +25,10 @@ var roles = {
   
 };
 
-Creep.prototype.runRole = function () {
-    //roles[this.memory.role].run(this);
-    try {
-        roles[this.memory.role].run(this);
-    }
-    catch(err) {
-        //unpackCreepMemory(this.name);
-        console.log('error: role name fault: '+this.memory.role+this.pos);
-    }
-};
-
-/**
- * unit - return the unit configuration for this creep
- *
- * @return {object} - The generic configuration for this creep role
- **/
-Creep.prototype.unit = function() {
-  return roles[this.memory.role];
-};
-
-
+Creep.prototype.runRole =
+    function () {
+        roles[this.memory.role].run(this)
+    };
 
 Creep.prototype.smartHeal = function (anotherCreep) {
     let ditance = this.pos.getRangeTo(anotherCreep);
