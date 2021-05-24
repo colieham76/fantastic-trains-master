@@ -6,13 +6,13 @@ module.exports = {
 				if (creep.pos.isNearTo(Game.flags['ReserverW3S7'])) {
 					creep.memory.W3S7 = true;
 				}
-				return;
+				
 			}
-			//else {
+			else {
 				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(creep.room.controller);
 				}
-			//}
+			}
 			if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
 				creep.moveTo(Game.flags['ReserverW1S7']);
 				if (creep.pos.isNearTo(Game.flags['ReserverW1S7'])) {
