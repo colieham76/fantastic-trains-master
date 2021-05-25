@@ -512,7 +512,7 @@ StructureSpawn.prototype.createDismantler = function(target) {
 
 StructureSpawn.prototype.createReserver =
     function (target) {
-        return this.createCreep([CLAIM, CLAIM, CLAIM, MOVE], undefined, {
+        return this.createCreep([CLAIM, CLAIM, MOVE], undefined, {
         role: 'reserver', target: target 
         });
     };
