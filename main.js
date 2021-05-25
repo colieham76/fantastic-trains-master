@@ -43,12 +43,12 @@ module.exports.loop = function() {
 	Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 	Game.spawns.Spawn1.memory.minNumberOfreservers = {W8S8: 1}
 	}
-	if (Game.time % 1401 === 0) {
+	if (Game.time % 1410 === 0) {
         Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 0}
 	
 	Game.spawns.W7S8.memory.minNumberOfreservers = {W7S9: 0}
 	}
-	if (Game.time % 1451 === 0) {
+	if (Game.time % 1460 === 0) {
 	Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 0}
 	Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0}
 	Game.spawns.Spawn1.memory.minNumberOfreservers = {W8S8: 0}
