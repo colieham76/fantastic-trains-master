@@ -4,7 +4,8 @@ module.exports = {
 				creep.travelTo(Game.flags['ReserverW3S7']);
 				if (creep.pos.isNearTo(Game.flags['ReserverW3S7'])) {
 					creep.memory.W3S7 = true;
-				}				
+				}
+return				
 			}
 			else {
 				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
