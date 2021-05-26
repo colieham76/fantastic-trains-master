@@ -628,12 +628,16 @@ StructureSpawn.prototype.createtowerdrainer = function(healRoom1, healRoom2, hea
         undefined,
         {
            role: 'towerdrainer',
-            healRoom1: healRoom1,
-	     healRoom2: healRoom2,
-	     healRoom3: healRoom3,
-	     healRoom4: healRoom4,
-	     healRoom5: healRoom5,
-	    
+            rally1: healRoom1,
+	    travel1: true,
+	     rally2: healRoom2,
+	     travel2: true,
+	    rally3: healRoom3,
+	    travel3: true,
+	    rally4: healRoom4,
+	    travel4: true,
+	    rally5: healRoom5,
+	    travel5: true,	    
             attackRoom: attackRoom,
         });
 }
