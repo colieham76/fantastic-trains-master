@@ -8,8 +8,15 @@ module.exports = {
 				return
 			}
 			else {
-				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					creep.travelTo(creep.room.controller);
+				if (creep.room.controller && !creep.room.controller.my) {
+					if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(creep.room.controller);
+					}
+				}
+				else {
+					if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.travelTo(creep.room.controller);
+					}
 				}
 			}
 			if (!creep.memory.W1S7 && creep.room.name === 'W1S7'|| creep.room.name === 'W1S8') {
@@ -20,8 +27,15 @@ module.exports = {
 				return
 			}
 			else {
-				if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					creep.travelTo(creep.room.controller);
+				if (creep.room.controller && !creep.room.controller.my) {
+					if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(creep.room.controller);
+					}
+				}
+				else {
+					if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.travelTo(creep.room.controller);
+					}
 				}				
 			}
 			if (!creep.memory.W1S9 && creep.room.name === 'W1S8'|| creep.room.name === 'W1S9') {
@@ -32,9 +46,16 @@ module.exports = {
 				return
 			}
 			else {
-				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					 creep.travelTo(creep.room.controller);
-				 }
+				if (creep.room.controller && !creep.room.controller.my) {
+					if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(creep.room.controller);
+					}
+				}
+				else {
+					if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.travelTo(creep.room.controller);
+					}
+				}
 			 }
 			if (!creep.memory.W8S8 && creep.room.name === 'W7S8'|| creep.room.name === 'W8S8') {
 				creep.travelTo(Game.flags['ReserverW8S8']);
@@ -44,9 +65,16 @@ module.exports = {
 				return
 			}
 			 else {
-				 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-					 creep.travelTo(creep.room.controller);
-				 }
+				if (creep.room.controller && !creep.room.controller.my) {
+					if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(creep.room.controller);
+					}
+				}
+				else {
+					if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						creep.travelTo(creep.room.controller);
+					}
+				}
 			 }
 			 if (!creep.memory.W7S9 && creep.room.name === 'W7S8'|| creep.room.name === 'W7S9') {
 			 	creep.travelTo(Game.flags['ReserverW7S9']);
@@ -56,9 +84,16 @@ module.exports = {
 				 return
 			 }
 			 else {
-			 	if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-			 		creep.travelTo(creep.room.controller);
-			 	}
+				 if (creep.room.controller && !creep.room.controller.my) {
+					 if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						 creep.moveTo(creep.room.controller);
+					 }
+				 }
+				 else {
+					 if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+						 creep.travelTo(creep.room.controller);
+					 }
+				 }
 			 }
 	}
 };
