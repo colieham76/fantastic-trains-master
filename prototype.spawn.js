@@ -288,13 +288,17 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         /** @type {Object.<string, number>} */
         let numberOftowerdrainers = {};
         if (name == undefined) {
-            // count the number of long distance harvesters globally
-            for (let attackRoom in this.memory.mintowerdrainers) {
-                numberOftowerdrainers[attackRoom] = _.sum(Game.creeps, (c) =>
-                    c.memory.role == 'towerdrainer' && c.memory.target == attackRoom);
+            // count the number of towerdrainers
+            for (let rallyRoom in this.memory.mintowerdrainers) {
+                numberOftowerdrainers[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true
+							|| c.memory.rally2 == true
+							|| c.memory.rally3 == true
+							|| c.memory.rally4 == true
+							|| c.memory.rally5 == true
+							);
 
-                if (numberOftowerdrainers[attackRoom] < this.memory.mintowerdrainers[attackRoom]) {
-                    name = this.createtowerdrainer(room.name, attackRoom);
+                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                    name = this.createtowerdrainer(rallyRoom);
                 }
             }
         }
@@ -610,7 +614,7 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 }
 
 
-StructureSpawn.prototype.createtowerdrainer = function(healRoom1, healRoom2, healRoom3, healRoom4, healRoom5, attackRoom) {
+StructureSpawn.prototype.createtowerdrainer = function(target) {
     var body = [];
     for (let i = 0; i < 4; i++) {
         //for (let i = 0; i < 12; i++) {
@@ -628,17 +632,12 @@ StructureSpawn.prototype.createtowerdrainer = function(healRoom1, healRoom2, hea
         undefined,
         {
            role: 'towerdrainer',
-            rally1: healRoom1,
-	    travel1: true,
-	     rally2: healRoom2,
-	     travel2: true,
-	    rally3: healRoom3,
-	    travel3: true,
-	    rally4: healRoom4,
-	    travel4: true,
-	    rally5: healRoom5,
-	    travel5: true,	    
-            attackRoom: attackRoom,
+            rally1: false ,	    
+	    rally2: false,	    
+	    rally3: false,	   
+	    rally4: false,	    
+	    rally5: false,
+	    travel: false	               
         });
 }
 	// create a new function for StructureSpawn
