@@ -1,103 +1,94 @@
 'use strict';
-
-/**
- * Towerdrainer is used to drain energy from hostile towers
- *
- * Moves to the border between routing targetRoom and attackRoom,
- * step for one tick into attackRoom, then step out and heals
- *
- * You need 13 towerdrainers to drain at maximum speed
- *
- * Towerdrainers doesn't called now from anywhere. Call them manually:
- * @example
- * Game.rooms.E17N1.memory.queue.push({role: 'towerdrainer', routing: {targetRoom: 'E16N0'}, attackRoom: 'E16N1'})
- */
 /*
-roles.towerdrainer = {};
-
-roles.towerdrainer.settings = {
-  layoutString: 'TMH',
-  amount: [3, 5, 2], // attack RCL 5
-  // amount: [2, 3, 1], // attack RCL 3
-  maxLayoutAmount: 1,
-};
-
-roles.towerdrainer.getRestPosition = function(creep) {
-  const restRoom = creep.memory.routing.targetRoom;
   const attackRoom = creep.memory.attackRoom;
   if (!creep.memory.restPosition) {
     creep.notifyWhenAttacked(false);
     const room = Game.rooms[restRoom];
     const attackDirection = room.findExitTo(attackRoom);
-    const restDirection = RoomPosition.oppositeDirection(attackDirection);
-    const occupiedPositions = {};
-    _.filter(Game.creeps, (c) => c.memory.role === 'towerdrainer' && c.memory.restPosition).forEach((c) => {
-      occupiedPositions[c.memory.restPosition.x + c.memory.restPosition.y] = c.id;
-    });
+   
     const attackExits = room.find(attackDirection);
-    for (const exit of attackExits) {
-      const pos = exit.getAdjacentPosition(restDirection);
-      if (!pos.checkForWall() && !pos.checkForObstacleStructure() && !occupiedPositions[pos.x + pos.y]) {
-        creep.memory.restPosition = pos;
-        creep.memory.attackDirrection = attackDirection;
-        creep.memory.restDirrection = restDirection;
-        break;
-      }
+        
     }
-  }
-  return creep.memory.restPosition;
-};
-
-roles.towerdrainer.action = function(creep) {
-  const attackRoom = creep.memory.attackRoom;
-  const restPos = roles.towerdrainer.getRestPosition(creep);
-  if (!restPos) {
-    creep.log('no position');
-    creep.moveRandom();
-    return false;
-  }
+ 
   creep.selfHeal();
-
-  if (creep.pos.roomName === attackRoom || creep.pos.isBorder(-1) && creep.pos.isNearTo(restPos.x, restPos.y)) {
-    creep.move(creep.memory.restDirrection);
-  } else if (creep.pos.isEqualTo(restPos.x, restPos.y)) {
-    creep.move(creep.memory.attackDirrection);
-  } else {
-    creep.moveTo(restPos.x, restPos.y);
-  }
-
-  return true;
-};
+;
 */
-
-///////////////////////
-
-var roleUpgrader = require('role.upgrader');
-
 module.exports = {
-  /*
   
-    build: function(spawn, size) {
-        spawn.spawnCreep(
-            [WORK, WORK, CARRY, MOVE, MOVE, MOVE],
-            'Drone' + Math.floor(Math.random() * 10000),
-            { memory: { role: 'drone', rally: 'work_1', traveling: true } }
-        )
-    },
-    */
     run: function(creep) {
     
-        if(!creep.memory.rally1) {
-            var flag = Game.flags['rally1'];
+        if(creep.memory.rally1) {
+            var flag1 = Game.flags['rally1'];
             
             if(creep.memory.traveling) {
-                if(creep.pos.getRangeTo(flag) > 1) {
-                    creep.moveTo(flag);
+                if(creep.pos.getRangeTo(flag1) > 1) {
+                    creep.moveTo(flag1);
                 } else {
                     creep.memory.traveling = false;
                 }
             }
+            else {
+                (creep.memory.rally1 = false)
+            }
         }
+        
+        else if(creep.memory.rally2) {
+            var flag2 = Game.flags['rally2'];
+
+            if(creep.memory.traveling) {
+                if(creep.pos.getRangeTo(flag2) > 1) {
+                    creep.moveTo(flag2);
+                } else {
+                    creep.memory.traveling = false;
+                }
+            }
+            else {
+                (creep.memory.rally2 = false)
+            }
+            
+        }
+        else if(creep.memory.rally3) {
+            var flag3 = Game.flags['rally3'];
+
+            if(creep.memory.traveling) {
+                if(creep.pos.getRangeTo(flag3) > 1) {
+                    creep.moveTo(flag3);
+                } else {
+                    creep.memory.traveling = false;
+                }
+            }
+            else {
+                (creep.memory.rally3 = false)
+            }
+        }
+        else if(creep.memory.rally4) {
+            var flag4 = Game.flags['rally4'];
+
+            if(creep.memory.traveling) {
+                if(creep.pos.getRangeTo(flag4) > 1) {
+                    creep.moveTo(flag4);
+                } else {
+                    creep.memory.traveling = false;
+                }
+            }
+            else {
+                (creep.memory.rally4 = false)
+            }
+        }
+        else if(creep.memory.rally5) {
+            var flag5 = Game.flags['rally5'];
+
+            if(creep.memory.traveling) {
+                if(creep.pos.getRangeTo(flag5) > 1) {
+                    creep.moveTo(flag5);
+                } else {
+                    creep.memory.traveling = false;
+                }
+            }
+            else {
+                (creep.memory.rally5 = false)
+            }
+        }      
     }
 };
 
