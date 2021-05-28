@@ -127,7 +127,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                     });
                     // if there is a container next to the source
                     if (containers.length > 0) {
-                       // if (numberOfCreeps['miner'] < 3 )
+                       if (numberOfCreeps['miner'] < 3)
 
                         // spawn a miner
                         name = this.createMiner(source.id);
