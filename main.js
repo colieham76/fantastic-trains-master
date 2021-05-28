@@ -32,7 +32,7 @@ module.exports.loop = function() {
                 // run spawn logic
                 Game.spawns[spawnName].spawnCreepsIfNecessary();
         }
-        
+    /*    
 	if (Game.time % 1400 === 0) {
         Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
 	
@@ -53,7 +53,7 @@ module.exports.loop = function() {
 	Game.spawns.Spawn1.memory.minNumberOfreservers = {W8S8: 0}
 	}
 	
-	
+	*/
 };
 
 // activate safe mode
