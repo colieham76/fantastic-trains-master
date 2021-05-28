@@ -1,7 +1,7 @@
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer',
-		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker',
-                   'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer1',
+		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2', 'towerdrainer3',
+                   'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
 
 require('myFunctions');
 	
