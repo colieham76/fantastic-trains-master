@@ -1,3 +1,4 @@
+
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker',
                    'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
@@ -277,10 +278,28 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
 							);
 
                 if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
-                    name = this.createtowerdrainer(rallyRoom);
+                    name = this.createtowerdrainer1(rallyRoom);
+                }
+                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                    name = this.createtowerdrainer2(rallyRoom);
+                }
+                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                    name = this.createtowerdrainer3(rallyRoom);
+                }
+                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                    name = this.createtowerdrainer4(rallyRoom);
+                }
+                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                    name = this.createtowerdrainer5(rallyRoom);
                 }
             }
         }
+
+
+
+
+
+
 	
     // if none of the above caused a spawn command check for reservers
         /** @type {Object.<string, number>} */
@@ -593,32 +612,107 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 }
 
 
-StructureSpawn.prototype.createtowerdrainer = function(target) {
+StructureSpawn.prototype.createtowerdrainer1 = function(target) {
     var body = [];
     for (let i = 0; i < 4; i++) {
-        //for (let i = 0; i < 12; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
-        //for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 2; i++) {
-        //for (let i = 0; i < 6; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        undefined,
+        E,
         {
-           role: 'towerdrainer',
-            rally1: false ,	    
-	    rally2: false,	    
-	    rally3: false,	   
-	    rally4: false,	    
-	    rally5: false,
-	    travel: false	               
+           role: 'towerdrainer1',
+            rally1: false ,
+            recycled: false,
         });
 }
+
+StructureSpawn.prototype.createtowerdrainer2 = function(target) {
+    var body = [];
+    for (let i = 0; i < 4; i++) {
+        body.push(TOUGH);
+    }
+    for (let i = 0; i < 6; i++) {
+        body.push(MOVE);
+    }
+    for (let i = 0; i < 2; i++) {
+        body.push(HEAL);
+    }
+    return this.createCreep(body,
+        E,
+        {
+            role: 'towerdrainer2',
+            rally2: false ,
+            recycled: false,
+        });
+}
+
+StructureSpawn.prototype.createtowerdrainer3 = function(target) {
+    var body = [];
+    for (let i = 0; i < 4; i++) {
+        body.push(TOUGH);
+    }
+    for (let i = 0; i < 6; i++) {
+        body.push(MOVE);
+    }
+    for (let i = 0; i < 2; i++) {
+        body.push(HEAL);
+    }
+    return this.createCreep(body,
+        E,
+        {
+            role: 'towerdrainer3',
+            rally3: false ,
+            recycled: false,
+        });
+}
+
+StructureSpawn.prototype.createtowerdrainer4 = function(target) {
+    var body = [];
+    for (let i = 0; i < 4; i++) {
+        body.push(TOUGH);
+    }
+    for (let i = 0; i < 6; i++) {
+        body.push(MOVE);
+    }
+    for (let i = 0; i < 2; i++) {
+        body.push(HEAL);
+    }
+    return this.createCreep(body,
+        E,
+        {
+            role: 'towerdrainer4',
+            rally4: false ,
+            recycled: false,
+        });
+}
+
+StructureSpawn.prototype.createtowerdrainer5 = function(target) {
+    var body = [];
+    for (let i = 0; i < 4; i++) {
+        body.push(TOUGH);
+    }
+    for (let i = 0; i < 6; i++) {
+        body.push(MOVE);
+    }
+    for (let i = 0; i < 2; i++) {
+        body.push(HEAL);
+    }
+    return this.createCreep(body,
+        E,
+        {
+            role: 'towerdrainer5',
+            rally5: false ,
+            recycled: false,
+        });
+}
+
+
 	// create a new function for StructureSpawn
 /*StructureSpawn.prototype.createMugger =
     function (target, target2) {
