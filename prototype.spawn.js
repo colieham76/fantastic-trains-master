@@ -624,7 +624,7 @@ StructureSpawn.prototype.createtowerdrainer1 = function(target) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        E,
+        undefined,
         {
            role: 'towerdrainer1',
             rally1: false ,
@@ -644,7 +644,7 @@ StructureSpawn.prototype.createtowerdrainer2 = function(target) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        E,
+        undefined,
         {
             role: 'towerdrainer2',
             rally2: false ,
@@ -664,7 +664,7 @@ StructureSpawn.prototype.createtowerdrainer3 = function(target) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        E,
+        undefined,
         {
             role: 'towerdrainer3',
             rally3: false ,
@@ -684,7 +684,7 @@ StructureSpawn.prototype.createtowerdrainer4 = function(target) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        E,
+        undefined,
         {
             role: 'towerdrainer4',
             rally4: false ,
@@ -704,7 +704,7 @@ StructureSpawn.prototype.createtowerdrainer5 = function(target) {
         body.push(HEAL);
     }
     return this.createCreep(body,
-        E,
+        undefined,
         {
             role: 'towerdrainer5',
             rally5: false ,
