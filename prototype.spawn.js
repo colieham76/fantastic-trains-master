@@ -40,7 +40,7 @@ Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 3}
 
 
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 1, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 1, rampartrepairer: 0};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
@@ -100,7 +100,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         if (numberOfCreeps['harvester'] == 0 && numberOfCreeps['lorry'] == 0) {
             // if there are still miners or enough energy in Storage left
             if (numberOfCreeps['miner'] > 0
- 		|| (room.storage != undefined && room.storage.store[RESOURCE_ENERGY] >= 150/* + 550*/)) {
+ 		|| (room.storage != undefined && room.storage.store[RESOURCE_ENERGY] >= 150 + 550)) {
              {
                 // create a lorry
                 name = this.createLorry(150);
