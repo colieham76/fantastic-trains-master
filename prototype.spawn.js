@@ -157,16 +157,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                         delete this.memory.dismantleRoom;
                     }
                 }
-/*
-         else if (role == 'reserver' && this.memory.reserveRoom != undefined) {
-                    name = this.createReserver(this.memory.reserveRoom);
-                    //attacking controller on one room w3s7 temporarily
-                    if (name != undefined && _.isString(name)) {
-                        // delete the reserve order
-                        delete this.memory.reserveRoom;
-                    }
-                }
-*/
+
           else if (role == 'captain' && this.memory.captainRoom != undefined) {
                 // try to spawn a captain
                 name = this.createCaptain(this.memory.captainRoom);
@@ -194,18 +185,6 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                     delete this.memory.crewRoom;
                 }
             }
-		    
-	/*	     
-             if (role == 'towerdrainer' && this.memory.towerdrainerRoom != undefined) {
-                // try to spawn a role_towerdrainer
-                name = this.createtowerdrainer(this.memory.towerdrainerRoom);
-                // if that worked
-                if (name != undefined && _.isString(name)) {
-                    // delete towerdrainer order
-                    delete this.memory.towerdrainerRoom;
-                }
-            }*/
-            
 		    
              /*
              if (role == 'ultimateWarrior' && this.memory.ultimateWarriorRoom != undefined) {
