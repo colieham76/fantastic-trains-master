@@ -312,6 +312,10 @@ function () {
                 if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]) {
                     name = this.createReserver(room.name, reserveRoom);
                 }
+                if (name != undefined && _.isString(name)) {
+                    // delete  order
+                    delete this.memory.minNumberOfreservers[reserveRoom];
+                }
             }
         }    	
   // print name to console if spawning was a success
