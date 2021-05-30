@@ -77,8 +77,10 @@ Spawn.prototype.getCreepName = function(role){
 
 // create a new function for StructureSpawn
 StructureSpawn.prototype.spawnCreepsIfNecessary =
-    function () {
-        /** @type {Room} */
+
+function () {
+
+            /** @type {Room} */
         let room = this.room;
         // find all creeps in room
         /** @type {Array.<Creep>} */
@@ -90,7 +92,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         /** @type {Object.<string, number>} */
         let numberOfCreeps = {};
         for (let role of listOfRoles) {
-            numberOfCreeps[role] = _.sum(creepsInRoom, (c) => c.memory.role === role);
+            numberOfCreeps[role] = _.sum(creepsInRoom, (c) => c.memory.role == role);
         }
         let maxEnergy = room.energyCapacityAvailable;
         let name = undefined;
@@ -99,18 +101,16 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         //  create a backup creep
         if (numberOfCreeps['harvester'] == 0 && numberOfCreeps['lorry'] == 0) {
             // if there are still miners or enough energy in Storage left
-            if (numberOfCreeps['miner'] > 0
- 		|| (room.storage != undefined && room.storage.store[RESOURCE_ENERGY] >= 150 + 550)) {
-             {
+            if (numberOfCreeps['miner'] > 0 ||
+                (room.storage != undefined && room.storage.store[RESOURCE_ENERGY] >= 150 + 550)) {
                 // create a lorry
                 name = this.createLorry(150);
             }
-}
             // if there is no miner and not enough energy in Storage left
-         else {
+            else {
                 // create a harvester because it can work on its own
                 name = this.createCustomCreep(room.energyAvailable, 'harvester');
-            } 
+            }
         }
         // if no backup creep is required
         else {
@@ -122,17 +122,15 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                 if (!_.some(creepsInRoom, c => c.memory.role == 'miner' && c.memory.sourceId == source.id)) {
                     // check whether or not the source has a container
                     /** @type {Array.StructureContainer} */
-                    let containers = source.pos.findInRange(FIND_STRUCTURES, 2, {
+                    let containers = source.pos.findInRange(FIND_STRUCTURES, 1, {
                         filter: s => s.structureType == STRUCTURE_CONTAINER
                     });
                     // if there is a container next to the source
                     if (containers.length > 0) {
-                       if (numberOfCreeps['miner'] < 3)
-
                         // spawn a miner
                         name = this.createMiner(source.id);
                         break;
-                    }                
+                    }
                 }
             }
         }
