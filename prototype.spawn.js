@@ -300,22 +300,22 @@ function () {
 
 
 	
-    // if none of the above caused a spawn command check for reservers
+   // if none of the above caused a spawn command check for reservers
         /** @type {Object.<string, number>} */
         let numberOfreservers = {};
         if (name == undefined) {
-            // count the number of long distance harvesters globally
             for (let reserveRoom in this.memory.minNumberOfreservers) {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
-
-                if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom] 
- && (Game.rooms.W3S7.controller.reservation == undefined
-            || Game.rooms.W3S7.controller.reservation.ticksToEnd < 1000)) {
-                    name = this.createReserver(room.name, reserveRoom);
+                if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]
+                    && (Game.rooms.W3S7.controller.reservation == undefined
+                        || Game.rooms.W3S7.controller.reservation.ticksToEnd < 1000)) {
+                    if (Game.time % 75 === 0) {
+                        name = this.createReserver(room.name, reserveRoom);
+                    }
                 }            
             }
-        }    	
+        } 
   // print name to console if spawning was a success
         if (name != undefined && _.isString(name)) {
             console.log(this.name + " spawned new creep: " + name + " (" + Game.creeps[name].memory.role + ")");
