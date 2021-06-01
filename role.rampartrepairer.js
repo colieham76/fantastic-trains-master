@@ -1,19 +1,16 @@
 module.exports = {
     run: function(creep) {
-        if (
-            creep.memory.working == true &&
-            creep.store.getUsedCapacity(RESOURCE_ENERGY) == 0
-        ) {
+        if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.working = false;
-        } else if (
-            creep.memory.working == false &&
-            creep.store.getFreeCapacity() == 0
-        ) {
+            creep.say('🔄 harvest');
+        }
+        if (!creep.memory.working && creep.store.getFreeCapacity() === 0) {
             creep.memory.working = true;
+            creep.say('offload');
         }
 
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, true,
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
                 true, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
