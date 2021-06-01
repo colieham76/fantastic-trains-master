@@ -82,10 +82,11 @@ module.exports = {
                 let invaderStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
                 if(creep.room.name == 'W3S7'){
                 if(invaderStructure){
-                    if (Game.time % 80 === 0) {
+                    if (Game.time % 100 === 0) {
                         Game.spawns.Spawn3.memory.rangedattackerRoom = 'W3S7';
                         // Game.spawns.Spawn21.memory.rangedattackerRoom = 'W64N63'
                     }
+                    
                 }
                 }
 
@@ -107,12 +108,12 @@ module.exports = {
 
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 if (invaderCreep) {
-                    if (creep.room.name === 'W7S9' && Game.time % 20 === 0) {
-                        Game.spawns.Spawn1.memory.rangedattackerRoom = 'W7S9';
+                    if (creep.room.name === 'W1S7' && Game.time % 20 === 0) {
+                        Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S7';
                         // Game.spawns.Spawn21.memory.rangedattackerRoom = 'W64N63'
                     }
-                    if (creep.room.name === 'W8S8' && Game.time % 15 === 0) {
-                        Game.spawns.Spawn1.memory.rangedattackerRoom = 'W8S8';
+                    if (creep.room.name === 'W3S7' && Game.time % 15 === 0) {
+                        Game.spawns.Spawn3.memory.rangedattackerRoom = 'W3S7';
                         //   Game.spawns.Spawn22.memory.rangedattackerRoom = 'W78N64'
                     }
 
