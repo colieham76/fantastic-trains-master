@@ -30,10 +30,21 @@ module.exports = {
             return;
         }
 
+        if (!creep.memory.recycled) {
+            if (creep.ticksToLive < 300) {
+                selfRenew.run(creep);
 
-        if (creep.ticksToLive < 300) {
-            selfRenew.run(creep);
+            }
+            creep.memory.recycled = true;
+            creep.memory.rally1 = false;
         }
-        
+
+        if (!creep.memory.rally1 && creep.memory.recycled == true) {
+            creep.travelTo(Game.flags['rally1']);
+            if (creep.pos.isNearTo(Game.flags['rally1'])) {
+                creep.memory.rally1 = true;
+            }
+            return;
+        }
     }
 }
