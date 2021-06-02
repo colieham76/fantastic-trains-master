@@ -1,4 +1,6 @@
 
+// noinspection SpellCheckingInspection
+
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer1',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2', 'towerdrainer3',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
@@ -265,41 +267,72 @@ function () {
 	
 	    // if none of the above caused a spawn command check for towerdrainers
         /** @type {Object.<string, number>} */
-        let numberOftowerdrainers = {};
+        let numberOftowerdrainers1 = {};
         if (name == undefined) {
             // count the number of towerdrainers
-            for (let rallyRoom in this.memory.mintowerdrainers) {
-                numberOftowerdrainers[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true
-							|| c.memory.rally2 == true
-							|| c.memory.rally3 == true
-							|| c.memory.rally4 == true
-							|| c.memory.rally5 == true
-							);
+            for (let rallyRoom in this.memory.mintowerdrainers1) {
+                numberOftowerdrainers1[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true);
 
-                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
+                if (numberOftowerdrainers1[rallyRoom] < this.memory.mintowerdrainers1[rallyRoom]) {
                     name = this.createtowerdrainer1(rallyRoom);
-                }
-                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
-                    name = this.createtowerdrainer2(rallyRoom);
-                }
-                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
-                    name = this.createtowerdrainer3(rallyRoom);
-                }
-                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
-                    name = this.createtowerdrainer4(rallyRoom);
-                }
-                if (numberOftowerdrainers[rallyRoom] < this.memory.mintowerdrainers[rallyRoom]) {
-                    name = this.createtowerdrainer5(rallyRoom);
-                }
+                }                
             }
         }
 
+// if none of the above caused a spawn command check for towerdrainers
+    /** @type {Object.<string, number>} */
+    let numberOftowerdrainers2 = {};
+    if (name == undefined) {
+        // count the number of towerdrainers
+        for (let rallyRoom in this.memory.mintowerdrainers2) {
+            numberOftowerdrainers2[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally2 == true);
+
+            if (numberOftowerdrainers2[rallyRoom] < this.memory.mintowerdrainers2[rallyRoom]) {
+                name = this.createtowerdrainer2(rallyRoom);
+            }
+        }
+    }
 
 
+    // if none of the above caused a spawn command check for towerdrainers
+    /** @type {Object.<string, number>} */
+    let numberOftowerdrainers3 = {};
+    if (name == undefined) {
+        // count the number of towerdrainers
+        for (let rallyRoom in this.memory.mintowerdrainers3) {
+            numberOftowerdrainers3[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally3 == true);
 
+            if (numberOftowerdrainers3[rallyRoom] < this.memory.mintowerdrainers3[rallyRoom]) {
+                name = this.createtowerdrainer3(rallyRoom);
+            }
+        }
+    }
+    // if none of the above caused a spawn command check for towerdrainers
+    /** @type {Object.<string, number>} */
+    let numberOftowerdrainers4 = {};
+    if (name == undefined) {
+        // count the number of towerdrainers
+        for (let rallyRoom in this.memory.mintowerdrainers4) {
+            numberOftowerdrainers4[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally4 == true);
 
+            if (numberOftowerdrainers4[rallyRoom] < this.memory.mintowerdrainers4[rallyRoom]) {
+                name = this.createtowerdrainer4(rallyRoom);
+            }
+        }
+    }
+    // if none of the above caused a spawn command check for towerdrainers
+    /** @type {Object.<string, number>} */
+    let numberOftowerdrainers5 = {};
+    if (name == undefined) {
+        // count the number of towerdrainers
+        for (let rallyRoom in this.memory.mintowerdrainers5) {
+            numberOftowerdrainers5[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally5 == true);
 
-	
+            if (numberOftowerdrainers5[rallyRoom] < this.memory.mintowerdrainers5[rallyRoom]) {
+                name = this.createtowerdrainer5(rallyRoom);
+            }
+        }
+    }	
    // if none of the above caused a spawn command check for reservers
         /** @type {Object.<string, number>} */
         let numberOfreservers = {};
