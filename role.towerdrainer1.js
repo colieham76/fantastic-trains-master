@@ -39,10 +39,11 @@ module.exports = {
             creep.memory.rally1 = false;
         }
 
-        if (!creep.memory.rally1 && creep.memory.recycled = true) {
+        if (!creep.memory.rally1 && creep.memory.recycled) {
             creep.travelTo(Game.flags['rally1']);
             if (creep.pos.isNearTo(Game.flags['rally1'])) {
                 creep.memory.rally1 = true;
+                creep.memory.recycled = false;
             }
             return;
         }
