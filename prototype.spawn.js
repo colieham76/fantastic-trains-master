@@ -48,6 +48,8 @@ Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
+//Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
+
 
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
@@ -271,7 +273,9 @@ function () {
         if (name == undefined) {
             // count the number of towerdrainers
             for (let rallyRoom in this.memory.mintowerdrainers1) {
-                numberOftowerdrainers1[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true);
+                numberOftowerdrainers1[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true
+                    && c.memory.target == rallyRoom
+                );
 
                 if (numberOftowerdrainers1[rallyRoom] < this.memory.mintowerdrainers1[rallyRoom]) {
                     name = this.createtowerdrainer1(rallyRoom);
