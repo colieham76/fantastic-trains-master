@@ -87,6 +87,8 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 //MYang2017
 
 	require('prototype.spawn');
+        require('prototype_creep_heal');
+
 	require('prototype.creep');
 	require('prototype.tower');
 	require('myFunctions');
