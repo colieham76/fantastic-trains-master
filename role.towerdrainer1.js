@@ -13,6 +13,10 @@
   creep.selfHeal();
 ;
 */
+
+var selfRenew = require('action.selfRenew');
+
+                   
 module.exports = {
 
     run: function (creep) {
@@ -25,5 +29,11 @@ module.exports = {
             }
             return;
         }
+
+
+        if (creep.ticksToLive < 300) {
+            selfRenew.run(creep);
+        }
+        
     }
 }
