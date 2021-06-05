@@ -19,7 +19,10 @@ var selfRenew = require('action.selfRenew');
                    
 module.exports = {
 
-    run: function (creep) {
+      run: function (creep) {
+        
+        for (var count =1; ; count++)
+        {
 
         if (!creep.memory.rally1) {
             creep.travelTo(Game.flags['rally1']);
@@ -39,13 +42,21 @@ module.exports = {
             creep.memory.rally1 = false;
         }
 
-        if (!creep.memory.rally1 && creep.memory.recycled) {
+          
+          
+          if (count === 3) {
+            return;
+          }
+        }
+            
+            
+       /* if (!creep.memory.rally1 && creep.memory.recycled) {
             creep.travelTo(Game.flags['rally1']);
             if (creep.pos.isNearTo(Game.flags['rally1'])) {
                 creep.memory.rally1 = true;
                 creep.memory.recycled = false;
             }
             return;
-        }
+        }*/
     }
 }
