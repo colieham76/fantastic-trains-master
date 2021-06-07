@@ -21,7 +21,15 @@ module.exports = {
 
       run: function (creep) {
         
-        creep.notifyWhenAttacked(false);       
+        creep.notifyWhenAttacked(false);
+
+          if (!creep.memory.rally1) {
+              creep.travelTo(Game.flags['waypoint1']);
+              if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
+                  creep.memory.waypoint1 = true;
+              }
+              return;
+          }
 
         if (!creep.memory.rally1) {
             creep.travelTo(Game.flags['rally1']);
@@ -74,3 +82,4 @@ module.exports = {
         }*/
     }
 }
+
