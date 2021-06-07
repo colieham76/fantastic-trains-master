@@ -20,7 +20,21 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
       run: function (creep) {
-        
+          if (creep.hits > 0.9*creep.hitsMax) { // if full health
+              creep.travelTo(Game.flags['attack1']);
+          }
+          else
+
+          if (creep.hits < 0.6*creep.hitsMax) { // if full health
+              creep.travelTo(Game.flags['Rally1']);
+          }
+
+          if (!creep.memory.healingAbility) {
+              creep.memory.healingAbility = healingability(creep);
+          }
+          creep.heal(creep);
+
+      
         for (var count =1; ; count++)
         {
 
@@ -41,9 +55,7 @@ module.exports = {
             creep.memory.recycled = true;
             creep.memory.rally1 = false;
         }
-
-          
-          
+                  
           if (count === 3) {
             return;
           }
