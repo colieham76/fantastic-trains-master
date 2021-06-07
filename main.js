@@ -94,6 +94,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	require('myFunctions');
 	require('funcAlly');
 	require('myTrading');
+	require('functionWar');
 	
 	var Traveler = require('Traveler');
 	
