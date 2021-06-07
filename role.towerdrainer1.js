@@ -20,20 +20,9 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
       run: function (creep) {
-          if (creep.hits > 0.9*creep.hitsMax) { // if full health
-              creep.travelTo(Game.flags['attack1']);
-          }
-          else
-
-          if (creep.hits < 0.6*creep.hitsMax) { // if full health
-              creep.travelTo(Game.flags['Rally1']);
-          }
-
-          if (!creep.memory.healingAbility) {
-              creep.memory.healingAbility = healingability(creep);
-          }
-          creep.heal(creep);
-
+        
+        creep.notifyWhenAttacked(false);     
+          
       
         for (var count =1; ; count++)
         {
@@ -46,6 +35,22 @@ module.exports = {
             }
             return;
         }
+          
+          
+          if (creep.hits > 0.9*creep.hitsMax) { // if full health
+              creep.travelTo(Game.flags['attack1']);
+          }
+          else
+
+          if (creep.hits < 0.6*creep.hitsMax) { // if full health
+              creep.travelTo(Game.flags['rally1']);
+          }
+
+          if (!creep.memory.healingAbility) {
+              creep.memory.healingAbility = healingability(creep);
+          }
+          creep.heal(creep);
+
 
         if (!creep.memory.recycled) {
             if (creep.ticksToLive < 300) {
