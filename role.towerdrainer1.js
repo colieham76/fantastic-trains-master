@@ -21,11 +21,7 @@ module.exports = {
 
       run: function (creep) {
         
-        creep.notifyWhenAttacked(false);     
-          
-      
-        for (var count =1; ; count++)
-        {
+        creep.notifyWhenAttacked(false);       
 
         if (!creep.memory.rally1) {
             creep.travelTo(Game.flags['rally1']);
@@ -34,8 +30,7 @@ module.exports = {
                 creep.memory.rally1 = true;
             }
             return;
-        }
-          
+        }        
           
           if (creep.hits > 0.9*creep.hitsMax) { // if full health
               creep.travelTo(Game.flags['attack1']);
@@ -50,7 +45,9 @@ module.exports = {
               creep.memory.healingAbility = healingability(creep);
           }
           creep.heal(creep);
-
+          
+          for (var count =1; ; count++)
+          {
 
         if (!creep.memory.recycled) {
             if (creep.ticksToLive < 300) {
