@@ -32,7 +32,7 @@ module.exports = {
             return;
         }        
           
-          if (creep.hits > 0.9*creep.hitsMax) { // if full health
+          if (creep.hits > 0.95*creep.hitsMax) { // if full health
               creep.travelTo(Game.flags['attack1']);
           }
           else
