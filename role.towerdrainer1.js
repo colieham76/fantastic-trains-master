@@ -5,34 +5,42 @@ module.exports = {
     run: function (creep) {
 
         if (creep.ticksToLive < 300) {
-            creep.say('need renew');
-            creep.memory.recycled = true;
-        } else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = false;
-        }
 
-        if (creep.memory.recycled) {
-            selfRenew.run(creep);
-        }
-        creep.notifyWhenAttacked(false);
-
-        if (!creep.memory.rally1) {
             creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
             }
-            return;
+            
+            creep.say('need renew');
+            selfRenew.run(creep);
+            
+        } else if (creep.ticksToLive > 1400) {
+            creep.memory.recycled = true;
+            creep.memory.waypoint1 = false;
         }
 
-        if (!creep.memory.rally1) {
-            creep.travelTo(Game.flags['rally1']);
+        if (creep.memory.recycled) {
+            creep.notifyWhenAttacked(false);
 
-            if (creep.pos.isNearTo(Game.flags['rally1'])) {
-                creep.memory.rally1 = true;
+            if (!creep.memory.rally1 && (creep.memory.waypoint1 = false)) {
+                creep.travelTo(Game.flags['waypoint1']);
+                if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
+                    creep.memory.waypoint1 = true;
+                }
+                // return;
             }
-            return;
-        }
 
+            if (!creep.memory.rally1 && (creep.memory.recycled = false)) {
+                creep.travelTo(Game.flags['rally1']);
+
+                if (creep.pos.isNearTo(Game.flags['rally1'])) {
+                    creep.memory.rally1 = true;
+                    creep.memory.waypoint1 = false;
+                }
+                return;
+            }
+        }
         if (creep.hits > 0.95 * creep.hitsMax) { // if full health
             creep.travelTo(Game.flags['attack1']);
         } else if (creep.hits < 0.6 * creep.hitsMax) { // if full health
