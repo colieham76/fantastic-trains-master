@@ -773,6 +773,41 @@ MOVE, MOVE, MOVE, MOVE, MOVE,
 	  getBoostkh: false
 	      });
     };
+
+//create a new function fo smallupgrader
+StructureSpawn.prototype.createsmallUpgrader =
+  function (energy, numberOfsmallWorkParts, home, target, sourceIndex) {
+  // create a body
+    var smallbody = [];
+    for (let i = 0; i < numberOfsmallWorkParts; i++) {
+    smallbody.push(WORK);
+    }
+  
+  // 150 = 100 (cost of WORK) + 50 (cost of MOVE)
+    energy -= 150 * numberOfsmallWorkParts;
+    var numberOfsmallBodyParts = Math.floor(energy / 200);
+    
+  // creep not big
+    numberOfsmallBodyParts = Math.min(numberOfsmallBodyParts, Math.floor((40 - numberOfsmallWorkParts) / 3));
+    
+    for (let i = 0; i < numberOfsmallBodyParts; i++) {
+    smallbody.push(CARRY);
+    }  
+    for (let i = 0; i < 2; i++) {
+    smallbody.push(MOVE);
+}
+   
+  // create smallUpgrader
+  return this.createCreep(smallbody, Spawn.prototype.getCreepName('2706'), {
+          role: 'smallUpgrader',
+	  home: home,
+          serial: Spawn.prototype.getSerial('2706'),
+          target: target,
+	  sourceIndex: sourceIndex,
+	  working: false
+          });
+};
+
 	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
