@@ -36,7 +36,9 @@ global.spawnCreepByRoomSpawnQueue = function(room) {
 global.ifSpawnAvailable = function(roomName) {
     //let motherRoomName = Game.rooms[roomName].motherRoomName;
     //if (!motherRoomName) {
-        let spawns = Game.rooms[roomName].find(FIND_MY_STRUCTURES, {filter:s=>s.structureType==STRUCTURE_SPAWN});
+        let spawns = Game.rooms[roomName].find(FIND_MY_STRUCTURES, {
+            filter:s=>s.structureType==STRUCTURE_SPAWN
+        });
         let availableSpawns = [];
         for (let spawn of spawns) {
             if (spawn.spawning == null) { // spawn is spawning
@@ -44,6 +46,7 @@ global.ifSpawnAvailable = function(roomName) {
             }
         }
         return availableSpawns; // all spawns are busy
+    creep.say('spawn busy');
     //}
 }
 
