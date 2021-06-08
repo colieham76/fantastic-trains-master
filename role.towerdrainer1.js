@@ -23,15 +23,15 @@ module.exports = {
         if (creep.memory.recycled) {
             creep.notifyWhenAttacked(false);
 
-            if (!creep.memory.rally1 && (creep.memory.waypoint1 = false)) {
+            if (!creep.memory.waypoint1) {
                 creep.travelTo(Game.flags['waypoint1']);
                 if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                     creep.memory.waypoint1 = true;
                 }
-                // return;
+                return;
             }
 
-            if (!creep.memory.rally1 && (creep.memory.recycled = false)) {
+            if (!creep.memory.rally1 && (creep.memory.recycled = true)) {
                 creep.travelTo(Game.flags['rally1']);
 
                 if (creep.pos.isNearTo(Game.flags['rally1'])) {
