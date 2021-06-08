@@ -46,7 +46,7 @@ global.ifSpawnAvailable = function(roomName) {
             }
         }
         return availableSpawns; // all spawns are busy
-    creep.say('spawn busy');
+   // creep.say('spawn busy');
     //}
 }
 
