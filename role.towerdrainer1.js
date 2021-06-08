@@ -22,16 +22,16 @@ module.exports = {
 
         if (creep.memory.recycled) {
             creep.notifyWhenAttacked(false);
-
-            if (!creep.memory.waypoint1) {
+        }
+            if (!creep.memory.waypoint1 && (creep.memory.recycled = false)) {
                 creep.travelTo(Game.flags['waypoint1']);
                 if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                     creep.memory.waypoint1 = true;
                 }
-                return;
+              //  return;
             }
-
-            if (!creep.memory.rally1 && (creep.memory.recycled = true)) {
+            else 
+                if (!creep.memory.rally1 && (creep.memory.recycled = true)) {
                 creep.travelTo(Game.flags['rally1']);
 
                 if (creep.pos.isNearTo(Game.flags['rally1'])) {
@@ -40,7 +40,7 @@ module.exports = {
                 }
                 return;
             }
-        }
+
         if (creep.hits > 0.95 * creep.hitsMax) { // if full health
             creep.travelTo(Game.flags['attack1']);
         } else if (creep.hits < 0.6 * creep.hitsMax) { // if full health
