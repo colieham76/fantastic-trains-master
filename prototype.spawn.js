@@ -267,6 +267,25 @@ function () {
             }
         }
 	
+	
+	// if none of the above caused a spawn command check for smallUpgraders
+        /** @type {Object.<string, number>} */
+        let numberOfsmallUpgraders = {};
+        if (name == undefined) {
+            // count the number of small Upgraders globally
+          
+        for (let roomName in this.memory.minsmallUpgraders) {
+              numberOfsmallUpgraders[roomName] = _.sum(Game.creeps, (c) =>
+                  c.memory.role == 'smallUpgrader' && c.memory.target == roomName);
+            
+          if (numberOfsmallUpgraders[roomName] < this.memory.minsmallUpgraders[roomName]) {
+                    name = this.createsmallUpgrader(maxEnergy, 2, room.name, roomName, 0); 
+                }
+            }
+        }
+	
+	
+	
 	    // if none of the above caused a spawn command check for towerdrainers
         /** @type {Object.<string, number>} */
         let numberOftowerdrainers1 = {};
