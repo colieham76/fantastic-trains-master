@@ -31,9 +31,10 @@ for(var name in Game.creeps) {
 
 
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 1,
-    upgrader: 1};
+    upgrader: 0};
 Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 2};
-Game.spawns.W7S8.memory.minCreeps = {harvester: 0, rampartrepairer: 1};
+Game.spawns.W7S8.memory.minCreeps = {harvester: 0, rampartrepairer: 0};
+Game.spawns.W7S8.memory.minsmallUpgraders = {W7S8: 1};
 Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W8S8: 2};
 
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 1,
@@ -43,8 +44,9 @@ Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1}
 
-Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, repairer: 0, upgrader: 1}
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
+Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, repairer: 0, upgrader: 0}
+Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 1,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
@@ -281,7 +283,7 @@ function () {
                   c.memory.role == 'smallUpgrader' && c.memory.target == roomName);
             
           if (numberOfsmallUpgraders[roomName] < this.memory.minsmallUpgraders[roomName]) {
-		   if (Game.time % 10 === 0) {
+		   if (Game.time % 20000 === 0) {
                     name = this.createsmallUpgrader(maxEnergy, 2, room.name, roomName, 0); 
 		   }
                 }
