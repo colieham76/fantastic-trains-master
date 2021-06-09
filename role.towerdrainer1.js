@@ -34,8 +34,7 @@ module.exports = {
 
                 if (creep.pos.isNearTo(Game.flags['rally1'])) {
                     creep.memory.rally1 = true;
-                    creep.memory.attaaaacck = true;
-                   // creep.memory.waypoint1 = false;
+                    creep.memory.attaaaacck = true;                   
                 }
                 return;
             }
@@ -44,17 +43,20 @@ module.exports = {
 
             if (creep.hits > 0.95 * creep.hitsMax) { // if full health
                 creep.travelTo(Game.flags['attack1']);
+                creep.memory.attaaaacck = true;
 
-            } else if (creep.hits < 0.6 * creep.hitsMax) { // if full health
+            } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
                 creep.travelTo(Game.flags['rally1']);
                 creep.memory.attaaaacck = false;
-                //creep.memory.waypoint1 = false;
-            }
 
+                if (creep.pos.isNearTo(Game.flags['rally1'])) {
+                    creep.memory.rally1 = true;
+                }
+            }
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-            creep.heal(creep);
+            creep.heal(creep);            
         }
     }
 }
