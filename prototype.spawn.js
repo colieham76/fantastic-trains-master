@@ -280,7 +280,7 @@ function () {
                   c.memory.role == 'smallUpgrader' && c.memory.target == roomName);
             
           if (numberOfsmallUpgraders[roomName] < this.memory.minsmallUpgraders[roomName]) {
-		   if (Game.time % 1000 === 0) {
+		   if (Game.time % 10 === 0) {
                     name = this.createsmallUpgrader(maxEnergy, 2, room.name, roomName, 0); 
 		   }
                 }
@@ -810,10 +810,10 @@ StructureSpawn.prototype.createsmallUpgrader =
   
   // 150 = 100 (cost of WORK) + 50 (cost of MOVE)
     energy -= 150 * numberOfsmallWorkParts;
-    var numberOfsmallBodyParts = Math.floor(energy / 200);
+    var numberOfsmallBodyParts = Math.floor(energy / 100);
     
   // creep not big
-    numberOfsmallBodyParts = Math.min(numberOfsmallBodyParts, Math.floor((40 - numberOfsmallWorkParts) / 3));
+    numberOfsmallBodyParts = Math.min(numberOfsmallBodyParts, Math.floor((40 - numberOfsmallWorkParts) / 2));
     
     for (let i = 0; i < numberOfsmallBodyParts; i++) {
     smallbody.push(CARRY);
