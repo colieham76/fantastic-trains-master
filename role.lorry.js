@@ -11,8 +11,8 @@ module.exports = {
             creep.say('offload');
         }
         // if creep is supposed to transfer energy to a structure
-        if (creep.memory.working === true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, true,
+        if (creep.memory.working !== true) {
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
                 true, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
@@ -26,6 +26,19 @@ module.exports = {
                     }
                 }
             }
-        }       
+        }
+        else {
+            var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                filter: (s) => (s.structureType === STRUCTURE_SPAWN
+                    || s.structureType === STRUCTURE_EXTENSION
+                    || s.structureType === STRUCTURE_NUKER)
+                    && s.energy < s.energyCapacity
+            });
+            if (structure !== undefined) {
+                if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                    creep.travelTo(structure);
+                }
+            }
+        }
     }
 };
