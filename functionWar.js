@@ -104,7 +104,7 @@ global.calculateTowerDamage = function(dist) {
 }
 
 global.healingability = function(creep) {
-    return 12*creep.getActiveBodyparts(HEAL)
+    return 24*creep.getActiveBodyparts(HEAL)
 }
 
 // ================================================ end ====================================================================================================
