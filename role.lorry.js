@@ -3,12 +3,7 @@ module.exports = {
     /** @param {Creep} creep */
 
     run: function(creep) {
-/*
-var numberOflorries = _.sum(Game.creeps, (c) => c.memory.role == 'role_Towerdrainer')
-     if (numberOflorries < 35){
-        creep.suicide() 
-       }
-*/
+
 	    /*	    
         //terminal distribution - not part of the lorry role
         let myTerminal = creep.room.find(FIND_MY_STRUCTURES, {
@@ -46,18 +41,13 @@ var numberOflorries = _.sum(Game.creeps, (c) => c.memory.role == 'role_Towerdrai
         */      
         var terminalVar = creep.room.terminal;
         //var storageVar = creep.room.storage;
-
-
-        if (
-            creep.memory.working === true &&
-            creep.store.getUsedCapacity(RESOURCE_ENERGY) === 0
-        ) {
+        if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.working = false;
-        } else if (
-            creep.memory.working === false &&
-            creep.store.getFreeCapacity() === 0
-        ) {
+            creep.say('🔄 collect');
+        }
+        if (!creep.memory.working && creep.store.getFreeCapacity() === 0) {
             creep.memory.working = true;
+            creep.say('offload');
         }
 
         // if creep is supposed to transfer energy to a structure
@@ -91,22 +81,15 @@ var numberOflorries = _.sum(Game.creeps, (c) => c.memory.role == 'role_Towerdrai
         }
         // if creep is supposed to get energy
         else {
-            // find closest container
-            let container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                filter: (s) => ( s.structureType === STRUCTURE_TERMINAL
-                    || s.structureType === STRUCTURE_CONTAINER) && s.store[RESOURCE_ENERGY] > 0
-            });
-            if (container === undefined) {
-                container = creep.room.storage;
-            }
-            // if one was found
-            if (container !== undefined) {
-                // try to withdraw energy, if the container is not in range
-                if (creep.withdraw(container, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                    creep.travelTo(container);
+            let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
+                filter: {
+                    resourceType: RESOURCE_ENERGY
                 }
+            });
+            if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
+                creep.travelTo(energy);
             }
+            creep.getEnergy(true, false);
         }
     }
 };
-
