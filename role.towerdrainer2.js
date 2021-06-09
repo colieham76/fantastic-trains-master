@@ -7,9 +7,9 @@ module.exports = {
         if (creep.ticksToLive < 300) {
             creep.memory.recycled = false;
 
-            creep.travelTo(Game.flags['waypoint1']);
-            if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
-                creep.memory.waypoint1 = true;
+            creep.travelTo(Game.flags['waypoint2']);
+            if (creep.pos.isNearTo(Game.flags['waypoint2'])) {
+                creep.memory.waypoint2 = true;
             }
             creep.say('need renew');
             selfRenew.run(creep);
@@ -19,12 +19,12 @@ module.exports = {
         }
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
-            creep.memory.waypoint1 = false;
+            creep.memory.waypoint2 = false;
         }
-        if (!creep.memory.waypoint1 && (creep.memory.recycled = true)) {
-            creep.travelTo(Game.flags['waypoint1']);
-            if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
-                creep.memory.waypoint1 = true;
+        if (!creep.memory.waypoint2 && (creep.memory.recycled = true)) {
+            creep.travelTo(Game.flags['waypoint2']);
+            if (creep.pos.isNearTo(Game.flags['waypoint2'])) {
+                creep.memory.waypoint2 = true;
             }
             return;
         }
@@ -33,7 +33,7 @@ module.exports = {
             creep.travelTo(Game.flags['rally2']);
 
             if (creep.pos.isNearTo(Game.flags['rally2'])) {
-                creep.memory.rally1 = true;
+                creep.memory.rally2 = true;
                 // creep.memory.waypoint1 = false;
             }
             return;
