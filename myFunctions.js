@@ -3,7 +3,9 @@
   this.y = y;
   this.roomName = roomName;
 };*/
-
+global.prepareMemory = function() {
+  Memory.username = Memory.username || _.chain(Game.rooms).map('controller').flatten().filter('my').map('owner.username').first().value(); 
+};
 
 global.roles = {};
 
