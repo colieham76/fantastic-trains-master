@@ -693,6 +693,7 @@ StructureSpawn.prototype.createtowerdrainer1 = function(target) {
            role: 'towerdrainer1',
             rally1: false ,
             recycled: false,
+	    attaaaacck: true,
         });
 }
 
@@ -713,6 +714,7 @@ StructureSpawn.prototype.createtowerdrainer2 = function(target) {
             role: 'towerdrainer2',
             rally2: false ,
             recycled: false,
+	    attaaaacck: true,
         });
 }
 
@@ -733,6 +735,7 @@ StructureSpawn.prototype.createtowerdrainer3 = function(target) {
             role: 'towerdrainer3',
             rally3: false ,
             recycled: false,
+	    attaaaacck: true,
         });
 }
 
@@ -753,6 +756,7 @@ StructureSpawn.prototype.createtowerdrainer4 = function(target) {
             role: 'towerdrainer4',
             rally4: false ,
             recycled: false,
+	    attaaaacck: true,
         });
 }
 
@@ -773,6 +777,7 @@ StructureSpawn.prototype.createtowerdrainer5 = function(target) {
             role: 'towerdrainer5',
             rally5: false ,
             recycled: false,
+	    attaaaacck: true,
         });
 }
 
