@@ -367,12 +367,12 @@ function () {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
                 if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]
-                  && (Game.rooms.W3S7.controller.reservation = undefined
-                        || Game.rooms.W3S7.controller.reservation.ticksToEnd < 3000)
+                //  && (Game.rooms.W3S7.controller.reservation = undefined
+                 //       || Game.rooms.W3S7.controller.reservation.ticksToEnd < 3000)
                  //   || (Game.rooms.W1S7.controller.reservation = undefined
                  //       ||  Game.rooms.W1S7.controller.reservation.ticksToEnd < 3000)
                 ){
-                    if (Game.time % 100 === 0) {
+                    if (Game.time % 500 === 0) {
                         name = this.createReserver(room.name, reserveRoom);
                     }
                 }            
