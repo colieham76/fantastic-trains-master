@@ -55,7 +55,7 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 0}
 Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
-Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 0}
+Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 1}
 Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 0}
 
 
@@ -844,7 +844,29 @@ StructureSpawn.prototype.createsmallUpgrader =
           });
 };
 
-	
+
+StructureSpawn.prototype.createHealer = function(target, boosted) {
+      var body = [];
+      for (let i = 0; i < 25; i++) {
+          body.push(MOVE);
+      }
+      for (let i = 0; i < 25; i++) {
+          body.push(HEAL);
+      }
+
+      /*var body = [];
+      for (let i = 0; i < 6; i++) {
+          body.push(MOVE);
+      }
+      for (let i = 0; i < 6; i++) {
+          body.push(HEAL);
+      }
+      body.push(ATTACK);
+      body.push(MOVE);
+      */
+
+      return this.spawnCreep(body, randomIdGenerator(), { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
+}	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
     var body = [];
