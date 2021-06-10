@@ -27,7 +27,7 @@ var roles = {
     crew: require('role.crew'),
     //nothinger: require('role.nothinger'),
     //ultimateWorrior: require('role.ultimateWorrior'),
-  
+    healer: require('role.healer'),
 };
 
 Creep.prototype.runRole =
