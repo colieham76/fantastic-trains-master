@@ -1,6 +1,9 @@
 module.exports.loop = function() {
 
-
+Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
+	
+	
+	
 		// clear memory
         for (let name in Memory.creeps) {
             if (Game.creeps[name] == undefined) {
