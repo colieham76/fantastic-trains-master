@@ -29,7 +29,7 @@ module.exports = {
             return;
         }
         else
-        if (!creep.memory.rally1 && (creep.memory.waypoint2 = true) && (creep.memory.recycled = true)) {// enroute
+        if (!creep.memory.rally2 && (creep.memory.waypoint2 = true) && (creep.memory.recycled = true)) {// enroute
             creep.travelTo(Game.flags['rally2']);
 
             if (creep.pos.isNearTo(Game.flags['rally2'])) {
