@@ -105,7 +105,7 @@ module.exports = {
                                 }
                             }*/
 
-
+/*
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 if (invaderCreep) {
                     if (creep.room.name === 'W1S7' && Game.time % 20 === 0) {
@@ -122,7 +122,7 @@ module.exports = {
                         //   Game.spawns.Spawn22.memory.rangedattackerRoom = 'W78N64'
                     }
                 }
-            }
+            }*/
             // if not in target room
             else {
                 // find exit to target room
