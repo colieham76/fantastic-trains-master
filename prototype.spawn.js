@@ -51,20 +51,28 @@ Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lo
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
-/*
+
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 0}
+
 Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
+
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
+
 Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 0}
+
 Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 0}
-*/
 
+/*
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
-Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
-Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 1}
-Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 1}
-Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 1}
 
+Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
+
+Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 1}
+
+Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 1}
+
+Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 1}
+*/
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
 
