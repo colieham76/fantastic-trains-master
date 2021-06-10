@@ -121,8 +121,8 @@ module.exports = {
                         Game.spawns.Spawn5.memory.rangedattackerRoom = 'W1S9';
                         //   Game.spawns.Spawn22.memory.rangedattackerRoom = 'W78N64'
                     }
-                }
-            }*/
+                }*/
+            }
             // if not in target room
             else {
                 // find exit to target room
