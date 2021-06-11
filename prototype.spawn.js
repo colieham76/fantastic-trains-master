@@ -41,6 +41,7 @@ Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 4, towerl
                                          rampartrepairer: 0};
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 0, upgrader: 0, wallRepairer: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
+Game.spawns.Spawn2.memory.minhealers = {W1S8: 1};
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1}
 
@@ -380,6 +381,21 @@ function () {
             }
         }
     }	
+	
+	    // if none of the above caused a spawn command check for towerdrainers
+    /** @type {Object.<string, number>} */
+    let numberOfhealers = {};
+    if (name == undefined) {
+        // count the number of towerdrainers
+        for (let roomName in this.memory.minhealers) {
+            numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.target == roomName);
+
+            if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
+                name = this.createhealer(roomName);
+            }
+        }
+    }
+	
    // if none of the above caused a spawn command check for reservers
         /** @type {Object.<string, number>} */
         let numberOfreservers = {};
@@ -880,7 +896,7 @@ StructureSpawn.prototype.createHealer = function(target, boosted) {
       body.push(MOVE);
       */
 
-      return this.spawnCreep(body, randomIdGenerator(), { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
+      return this.spawnCreep(body, undefined, { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
 }	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
