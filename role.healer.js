@@ -32,7 +32,7 @@ module.exports = {
                     }
                 }
                 else {
-                    creep.travelTo(new RoomPosition(25,25, creep.memory.target));
+                    creep.travelTo(new RoomPosition(3,19, creep.memory.target));
                     creep.heal(creep);
                 }
             }
@@ -40,12 +40,12 @@ module.exports = {
                 if (Game.flags[creep.memory.target+'esc']) {
                     creep.moveTo(Game.flags[creep.memory.target+'esc']);
                     creep.heal(creep);
-                }
+                }/*
                 else {
                     var exit = creep.room.findExitTo(creep.memory.target);
                     creep.moveTo(creep.pos.findClosestByRange(exit));
                     creep.heal(creep);
-                }
+                }*/
             }
         }
     }
