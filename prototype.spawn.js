@@ -876,7 +876,7 @@ StructureSpawn.prototype.createsmallUpgrader =
 };
 
 
-StructureSpawn.prototype.createHealer = function(target) {
+StructureSpawn.prototype.createhealer = function(target) {
       var body = [];
       for (let i = 0; i < 6; i++) {
           body.push(MOVE);
