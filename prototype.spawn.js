@@ -878,10 +878,10 @@ StructureSpawn.prototype.createsmallUpgrader =
 
 StructureSpawn.prototype.createHealer = function(target, boosted) {
       var body = [];
-      for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < 6; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < 6; i++) {
           body.push(HEAL);
       }
 
