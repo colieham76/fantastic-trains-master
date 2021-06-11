@@ -1,6 +1,7 @@
 module.exports = {
     run: function(creep) {
         creep.say('💕', true);
+        /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
             let labs = creep.room.find(FIND_MY_STRUCTURES, {filter: c => c.structureType == STRUCTURE_LAB});
@@ -20,7 +21,7 @@ module.exports = {
             }
 
         }
-        else {
+        else {*/
             if (creep.hits > 0.9*creep.hitsMax) { // if full health
                 if (creep.room.name == creep.memory.target) {// if creep in target room
                     let toHeal = lowestHealthInRoom(creep);
@@ -47,6 +48,6 @@ module.exports = {
                     creep.heal(creep);
                 }*/
             }
-        }
+      //  }
     }
 };
