@@ -876,7 +876,7 @@ StructureSpawn.prototype.createsmallUpgrader =
 };
 
 
-StructureSpawn.prototype.createHealer = function(target, boosted) {
+StructureSpawn.prototype.createHealer = function(target) {
       var body = [];
       for (let i = 0; i < 6; i++) {
           body.push(MOVE);
@@ -896,7 +896,7 @@ StructureSpawn.prototype.createHealer = function(target, boosted) {
       body.push(MOVE);
       */
 
-      return this.spawnCreep(body, undefined, { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
+      return this.createCreep(body, undefined, { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
 }	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
