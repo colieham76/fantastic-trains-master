@@ -885,18 +885,11 @@ StructureSpawn.prototype.createhealer = function(target) {
           body.push(HEAL);
       }
 
-      /*var body = [];
-      for (let i = 0; i < 6; i++) {
-          body.push(MOVE);
-      }
-      for (let i = 0; i < 6; i++) {
-          body.push(HEAL);
-      }
-      body.push(ATTACK);
-      body.push(MOVE);
-      */
-
-      return this.createCreep(body, undefined, { memory: {role: 'healer', target: target, boosted: boosted, spawnTime: 3*body.length}});
+      return this.createCreep(body, undefined, {
+ memory: {
+role: 'healer',
+target: target, 
+}});
 }	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
