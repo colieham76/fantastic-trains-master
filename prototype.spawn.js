@@ -881,7 +881,7 @@ StructureSpawn.prototype.createhealer = function(target) {
       for (let i = 0; i < 6; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 9; i++) {
           body.push(HEAL);
       }
 
