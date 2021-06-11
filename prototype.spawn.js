@@ -886,10 +886,9 @@ StructureSpawn.prototype.createhealer = function(target) {
       }
 
       return this.createCreep(body, undefined, {
- memory: {
 role: 'healer',
-target: target, 
-}});
+target: target
+});
 }	
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
