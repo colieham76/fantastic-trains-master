@@ -388,7 +388,7 @@ function () {
     if (name == undefined) {
         // count the number of towerdrainers
         for (let roomName in this.memory.minhealers) {
-            numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.target == roomName);
+            numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer');
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
                 name = this.createhealer(roomName);
