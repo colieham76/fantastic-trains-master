@@ -22,7 +22,7 @@ module.exports = {
 
         }
         else {*/
-            if (creep.hits > 0.9*creep.hitsMax) { // if full health
+            if (creep.hits > 0.85*creep.hitsMax) { // if full health
                 if (creep.room.name == creep.memory.target) {// if creep in target room
                     let toHeal = lowestHealthInRoom(creep);
                     if (toHeal.hits!=toHeal.hitsMax&&creep.heal(toHeal)==0) { // if found creep
