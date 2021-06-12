@@ -13,10 +13,7 @@ module.exports = {
             }            
             creep.say('need renew');
                 selfRenew.run(creep);
-        }        
-        else if(creep.ticksToLive < 1450){
-            selfRenew.run(creep);
-        }
+        }              
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
             creep.memory.waypoint1 = false;
