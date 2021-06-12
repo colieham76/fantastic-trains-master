@@ -1,4 +1,4 @@
-
+var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
         creep.say('💕', true);
