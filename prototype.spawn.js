@@ -2,6 +2,7 @@
 // noinspection SpellCheckingInspection
 
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer1', 'healer',
+		   'healer3', 'healer2',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2', 'towerdrainer3',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
 
@@ -381,17 +382,45 @@ function () {
             }
         }
     }	
-	
-	    // if none of the above caused a spawn command check for towerdrainers
+ 
+    // if none of the above caused a spawn command check for healers
     /** @type {Object.<string, number>} */
     let numberOfhealers = {};
     if (name == undefined) {
-        // count the number of towerdrainers
+    // count the number of healers
         for (let roomName in this.memory.minhealers) {
             numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer');
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
                 name = this.createhealer(roomName);
+            }
+        }
+    }
+
+	// if none of the above caused a spawn command check for healers
+    /** @type {Object.<string, number>} */
+    let numberOfhealers2 = {};
+    if (name == undefined) {
+    // count the number of healers
+        for (let roomName in this.memory.minhealers2) {
+            numberOfhealers2[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer2');
+
+            if (numberOfhealers2[roomName] < this.memory.minhealers2[roomName]) {
+                name = this.createhealer2(roomName);
+            }
+        }
+    }
+	
+	    // if none of the above caused a spawn command check for healers
+    /** @type {Object.<string, number>} */
+    let numberOfhealers3 = {};
+    if (name == undefined) {
+    // count the number of healers
+        for (let roomName in this.memory.minhealers) {
+            numberOfhealers3[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer3');
+
+            if (numberOfhealers3[roomName] < this.memory.minhealers3[roomName]) {
+                name = this.createhealer3(roomName);
             }
         }
     }
@@ -889,7 +918,38 @@ StructureSpawn.prototype.createhealer = function(target) {
 role: 'healer',
 target: target
 });
+}
+
+StructureSpawn.prototype.createhealer2 = function(target) {
+      var body = [];
+      for (let i = 0; i < 6; i++) {
+          body.push(MOVE);
+      }
+      for (let i = 0; i < 9; i++) {
+          body.push(HEAL);
+      }
+
+      return this.createCreep(body, undefined, {
+role: 'healer2',
+target: target
+});
 }	
+
+StructureSpawn.prototype.createhealer3 = function(target) {
+      var body = [];
+      for (let i = 0; i < 6; i++) {
+          body.push(MOVE);
+      }
+      for (let i = 0; i < 9; i++) {
+          body.push(HEAL);
+      }
+
+      return this.createCreep(body, undefined, {
+role: 'healer3',
+target: target
+});
+}	
+
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
     var body = [];
