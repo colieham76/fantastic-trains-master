@@ -33,7 +33,7 @@ module.exports = {
             selfRenew.run(creep);
         }               
         
-            if (creep.hits > 0.98*creep.hitsMax) { // if full health
+        else if (creep.hits > 0.98*creep.hitsMax) { // if full health
                 creep.travelTo(new RoomPosition(2,20, creep.memory.target));
                 if (creep.room.name == creep.memory.target) {// if creep in target room
                     let toHeal = lowestHealthInRoom(creep);
@@ -43,11 +43,7 @@ module.exports = {
                         creep.rangedHeal(toHeal);
                        // creep.moveTo(toHeal);
                     }
-                }
-                else {
-                    creep.travelTo(new RoomPosition(3,19, creep.memory.target));
-                    creep.heal(creep);
-                }
+                }               
             }
             else { // wounded, escape
                 if (Game.flags[creep.memory.target+'esc']) {
