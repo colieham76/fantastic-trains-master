@@ -28,6 +28,8 @@ var roles = {
     //nothinger: require('role.nothinger'),
     //ultimateWorrior: require('role.ultimateWorrior'),
     healer: require('role.healer'),
+    healer2: require('role.healer2'),
+    healer3: require('role.healer3'),
 };
 
 Creep.prototype.runRole =
