@@ -417,7 +417,7 @@ function () {
     let numberOfhealers3 = {};
     if (name == undefined) {
     // count the number of healers
-        for (let roomName in this.memory.minhealers) {
+        for (let roomName in this.memory.minhealers3) {
             numberOfhealers3[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer3');
 
             if (numberOfhealers3[roomName] < this.memory.minhealers3[roomName]) {
