@@ -23,6 +23,16 @@ module.exports = {
 
         }
         else {*/
+        
+        if (creep.ticksToLive < 300) {// double back
+                              
+            creep.say('need renew');
+                selfRenew.run(creep);
+        }        
+        else if(creep.ticksToLive < 1450){
+            selfRenew.run(creep);
+        }               
+        
             if (creep.hits > 0.98*creep.hitsMax) { // if full health
                 creep.travelTo(new RoomPosition(2,20, creep.memory.target));
                 if (creep.room.name == creep.memory.target) {// if creep in target room
