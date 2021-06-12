@@ -2,7 +2,7 @@
 // noinspection SpellCheckingInspection
 
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer',
-		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2',
+		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
 		   'towerdrainer3',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
@@ -425,6 +425,21 @@ function () {
             }
         }
     }
+	
+
+	    // if none of the above caused a spawn command check for healers
+    /** @type {Object.<string, number>} */
+    let numberOfhealers4 = {};
+    if (name == undefined) {
+    // count the number of healers
+        for (let roomName in this.memory.minhealers4) {
+            numberOfhealers4[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer4');
+
+            if (numberOfhealers4[roomName] < this.memory.minhealers4[roomName]) {
+                name = this.createhealer4(roomName);
+            }
+        }
+    }	
 	
    // if none of the above caused a spawn command check for reservers
         /** @type {Object.<string, number>} */
@@ -908,7 +923,7 @@ StructureSpawn.prototype.createsmallUpgrader =
 
 StructureSpawn.prototype.createhealer = function(target) {
       var body = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 10; i++) {
           body.push(MOVE);
       }
       for (let i = 0; i < 20; i++) {
@@ -923,10 +938,10 @@ target: target
 
 StructureSpawn.prototype.createhealer2 = function(target) {
       var body = [];
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 10; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 20; i++) {
           body.push(HEAL);
       }
 
@@ -938,10 +953,10 @@ target: target
 
 StructureSpawn.prototype.createhealer3 = function(target) {
       var body = [];
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 10; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 20; i++) {
           body.push(HEAL);
       }
 
@@ -950,6 +965,22 @@ role: 'healer3',
 target: target
 });
 }	
+
+StructureSpawn.prototype.createhealer4 = function(target) {
+      var body = [];
+      for (let i = 0; i < 10; i++) {
+          body.push(MOVE);
+      }
+      for (let i = 0; i < 20; i++) {
+          body.push(HEAL);
+      }
+
+      return this.createCreep(body, undefined, {
+role: 'healer4',
+target: target
+});
+}	
+
 
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
