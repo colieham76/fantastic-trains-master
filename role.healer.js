@@ -55,7 +55,7 @@ module.exports = {
                     }
                     else {
                         creep.rangedHeal(toHeal);
-                       // creep.heal(toHeal);
+                        creep.heal(toHeal);
                        // creep.moveTo(toHeal);
                     }
                 }               
