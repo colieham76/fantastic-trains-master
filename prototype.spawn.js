@@ -1,9 +1,10 @@
 
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'rampartrepairer', 'towerdrainer1', 'healer',
-		   'healer3', 'healer2',
-		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2', 'towerdrainer3',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer',
+		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2',
+		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
+		   'towerdrainer3',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
 
 require('myFunctions');
