@@ -30,13 +30,14 @@ module.exports = {
                 selfRenew.run(creep);
         }                            
         else if (creep.hits > 0.98*creep.hitsMax) { // if full health
-                creep.travelTo(new RoomPosition(2,20, creep.memory.target));
+                creep.travelTo(new RoomPosition(0,21, creep.memory.target));
                 if (creep.room.name == creep.memory.target) {// if creep in target room
                     let toHeal = lowestHealthInRoom(creep);
                     if (toHeal.hits!=toHeal.hitsMax&&creep.heal(toHeal)==0) { // if found creep
                     }
                     else {
                         creep.rangedHeal(toHeal);
+                        creep.heal(toHeal);
                        // creep.moveTo(toHeal);
                     }
                 }               
