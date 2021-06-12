@@ -34,7 +34,7 @@ module.exports = {
                     }
                 }
                 else {
-                    creep.travelTo(new RoomPosition(1,17, creep.memory.target));
+                    creep.travelTo(new RoomPosition(3,17, creep.memory.target));
                     creep.heal(creep);
                 }
             }
