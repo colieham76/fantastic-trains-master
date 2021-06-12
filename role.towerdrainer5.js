@@ -19,6 +19,10 @@ module.exports = {
             creep.memory.recycled = true;
             creep.memory.waypoint5 = false;
         }
+        
+        else if(creep.ticksToLive < 1450){
+            selfRenew.run(creep);
+        }
         if (!creep.memory.waypoint5 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
             creep.travelTo(Game.flags['waypoint5']);
             if (creep.pos.isNearTo(Game.flags['waypoint5'])) {
