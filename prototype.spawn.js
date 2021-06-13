@@ -69,7 +69,7 @@ Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
 
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
 
-Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 1}
+Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 0}
 
 Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 0}
 
