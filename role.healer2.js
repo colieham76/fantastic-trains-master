@@ -58,8 +58,8 @@ module.exports = {
                     if (toHeal.hits!=toHeal.hitsMax&&creep.heal(toHeal)==0) { // if found creep
                     }
                     else {
-                        creep.rangedHeal(toHeal);
-                       // creep.moveTo(toHeal);
+                        //creep.rangedHeal(toHeal);
+                       creep.heal(toHeal);
                     }
                 }
                 else {
