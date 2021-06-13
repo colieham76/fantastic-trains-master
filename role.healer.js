@@ -51,7 +51,7 @@ module.exports = {
                 }
                return;
             }
-         else (creep.hits > 0.98*creep.hitsMax) { // if full health
+         else{ (creep.hits > 0.98*creep.hitsMax) { // if full health
                 creep.travelTo(new RoomPosition(1,21, creep.memory.target));
                 creep.memory.attaaaacck = true;  
                 if (creep.room.name == creep.memory.target) {// if creep in target room
@@ -76,6 +76,7 @@ module.exports = {
                     creep.heal(creep);
                 }*/
             }
+}
       //  }
     }
 };
