@@ -1,4 +1,3 @@
-
 var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
@@ -23,62 +22,49 @@ module.exports = {
             }
         }
         else {*/
-
- if (creep.ticksToLive < 300) {// double back
+        if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
             creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
-            }            
-            creep.say('need renew');
-                selfRenew.run(creep);
-        }  
-        
-                
-        else if(creep.ticksToLive < 1450){
+            }
+            creep.say('need 2 renew');
             selfRenew.run(creep);
         }
-        
+        else if (creep.ticksToLive < 1450) {
+            selfRenew.run(creep);
+        }
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
             creep.memory.waypoint1 = false;
         }
-        if (!creep.memory.waypoint1 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
+        if (!creep.memory.waypoint1 && (creep.memory.recycled = true) 
+            && (creep.memory.attaaaacck = true)) {
             creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
-                }
-               return;
             }
-            else if (creep.hits > 0.98*creep.hitsMax) { // if full health
-                creep.travelTo(new RoomPosition(1,21, creep.memory.target));
-                creep.memory.attaaaacck = true;  
-                if (creep.room.name == creep.memory.target) {// if creep in target room
+            return;
+        }
+        else if (creep.hits > 0.98 * creep.hitsMax) {
+            if (creep.memory.recycled 
+                && (creep.memory.attaaaacck = true)) {//full health
+                creep.travelTo(new RoomPosition(1, 19, creep.memory.target));
+                creep.memory.attaaaacck = true;
+                if (creep.room.name == creep.memory.target) {
                     let toHeal = lowestHealthInRoom(creep);
-                    if (toHeal.hits!=toHeal.hitsMax&&creep.heal(toHeal)==0) { // if found creep
-                    }
-                    else {
+                    if (toHeal.hits != toHeal.hitsMax 
+                        && creep.heal(toHeal) == 0) {
+                        
+                    } else {
                         creep.rangedHeal(toHeal);
                         creep.heal(toHeal);
                     }
-                }
-                else {
-                    creep.travelTo(new RoomPosition(3,19, creep.memory.target));
+                } else {
+                    creep.travelTo(new RoomPosition(3, 19, creep.memory.target));
                     creep.heal(creep);
                 }
             }
-            else { // wounded, escape
-                if (Game.flags[creep.memory.target+'esc']) {
-                    creep.moveTo(Game.flags[creep.memory.target+'esc']);
-                    creep.heal(creep);
-                }/*
-                else {
-                    var exit = creep.room.findExitTo(creep.memory.target);
-                    creep.moveTo(creep.pos.findClosestByRange(exit));
-                    creep.heal(creep);
-                }*/
-            }
-      //  }
+        }
     }
-};
