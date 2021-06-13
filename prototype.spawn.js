@@ -49,7 +49,7 @@ Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 1};
 
 Game.spawns.Spawn2.memory.minhealers3 = {W1S8: 1};
 
-Game.spawns.Spawn2.memory.minhealers4 = {W1S8: 0};
+Game.spawns.Spawn2.memory.minhealers4 = {W1S8: 1};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
