@@ -939,9 +939,11 @@ StructureSpawn.prototype.createhealer = function(target) {
       }
 
       return this.createCreep(body, undefined, {
-role: 'healer',
-target: target
-});
+	      role: 'healer',
+	      recycled: false,
+	    attaaaacck: true,
+	      target: target
+      });
 }
 
 StructureSpawn.prototype.createhealer2 = function(target) {
@@ -954,9 +956,11 @@ StructureSpawn.prototype.createhealer2 = function(target) {
       }
 
       return this.createCreep(body, undefined, {
-role: 'healer2',
-target: target
-});
+	      role: 'healer2',
+	      recycled: false,
+	    attaaaacck: true,
+	      target: target
+      });
 }	
 
 StructureSpawn.prototype.createhealer3 = function(target) {
@@ -969,9 +973,11 @@ StructureSpawn.prototype.createhealer3 = function(target) {
       }
 
       return this.createCreep(body, undefined, {
-role: 'healer3',
-target: target
-});
+	      role: 'healer3',
+	      recycled: false,
+	    attaaaacck: true,
+	      target: target
+      });
 }	
 
 StructureSpawn.prototype.createhealer4 = function(target) {
@@ -984,9 +990,11 @@ StructureSpawn.prototype.createhealer4 = function(target) {
       }
 
       return this.createCreep(body, undefined, {
-role: 'healer4',
-target: target
-});
+	      role: 'healer4',
+	      recycled: false,
+	    attaaaacck: true,
+	      target: target
+      });
 }	
 
 
