@@ -29,39 +29,43 @@ module.exports = {
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
             }
-            creep.say('need renew');
+            creep.say('need 2 renew');
             selfRenew.run(creep);
         }
-         else if (creep.ticksToLive < 1450) {
-                selfRenew.run(creep);
+        else if (creep.ticksToLive < 1450) {
+            selfRenew.run(creep);
+        }
+        else if (creep.ticksToLive > 1400) {
+            creep.memory.recycled = true;
+            creep.memory.waypoint1 = false;
+        }
+        if (!creep.memory.waypoint1 && (creep.memory.recycled = true) 
+            && (creep.memory.attaaaacck = true)) {
+            creep.travelTo(Game.flags['waypoint1']);
+            if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
+                creep.memory.waypoint1 = true;
             }
-         else if (creep.ticksToLive > 1400) {
-                creep.memory.recycled = true;
-                creep.memory.waypoint1 = false;
-            }
-            if (!creep.memory.waypoint1 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
-                creep.travelTo(Game.flags['waypoint1']);
-                if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
-                    creep.memory.waypoint1 = true;
-                }
-                return;
-            }
-         else if (creep.hits > 0.98 * creep.hitsMax) {
-                if (creep.memory.recycled &&  (creep.memory.attaaaacck = true)) {// if full health
-                    creep.travelTo(new RoomPosition(1, 21, creep.memory.target));
-                    creep.memory.attaaaacck = true;
-                    if (creep.room.name == creep.memory.target) {// if creep in target room
-                        let toHeal = lowestHealthInRoom(creep);
-                        if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) { // if found creep
-                        } else {
-                            creep.rangedHeal(toHeal);
-                            creep.heal(toHeal);
-                        }
+            return;
+        }
+        else if (creep.hits > 0.98 * creep.hitsMax) {
+            if (creep.memory.recycled 
+                && (creep.memory.attaaaacck = true)) {//full health
+                creep.travelTo(new RoomPosition(1, 21, creep.memory.target));
+                creep.memory.attaaaacck = true;
+                if (creep.room.name == creep.memory.target) {
+                    let toHeal = lowestHealthInRoom(creep);
+                    if (toHeal.hits != toHeal.hitsMax 
+                        && creep.heal(toHeal) == 0) {
+                        
                     } else {
-                        creep.travelTo(new RoomPosition(3, 19, creep.memory.target));
-                        creep.heal(creep);
+                        creep.rangedHeal(toHeal);
+                        creep.heal(toHeal);
                     }
+                } else {
+                    creep.travelTo(new RoomPosition(3, 19, creep.memory.target));
+                    creep.heal(creep);
                 }
+            }
         }
     }
 };
