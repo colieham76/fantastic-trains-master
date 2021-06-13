@@ -31,7 +31,7 @@ var roles = {
     healer2: require('role.healer2'),
     healer3: require('role.healer3'),
 
-healer3: require('role.healer4')
+healer4: require('role.healer4')
 
 };
 
