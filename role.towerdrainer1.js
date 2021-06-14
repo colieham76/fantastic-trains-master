@@ -51,7 +51,7 @@ module.exports = {
             if (creep.hits > 0.95 * creep.hitsMax) { // if full health
                 creep.travelTo(Game.flags['attack1']);
                 creep.memory.attaaaacck = true;
-                creep.memory.waypoint1 = false;
+            //    creep.memory.waypoint1 = false;
             } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
                 creep.travelTo(Game.flags['rally1']);
                 creep.memory.attaaaacck = false;
