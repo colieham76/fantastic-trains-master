@@ -16,6 +16,9 @@ module.exports = {
         }
 
         else if(creep.ticksToLive < 1450){
+
+creep.say('wrong way'); 
+
             selfRenew.run(creep);
             
         }
