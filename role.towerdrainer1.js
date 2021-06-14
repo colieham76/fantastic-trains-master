@@ -26,7 +26,8 @@ module.exports = {
             creep.memory.renewing = false;
         }
         if (!creep.memory.waypoint1 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
-            creep.travelTo(Game.flags['waypoint1']);
+          creep.say('wrong way'); 
+creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
             }
