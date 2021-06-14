@@ -15,9 +15,9 @@ module.exports = {
             selfRenew.run(creep);
         }
 
-        else if(creep.ticksToLive < 1450){
+        else if(creep.ticksToLive < 1450 && (creep.memory.renewing = true)){
 
-creep.say('wrong way'); 
+           creep.say('wrong way'); 
 
             selfRenew.run(creep);
             
@@ -29,7 +29,7 @@ creep.say('wrong way');
             creep.memory.renewing = false;
         }
         if (!creep.memory.waypoint1 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
-          creep.say('wrong way'); 
+         
 creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
