@@ -54,6 +54,7 @@ creep.travelTo(Game.flags['waypoint1']);
                 creep.memory.attaaaacck = true;
 
             } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
+             creep.say('ww');
                 creep.travelTo(Game.flags['rally1']);
                 creep.memory.attaaaacck = false;
 
