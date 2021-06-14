@@ -16,7 +16,9 @@ module.exports = {
         }  
         
                 
-        else if(creep.ticksToLive < 1450 && (creep.memory.waypoint1 = true)){
+        else if(creep.ticksToLive < 1450 
+&& (creep.memory.waypoint1 = true)
+&& (creep.memory.recycled = false)){
             selfRenew.run(creep);
         }
         
