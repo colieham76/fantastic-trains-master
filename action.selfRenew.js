@@ -5,6 +5,7 @@ module.exports = {
             let availableSpawn = availableSpawns[0];
             if (availableSpawn.renewCreep(creep) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(availableSpawn);
+                creep.memory.renewing = true;
             }
         }
     }
