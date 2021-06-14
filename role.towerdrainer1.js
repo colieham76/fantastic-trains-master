@@ -20,6 +20,8 @@ module.exports = {
 && (creep.memory.waypoint1 = true)
 && (creep.memory.recycled = false)){
             selfRenew.run(creep);
+            creep.memory.attaaaacck = true;
+
         }
         
         else if (creep.ticksToLive > 1400) {
