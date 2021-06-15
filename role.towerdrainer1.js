@@ -52,7 +52,10 @@ module.exports = {
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-            creep.heal(creep);            
+                        
+            if(Game.time % 3 === 0){
+            creep.heal(creep);       
+            }
         }
     }
 }
