@@ -45,11 +45,12 @@ module.exports = {
                 creep.memory.attaaaacck = true;
 
             } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
-                creep.travelTo(Game.flags['rally1']);
+                creep.travelTo(rallypos);
                 creep.memory.attaaaacck = false;
 
-                if (creep.pos.isNearTo(Game.flags['rally1'])) {
+                if (creep.pos.isNearTo(rallypos)) {
                     creep.memory.rally1 = true;
+                    Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
                 }
             }
             if (!creep.memory.healingAbility) {
