@@ -52,7 +52,7 @@ module.exports = {
         }
         if (creep.memory.recycled
             && (creep.memory.attaaaacck = true)) {//full health
-            creep.travelTo(new RoomPosition(1, 21, creep.memory.target));
+            creep.travelTo(new RoomPosition(1, 19, creep.memory.target));
             creep.memory.attaaaacck = true;
             let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax
