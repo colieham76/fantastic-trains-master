@@ -1,7 +1,7 @@
 var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
-        creep.say('💕', true);
+      //  creep.say('💕', true);
         var rallypos = new RoomPosition(1,23,'W1S8');
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
