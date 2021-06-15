@@ -3,20 +3,7 @@ module.exports = {
     run: function(creep) {
         creep.say('💕', true);
         
- function wait(){
-      let waitFlag = Game.flags["waitFlag"];
-        let moveToFlag = creep.moveTo(waitFlag, {
-          visualizePathStyle: {
-            fill: "transparent",
-            stroke: "#fff",
-            lineStyle: "dashed",
-            strokeWidth: 0.15,
-            opacity: 0.1,
-          },
-        });
-        return;
-      
-    }
+
        
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
@@ -74,9 +61,7 @@ module.exports = {
                     if (toHeal.hits != toHeal.hitsMax 
                         && creep.heal(toHeal) == 0) {
                         
-                    } else {
-                        
-                        creep.rangedHeal(toHeal);
+                    } else {                      
                         creep.heal(toHeal);
                     }
                 }
