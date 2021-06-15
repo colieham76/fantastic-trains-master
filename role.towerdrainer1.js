@@ -15,7 +15,8 @@ module.exports = {
             creep.say('need renew');
                 selfRenew.run(creep);
         }        
-        else if(creep.ticksToLive < 1450){
+       else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
+            if (creep.ticksToLive < 1450) {
             selfRenew.run(creep);
         }
         else if (creep.ticksToLive > 1400) {
@@ -29,16 +30,8 @@ module.exports = {
                 }
                return;
             }
-            else 
-                if (!creep.memory.rally1 && (creep.memory.waypoint1 = true) && (creep.memory.recycled = true)) {// enroute
-                creep.travelTo(Game.flags['rally1']);
-
-                if (creep.pos.isNearTo(Game.flags['rally1'])) {
-                    creep.memory.rally1 = true;
-                    creep.memory.attaaaacck = true;                   
-                }
-                return;
-            }
+            
+       }
         if (creep.memory.recycled &&  (creep.memory.attaaaacck = true)) {
             creep.notifyWhenAttacked(false);
 
