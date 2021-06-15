@@ -50,11 +50,19 @@ module.exports = {
             }
             return;
         }
+        
+       /* 
+        var rallypos = new RoomPosition(1,17,'W1S8');
+            if(creep.pos.x != rallypos.x && creep.pos.y != rallypos.y) {
+                creep.moveTo(rallypos);                
+            } 
+       */ 
         else if (creep.hits > 0.98 * creep.hitsMax) {
             if (creep.memory.recycled 
                 && (creep.memory.attaaaacck = true)) {//full health
-                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
                 
+                
+                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));                
                 creep.memory.attaaaacck = true;
                 if (creep.room.name == creep.memory.target) {
                     let toHeal = lowestHealthInRoom(creep);
