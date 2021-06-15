@@ -3,6 +3,22 @@
   this.y = y;
   this.roomName = roomName;
 };*/
+
+global.wait =  function wait(){
+      let waitFlag = Game.flags["waitFlag"];
+        let moveToFlag = creep.moveTo(waitFlag, {
+          visualizePathStyle: {
+            fill: "transparent",
+            stroke: "#fff",
+            lineStyle: "dashed",
+            strokeWidth: 0.15,
+            opacity: 0.1,
+          },
+        });
+        return;
+      
+    }
+
 global.prepareMemory = function() {
   Memory.username = Memory.username || _.chain(Game.rooms).map('controller').flatten().filter('my').map('owner.username').first().value(); 
 };
