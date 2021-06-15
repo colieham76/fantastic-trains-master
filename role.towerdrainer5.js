@@ -4,7 +4,7 @@ module.exports = {
 
     run: function (creep) {
 
- var rallypos = new RoomPosition(1,22,'W1S8');
+ var rallypos = new RoomPosition(1,24,'W1S8');
 
         if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
@@ -16,15 +16,18 @@ module.exports = {
             creep.say('need renew');
             selfRenew.run(creep);
         }
+
+        else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
+            if (creep.ticksToLive < 1450) {
+                selfRenew.run(creep);
+            }
         
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
             creep.memory.waypoint5 = false;
         }
         
-       else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
-            selfRenew.run(creep);
-        }
+      
         if (!creep.memory.waypoint5 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
             creep.travelTo(Game.flags['waypoint5']);
             if (creep.pos.isNearTo(Game.flags['waypoint5'])) {
