@@ -2,9 +2,7 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
         creep.say('💕', true);
-        
-
-       
+        var rallypos = new RoomPosition(1,17,'W1S8');       
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
@@ -35,45 +33,41 @@ module.exports = {
             creep.say('need 2 renew');
             selfRenew.run(creep);
         }
-        else if (creep.ticksToLive < 1450) {
-            selfRenew.run(creep);
-        }
-        else if (creep.ticksToLive > 1400) {
-            creep.memory.recycled = true;
-            creep.memory.waypoint1 = false;
-        }
-        if (!creep.memory.waypoint1 && (creep.memory.recycled = true) 
-            && (creep.memory.attaaaacck = true)) {
-            creep.travelTo(Game.flags['waypoint1']);
-            if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
-                creep.memory.waypoint1 = true;
+        else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
+            if (creep.ticksToLive < 1450) {
+                selfRenew.run(creep);
+            } else if (creep.ticksToLive > 1400) {
+                creep.memory.recycled = true;
+                creep.memory.waypoint1 = false;
             }
-            return;
+            if (!creep.memory.waypoint1 && (creep.memory.recycled = true)
+                && (creep.memory.attaaaacck = true)) {
+                creep.travelTo(Game.flags['waypoint1']);
+                if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
+                    creep.memory.waypoint1 = true;
+                }
+                return;
+            }
         }
-        
        /* 
         var rallypos = new RoomPosition(1,17,'W1S8');
             if(creep.pos.x != rallypos.x && creep.pos.y != rallypos.y) {
                 creep.moveTo(rallypos);                
             } 
-       */ 
-        else if (creep.hits > 0.98 * creep.hitsMax) {
-            if (creep.memory.recycled 
+       */
+       if (creep.memory.recycled 
                 && (creep.memory.attaaaacck = true)) {//full health
-                
-                
-                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));                
-                creep.memory.attaaaacck = true;
-               
+                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
+
+                    creep.memory.attaaaacck = true;
+
                     let toHeal = lowestHealthInRoom(creep);
                     if (toHeal.hits != toHeal.hitsMax 
                         && creep.heal(toHeal) == 0) {
                         
                     } else {                      
                         creep.heal(toHeal);
-                    }
-                
-            }
+                    }           
         }
     }
 }
