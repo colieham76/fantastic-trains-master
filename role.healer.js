@@ -60,17 +60,24 @@ module.exports = {
        */
        if (creep.memory.recycled 
                 && (creep.memory.attaaaacck = true)) {//full health
-                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
+           creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
 
-                    creep.memory.attaaaacck = true;
+           creep.memory.attaaaacck = true;
 
-                    let toHeal = lowestHealthInRoom(creep);
-                    if (toHeal.hits != toHeal.hitsMax 
-                        && creep.heal(toHeal) == 0) {
-                        
-                    } else {                      
+           let toHeal = lowestHealthInRoom(creep);
+           try {
+               if (toHeal.hits != toHeal.hitsMax
+                   && creep.heal(toHeal) == 0) {
+
+               }
+           } catch (e) {
+               if(Game.time % 25 === 0) {
+                   console.log('no towerdrainer spawned ffs!')
+               }
+           }
+       }
+       else {
                         creep.heal(toHeal);
-                    }           
-        }
+                    }
     }
 }
