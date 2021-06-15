@@ -144,10 +144,10 @@ function () {
                 name = this.createLorry(150);
             }
             // if there is no miner and not enough energy in Storage left
-            /*else {
+            else {
                 // create a harvester because it can work on its own
                 name = this.createCustomCreep(room.energyAvailable, 'harvester');
-            }*/
+            }
         }
         // if no backup creep is required
         else {
