@@ -293,7 +293,10 @@ global.findVIPInRoom = function(creep) {
     let VIP = creep;
 
     for (let creepx of creepsInRoom) {
-        if (creepx.getActiveBodyparts(WORK)>0||creepx.getActiveBodyparts(RANGED_ATTACK)>0||creepx.getActiveBodyparts(ATTACK)>0) {
+        if (creepx.getActiveBodyparts(TOUGH)>0
+            ||creepx.getActiveBodyparts(WORK)>0
+            ||creepx.getActiveBodyparts(RANGED_ATTACK)>0
+            ||creepx.getActiveBodyparts(ATTACK)>0) {
             VIP = creepx;
             break
         }
