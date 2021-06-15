@@ -20,7 +20,10 @@ module.exports = {
         
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
-            selfRenew.run(creep);
+            let storage = creep.room.storage;
+            if (_.sum(creep.store) > 1000) {
+                selfRenew.run(creep);
+            }
         }
         
         else if (creep.ticksToLive > 1400) {
