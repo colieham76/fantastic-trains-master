@@ -51,33 +51,26 @@ module.exports = {
                 }
                 return;
             }
-        }
-       /* 
-        var rallypos = new RoomPosition(1,17,'W1S8');
-            if(creep.pos.x != rallypos.x && creep.pos.y != rallypos.y) {
-                creep.moveTo(rallypos);                
-            } 
-       */
+        }       
        if (creep.memory.recycled 
                 && (creep.memory.attaaaacck = true)) {//full health
            creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
-
            creep.memory.attaaaacck = true;
-
            let toHeal = lowestHealthInRoom(creep);
            try {
                if (toHeal.hits != toHeal.hitsMax
-                   && creep.heal(toHeal) == 0) {
-
-               }
+                   && creep.heal(toHeal) == 0) {}
            } catch (e) {
                if(Game.time % 25 === 0) {
-                   console.log('no towerdrainer spawned ffs!')
+                   console.log('no towerdrainer spawned ffs - spawning now!')
+                   if (creep.room.name === 'W1S8'){
+                       Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
+                   }
                }
            }
        }
        else {
-                        creep.heal(toHeal);
-                    }
+           creep.heal(toHeal);
+       }
     }
 }
