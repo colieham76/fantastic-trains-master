@@ -1,5 +1,6 @@
+
 'use strict';
-var selfRenew = require('action.selfRenew');
+var selfRenew = require('action.selfRenew');                   
 module.exports = {
 
     run: function (creep) {
@@ -10,42 +11,34 @@ module.exports = {
             creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
-            }
+            }            
             creep.say('need renew');
+                selfRenew.run(creep);
+        }        
+        else if(creep.ticksToLive < 1450){
             selfRenew.run(creep);
         }
-
-        else if(creep.ticksToLive < 1450 && (creep.memory.renewing = true)){
-
-           creep.say('wrong way'); 
-
-            selfRenew.run(creep);
-            
-        }
-
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
             creep.memory.waypoint1 = false;
-            creep.memory.renewing = false;
         }
         if (!creep.memory.waypoint1 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
-         
-creep.travelTo(Game.flags['waypoint1']);
+            creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
+                }
+               return;
             }
-            return;
-        }
-        else
-        if (!creep.memory.rally1 && (creep.memory.waypoint1 = true) && (creep.memory.recycled = true)) {// enroute
-            creep.travelTo(Game.flags['rally1']);
+            else 
+                if (!creep.memory.rally1 && (creep.memory.waypoint1 = true) && (creep.memory.recycled = true)) {// enroute
+                creep.travelTo(Game.flags['rally1']);
 
-            if (creep.pos.isNearTo(Game.flags['rally1'])) {
-                creep.memory.rally1 = true;
-                creep.memory.attaaaacck = true;
+                if (creep.pos.isNearTo(Game.flags['rally1'])) {
+                    creep.memory.rally1 = true;
+                    creep.memory.attaaaacck = true;                   
+                }
+                return;
             }
-            return;
-        }
         if (creep.memory.recycled &&  (creep.memory.attaaaacck = true)) {
             creep.notifyWhenAttacked(false);
 
@@ -54,7 +47,6 @@ creep.travelTo(Game.flags['waypoint1']);
                 creep.memory.attaaaacck = true;
 
             } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
-             creep.say('ww');
                 creep.travelTo(Game.flags['rally1']);
                 creep.memory.attaaaacck = false;
 
@@ -65,7 +57,7 @@ creep.travelTo(Game.flags['waypoint1']);
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-            creep.heal(creep);
+            creep.heal(creep);            
         }
     }
 }
