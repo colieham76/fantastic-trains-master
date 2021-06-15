@@ -64,7 +64,7 @@ module.exports = {
                 
                 creep.travelTo(new RoomPosition(1, 17, creep.memory.target));                
                 creep.memory.attaaaacck = true;
-                if (creep.room.name == creep.memory.target) {
+               
                     let toHeal = lowestHealthInRoom(creep);
                     if (toHeal.hits != toHeal.hitsMax 
                         && creep.heal(toHeal) == 0) {
@@ -72,7 +72,7 @@ module.exports = {
                     } else {                      
                         creep.heal(toHeal);
                     }
-                }
+                
             }
         }
     }
