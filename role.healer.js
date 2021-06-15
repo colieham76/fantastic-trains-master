@@ -51,26 +51,22 @@ module.exports = {
                 }
                 return;
             }
-        }       
+        }
+        let toHeal = lowestHealthInRoom(creep);
        if (creep.memory.recycled 
                 && (creep.memory.attaaaacck = true)) {//full health
            creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
            creep.memory.attaaaacck = true;
-           let toHeal = lowestHealthInRoom(creep);
-           try {
+
+        //   try {
                if (toHeal.hits != toHeal.hitsMax
                    && creep.heal(toHeal) == 0) {}
-           } catch (e) {
-               if(Game.time % 25 === 0) {
-                   console.log('no towerdrainer spawned ffs - spawning now!')
-                   if (creep.room.name === 'W1S8'){
-                       Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
-                   }
-               }
+       //    } catch (e) {
            }
-       }
+      // }
        else {
            creep.heal(toHeal);
        }
     }
 }
+
