@@ -32,15 +32,18 @@ module.exports = {
             creep.say('need 2 renew');
             selfRenew.run(creep);
         }
-        else if (creep.ticksToLive < 1450) {
+        else if (creep.ticksToLive < 1450 && (creep.memory.attaaaacck = false)) {
             selfRenew.run(creep);
         }
         else if (creep.ticksToLive > 1400) {
             creep.memory.recycled = true;
             creep.memory.waypoint1 = false;
+            //creep.memory.attack = true;
         }
-        if (!creep.memory.waypoint1 && (creep.memory.recycled = true) 
-            && (creep.memory.attaaaacck = true)) {
+        if (!creep.memory.waypoint1 && (creep.memory.recycled = true)
+
+            && (creep.memory.attaaaacck = false)) {
+
             creep.travelTo(Game.flags['waypoint1']);
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
@@ -61,9 +64,6 @@ module.exports = {
                         creep.rangedHeal(toHeal);
                         creep.heal(toHeal);
                     }
-                } else {
-                    creep.travelTo(new RoomPosition(3, 19, creep.memory.target));
-                    creep.heal(creep);
                 }
             }
         }
