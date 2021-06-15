@@ -50,7 +50,7 @@ module.exports = {
 
                 if (creep.pos.isNearTo(rallypos)) {
                     creep.memory.rally1 = true;
-                    Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
+                   // Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
                 }
             }
             if (!creep.memory.healingAbility) {
