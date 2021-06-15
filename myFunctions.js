@@ -814,7 +814,8 @@ global.evaluateEnergyResources = function(creep, ifLink, ifStorage, ifDropped, i
     var resourceness = 0;
     var energyDropped = false;
 
-    if ((creep.memory.role == 'longDistanceBuilder')
+    if ((creep.memory.role == 'longDistanceHarvester')
+        ||(creep.memory.role == 'lorry')
         ||(creep.memory.role == 'harvester')
         ||(creep.memory.role == 'keeperLairLorry')
         ||((RCL==0)&&(creep.memory.role == 'pioneer'))) {
