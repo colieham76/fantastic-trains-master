@@ -4,6 +4,8 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
     run: function (creep) {
+        
+         var rallypos = new RoomPosition(1,16,'W1S8');
 
         if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
