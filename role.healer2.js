@@ -32,7 +32,7 @@ module.exports = {
             creep.say('need 2 renew');
             selfRenew.run(creep);
         }
-        else if (creep.ticksToLive < 1450 && (creep.memory.attaaaacck = false)) {
+        else if (creep.ticksToLive) {
             selfRenew.run(creep);
         }
         else if (creep.ticksToLive > 1400) {
