@@ -61,7 +61,7 @@ module.exports = {
                         && creep.heal(toHeal) == 0) {
                         
                     } else {
-                        creep.rangedHeal(toHeal);
+                       // creep.rangedHeal(toHeal);
                         creep.heal(toHeal);
                     }
                 }
