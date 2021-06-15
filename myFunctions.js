@@ -32,7 +32,7 @@ global.wait =  function wait2(){
         return;
       
     }
-global.wait =  function wait3(){
+global.wait3 =  function wait3(){
       let waitFlag3 = Game.flags["waitFlag3"];
         let moveToFlag = creep.moveTo(waitFlag3, {
           visualizePathStyle: {
