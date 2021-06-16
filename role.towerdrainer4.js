@@ -3,8 +3,6 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
     run: function (creep) {
-        var rallypos = new RoomPosition(1,22,'W1S8');
-
 
         if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
@@ -14,14 +12,10 @@ module.exports = {
                 creep.memory.waypoint4 = true;
             }
             creep.say('need renew');
-            let storage = creep.room.storage;
-            if (_.sum(creep.store) > 1000) {
-                selfRenew.run(creep);
-            }
+            selfRenew.run(creep);
         }
         
-         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
-            if (creep.ticksToLive < 1450) {
+        else if(creep.ticksToLive < 1450){
             selfRenew.run(creep);
         }
         
@@ -36,7 +30,16 @@ module.exports = {
             }
             return;
         }
-         }
+        else
+        if (!creep.memory.rally4 && (creep.memory.waypoint4 = true) && (creep.memory.recycled = true)) {// enroute
+            creep.travelTo(Game.flags['rally4']);
+
+            if (creep.pos.isNearTo(Game.flags['rally4'])) {
+                creep.memory.rally4 = true;
+                creep.memory.attaaaacck = true;
+            }
+            return;
+        }
         if (creep.memory.recycled &&  (creep.memory.attaaaacck = true)) {
             creep.notifyWhenAttacked(false);
 
@@ -55,9 +58,7 @@ module.exports = {
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-             if(Game.time % 3 === 0){
             creep.heal(creep);
-             }
         }
     }
 }
