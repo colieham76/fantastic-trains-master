@@ -54,10 +54,15 @@ module.exports = {
             }
         }
         if (creep.memory.recycled 
-                && (creep.memory.attaaaacck = true)) {//full health
-                creep.travelTo(new RoomPosition(1, 19, creep.memory.target));
-                    creep.memory.attaaaacck = true;
-                    creep.heal(creep);
+            && (creep.memory.attaaaacck = true)) {
+            creep.travelTo(new RoomPosition(1, 19, creep.memory.target));
+            creep.memory.attaaaacck = true;
+            let toHeal = lowestHealthInRoom(creep);
+            if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
+                
+            } else {
+                creep.heal(toHeal);
+            }
         }
     }
 }
