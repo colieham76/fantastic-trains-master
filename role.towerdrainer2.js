@@ -22,6 +22,9 @@ module.exports = {
             if (_.sum(creep.store) > 1000) {
                 selfRenew.run(creep);
             }
+            else if (_.sum(creep.store) < 5500) {
+                selfRenew.run(creep);
+            }
         }
         
         else if (creep.ticksToLive > 1400) {
@@ -54,7 +57,7 @@ module.exports = {
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-           if(Game.time % 9 === 0){
+           if(Game.time % 10 === 0){
             creep.heal(creep);       
             }
         }
