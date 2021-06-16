@@ -254,6 +254,8 @@ function () {
                         delete this.memory.rangedattackerRoom;
                     }
                 }
+		    
+		   
                    	
 
                 // if no claim or dismantle order was found, check other roles
@@ -265,6 +267,9 @@ function () {
                     }
                     if (role == 'towerlorry') {
                         name = this.createtowerLorry(250);
+                    }
+			if (role == 'antiTransporter') {
+                        name = this.createantiTransporter(energy);
                     }
 
                     break;
