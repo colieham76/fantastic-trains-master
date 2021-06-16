@@ -1,7 +1,7 @@
 module.exports.loop = function() {
 
-Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
-	
+//Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
+//Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
 	
 	
 		// clear memory
