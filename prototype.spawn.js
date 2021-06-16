@@ -269,7 +269,7 @@ function () {
                         name = this.createtowerLorry(250);
                     }
 			if (role == 'antiTransporter') {
-                        name = this.createantiTransporter(energy);
+                        name = this.createAntiTransporter(energy);
                     }
 
                     break;
