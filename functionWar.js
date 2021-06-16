@@ -279,10 +279,10 @@ global.lowestHealthInRoom = function(creep) {
         }
     }
     if (toHeal) {
-        return findVIPInRoom(creep)
+        return toHeal
     }
     else {
-        return toHeal
+        return findVIPInRoom(creep)
     }
 
 }
