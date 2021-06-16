@@ -31,10 +31,7 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }
             creep.say('need 2 renew');
-            let storage = creep.room.storage;
-            if (_.sum(creep.store) > 600) {
-                selfRenew.run(creep);
-            }
+            selfRenew.run(creep);
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
