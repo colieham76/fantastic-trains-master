@@ -1,7 +1,7 @@
 
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
 		   'towerdrainer3',
@@ -996,7 +996,15 @@ StructureSpawn.prototype.createhealer4 = function(target) {
 	      target: target
       });
 }	
-
+StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
+    var body = [];
+    for (let i = 0; i < 10; i++) {
+        body.push(MOVE);
+        body.push(CARRY);
+        body.push(CARRY);
+    }
+    return this.spawnCreep(body, undefined, {role: 'antiTransporter', resourceType: mineralType, working: false, spawnTime: 3*body.length});
+}
 
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
