@@ -36,6 +36,7 @@ module.exports = {
             if (room.energyCapacityAvailable < 1000) {
                 creep.cancelOrder(selfRenew)
             }
+return true;
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
