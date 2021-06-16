@@ -4,6 +4,8 @@ module.exports = {
 
     run: function (creep) {
 
+        var rallypos = new RoomPosition(1,20,'W1S8');
+
         if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
@@ -14,32 +16,25 @@ module.exports = {
             creep.say('need renew');
             selfRenew.run(creep);
         }
-        
-        else if(creep.ticksToLive < 1450){
-            selfRenew.run(creep);
-        }
-        
-        else if (creep.ticksToLive > 1400) {
-            creep.memory.recycled = true;
-            creep.memory.waypoint4 = false;
-        }
-        if (!creep.memory.waypoint4 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
-            creep.travelTo(Game.flags['waypoint4']);
-            if (creep.pos.isNearTo(Game.flags['waypoint4'])) {
-                creep.memory.waypoint4 = true;
-            }
-            return;
-        }
-        else
-        if (!creep.memory.rally4 && (creep.memory.waypoint4 = true) && (creep.memory.recycled = true)) {// enroute
-            creep.travelTo(Game.flags['rally4']);
 
-            if (creep.pos.isNearTo(Game.flags['rally4'])) {
-                creep.memory.rally4 = true;
-                creep.memory.attaaaacck = true;
+        else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
+            if (creep.ticksToLive < 1450) {
+                selfRenew.run(creep);
             }
-            return;
+
+            else if (creep.ticksToLive > 1400) {
+                creep.memory.recycled = true;
+                creep.memory.waypoint4 = false;
+            }
+            if (!creep.memory.waypoint4 && (creep.memory.recycled = true) && (creep.memory.attaaaacck = true)) {//enroute
+                creep.travelTo(Game.flags['waypoint4']);
+                if (creep.pos.isNearTo(Game.flags['waypoint4'])) {
+                    creep.memory.waypoint4 = true;
+                }
+                return;
+            }
         }
+
         if (creep.memory.recycled &&  (creep.memory.attaaaacck = true)) {
             creep.notifyWhenAttacked(false);
 
@@ -58,7 +53,9 @@ module.exports = {
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-            creep.heal(creep);
+            //if(Game.time % 4 === 0){
+                creep.heal(creep);
+           // }
         }
     }
 }
