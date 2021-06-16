@@ -31,7 +31,7 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }
             creep.say('need 2 renew');
-            var room = room.name
+            var room = Game.rooms[roomName]
                 selfRenew.run(creep);
             if (room.energyCapacityAvailable < 1000) {
                 creep.cancelOrder(selfRenew)
