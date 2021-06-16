@@ -15,11 +15,8 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }            
             creep.say('need renew');
-               // let storage = creep.room.storage;
-          //  if (_.sum(creep.store) > 1000) {
                 selfRenew.run(creep);
-          //  }
-        }
+        }        
        else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
             selfRenew.run(creep);
@@ -45,21 +42,17 @@ module.exports = {
                 creep.memory.attaaaacck = true;
 
             } else if (creep.hits < 0.95 * creep.hitsMax) { // if not full health
-                creep.travelTo(rallypos);
+                creep.travelTo(Game.flags['rally1']);
                 creep.memory.attaaaacck = false;
 
-                if (creep.pos.isNearTo(rallypos)) {
+                if (creep.pos.isNearTo(Game.flags['rally1'])) {
                     creep.memory.rally1 = true;
-                   // Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
                 }
             }
             if (!creep.memory.healingAbility) {
                 creep.memory.healingAbility = healingability(creep);
             }
-                        
-            if(Game.time % 3 === 0){
-            creep.heal(creep);       
-            }
+            creep.heal(creep);            
         }
     }
 }
