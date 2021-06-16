@@ -31,9 +31,9 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }
             creep.say('need 2 renew');
-            let storage = creep.room.storage;
-            if (_.sum(creep.store) > 1000) {
-                selfRenew.run(creep);
+            selfRenew.run(creep);
+            if (room.energyCapacityAvailable < 1000) {
+                creep.cancelOrder(selfRenew)
             }
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
