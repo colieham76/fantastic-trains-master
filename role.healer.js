@@ -1,8 +1,8 @@
 var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
-      //  creep.say('💕', true);
-        var rallypos = new RoomPosition(1,17,'W1S8');       
+     //   creep.say('💕', true);
+        var rallypos = new RoomPosition(1,19,'W1S8');
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
@@ -31,7 +31,10 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }
             creep.say('need 2 renew');
-            selfRenew.run(creep);
+            let storage = creep.room.storage;
+            if (_.sum(creep.store) > 1000) {
+                selfRenew.run(creep);
+            }
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
@@ -39,21 +42,27 @@ module.exports = {
             } else if (creep.ticksToLive > 1400) {
                 creep.memory.recycled = true;
                 creep.memory.waypoint1 = false;
+                //creep.memory.attack = true;
             }
             if (!creep.memory.waypoint1 && (creep.memory.recycled = true)
-                && (creep.memory.attaaaacck = true)) {
+                && (creep.memory.attaaaacck = false)) {
                 creep.travelTo(Game.flags['waypoint1']);
                 if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                     creep.memory.waypoint1 = true;
                 }
                 return;
             }
-        }       
-       if (creep.memory.recycled 
-                && (creep.memory.attaaaacck = true)) {//full health
-                creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
-                    creep.memory.attaaaacck = true;
-                    creep.heal(creep);
+        }
+        if (creep.memory.recycled 
+            && (creep.memory.attaaaacck = true)) {
+            creep.travelTo(new RoomPosition(1, 17, creep.memory.target));
+            creep.memory.attaaaacck = true;
+            let toHeal = lowestHealthInRoom(creep);
+            if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
+                
+            } else {
+                creep.heal(toHeal);
+            }
         }
     }
 }
