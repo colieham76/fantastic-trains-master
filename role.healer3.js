@@ -1,7 +1,7 @@
 var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
-    //    creep.say('💕', true);
+     //   creep.say('💕', true);
         var rallypos = new RoomPosition(1,21,'W1S8');
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
@@ -53,14 +53,13 @@ module.exports = {
                 return;
             }
         }
-        if (creep.memory.recycled
-            && (creep.memory.attaaaacck = true)) {//full health
+        if (creep.memory.recycled 
+            && (creep.memory.attaaaacck = true)) {
             creep.travelTo(new RoomPosition(1, 21, creep.memory.target));
             creep.memory.attaaaacck = true;
             let toHeal = lowestHealthInRoom(creep);
-            if (toHeal.hits != toHeal.hitsMax
-                && creep.heal(toHeal) == 0) {
-
+            if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
+                
             } else {
                 creep.heal(toHeal);
             }
