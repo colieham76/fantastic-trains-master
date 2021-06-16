@@ -32,6 +32,7 @@ module.exports = {
             }
             creep.say('need 2 renew');
 
+               var room = room.name
                 selfRenew.run(creep);
             if (room.energyCapacityAvailable < 1000) {
                 creep.cancelOrder(selfRenew)
