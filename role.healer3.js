@@ -2,7 +2,7 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
-        var rallypos = new RoomPosition(1,21,'W1S8');
+        var rallypos = new RoomPosition(1,19,'W1S8');
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
@@ -31,10 +31,12 @@ module.exports = {
                 creep.memory.waypoint1 = true;
             }
             creep.say('need 2 renew');
-           // let storage = creep.room.storage;
-           // if (_.sum(creep.store) > 1000) {
+            var room = Game.rooms['W1S8']
                 selfRenew.run(creep);
-           // }
+            if (room.energyCapacityAvailable < 1000) {
+                creep.cancelOrder(selfRenew)
+            }
+return true;
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
@@ -62,7 +64,7 @@ module.exports = {
                 
             } else {
                 creep.heal(toHeal);
-                 creep.rangedHeal(toHeal);
+                creep.rangedHeal(toHeal);
             }
         }
     }
