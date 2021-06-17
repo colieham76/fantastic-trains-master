@@ -64,6 +64,7 @@ module.exports = {
                 
             } else {
                 creep.heal(toHeal);
+                creep.rangedHeal(toHeal);
             }
         }
     }
