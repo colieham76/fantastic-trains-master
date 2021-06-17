@@ -1008,7 +1008,12 @@ StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
         body.push(CARRY);
         body.push(CARRY);
     }
-    return this.spawnCreep(body, undefined, {role: 'antiTransporter', resourceType: mineralType, working: false, spawnTime: 3*body.length});
+    return this.createCreep(body, undefined, {
+	    role: 'antiTransporter', 
+	    resourceType: mineralType,
+	    working: false,
+	    spawnTime: 3*body.length
+    });
 }
 
 /*
