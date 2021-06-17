@@ -64,6 +64,7 @@ return true;
                 
             } else {
                 creep.heal(toHeal);
+                creep.rangedHeal(toHeal);
             }
         }
     }
