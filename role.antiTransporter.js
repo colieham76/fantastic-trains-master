@@ -14,7 +14,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) { // if working
-            //getOverwelmingEnergy.run(creep);
+            getOverwelmingEnergy.run(creep);
             let toFill = creep.room.storage;
             if (creep.transfer(toFill, resourceType) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(toFill);
