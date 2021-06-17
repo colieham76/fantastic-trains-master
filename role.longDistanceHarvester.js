@@ -104,7 +104,7 @@ module.exports = {
                                     Game.spawns.Spawn6.memory.rangedattackerRoom = 'W63N68'
                                 }
                             }*/
-
+/*
 
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 
@@ -126,7 +126,7 @@ module.exports = {
                         Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S9'
                       }
                     }
-                
+                */
             }
             // if not in target room
             else {
@@ -143,7 +143,7 @@ module.exports = {
         if(creep.memory.working && creep.store.energy == 0) {
         // pickup dropped energy in target room
         var dropedEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 900
+            filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 500
         });
         if (dropedEnergy) {
             if (creep.pickup(dropedEnergy) === ERR_NOT_IN_RANGE) {
