@@ -998,7 +998,9 @@ global.evaluateEnergyResources = function(creep, ifLink, ifStorage, ifDropped, i
 
     if (ifContainer) { // find energy in links
       var containers = room.find(FIND_STRUCTURES, {
-          filter : c => ((c.structureType == STRUCTURE_CONTAINER) 
+          filter : c => ((c.structureType == STRUCTURE_CONTAINER
+                             || c.structureType == STRUCTURE_TERMINAL) &&
+                             c.store[RESOURCE_ENERGY] > 450
                          && (c.store.energy>creep.carryCapacity) 
                          && (c.pos.findInRange(FIND_HOSTILE_CREEPS, 3).length == 0))});
       for (let container of containers) {
