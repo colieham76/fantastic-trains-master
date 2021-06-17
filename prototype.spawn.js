@@ -468,7 +468,7 @@ function () {
                  //   || (Game.rooms.W1S7.controller.reservation = undefined
                  //       ||  Game.rooms.W1S7.controller.reservation.ticksToEnd < 3000)
                 ){
-                    if (Game.time % 500 === 0) {
+                    if (Game.time % 750 === 0) {
                         name = this.createReserver(room.name, reserveRoom);
                     }
                 }            
