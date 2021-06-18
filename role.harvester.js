@@ -21,9 +21,6 @@ module.exports = {
                 // we use the arrow operator to define it
                 filter: (s) => (s.structureType === STRUCTURE_SPAWN
                              || s.structureType === STRUCTURE_EXTENSION
-
-|| s.structureType === STRUCTURE_STORAGE
-
                              || s.structureType === STRUCTURE_NUKER)
                              && s.energy < s.energyCapacity
             });
@@ -39,6 +36,19 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else {
 
+            
+            
+            if (structure == undefined) {
+                structure = creep.room.storage;
+            } else if (structure != undefined) {
+                if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.travelTo(structure);
+                }
+            }
+            
+            
+            
+            
 
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
