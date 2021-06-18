@@ -46,7 +46,7 @@ module.exports = {
                 }
             }
         }
-/*
+
         var terminal = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
             filter: s => s.structureType == STRUCTURE_TERMINAL && s.store[RESOURCE_ENERGY] <= 150000
         });
@@ -54,6 +54,6 @@ module.exports = {
         if (creep.transfer(terminal, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
             creep.moveTo(terminal);
         } 
-        */
+        
     }
 };        
