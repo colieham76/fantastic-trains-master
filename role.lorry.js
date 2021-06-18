@@ -57,4 +57,4 @@ if (structure == undefined) {
             }
         }
     }
-};
+}
