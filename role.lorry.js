@@ -41,6 +41,15 @@ module.exports = {
 )
                     && s.energy < s.energyCapacity
             });
+
+if (structure == undefined) {
+                          structure = creep.room.storage;
+                          if (structure) {
+                              if (structure.store[RESOURCE_ENERGY]>0.8*structure.storeCapacity) { // storage is almost full
+                                  structure = creep.room.terminal;
+                              }
+                          }
+
             if (structure !== undefined) {
                 if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(structure);
