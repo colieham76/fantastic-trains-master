@@ -33,7 +33,7 @@ module.exports = {
 
                     || s.structureType === STRUCTURE_EXTENSION
 
-|| s.structureType === STRUCTURE_STORAGE
+|| s.structureType === STRUCTURE_TERMINAL
 
                     || s.structureType === STRUCTURE_NUKER
 
