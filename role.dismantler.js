@@ -35,33 +35,19 @@ module.exports = {
                               filter:c => c.structureType==STRUCTURE_TOWER});
                               
                               
-                          if (core ==undefined) {
-                                  core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-                                  filter:c => c.structureType==STRUCTURE_SPAWN
-                                  ||c.structureType==STRUCTURE_LINK
-                                  ||c.structureType==STRUCTURE_LAB});
-                              }
-                          }
-                          if (core) {
-                              creep.travelTo(core);
-                              creep.dismantle(core);
-                          }
+                         
+                         
                       }
                   }
             }
-            else {
-                creep.moveTo(Game.flags[creep.memory.target+'esc']);
-            }
+           
         }
         else { // if not in target room, move to target room
             if (Game.flags.Dismantle) {
                 creep.moveTo(Game.flags.Dismantle);
             }
-            else {
-                creep.moveTo(new RoomPosition(25,25, creep.memory.target));
-            }
-            //var exit = creep.room.findExitTo(creep.memory.target);
-            //creep.moveTo(creep.pos.findClosestByRange(exit));
+           
+           
         }
     }
 };
