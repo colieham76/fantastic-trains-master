@@ -4,7 +4,7 @@ module.exports = {
      //   creep.say('💕', true);
         var rallypos = new RoomPosition(1,19,'W1S8');
 
-if (creep.ticksToLive < 1400) {
+if (creep.ticksToLive < 1500) {
                     creep.suicide();
                 }
 
