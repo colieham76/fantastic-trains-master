@@ -40,7 +40,7 @@ dismantler: 1, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 Game.spawns.Spawn2.memory.minhealers = {W1S8: 0};
 
-Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 1};
+Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
 
 Game.spawns.Spawn2.memory.minhealers3 = {W1S8: 0};
 
