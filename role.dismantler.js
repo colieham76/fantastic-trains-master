@@ -14,13 +14,13 @@ module.exports = {
                           let presious = getTargetByFlag('Dismantle','structure');
                           if (presious != undefined) { // if there is storage
                               if (creep.dismantle(presious) == ERR_NOT_IN_RANGE) {
-                                  creep.moveTo(presious);
+                                  creep.travelTo(presious);
                               }
                           }
                           else {
                             var target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
                             if (creep.dismantle(target) == ERR_NOT_IN_RANGE) {
-                                creep.moveTo(target)
+                                creep.travelTo(target)
                             }
                           }
                           if (creep.pos.isEqualTo(Game.flags['Dismantle'])) {
