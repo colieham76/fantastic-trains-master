@@ -2,7 +2,7 @@ module.exports = {
     run: function(creep) {
       creep.say('presious...');
 
-        if ((creep.room.name == creep.memory.target)||(creep.memory.target==undefined)) { // if in target (giver) room, go withdraw from storage:
+        if (creep.memory.target==undefined) { // if in target (giver) room, go withdraw from storage:
             if (creep.hits < 0.75*creep.hitsMax) { // if full health
                 let closestHealer = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
                 filter:s=>s.getActiveBodyparts(HEAL)>10&&s.name!=creep.name});
