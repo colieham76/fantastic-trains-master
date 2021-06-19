@@ -5,7 +5,7 @@ module.exports = {
         var rallypos = new RoomPosition(1,19,'W1S8');
 
 
-if (creep.ticksToLive < 2) {
+if (creep.ticksToLive < 1500) {
                     creep.suicide();
                 }
 
