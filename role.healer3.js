@@ -3,6 +3,11 @@ module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
         var rallypos = new RoomPosition(1,19,'W1S8');
+
+if (creep.ticksToLive < 200) {
+                    creep.suicide();
+                }
+
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
