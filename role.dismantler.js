@@ -26,28 +26,13 @@ module.exports = {
                           if (creep.pos.isEqualTo(Game.flags['Dismantle'])) {
                               Game.flags['Dismantle'].remove();
                           }
-                      }
-                      else {
-                          let core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-                          filter:c => c.structureType==STRUCTURE_EXTENSION});
-                          if (core==undefined) {
-                              core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-                              filter:c => c.structureType==STRUCTURE_TOWER});
-                              
-                              
-                         
-                         
-                      }
-                  }
-            }
+                      }            
            
         }
         else { // if not in target room, move to target room
             if (Game.flags.Dismantle) {
                 creep.moveTo(Game.flags.Dismantle);
-            }
-           
-           
+            }          
         }
     }
 };
