@@ -54,23 +54,43 @@ module.exports = {
             }
             return;
         }
-        
-        if (Game.flags['Dismantle'] != undefined) {                     
-            if (Game.flags.Dismantle) {
-                creep.moveTo(Game.flags.Dismantle);
-            }
-            var target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
-            if (creep.dismantle(target) == ERR_NOT_IN_RANGE) {
-                creep.travelTo(target)
-            }
-            /*
-            let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);            
-            if (creep.room.name === 'W3S8' && Game.time % 50 === 0) {
-                if (invaderCreep) {
-                    Game.spawns.Spawn2.memory.rangedattackerRoom = 'W3S8';
-                    Game.spawns.Spawn5.memory.rangedattackerRoom = 'W3S8'
+
+        if (Game.flags['Dismantle'] != undefined) {
+            let presious = getTargetByFlag('Dismantle','structure');
+            if (presious != undefined) { // if there is storage
+                if (creep.dismantle(presious) == ERR_NOT_IN_RANGE) {
+                    creep.travelTo(presious);
                 }
-            }*/                     
-        }                 
+            }
+            else {
+                var target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+                if (creep.dismantle(target) == ERR_NOT_IN_RANGE) {
+                    creep.travelTo(target)
+                }
+            }
+            if (creep.pos.isEqualTo(Game.flags['Dismantle'])) {
+                Game.flags['Dismantle'].remove();
+            }
+        }
+        else {
+            let core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+                filter:c => c.structureType==STRUCTURE_EXTENSION});
+            if (core==undefined) {
+                core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+                    filter:c => c.structureType==STRUCTURE_TOWER});
+
+
+                if (core ==undefined) {
+                    core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+                        filter:c => c.structureType==STRUCTURE_SPAWN
+                            ||c.structureType==STRUCTURE_LINK
+                            ||c.structureType==STRUCTURE_LAB});
+                }
+            }
+            if (core) {
+                creep.travelTo(core);
+                creep.dismantle(core);
+            }
+        }
     }       
 }
