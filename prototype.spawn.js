@@ -187,7 +187,7 @@ function () {
                     }
                 } else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
                     // try to spawn a dismantler
-                    if (Game.time % 2500 === 0) {
+                    if (Game.time % 3500 === 0) {
                         name = this.createDismantler(this.memory.dismantleRoom);
                     }
                     // if that worked
