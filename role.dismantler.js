@@ -38,6 +38,14 @@ module.exports = {
             }
             return;
         }
+        
+        if (!creep.memory.w5s7f2) {
+            creep.travelTo(Game.flags['w5s7f2']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
+                creep.memory.w5s7f2 = true;
+            }
+            return;
+        }
 
         if (!creep.memory.w5s7f3) {
             creep.travelTo(Game.flags['w5s7f3']);
