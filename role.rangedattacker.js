@@ -18,7 +18,7 @@ module.exports = {
 			return;
 		} 
 	    
-	    if (!creep.memory.w3s8f1) {
+	/*    if (!creep.memory.w3s8f1) {
             creep.travelTo(Game.flags['w3s8f1']);
             if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
                 creep.memory.w3s8f1 = true;
@@ -77,7 +77,7 @@ module.exports = {
                 creep.memory.w5s7f4 = true;
             }
             return;
-        }
+        }*/
 	    
 		var attacked;
 		var targets = [];
