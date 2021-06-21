@@ -24,7 +24,7 @@ module.exports = {
 					creep.travelTo(creep.room.controller);
 				}				
 			}
-			if (!creep.memory.W1S9 && creep.room.name === 'W1S8'|| creep.room.name === 'W1S9') {
+			if (!creep.memory.W1S9 && creep.room.name === 'W1S9'|| creep.room.name === 'W1S8') {
 				creep.travelTo(Game.flags['ReserverW1S9']);
 				if (creep.pos.isNearTo(Game.flags['ReserverW1S9'])) {
 					creep.memory.W1S9 = true;
