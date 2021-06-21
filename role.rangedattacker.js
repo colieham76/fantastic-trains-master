@@ -17,6 +17,68 @@ module.exports = {
 			}
 			return;
 		} 
+	    
+	    if (!creep.memory.w3s8f1) {
+            creep.travelTo(Game.flags['w3s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
+                creep.memory.w3s8f1 = true;
+            }
+            return;
+        }
+        if (creep.room.name !== creep.memory.target && !creep.memory.w3s8f2) {
+            creep.travelTo(Game.flags['w3s8f2']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f2'])) {
+                creep.memory.w3s8f2 = true;
+            }
+            return;
+        }
+        if (!creep.memory.w3s8f3) {
+            creep.travelTo(Game.flags['w3s8f3']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
+                creep.memory.w3s8f3 = true;
+            }
+            return;
+        }
+
+        if (!creep.memory.w3s8f1) {
+            creep.travelTo(Game.flags['w3s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
+                creep.memory.w3s8f1 = true;
+            }
+            return;
+        }
+        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
+            creep.travelTo(Game.flags['w5s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
+                creep.memory.w5s7f1 = true;
+            }
+            return;
+        }
+        
+        if (!creep.memory.w5s7f2) {
+            creep.travelTo(Game.flags['w5s7f2']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
+                creep.memory.w5s7f2 = true;
+            }
+            return;
+        }
+
+        if (!creep.memory.w5s7f3) {
+            creep.travelTo(Game.flags['w5s7f3']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f3'])) {
+                creep.memory.w5s7f3 = true;
+            }
+            return;
+        }
+
+        if (!creep.memory.w5s7f4) {
+            creep.travelTo(Game.flags['w5s7f4']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f4'])) {
+                creep.memory.w5s7f4 = true;
+            }
+            return;
+        }
+	    
 		var attacked;
 		var targets = [];
 	        //attack within range	
