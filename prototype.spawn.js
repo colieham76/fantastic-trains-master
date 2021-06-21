@@ -36,9 +36,9 @@ Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 0};
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
-dismantler: 1, antiTransporter: 0};
+dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 3};
-Game.spawns.Spawn2.memory.minhealers = {W1S8: 0};
+Game.spawns.Spawn2.memory.minhealers = {W1S8: 1};
 
 Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
 
@@ -185,7 +185,21 @@ function () {
                         // delete the claim order
                         delete this.memory.claimRoom;
                     }
-                } else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
+                }
+
+                // check for attack controller order
+                if (role == 'controllerAttacker' && this.memory.attackRoom != undefined) {
+                    // try to spawn a controller attacker
+                    name = this.createcontrollerAttacker(this.memory.attackRoom);
+                    // if that worked
+                    if (name != undefined && _.isString(name)) {
+                        // delete the order
+                        delete this.memory.attackRoom;
+                    }
+                }
+                
+                
+                else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
                     // try to spawn a dismantler
                     if (Game.time % 4000 === 0) {
                         name = this.createDismantler(this.memory.dismantleRoom);
@@ -559,6 +573,16 @@ StructureSpawn.prototype.createClaimer =
              role: 'claimer',
              target: target 
              });
+    };
+
+// create a new function for StructureSpawn
+StructureSpawn.prototype.createcontrollerAttacker =
+    function (target) {
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
+            CLAIM, CLAIM, CLAIM, CLAIM, CLAIM, CLAIM], undefined, {
+            role: 'controllerAttacker',
+            target: target
+        });
     };
 
 /* th_Pion
@@ -1043,4 +1067,3 @@ StructureSpawn.prototype.createUltimateWarrior = function(target) {
         }});
 }
 */
-
