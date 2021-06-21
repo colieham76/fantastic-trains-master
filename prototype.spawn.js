@@ -59,7 +59,7 @@ Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
-Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S9: 1}
+Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 0}
 
