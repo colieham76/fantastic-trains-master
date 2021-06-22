@@ -512,7 +512,7 @@ function () {
                 if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfcontrollerAttackers[attackRoom]            
                 ){
                     if (Game.time % 750 === 0) {
-                        name = this.createcontrollerAttacker(attackRoom);
+                        name = this.createcontrollerAttacker(room.name,attackRoom);
                     }
                 }            
             }
