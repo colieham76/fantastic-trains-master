@@ -1,7 +1,6 @@
-
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'controllerAttacker',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
 		   'towerdrainer3',
@@ -36,7 +35,7 @@ Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 0};
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
-dismantler: 0, antiTransporter: 0};
+dismantler: 1, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 3};
 Game.spawns.Spawn2.memory.minhealers = {W1S8: 0};
 
@@ -48,7 +47,6 @@ Game.spawns.Spawn2.memory.minhealers4 = {W1S8: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
-Game.spawns.Spawn2.memory.minNumberOfcontrollerAttackers = {W2S8: 1};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1}
 
 Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, repairer: 0, upgrader: 0}
@@ -186,21 +184,7 @@ function () {
                         // delete the claim order
                         delete this.memory.claimRoom;
                     }
-                }
-
-                // check for attack controller order
-                if (role == 'controllerAttacker' && this.memory.attackRoom != undefined) {
-                    // try to spawn a controller attacker
-                    name = this.createcontrollerAttacker(this.memory.attackRoom);
-                    // if that worked
-                    if (name != undefined && _.isString(name)) {
-                        // delete the order
-                        delete this.memory.attackRoom;
-                    }
-                }
-                
-                
-                else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
+                } else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
                     // try to spawn a dismantler
                     if (Game.time % 4000 === 0) {
                         name = this.createDismantler(this.memory.dismantleRoom);
@@ -500,29 +484,8 @@ function () {
             for (let roomName in numberOfextractors) {
                 console.log("extractor" + roomName + ": " + numberOfextractors[roomName]);
             }*/
-        }
-
-    // if none of the above caused a spawn command check for reservers
-    /** @type {Object.<string, number>} */
-    let numberOfcontrollerAttackers = {};
-    if (name == undefined) {
-        for (let attackRoom in this.memory.minNumberOfcontrollerAttackers) {
-            numberOfcontrollerAttackers[attackRoom] = _.sum(Game.creeps, (c) =>
-                c.memory.role == 'controllerAttacker' && c.memory.target == attackRoom);
-            if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfcontrollerAttackers[attackRoom]
-            ){
-                if (Game.time % 750 === 0) {
-                    name = this.createcontrollerAttacker(room.name,attackRoom);
-                }
-            }
-        }
-    }
-
-
+        }	
 };
-
-
-
 
 // create a new function for StructureSpawn
 StructureSpawn.prototype.createCustomCreep =
@@ -595,16 +558,6 @@ StructureSpawn.prototype.createClaimer =
              role: 'claimer',
              target: target 
              });
-    };
-
-// create a new function for StructureSpawn
-StructureSpawn.prototype.createcontrollerAttacker =
-    function (target) {
-        return this.spawnCreep([MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
-            CLAIM, CLAIM, CLAIM, CLAIM, CLAIM, CLAIM], undefined, {
-            role: 'controllerAttacker',
-            target: target
-        });
     };
 
 /* th_Pion
