@@ -256,6 +256,17 @@ function () {
                     }
                 }
 		    
+		        // check for rangedattacker order
+               if (role == 'controllerAttacker' && this.memory.controllerAttackerRoom != undefined) {
+                    // try to spawn a rangedattacker
+                    name = this.createcontrollerAttacker(this.memory.controllerAttackerRoom);
+                    // if that worked
+                    if (name != undefined && _.isString(name)) {
+                        // delete the rangedattacker order
+                        delete this.memory.controllerAttackerRoom;
+                    }
+                }
+		    
 		   
                    	
 
@@ -277,7 +288,7 @@ function () {
                 }
             }
         }
-	  // if none of the above caused a spawn command check for rangedattackers
+	// if none of the above caused a spawn command check for rangedattackers
         /** @type {Object.<string, number>} */
         let numberOfRangedAttackers = {};
         if (name == undefined) {
@@ -288,6 +299,20 @@ function () {
 
                 if (numberOfRangedAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
                     name = this.createrangedattacker(room.name, roomName)}
+            }
+        }
+	
+	// if none of the above caused a spawn command check for rangedattackers
+        /** @type {Object.<string, number>} */
+        let numberOfcontrollerAttackers = {};
+        if (name == undefined) {
+            // count the number of controller Attackers globally
+            for (let roomName in this.memory.mincontrollerattackers) {
+                numberOfcontrollerAttackers[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'controllerAttacker' && c.memory.target == roomName);
+
+                if (numberOfcontrollerAttackers[roomName] < this.memory.mincontrollerattackers[roomName]) {
+                    name = this.createcontrollerAttacker(room.name, roomName)}
             }
         }
 
