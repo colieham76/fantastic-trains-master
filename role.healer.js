@@ -5,9 +5,9 @@ module.exports = {
         var rallypos = new RoomPosition(17,48,'E1S16');
 
 
-//if (creep.ticksToLive < 1500) {
-//                    creep.suicide();
-//                }
+if (creep.ticksToLive < 1500) {
+                    creep.suicide();
+            }
 
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
