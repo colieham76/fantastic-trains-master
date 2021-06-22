@@ -36,8 +36,10 @@ module.exports = {
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
             }
-            creep.say('need 2 renew');           
+            creep.say('need 2 renew');
+            if(creep.room.name === 'W1S8'){
                 selfRenew.run(creep);
+            }
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
