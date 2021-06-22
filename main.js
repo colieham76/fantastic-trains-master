@@ -84,7 +84,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 //Game.spawns.Spawn2.memory.claimRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.dismantleRoom = 'W3S7'
 //Game.creeps['Jackson'].memory.target = 'W11N88'
-//Game.spawns.Spawn2.memory.attackRoom = 'W2S8'   controller attacker
+//Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 1}  controller attacker
 ////////////////////////////////////////////////////////////////////////////////////////
 //MYang2017
 
