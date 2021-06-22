@@ -13,6 +13,7 @@ var roles = {
     smallUpgrader: require('role.smallUpgrader'),
    rangedattacker: require('role.rangedattacker'),
     claimer: require('role.claimer'),
+    controllerAttacker: require('role.controllerAttacker'),
      towerdrainer1: require('role.towerdrainer1'),
     towerdrainer2: require('role.towerdrainer2'),
     towerdrainer3: require('role.towerdrainer3'),
