@@ -34,6 +34,7 @@ Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 0};
+Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 1} 
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 1, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 3};
@@ -312,7 +313,9 @@ function () {
                     c.memory.role == 'controllerAttacker' && c.memory.target == roomName);
 
                 if (numberOfcontrollerAttackers[roomName] < this.memory.mincontrollerattackers[roomName]) {
+			 if (Game.time % 1300 === 0) {
                     name = this.createcontrollerAttacker(room.name, roomName)}
+		}
             }
         }
 
@@ -594,7 +597,7 @@ StructureSpawn.prototype.createcontrollerAttacker =
 				undefined, 
 				{
 		role: 'controllerAttacker',
-		target: target
+		target: 'W2S8' 
 	});
     };
 
