@@ -73,19 +73,18 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 } else if (spawn.room.terminal && spawn.room.terminal.hits < spawn.room.terminal.hitsMax) {
         spawn.room.controller.activateSafeMode();
 }
+// useful console commands
 //Game.spawns.Spawn3.memory.captainRoom = 'W2S8'
 //Game.spawns.Spawn3.memory.firstMateRoom = 'W2S8'
 //Game.spawns.Spawn3.memory.crewRoom = 'W2S8'
 //Game.spawns.Spawn3.memory.crewRoom = 'W2S8'
-  
-
-//Game.spawns.Spawn2.memory = ({role: 'role_towerdrainer', routing: {targetRoom: 'W1S8'}, attackRoom: 'W2S8'})
 //Game.spawns.Spawn2.memory.firstMateRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.crewRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.crewRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.claimRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.dismantleRoom = 'W3S7'
 //Game.creeps['Jackson'].memory.target = 'W11N88'
+//Game.spawns.Spawn2.memory.attackRoom = 'W2S8'   controller attacker
 ////////////////////////////////////////////////////////////////////////////////////////
 //MYang2017
 
