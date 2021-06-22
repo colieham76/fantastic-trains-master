@@ -48,6 +48,7 @@ Game.spawns.Spawn2.memory.minhealers4 = {W1S8: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
+Game.spawns.Spawn2.memory.minNumberOfcontrollerAttackers = {W2S8: 1};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1}
 
 Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, repairer: 0, upgrader: 0}
