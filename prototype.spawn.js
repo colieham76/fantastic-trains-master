@@ -502,6 +502,23 @@ function () {
         }	
 };
 
+// if none of the above caused a spawn command check for reservers
+        /** @type {Object.<string, number>} */
+        let numberOfcontrollerAttackers = {};
+        if (name == undefined) {
+            for (let attackRoom in this.memory.minNumberOfreservers) {
+                numberOfcontrollerAttackers[attackRoom] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'controllerAttacker' && c.memory.target == attackRoom);
+                if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfreservers[attackRoom]            
+                ){
+                    if (Game.time % 750 === 0) {
+                        name = this.createcontrollerAttacker(room.name, attackRoom);
+                    }
+                }            
+            }
+        } 
+
+
 // create a new function for StructureSpawn
 StructureSpawn.prototype.createCustomCreep =
     function (energy, roleName) {
