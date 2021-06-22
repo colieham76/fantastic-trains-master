@@ -506,10 +506,10 @@ function () {
         /** @type {Object.<string, number>} */
         let numberOfcontrollerAttackers = {};
         if (name == undefined) {
-            for (let attackRoom in this.memory.minNumberOfreservers) {
+            for (let attackRoom in this.memory.minNumberOfcontrollererAttackers) {
                 numberOfcontrollerAttackers[attackRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'controllerAttacker' && c.memory.target == attackRoom);
-                if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfreservers[attackRoom]            
+                if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfcontrollererAttackers[attackRoom]            
                 ){
                     if (Game.time % 750 === 0) {
                         name = this.createcontrollerAttacker(room.name, attackRoom);
