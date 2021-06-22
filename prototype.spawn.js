@@ -585,6 +585,19 @@ StructureSpawn.prototype.createClaimer =
              });
     };
 
+
+// create a new function for StructureSpawn
+StructureSpawn.prototype.createcontrollerAttacker =
+    function (target) {
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE, 
+				 CLAIM, CLAIM, CLAIM, CLAIM, CLAIM, CLAIM, CLAIM, CLAIM], 
+				undefined, 
+				{
+		role: 'controllerAttacker',
+		target: target
+	});
+    };
+
 /* th_Pion
 
 StructureSpawn.prototype.createClaimer =
