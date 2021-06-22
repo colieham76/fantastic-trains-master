@@ -36,13 +36,8 @@ module.exports = {
             if (creep.pos.isNearTo(Game.flags['waypoint1'])) {
                 creep.memory.waypoint1 = true;
             }
-            creep.say('need 2 renew');
-            var room = Game.rooms['E1S16']
+            creep.say('need 2 renew');           
                 selfRenew.run(creep);
-            if (room.energyCapacityAvailable < 1000) {
-                creep.cancelOrder(selfRenew)
-            }
-return true;
         }
         else if (creep.pos.x !== rallypos.x && creep.pos.y !== rallypos.y) {
             if (creep.ticksToLive < 1450) {
