@@ -499,24 +499,28 @@ function () {
             for (let roomName in numberOfextractors) {
                 console.log("extractor" + roomName + ": " + numberOfextractors[roomName]);
             }*/
-        }	
+        }
+
+    // if none of the above caused a spawn command check for reservers
+    /** @type {Object.<string, number>} */
+    let numberOfcontrollerAttackers = {};
+    if (name == undefined) {
+        for (let attackRoom in this.memory.minNumberOfcontrollerAttackers) {
+            numberOfcontrollerAttackers[attackRoom] = _.sum(Game.creeps, (c) =>
+                c.memory.role == 'controllerAttacker' && c.memory.target == attackRoom);
+            if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfcontrollerAttackers[attackRoom]
+            ){
+                if (Game.time % 750 === 0) {
+                    name = this.createcontrollerAttacker(room.name,attackRoom);
+                }
+            }
+        }
+    }
+
+
 };
 
-// if none of the above caused a spawn command check for reservers
-        /** @type {Object.<string, number>} */
-        let numberOfcontrollerAttackers = {};
-        if (name == undefined) {
-            for (let attackRoom in this.memory.minNumberOfcontrollerAttackers) {
-                numberOfcontrollerAttackers[attackRoom] = _.sum(Game.creeps, (c) =>
-                    c.memory.role == 'controllerAttacker' && c.memory.target == attackRoom);
-                if (numberOfcontrollerAttackers[attackRoom] < this.memory.minNumberOfcontrollerAttackers[attackRoom]            
-                ){
-                    if (Game.time % 750 === 0) {
-                        name = this.createcontrollerAttacker(room.name,attackRoom);
-                    }
-                }            
-            }
-        } 
+
 
 
 // create a new function for StructureSpawn
