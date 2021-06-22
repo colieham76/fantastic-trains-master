@@ -989,7 +989,7 @@ StructureSpawn.prototype.createhealer = function(target) {
 	      role: 'healer',
 	      recycled: false,
 	    attaaaacck: true,
-	      target: target
+	      target: 'E1S16'
       });
 }
 
