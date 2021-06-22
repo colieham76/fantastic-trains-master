@@ -1,7 +1,7 @@
 
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'controllerAttacker',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
 		   'towerdrainer3',
