@@ -70,7 +70,9 @@ Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
 Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 0}
 
 Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 0}
-
+if (Game.time % 1300 === 0) {
+Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 1}
+}
 /*
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
 
@@ -313,9 +315,9 @@ function () {
                     c.memory.role == 'controllerAttacker' && c.memory.target == roomName);
 
                 if (numberOfcontrollerAttackers[roomName] < this.memory.mincontrollerattackers[roomName]) {
-			 if (Game.time % 1300 === 0) {
+		//	 if (Game.time % 1300 === 0) {
                     name = this.createcontrollerAttacker(room.name, roomName)}
-		}
+		//}
             }
         }
 
