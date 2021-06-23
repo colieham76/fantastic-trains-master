@@ -62,7 +62,22 @@ module.exports = {
             }
             return;
         }
-
+if (!creep.memory.w5s7f5) {
+            creep.travelTo(Game.flags['w5s7f5']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f5'])) {
+                creep.memory.w5s7f5 = true;
+            }
+            return;
+        }
+  if (!creep.memory.w5s7f6) {
+            creep.travelTo(Game.flags['w5s7f6']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f6'])) {
+                creep.memory.w5s7f6 = true;
+            }
+            return;
+        }      
+        
+        
         if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
             if (presious != undefined) { // if there is storage
