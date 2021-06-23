@@ -1054,7 +1054,9 @@ global.getTargetByFlag = function(flagName, targetType) {
         return Game.getObjectById(target[targetType].id);
       }
     }
+    if (Game.time % 20 === 0) {
     console.log('no '+targetType+' found');
+    }
   }
   else {
     console.log('set flag: '+flagName);
