@@ -38,8 +38,9 @@ Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 1}
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 3};
-Game.spawns.Spawn2.memory.minhealers = {W1S8: 0};
-
+if (Game.time % 1000 === 0) {
+    Game.spawns.Spawn1.memory.minhealers = {W1S8: 1};
+}
 Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
 
 Game.spawns.Spawn2.memory.minhealers3 = {W1S8: 0};
