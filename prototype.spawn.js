@@ -23,7 +23,7 @@ for(var name in Game.creeps) {
 
 //Game.spawns.Spawn2.memory.captainRoom = ['captain', 'W2S8']
 
-Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 1, dismantler: 1,
+Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 1, dismantler: 0,
     upgrader: 0};
 Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 3};
 Game.spawns.Spawn1.memory.minNumberOfreservers = {W7S9: 1}
@@ -39,7 +39,7 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 3};
 if (Game.time % 1000 === 0) {
-    Game.spawns.Spawn1.memory.minhealers = {W1S8: 1};
+    Game.spawns.Spawn1.memory.minhealers = {W9S5: 1};
 }
 Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
 
@@ -61,9 +61,9 @@ Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
-
-Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 0}
-
+if (Game.time % 1000 === 0) {
+Game.spawns.Spawn1.memory.mintowerdrainers1 = {W9S5: 1}
+}
 Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
 
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
