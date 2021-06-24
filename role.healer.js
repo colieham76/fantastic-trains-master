@@ -30,7 +30,7 @@ module.exports = {
         }
         else {*/
         
-        /*
+        /* //healer code for  adjacent room
         if (creep.ticksToLive < 500) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
@@ -75,7 +75,7 @@ module.exports = {
             }
         }
         */
-        
+        //code for distant room
         if (!creep.memory.recycled){
           creep.travelTo(new RoomPosition(17, 48, creep.memory.target));   
            creep.memory.attaaaacck = true;
