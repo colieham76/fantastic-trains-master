@@ -92,7 +92,7 @@ module.exports = {
             }
             return;
         }
-//W9S8 dismantle
+//W10S8 dismantler route flag
         if (!creep.memory.w5s7f4) {
             creep.travelTo(Game.flags['w5s7f4']);
             if (creep.pos.isNearTo(Game.flags['w5s7f4'])) {
@@ -100,7 +100,7 @@ module.exports = {
             }
             return;
         }
-//W9S8 dismantle
+//W10S5 dismantler route flag
 if (!creep.memory.w5s7f5) {
             creep.travelTo(Game.flags['w5s7f5']);
             if (creep.pos.isNearTo(Game.flags['w5s7f5'])) {
@@ -108,7 +108,7 @@ if (!creep.memory.w5s7f5) {
             }
             return;
         }
-        //W9S6 dismantle
+//W9S5 dismantler route flag
         if (!creep.memory.w9s6f1) {
             creep.travelTo(Game.flags['w9s6f1']);
             if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
@@ -117,7 +117,7 @@ if (!creep.memory.w5s7f5) {
             return;
         } 
 
-//w9s6f2
+//W9S6 dismantler route flag
 
 if (!creep.memory. w9s6f2) {
             creep.travelTo(Game.flags['w9s6f2']);
@@ -129,7 +129,7 @@ if (!creep.memory. w9s6f2) {
 
         
         
-//W9S8 dismantle
+//W9S4 dismantler route flag
         /*
   if (!creep.memory.w5s7f6) {
             creep.travelTo(Game.flags['w5s7f6']);
