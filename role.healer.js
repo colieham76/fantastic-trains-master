@@ -29,6 +29,8 @@ module.exports = {
             }
         }
         else {*/
+        
+        /*
         if (creep.ticksToLive < 500) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
@@ -58,6 +60,8 @@ module.exports = {
                 return;
             }
         }
+        
+        
         if (creep.memory.recycled 
             && (creep.memory.attaaaacck = true)) {
             creep.travelTo(new RoomPosition(17, 48, creep.memory.target));
@@ -70,5 +74,19 @@ module.exports = {
                 creep.rangedHeal(toHeal);
             }
         }
+        */
+        
+        if (!creep.memory.recycled){
+          creep.travelTo(new RoomPosition(17, 48, creep.memory.target));   
+           creep.memory.attaaaacck = true;
+        let toHeal = lowestHealthInRoom(creep);
+            if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
+                
+            } else {
+                creep.heal(toHeal);
+                creep.rangedHeal(toHeal);
+            }
+        }
+        
     }
 }
