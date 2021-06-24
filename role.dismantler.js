@@ -23,6 +23,7 @@ module.exports = {
             }
             return;
         }
+        
 
         if (!creep.memory.w3s8f1) {
             creep.travelTo(Game.flags['w3s8f1']);
@@ -69,6 +70,14 @@ module.exports = {
             creep.travelTo(Game.flags['w7s6f3']);
             if (creep.pos.isNearTo(Game.flags['w7s6f3'])) {
                 creep.memory.w7s6f3 = true;
+            }
+            return;
+        }
+        
+        if (!creep.memory.w7s6f4) {
+            creep.travelTo(Game.flags['w7s6f4']);
+            if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
+                creep.memory.w7s6f4 = true;
             }
             return;
         }
