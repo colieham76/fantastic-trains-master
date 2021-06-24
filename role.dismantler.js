@@ -117,7 +117,7 @@ if (!creep.memory.w5s7f5) {
             return;
         } 
 
-w9s6f2
+//w9s6f2
 
 if (!creep.memory. w9s6f2) {
             creep.travelTo(Game.flags['w9s6f2']);
