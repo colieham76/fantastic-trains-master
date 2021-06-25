@@ -90,6 +90,15 @@ module.exports = {
             return;
         } 
         
+        // W8S4 route flag
+        if (!creep.memory.w8s4f1) {
+            creep.travelTo(Game.flags['w8s4f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s4f1'])) {
+                creep.memory.w8s4f1 = true;
+            }
+            return;
+        } 
+        
 /*
    //w7s5 dismantle     
         if (!creep.memory.w7s6f4) {
