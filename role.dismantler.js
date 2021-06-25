@@ -1,7 +1,7 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');
-/*
+
         if (!creep.memory.w3s8f1) {
             creep.travelTo(Game.flags['w3s8f1']);
             if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
@@ -47,9 +47,9 @@ module.exports = {
             }
             return;
         }
-*/
+
 //w7s6 dismantle
-/*
+
         if (!creep.memory.w7s6f1) {
             creep.travelTo(Game.flags['w7s6f1']);
             if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
@@ -73,6 +73,7 @@ module.exports = {
             }
             return;
         }
+/*
    //w7s5 dismantle     
         if (!creep.memory.w7s6f4) {
             creep.travelTo(Game.flags['w7s6f4']);
@@ -83,7 +84,7 @@ module.exports = {
         }
         */
 
-        
+   /*     
         //W9S8 dismantle
         if (!creep.memory.w5s7f3) {
             creep.travelTo(Game.flags['w5s7f3']);
@@ -127,7 +128,7 @@ if (!creep.memory. w9s6f2) {
             return;
         } 
 
-        
+    */    
         
 //W9S4 dismantler route flag
         /*
