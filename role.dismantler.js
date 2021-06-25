@@ -25,6 +25,7 @@ module.exports = {
         }
         
 */
+        /*
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
@@ -98,7 +99,7 @@ module.exports = {
             }
             return;
         } 
-        
+     */   
 /*
    //w7s5 dismantle     
         if (!creep.memory.w7s6f4) {
@@ -110,32 +111,32 @@ module.exports = {
         }
         */
 
-   /*     
-        //W9S8 dismantle
-        if (!creep.memory.w5s7f3) {
-            creep.travelTo(Game.flags['w5s7f3']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f3'])) {
-                creep.memory.w5s7f3 = true;
-            }
-            return;
-        }
-//W10S8 dismantler route flag
-        if (!creep.memory.w5s7f4) {
-            creep.travelTo(Game.flags['w5s7f4']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f4'])) {
-                creep.memory.w5s7f4 = true;
+        
+        //W10S8 dismantle route flag
+        if (!creep.memory.w10s8f1) {
+            creep.travelTo(Game.flags['w10s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
+                creep.memory.w10s8f1 = true;
             }
             return;
         }
 //W10S5 dismantler route flag
-if (!creep.memory.w5s7f5) {
-            creep.travelTo(Game.flags['w5s7f5']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f5'])) {
-                creep.memory.w5s7f5 = true;
+        if (!creep.memory.w10s5f1) {
+            creep.travelTo(Game.flags['w10s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
+                creep.memory.w10s5f1 = true;
             }
             return;
         }
 //W9S5 dismantler route flag
+if (!creep.memory.w9s5f1) {
+            creep.travelTo(Game.flags['w9s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
+                creep.memory.w9s5f1 = true;
+            }
+            return;
+        }
+//W9S6 dismantler route flag
         if (!creep.memory.w9s6f1) {
             creep.travelTo(Game.flags['w9s6f1']);
             if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
@@ -144,17 +145,17 @@ if (!creep.memory.w5s7f5) {
             return;
         } 
 
-//W9S6 dismantler route flag
+//W9S7 dismantler route flag
 
-if (!creep.memory. w9s6f2) {
-            creep.travelTo(Game.flags['w9s6f2']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f2'])) {
-                creep.memory. w9s6f2 = true;
+if (!creep.memory.w9s7f1) {
+            creep.travelTo(Game.flags['w9s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s7f1'])) {
+                creep.memory.w9s7f1 = true;
             }
             return;
         } 
 
-    */    
+       
         
 //W9S4 dismantler route flag
         /*
