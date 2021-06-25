@@ -144,7 +144,7 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         } 
-/*
+
 //W9S7 dismantler route flag LAST ROOM
 
 if (!creep.memory.w9s7f1) {
@@ -155,7 +155,7 @@ if (!creep.memory.w9s7f1) {
             return;
         } 
 
-       
+  /*     
         
 //W9S4 dismantler route flag
         
