@@ -981,10 +981,10 @@ StructureSpawn.prototype.createsmallUpgrader =
 
 StructureSpawn.prototype.createhealer = function(target) {
       var body = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 16; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 16; i++) {
           body.push(HEAL);
       }
 
@@ -998,10 +998,10 @@ StructureSpawn.prototype.createhealer = function(target) {
 
 StructureSpawn.prototype.createhealer2 = function(target) {
       var body = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 16; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 16; i++) {
           body.push(HEAL);
       }
 
