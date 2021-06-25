@@ -54,7 +54,7 @@ Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1}
 Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, repairer: 0, upgrader: 0}
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 1, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
-                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, dismantler: 1};
+                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, dismantler: 0};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
