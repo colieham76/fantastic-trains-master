@@ -76,45 +76,42 @@ module.exports = {
         }
         */
 
-        //W10S8 dismantler route flag
-        if (!creep.memory.w5s7f4) {
-            creep.travelTo(Game.flags['w5s7f4']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f4'])) {
-                creep.memory.w5s7f4 = true;
+        //W10S8 dismantle route flag
+        if (!creep.memory.w10s8f1) {
+            creep.travelTo(Game.flags['w10s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
+                creep.memory.w10s8f1 = true;
             }
             return;
         }
 //W10S5 dismantler route flag
-        if (!creep.memory.w5s7f5) {
-            creep.travelTo(Game.flags['w5s7f5']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f5'])) {
-                creep.memory.w5s7f5 = true;
+        if (!creep.memory.w10s5f1) {
+            creep.travelTo(Game.flags['w10s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
+                creep.memory.w10s5f1 = true;
             }
             return;
         }
 //W9S5 dismantler route flag
+if (!creep.memory.w9s5f1) {
+            creep.travelTo(Game.flags['w9s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
+                creep.memory.w9s5f1 = true;
+            }
+            return;
+        }
+//W9S6 dismantler route flag
         if (!creep.memory.w9s6f1) {
             creep.travelTo(Game.flags['w9s6f1']);
             if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
                 creep.memory.w9s6f1 = true;
             }
             return;
-        }
-/*
-//W9S6 dismantler route flag
-
-        if (!creep.memory. w9s6f2) {
-            creep.travelTo(Game.flags['w9s6f2']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f2'])) {
-                creep.memory. w9s6f2 = true;
-            }
-            return;
-        }
-*/
+        } 
 
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(22, 48, creep.memory.target));   
+          creep.travelTo(new RoomPosition(18, 48, 'W9S6'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
