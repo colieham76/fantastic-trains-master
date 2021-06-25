@@ -73,6 +73,23 @@ module.exports = {
             }
             return;
         }
+        // W8S6 route flag
+        if (!creep.memory.w8s6f1) {
+            creep.travelTo(Game.flags['w8s6f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
+                creep.memory.w8s6f1 = true;
+            }
+            return;
+        } 
+        // W8S5 route flag
+        if (!creep.memory.w8s5f1) {
+            creep.travelTo(Game.flags['w8s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
+                creep.memory.w8s5f1 = true;
+            }
+            return;
+        } 
+        
 /*
    //w7s5 dismantle     
         if (!creep.memory.w7s6f4) {
