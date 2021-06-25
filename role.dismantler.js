@@ -1,7 +1,7 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');
-
+/*
         if (!creep.memory.w3s8f1) {
             creep.travelTo(Game.flags['w3s8f1']);
             if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
@@ -24,11 +24,11 @@ module.exports = {
             return;
         }
         
-
-        if (!creep.memory.w3s8f1) {
-            creep.travelTo(Game.flags['w3s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
-                creep.memory.w3s8f1 = true;
+*/
+        if (!creep.memory.w3s8f3) {
+            creep.travelTo(Game.flags['w3s8f3']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
+                creep.memory.w3s8f3 = true;
             }
             return;
         }
