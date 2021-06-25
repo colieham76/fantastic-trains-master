@@ -144,8 +144,8 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         } 
-
-//W9S7 dismantler route flag
+/*
+//W9S7 dismantler route flag LAST ROOM
 
 if (!creep.memory.w9s7f1) {
             creep.travelTo(Game.flags['w9s7f1']);
@@ -158,7 +158,7 @@ if (!creep.memory.w9s7f1) {
        
         
 //W9S4 dismantler route flag
-        /*
+        
   if (!creep.memory.w5s7f6) {
             creep.travelTo(Game.flags['w5s7f6']);
             if (creep.pos.isNearTo(Game.flags['w5s7f6'])) {
