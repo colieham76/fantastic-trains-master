@@ -2,7 +2,11 @@ module.exports.loop = function() {
 
 //Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
 //Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
-	
+Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
+Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
+Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
+	Game.rooms.W3S8.createConstructionSite(19, 19, STRUCTURE_RAMPART);	
+	Game.rooms.W3S8.createConstructionSite(15, 22, STRUCTURE_RAMPART);	
 	
 		// clear memory
         for (let name in Memory.creeps) {
