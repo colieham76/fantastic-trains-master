@@ -39,7 +39,7 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
-    Game.spawns.Spawn3.memory.minhealers = {W7S6: 0};
+    Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
 //}
 Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
 
@@ -67,7 +67,7 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
+Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 0}
 //}
 Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
 
