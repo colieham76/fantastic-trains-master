@@ -69,7 +69,7 @@ Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 //if (Game.time % 1000 === 0) {
 Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 0}
 //}
-Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 0}
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
 
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
 
