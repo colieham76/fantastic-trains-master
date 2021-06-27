@@ -1,32 +1,8 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');
-/*
-        if (!creep.memory.w3s8f1) {
-            creep.travelTo(Game.flags['w3s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
-                creep.memory.w3s8f1 = true;
-            }
-            return;
-        }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w3s8f2) {
-            creep.travelTo(Game.flags['w3s8f2']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f2'])) {
-                creep.memory.w3s8f2 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w3s8f3) {
-            creep.travelTo(Game.flags['w3s8f3']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
-                creep.memory.w3s8f3 = true;
-            }
-            return;
-        }
         
-*/
-        /*
-        if (!creep.memory.w3s8f3) {
+if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
                 creep.memory.w3s8f3 = true;
@@ -48,9 +24,18 @@ module.exports = {
             }
             return;
         }
+//w7s6 dismantle
+        if (!creep.memory.w7s6f1) {
+            creep.travelTo(Game.flags['w7s6f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
+                creep.memory.w7s6f1 = true;
+            }
+            return;
+        }
+      
 
 //w7s6 dismantle
-
+/*
         if (!creep.memory.w7s6f1) {
             creep.travelTo(Game.flags['w7s6f1']);
             if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
@@ -109,7 +94,7 @@ module.exports = {
             }
             return;
         }
-        */
+        
 
         
         //W10S8 dismantle route flag
@@ -153,20 +138,10 @@ if (!creep.memory.w9s7f1) {
                 creep.memory.w9s7f1 = true;
             }
             return;
-        } 
+        }
+        */
 
-  /*     
-        
-//W9S4 dismantler route flag
-        
-  if (!creep.memory.w5s7f6) {
-            creep.travelTo(Game.flags['w5s7f6']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f6'])) {
-                creep.memory.w5s7f6 = true;
-            }
-            return;
-        }      
-      */ 
+       
         
         if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
