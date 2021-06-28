@@ -1023,7 +1023,7 @@ StructureSpawn.prototype.createhealer3 = function(target) {
       for (let i = 0; i < 10; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 10; i++) {
           body.push(HEAL);
       }
 
@@ -1040,7 +1040,7 @@ StructureSpawn.prototype.createhealer4 = function(target) {
       for (let i = 0; i < 10; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 10; i++) {
           body.push(HEAL);
       }
 
