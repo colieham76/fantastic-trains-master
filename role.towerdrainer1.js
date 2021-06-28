@@ -5,8 +5,18 @@ module.exports = {
 
     run: function (creep) {
         
+        if(creep.room.name == 'W3S8'){
+            creep.memory.healerspawn == true;
+        }
+        if(creep.memory.healerspawn){
+            Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
+            creep.memory.healerspawn = false;
+        }
+        
+   
+        /*
          var rallypos = new RoomPosition(17,48,'W9S6');
-/*
+
         if (creep.ticksToLive < 500) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
