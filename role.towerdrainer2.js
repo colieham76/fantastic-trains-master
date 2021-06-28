@@ -122,7 +122,7 @@ module.exports = {
                 creep.memory.attaaaacck = false;
 
                 if (creep.pos.isNearTo(Game.flags['rally2'])) {
-                    creep.memory.rally1 = true;
+                    creep.memory.rally2 = true;
                 }
             }
             if (!creep.memory.healingAbility) {
