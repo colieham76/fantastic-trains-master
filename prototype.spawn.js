@@ -833,13 +833,13 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createtowerdrainer1 = function(target) {
     var body = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -854,13 +854,13 @@ StructureSpawn.prototype.createtowerdrainer1 = function(target) {
 
 StructureSpawn.prototype.createtowerdrainer2 = function(target) {
     var body = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -875,13 +875,13 @@ StructureSpawn.prototype.createtowerdrainer2 = function(target) {
 
 StructureSpawn.prototype.createtowerdrainer3 = function(target) {
     var body = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -896,13 +896,13 @@ StructureSpawn.prototype.createtowerdrainer3 = function(target) {
 
 StructureSpawn.prototype.createtowerdrainer4 = function(target) {
     var body = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -917,13 +917,13 @@ StructureSpawn.prototype.createtowerdrainer4 = function(target) {
 
 StructureSpawn.prototype.createtowerdrainer5 = function(target) {
     var body = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 6; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -997,10 +997,10 @@ StructureSpawn.prototype.createsmallUpgrader =
 
 StructureSpawn.prototype.createhealer = function(target) {
       var body = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(HEAL);
       }
 
@@ -1014,10 +1014,10 @@ StructureSpawn.prototype.createhealer = function(target) {
 
 StructureSpawn.prototype.createhealer2 = function(target) {
       var body = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(HEAL);
       }
 
@@ -1031,10 +1031,10 @@ StructureSpawn.prototype.createhealer2 = function(target) {
 
 StructureSpawn.prototype.createhealer3 = function(target) {
       var body = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 13; i++) {
           body.push(HEAL);
       }
 
