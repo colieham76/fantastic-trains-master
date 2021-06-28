@@ -377,9 +377,9 @@ function () {
                 );
 
                 if (numberOftowerdrainers1[rallyRoom] < this.memory.mintowerdrainers1[rallyRoom]) {
-			 if (Game.time % 1750 === 0) { 
+		//	 if (Game.time % 1750 === 0) { 
                     name = this.createtowerdrainer1(rallyRoom);
-			 }
+		//	 }
                 }                
             }
         }
@@ -393,9 +393,9 @@ function () {
             numberOftowerdrainers2[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally2 == true);
 
             if (numberOftowerdrainers2[rallyRoom] < this.memory.mintowerdrainers2[rallyRoom]) {
-		     if (Game.time % 1750 === 0) { 
+		//     if (Game.time % 1750 === 0) { 
                 name = this.createtowerdrainer2(rallyRoom);
-		     }
+		//     }
             }
         }
     }
@@ -452,9 +452,9 @@ function () {
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
 		    
-		  if (Game.time % 1750 === 0) { 
+		//  if (Game.time % 1750 === 0) { 
                 name = this.createhealer(room.name, roomName);
-		   }
+		 //  }
             }
         }
     }
