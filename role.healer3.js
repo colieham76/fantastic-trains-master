@@ -28,6 +28,7 @@ module.exports = {
             }
         }
         else {*/
+        /*
         if (creep.ticksToLive < 300) {// double back
             creep.memory.recycled = false;
             creep.memory.attaaaacck = false;
@@ -72,5 +73,51 @@ return true;
                 creep.rangedHeal(toHeal);
             }
         }
+        */
+         if (!creep.memory.w3s8f3) {
+            creep.travelTo(Game.flags['w3s8f3']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
+                creep.memory.w3s8f3 = true;
+            }
+            return;
+        }
+        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
+            creep.travelTo(Game.flags['w5s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
+                creep.memory.w5s7f1 = true;
+            }
+            return;
+        }
+        
+        if (!creep.memory.w5s7f2) {
+            creep.travelTo(Game.flags['w5s7f2']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
+                creep.memory.w5s7f2 = true;
+            }
+            return;
+        }
+//w7s6 dismantle
+        if (!creep.memory.w7s6f1) {
+            creep.travelTo(Game.flags['w7s6f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
+                creep.memory.w7s6f1 = true;
+            }
+            return;
+        }
+       
+        //code for distant room
+        if (!creep.memory.recycled){
+          creep.travelTo(new RoomPosition(1, 19, 'W6S7'));   
+           creep.memory.attaaaacck = true;
+        let toHeal = lowestHealthInRoom(creep);
+            if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
+                
+            } else {
+                creep.heal(toHeal);
+                creep.rangedHeal(toHeal);
+            }
+        }
+        
+        
     }
 }
