@@ -444,12 +444,13 @@ function () {
     if (name == undefined) {
     // count the number of healers
         for (let roomName in this.memory.minhealers) {
-            numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer');
+            numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer'
+                && c.memory.target == roomName);
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
 		    
 		   if (Game.time % 1750 === 0) { 
-                name = this.createhealer(roomName);
+                name = this.createhealer(room.name, roomName);
 		   }
             }
         }
