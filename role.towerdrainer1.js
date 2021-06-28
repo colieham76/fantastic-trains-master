@@ -9,8 +9,10 @@ module.exports = {
             creep.memory.healerspawn == true;
         }
         if(creep.memory.healerspawn){
+            if (Game.time % 10 === 0) {
              Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
             creep.memory.healerspawn = false;
+            }
         }
         
    
