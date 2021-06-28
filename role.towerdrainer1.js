@@ -9,7 +9,7 @@ module.exports = {
             creep.memory.healerspawn == true;
         }
         if(creep.memory.healerspawn){
-            Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
+             Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
             creep.memory.healerspawn = false;
         }
         
