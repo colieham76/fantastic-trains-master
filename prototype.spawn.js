@@ -449,9 +449,9 @@ function () {
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
 		    
-		//   if (Game.time % 1750 === 0) { 
+		  if (Game.time % 1750 === 0) { 
                 name = this.createhealer(room.name, roomName);
-		//   }
+		   }
             }
         }
     }
