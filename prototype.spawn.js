@@ -39,13 +39,13 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
-    Game.spawns.Spawn3.memory.minhealers = {W7S6: 0};
+    Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
 //}
-Game.spawns.Spawn2.memory.minhealers2 = {W1S8: 0};
+Game.spawns.Spawn4.memory.minhealers2 = {W7S6: 0};
 
-Game.spawns.Spawn2.memory.minhealers3 = {W1S8: 0};
+Game.spawns.Spawn4.memory.minhealers3 = {W7S6: 0};
 
-Game.spawns.Spawn2.memory.minhealers4 = {W1S8: 0};
+Game.spawns.Spawn3.memory.minhealers4 = {W7S6: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
@@ -67,9 +67,9 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 0}
+Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
 //}
-Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 0}
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
 
 Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 0}
 
@@ -374,7 +374,9 @@ function () {
                 );
 
                 if (numberOftowerdrainers1[rallyRoom] < this.memory.mintowerdrainers1[rallyRoom]) {
+			 if (Game.time % 1750 === 0) { 
                     name = this.createtowerdrainer1(rallyRoom);
+			 }
                 }                
             }
         }
@@ -388,7 +390,9 @@ function () {
             numberOftowerdrainers2[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally2 == true);
 
             if (numberOftowerdrainers2[rallyRoom] < this.memory.mintowerdrainers2[rallyRoom]) {
+		     if (Game.time % 1750 === 0) { 
                 name = this.createtowerdrainer2(rallyRoom);
+		     }
             }
         }
     }
@@ -443,7 +447,10 @@ function () {
             numberOfhealers[roomName] = _.sum(Game.creeps, (c) => c.memory.role == 'healer');
 
             if (numberOfhealers[roomName] < this.memory.minhealers[roomName]) {
+		    
+		   if (Game.time % 1750 === 0) { 
                 name = this.createhealer(roomName);
+		   }
             }
         }
     }
