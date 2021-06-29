@@ -4,13 +4,13 @@ module.exports = {
      //   creep.say('💕', true);
         
         
-         if(creep.room.name == 'W3S8'){
+     /*    if(creep.room.name == 'W3S8'){
             creep.memory.drainerspawn == true;
         }
         if(creep.memory.healerspawn){
              Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
             creep.memory.drainerspawn = false;
-        }
+        }*/
        /* 
         var rallypos = new RoomPosition(29,48,'W7S6');
 
