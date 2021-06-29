@@ -372,13 +372,13 @@ function () {
         if (name == undefined) {
             // count the number of towerdrainers
             for (let rallyRoom in this.memory.mintowerdrainers1) {
-                numberOftowerdrainers1[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally1 == true
+                numberOftowerdrainers1[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.role == 'towerdrainer1'
                     && c.memory.target == rallyRoom
                 );
 
                 if (numberOftowerdrainers1[rallyRoom] < this.memory.mintowerdrainers1[rallyRoom]) {
 		//	 if (Game.time % 1750 === 0) { 
-                    name = this.createtowerdrainer1(rallyRoom);
+                    name = this.createtowerdrainer1(room.name, rallyRoom);
 		//	 }
                 }                
             }
@@ -831,7 +831,7 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 }
 
 
-StructureSpawn.prototype.createtowerdrainer1 = function(target) {
+StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     var body = [];
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
@@ -849,6 +849,8 @@ StructureSpawn.prototype.createtowerdrainer1 = function(target) {
             rally1: false ,
             recycled: false,
 	    attaaaacck: true,
+	    home: home,
+	    target: target
         });
 }
 
