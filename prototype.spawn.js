@@ -324,9 +324,9 @@ function () {
                     c.memory.role == 'controllerAttacker' && c.memory.target == roomName);
 
                 if (numberOfcontrollerAttackers[roomName] < this.memory.mincontrollerattackers[roomName]) {
-		//	 if (Game.time % 1300 === 0) {
+			 if (Game.time % 1300 === 0) {
                     name = this.createcontrollerAttacker(room.name, roomName)}
-		//}
+		}
             }
         }
 
