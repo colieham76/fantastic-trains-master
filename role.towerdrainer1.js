@@ -5,7 +5,7 @@ module.exports = {
 
     run: function (creep) {
         
-        if(creep.room.name == 'W3S8'){
+      /*  if(creep.room.name == 'W3S8'){
             creep.memory.healerspawn == true;
         }
         if(creep.memory.healerspawn){
@@ -14,7 +14,7 @@ module.exports = {
             creep.memory.healerspawn = false;
             }
         }
-        
+        */
    
         /*
          var rallypos = new RoomPosition(17,48,'W9S6');
