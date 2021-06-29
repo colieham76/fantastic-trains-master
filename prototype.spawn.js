@@ -34,7 +34,7 @@ Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 2};
-Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0} 
+Game.spawns.W7S8.memory.mincontrollerattackers = {W9S6: 1} 
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
@@ -616,7 +616,7 @@ StructureSpawn.prototype.createcontrollerAttacker =
 				undefined, 
 				{
 		role: 'controllerAttacker',
-		target: 'W2S8' 
+		target: 'W9S6' 
 	});
     };
 
