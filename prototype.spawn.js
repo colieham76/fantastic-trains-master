@@ -67,18 +67,18 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
+Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 0}
 //}
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 0}
 //}
-Game.spawns.Spawn3.memory.mintowerdrainers3 = {W6S7: 1}
+Game.spawns.Spawn3.memory.mintowerdrainers3 = {W6S7: 0}
 
-Game.spawns.Spawn4.memory.mintowerdrainers4 = {W6S7: 1}
+Game.spawns.Spawn4.memory.mintowerdrainers4 = {W6S7: 0}
 
-Game.spawns.Spawn3.memory.mintowerdrainers5 = {W6S7: 1}
+Game.spawns.Spawn3.memory.mintowerdrainers5 = {W6S7: 0}
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0}
 //}
@@ -839,10 +839,10 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -862,10 +862,10 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -885,10 +885,10 @@ StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -908,10 +908,10 @@ StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -924,7 +924,8 @@ StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
             rally4: false ,
             recycled: false,
 	    attaaaacck: true,
-	    home, target
+	    home: home,
+	    target: target
         });
 }
 
@@ -946,7 +947,8 @@ StructureSpawn.prototype.createtowerdrainer5 = function(home, target) {
             rally5: false ,
             recycled: false,
 	    attaaaacck: true,
-	    home, target
+	    home: home,
+	    target: target
         });
 }
 
