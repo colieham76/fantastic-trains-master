@@ -32,6 +32,15 @@ if (!creep.memory.w3s8f3) {
             }
             return;
         }    
+     //////////////////////////////////////////////////////////   
+        //w7s7 dismantle attack
+        if (!creep.memory.w7s7f1) {
+            creep.travelTo(Game.flags['w7s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s7f1'])) {
+                creep.memory.w7s7f1 = true;
+            }
+            return;
+        }    
 
 //////////////////////////////////////////////
 /*
