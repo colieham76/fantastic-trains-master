@@ -3,6 +3,13 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
     run: function (creep) {
+
+if (Game.time % 350 === 0) {
+
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 2}
+
+  } 
+
         /*
         var rallypos = new RoomPosition(16,48,'E1S16');
 
