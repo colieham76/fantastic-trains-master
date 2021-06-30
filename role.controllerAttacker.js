@@ -33,6 +33,16 @@ module.exports = {
             return;
         } 
         
+         //w7s7 dismantle attack
+        if (!creep.memory.w7s7f1) {
+            creep.travelTo(Game.flags['w7s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s7f1'])) {
+                creep.memory.w7s7f1 = true;
+            }
+            return;
+        }    
+        
+        
         if (creep.room.name == creep.memory.target) { // if in target room
             if (creep.room.controller && !creep.room.controller.my) {
                 if (creep.attackController(creep.room.controller) == ERR_NOT_IN_RANGE) {
