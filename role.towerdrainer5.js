@@ -119,9 +119,7 @@ module.exports = {
                 creep.memory.healingAbility = healingability(creep);
             }
             creep.heal(creep);
-        } 
-        
-        
+        }         
         
     }
 }
