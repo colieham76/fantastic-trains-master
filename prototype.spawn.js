@@ -78,7 +78,7 @@ Game.spawns.Spawn3.memory.mintowerdrainers3 = {W6S7: 1}
 
 Game.spawns.Spawn4.memory.mintowerdrainers4 = {W6S7: 1}
 
-Game.spawns.Spawn5.memory.mintowerdrainers5 = {W6S7: 1}
+Game.spawns.Spawn3.memory.mintowerdrainers5 = {W6S7: 1}
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0}
 //}
