@@ -39,13 +39,13 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
-    Game.spawns.Spawn3.memory.minhealers = {W7S6: 0};
+    Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
 //}
-Game.spawns.Spawn4.memory.minhealers2 = {W7S6: 0};
+Game.spawns.Spawn4.memory.minhealers2 = {W6S7: 1};
 
-Game.spawns.Spawn4.memory.minhealers3 = {W7S6: 0};
+Game.spawns.Spawn4.memory.minhealers3 = {W6S7: 1};
 
-Game.spawns.Spawn3.memory.minhealers4 = {W7S6: 0};
+Game.spawns.Spawn3.memory.minhealers4 = {W6S7: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
@@ -72,13 +72,13 @@ Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 1}
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 0}
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
 //}
-Game.spawns.Spawn3.memory.mintowerdrainers3 = {W1S8: 0}
+Game.spawns.Spawn3.memory.mintowerdrainers3 = {W6S7: 1}
 
-Game.spawns.Spawn4.memory.mintowerdrainers4 = {W1S8: 0}
+Game.spawns.Spawn4.memory.mintowerdrainers4 = {W6S7: 1}
 
-Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 0}
+Game.spawns.Spawn5.memory.mintowerdrainers5 = {W6S7: 1}
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0}
 //}
@@ -390,11 +390,13 @@ function () {
     if (name == undefined) {
         // count the number of towerdrainers
         for (let rallyRoom in this.memory.mintowerdrainers2) {
-            numberOftowerdrainers2[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally2 == true);
+            numberOftowerdrainers2[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.role == 'towerdrainer2'
+						     && c.memory.target == rallyRoom
+						     );
 
             if (numberOftowerdrainers2[rallyRoom] < this.memory.mintowerdrainers2[rallyRoom]) {
 		//     if (Game.time % 1750 === 0) { 
-                name = this.createtowerdrainer2(rallyRoom);
+                name = this.createtowerdrainer2(room.name, rallyRoom);
 		//     }
             }
         }
@@ -407,10 +409,12 @@ function () {
     if (name == undefined) {
         // count the number of towerdrainers
         for (let rallyRoom in this.memory.mintowerdrainers3) {
-            numberOftowerdrainers3[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally3 == true);
+            numberOftowerdrainers3[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.role == 'towerdrainer3'
+						     && c.memory.target == rallyRoom
+						     );
 
             if (numberOftowerdrainers3[rallyRoom] < this.memory.mintowerdrainers3[rallyRoom]) {
-                name = this.createtowerdrainer3(rallyRoom);
+                name = this.createtowerdrainer3(room.name, rallyRoom);
             }
         }
     }
@@ -420,10 +424,11 @@ function () {
     if (name == undefined) {
         // count the number of towerdrainers
         for (let rallyRoom in this.memory.mintowerdrainers4) {
-            numberOftowerdrainers4[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally4 == true);
+            numberOftowerdrainers4[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.role == 'towerdrainer4'
+						     && c.memory.target == rallyRoom);
 
             if (numberOftowerdrainers4[rallyRoom] < this.memory.mintowerdrainers4[rallyRoom]) {
-                name = this.createtowerdrainer4(rallyRoom);
+                name = this.createtowerdrainer4(room.name, rallyRoom);
             }
         }
     }
@@ -433,10 +438,11 @@ function () {
     if (name == undefined) {
         // count the number of towerdrainers
         for (let rallyRoom in this.memory.mintowerdrainers5) {
-            numberOftowerdrainers5[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.rally5 == true);
+            numberOftowerdrainers5[rallyRoom] = _.sum(Game.creeps, (c) => c.memory.role == 'towerdrainer5'
+						     && c.memory.target == rallyRoom);
 
             if (numberOftowerdrainers5[rallyRoom] < this.memory.mintowerdrainers5[rallyRoom]) {
-                name = this.createtowerdrainer5(rallyRoom);
+                name = this.createtowerdrainer5(room.name, rallyRoom);
             }
         }
     }	
@@ -836,7 +842,7 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 9; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -854,12 +860,12 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
         });
 }
 
-StructureSpawn.prototype.createtowerdrainer2 = function(target) {
+StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     var body = [];
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 9; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -872,15 +878,17 @@ StructureSpawn.prototype.createtowerdrainer2 = function(target) {
             rally2: false ,
             recycled: false,
 	    attaaaacck: true,
+	    home: home,
+	    target: target
         });
 }
 
-StructureSpawn.prototype.createtowerdrainer3 = function(target) {
+StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
     var body = [];
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 9; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -893,15 +901,17 @@ StructureSpawn.prototype.createtowerdrainer3 = function(target) {
             rally3: false ,
             recycled: false,
 	    attaaaacck: true,
+	    home: home,
+	    target: target
         });
 }
 
-StructureSpawn.prototype.createtowerdrainer4 = function(target) {
+StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
     var body = [];
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 9; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -914,15 +924,16 @@ StructureSpawn.prototype.createtowerdrainer4 = function(target) {
             rally4: false ,
             recycled: false,
 	    attaaaacck: true,
+	    home, target
         });
 }
 
-StructureSpawn.prototype.createtowerdrainer5 = function(target) {
+StructureSpawn.prototype.createtowerdrainer5 = function(home, target) {
     var body = [];
     for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 9; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -935,6 +946,7 @@ StructureSpawn.prototype.createtowerdrainer5 = function(target) {
             rally5: false ,
             recycled: false,
 	    attaaaacck: true,
+	    home, target
         });
 }
 
@@ -997,7 +1009,7 @@ StructureSpawn.prototype.createsmallUpgrader =
 };
 
 
-StructureSpawn.prototype.createhealer = function(target) {
+StructureSpawn.prototype.createhealer = function(home, target) {
       var body = [];
       for (let i = 0; i < 13; i++) {
           body.push(MOVE);
@@ -1010,11 +1022,12 @@ StructureSpawn.prototype.createhealer = function(target) {
 	      role: 'healer',
 	      recycled: false,
 	    attaaaacck: true,
+	      home: home,
 	      target: target
       });
 }
 
-StructureSpawn.prototype.createhealer2 = function(target) {
+StructureSpawn.prototype.createhealer2 = function(home, target) {
       var body = [];
       for (let i = 0; i < 13; i++) {
           body.push(MOVE);
@@ -1027,11 +1040,12 @@ StructureSpawn.prototype.createhealer2 = function(target) {
 	      role: 'healer2',
 	      recycled: false,
 	    attaaaacck: true,
+	      home: home,
 	      target: target
       });
 }	
 
-StructureSpawn.prototype.createhealer3 = function(target) {
+StructureSpawn.prototype.createhealer3 = function(home, target) {
       var body = [];
       for (let i = 0; i < 13; i++) {
           body.push(MOVE);
@@ -1044,11 +1058,12 @@ StructureSpawn.prototype.createhealer3 = function(target) {
 	      role: 'healer3',
 	      recycled: false,
 	    attaaaacck: true,
+	      home: home,
 	      target: target
       });
 }	
 
-StructureSpawn.prototype.createhealer4 = function(target) {
+StructureSpawn.prototype.createhealer4 = function(home, target) {
       var body = [];
       for (let i = 0; i < 15; i++) {
           body.push(MOVE);
@@ -1061,6 +1076,7 @@ StructureSpawn.prototype.createhealer4 = function(target) {
 	      role: 'healer4',
 	      recycled: false,
 	    attaaaacck: true,
+	      home: home,
 	      target: target
       });
 }	
