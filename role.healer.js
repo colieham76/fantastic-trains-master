@@ -3,9 +3,9 @@ module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
 
-      if (creep.ticksToLive < 350) {
-Game.spawns.Spawn3.memory.minhealers = {W7S6: 2};
-}  
+//      if (creep.ticksToLive < 350) {
+//Game.spawns.Spawn3.memory.minhealers = {W7S6: 2};
+//}  
         
      /*    if(creep.room.name == 'W3S8'){
             creep.memory.drainerspawn == true;
