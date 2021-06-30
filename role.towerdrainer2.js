@@ -4,11 +4,9 @@ module.exports = {
 
     run: function (creep) {
 
-if (creep.ticksToLive < 350) {
-
-Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 2}
-
-  } 
+//if (creep.ticksToLive < 350) {
+//Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 2}
+//  } 
 
         /*
         var rallypos = new RoomPosition(16,48,'E1S16');
