@@ -2,7 +2,10 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
-        
+
+      if (creep.ticksToLive < 1500) {
+Game.spawns.Spawn3.memory.minhealers = {W7S6: 2};
+}  
         
      /*    if(creep.room.name == 'W3S8'){
             creep.memory.drainerspawn == true;
