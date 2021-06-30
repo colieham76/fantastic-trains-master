@@ -5,22 +5,11 @@ module.exports = {
 
     run: function (creep) {
         
-      /*  if(creep.room.name == 'W3S8'){
-            creep.memory.healerspawn == true;
-        }
-        if(creep.memory.healerspawn){
-            if (Game.time % 50 === 0) {
-             Game.spawns.Spawn3.memory.minhealers = {W7S6: 1};
-            creep.memory.healerspawn = false;
-            }
-        }
-        */
+     
 
- if (creep.ticksToLive < 350) {
-
-Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 2}
-
-  } 
+// if (creep.ticksToLive < 350) {
+//Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 2}
+//  } 
         /*
          var rallypos = new RoomPosition(17,48,'W9S6');
 
