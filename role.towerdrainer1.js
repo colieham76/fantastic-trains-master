@@ -15,7 +15,12 @@ module.exports = {
             }
         }
         */
-   
+
+ if (Game.time % 350 === 0) {
+
+Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 2}
+
+  } 
         /*
          var rallypos = new RoomPosition(17,48,'W9S6');
 
