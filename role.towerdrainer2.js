@@ -4,7 +4,7 @@ module.exports = {
 
     run: function (creep) {
 
-if (Game.time % 350 === 0) {
+if (creep.ticksToLive < 350) {
 
 Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 2}
 
