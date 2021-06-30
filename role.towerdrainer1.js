@@ -16,7 +16,7 @@ module.exports = {
         }
         */
 
- if (Game.time % 350 === 0) {
+ if (creep.ticksToLive < 350) {
 
 Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 2}
 
