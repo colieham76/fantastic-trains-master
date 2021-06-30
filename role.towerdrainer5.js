@@ -3,6 +3,13 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
 
     run: function (creep) {
+
+if (creep.ticksToLive < 350) {
+
+Game.spawns.Spawn3.memory.mintowerdrainers5 = {W6S7: 2}
+
+  }      
+
         
         /*
 
