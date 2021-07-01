@@ -42,13 +42,13 @@ dismantler: 0, antiTransporter: 0};
 
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
-    Game.spawns.Spawn3.memory.minhealers = {W7S6: 0};
+Game.spawns.Spawn1.memory.minhealers = {W5S9: 0};
 //}
-Game.spawns.Spawn4.memory.minhealers2 = {W6S7: 0};
+Game.spawns.W7S8.memory.minhealers2 = {W5S9: 0};
 
-Game.spawns.Spawn4.memory.minhealers3 = {W6S7: 0};
+Game.spawns.Spawn1.memory.minhealers3 = {W5S9: 0};
 
-Game.spawns.Spawn3.memory.minhealers4 = {W6S7: 0};
+Game.spawns.W7S8.memory.minhealers4 = {W5S9: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
@@ -70,18 +70,18 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn3.memory.mintowerdrainers1 = {W7S6: 0}
+Game.spawns.Spawn1.memory.mintowerdrainers1 = {W7S6: 0}
 //}
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 0}
+Game.spawns.W7S8.memory.mintowerdrainers2 = {W5S9: 0}
 //}
-Game.spawns.Spawn3.memory.mintowerdrainers3 = {W6S7: 0}
+Game.spawns.Spawn1.memory.mintowerdrainers3 = {W5S9: 0}
 
-Game.spawns.Spawn4.memory.mintowerdrainers4 = {W6S7: 0}
+Game.spawns.W7S8.memory.mintowerdrainers4 = {W5S9: 0}
 
-Game.spawns.Spawn3.memory.mintowerdrainers5 = {W6S7: 0}
+Game.spawns.Spawn1.memory.mintowerdrainers5 = {W5S9: 0}
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0}
 //}
@@ -934,10 +934,10 @@ StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer5 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
