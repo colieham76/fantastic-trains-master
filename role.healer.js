@@ -3,9 +3,9 @@ module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
 
-//      if (creep.ticksToLive < 350) {
-//Game.spawns.Spawn3.memory.minhealers = {W7S6: 2};
-//}  
+      if (creep.ticksToLive < 350) {
+Game.spawns.Spawn1.memory.minhealers = {W5S10: 2};
+}  
         
      /*    if(creep.room.name == 'W3S8'){
             creep.memory.drainerspawn == true;
@@ -171,7 +171,7 @@ if (!creep.memory.w9s5f1) {
         
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(29, 48, 'W7S6'));   
+          creep.travelTo(new RoomPosition(17, 1, 'W5S10'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
