@@ -2,7 +2,7 @@ module.exports = {
     run: function(creep) {
         creep.say('OMG!😂', true);
         
-      if (creep.ticksToLive < 300) {
+      if (creep.ticksToLive < 50) {
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 2} 
 }      
         
