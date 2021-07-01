@@ -1,7 +1,7 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');
-        
+  /*      
 if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
@@ -41,7 +41,7 @@ if (!creep.memory.w3s8f3) {
             }
             return;
         }    
-
+*/
 //////////////////////////////////////////////
 /*
         if (!creep.memory.w7s6f2) {
@@ -99,7 +99,7 @@ if (!creep.memory.w3s8f3) {
     /////////////////////////////////////////////////////////////////////////////////////////////
         
         //W10S8 dismantle route flag
-        /*
+        
         if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
@@ -131,9 +131,9 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         } 
-*/
+
 //W9S7 dismantler route flag LAST ROOM
-/*
+
 if (!creep.memory.w9s7f1) {
             creep.travelTo(Game.flags['w9s7f1']);
             if (creep.pos.isNearTo(Game.flags['w9s7f1'])) {
@@ -143,7 +143,7 @@ if (!creep.memory.w9s7f1) {
         }
         
 
-    */ 
+     
  ////////////////////////////////////////////////////////////////////////////////////////
         
         if (Game.flags['Dismantle'] != undefined) {
