@@ -17,7 +17,9 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working === true) {
-          /*  if(creep.room.storage
+          /* 
+          //take dropped energy and put into storage
+          if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
                 for (const resourceType in creep.store) {
@@ -36,6 +38,13 @@ module.exports = {
                         || s.structureType === STRUCTURE_SPAWN)
                         && s.energy < s.energyCapacity
                 });
+            if (structure !== undefined) {
+                // try to transfer energy, if it is not in range
+                if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                    // move towards it
+                    creep.travelTo(structure);
+                }
+            }
 
             //}
 
