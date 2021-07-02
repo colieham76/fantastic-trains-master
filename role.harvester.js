@@ -70,7 +70,7 @@ module.exports = {
                 if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(energy);
                 }
-                creep.getEnergy(false, true);
+                creep.getEnergy(true, true);
             }
     }
 }
