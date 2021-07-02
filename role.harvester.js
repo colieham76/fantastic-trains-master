@@ -42,7 +42,7 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-
+creep.getEnergy(false, true);
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
             });
@@ -69,7 +69,7 @@ module.exports = {
                 if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(energy);
                 }
-                creep.getEnergy(true, true);
+                
             }
     }
 }
