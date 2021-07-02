@@ -17,14 +17,14 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working === true) {
-            if(creep.room.storage
+          /*  if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
                 for (const resourceType in creep.store) {
                     if (creep.transfer(storage, resourceType) === ERR_NOT_IN_RANGE) {
                         creep.moveTo(storage, {visualizePathStyle: {stroke: '#f10e3b'}});
                     }
-                }
+                }*/
 
                 // find closest spawn, extension or tower which is not full
                 var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
@@ -37,12 +37,12 @@ module.exports = {
                         && s.energy < s.energyCapacity
                 });
 
-            }
+            //}
 
         }
         // if creep is supposed to harvest energy from source
         else {
-creep.getEnergy(false, true);
+
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
             });
@@ -69,7 +69,7 @@ creep.getEnergy(false, true);
                 if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(energy);
                 }
-                
+                creep.getEnergy(false, true);
             }
     }
 }
