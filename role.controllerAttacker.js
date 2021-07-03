@@ -1,6 +1,9 @@
 module.exports = {
     run: function(creep) {
         creep.say('OMG!😂', true);
+        
+        Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 1} 
+        
         /** @type {Object.<string, number>} */
         let numberOfcontrollerAttackers = {};
         // count the number of controller Attackers globally
