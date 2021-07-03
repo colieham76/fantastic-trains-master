@@ -2,23 +2,9 @@ module.exports = {
     run: function(creep) {
         creep.say('OMG!😂', true);
         
-        Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 1} 
-        
-        /** @type {Object.<string, number>} */
-        let numberOfcontrollerAttackers = {};
-        if (name == undefined) {
-        // count the number of controller Attackers globally
-        for (let roomName in this.memory.mincontrollerattackers) {
-            numberOfcontrollerAttackers[roomName] = _.sum(Game.creeps,
-                                                          (c) => c.memory.role == 'controllerAttacker'
-                                                          && c.memory.target == roomName
-                                                         );
-            if (numberOfcontrollerAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
-                    if (creep.ticksToLive < 50) {
-                        name = this.createrangedattacker(room.name, roomName)}
-                    }
-                }
-            }
+        if (creep.ticksToLive < 50) {
+            Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 2} 
+        }      
         
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
