@@ -15,11 +15,11 @@ module.exports = {
                                                          );
             if (numberOfcontrollerAttackers[roomName] > 0) {
                     if (creep.ticksToLive < 50) {
-                        Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 2} 
+                        name = this.createrangedattacker(room.name, roomName)}
                     }
                 }
             }
-        }
+        
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
