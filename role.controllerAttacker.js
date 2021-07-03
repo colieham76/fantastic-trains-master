@@ -13,7 +13,7 @@ module.exports = {
                                                           (c) => c.memory.role == 'controllerAttacker'
                                                           && c.memory.target == roomName
                                                          );
-            if (numberOfcontrollerAttackers[roomName] > 0) {
+            if (numberOfcontrollerAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
                     if (creep.ticksToLive < 50) {
                         name = this.createrangedattacker(room.name, roomName)}
                     }
