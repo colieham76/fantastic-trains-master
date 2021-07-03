@@ -6,6 +6,7 @@ module.exports = {
         
         /** @type {Object.<string, number>} */
         let numberOfcontrollerAttackers = {};
+        if (name == undefined) {
         // count the number of controller Attackers globally
         for (let roomName in this.memory.mincontrollerattackers) {
             numberOfcontrollerAttackers[roomName] = _.sum(Game.creeps,
@@ -18,6 +19,7 @@ module.exports = {
                     }
                 }
             }
+        }
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
