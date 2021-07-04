@@ -6,7 +6,7 @@ module.exports = {
     /** @param {Creep} creep *
      */
     run: function (creep) {
-       
+       /*
         if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
@@ -37,7 +37,7 @@ module.exports = {
                 creep.memory.w9s6f1 = true;
             }
             return;
-        }
+        }*/
       const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
         
         if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
