@@ -6,7 +6,11 @@ Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
 Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
 Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
 	Game.rooms.W3S8.createConstructionSite(19, 19, STRUCTURE_RAMPART);	
-	Game.rooms.W3S8.createConstructionSite(15, 22, STRUCTURE_RAMPART);	
+	Game.rooms.W3S8.createConstructionSite(15, 22, STRUCTURE_RAMPART);
+
+    Game.rooms.W9S6.createConstructionSite(39, 2, STRUCTURE_RAMPART);
+    Game.rooms.W9S6.createConstructionSite(41, 2, STRUCTURE_RAMPART);
+    Game.rooms.W9S6.createConstructionSite(43, 2, STRUCTURE_RAMPART);
 	
 		// clear memory
         for (let name in Memory.creeps) {
@@ -351,4 +355,3 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
                 }
                 previousCPU = calculateCPUUsageOfProcesses(previousCPU, 'Check and spawn roles');
 */
-
