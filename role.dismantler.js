@@ -1,101 +1,30 @@
 module.exports = {
     run: function(creep) {
-        creep.say('presious...');
-  /*      
-if (!creep.memory.w3s8f3) {
-            creep.travelTo(Game.flags['w3s8f3']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
-                creep.memory.w3s8f3 = true;
+        creep.say('presious...');     
+        if (!creep.memory.w8f5s1) {
+            creep.travelTo(Game.flags['w8f5s1']);
+            if (creep.pos.isNearTo(Game.flags['w8f5s1'])) {
+                creep.memory.w8f5s1 = true;
             }
             return;
         }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
-            creep.travelTo(Game.flags['w5s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
-                creep.memory.w5s7f1 = true;
+        if (!creep.memory.w7s4f1) {
+            creep.travelTo(Game.flags['w7s4f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s4f1'])) {
+                creep.memory.w7s4f1 = true;
             }
             return;
         }
         
-        if (!creep.memory.w5s7f2) {
-            creep.travelTo(Game.flags['w5s7f2']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
-                creep.memory.w5s7f2 = true;
-            }
-            return;
-        }
-//w7s6 dismantle
-        if (!creep.memory.w7s6f1) {
-            creep.travelTo(Game.flags['w7s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
-                creep.memory.w7s6f1 = true;
-            }
-            return;
-        }    
-     //////////////////////////////////////////////////////////   
-        //w7s7 dismantle attack
-        if (!creep.memory.w7s7f1) {
-            creep.travelTo(Game.flags['w7s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s7f1'])) {
-                creep.memory.w7s7f1 = true;
-            }
-            return;
-        }    
-*/
-//////////////////////////////////////////////
-/*
-        if (!creep.memory.w7s6f2) {
-            creep.travelTo(Game.flags['w7s6f2']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f2'])) {
-                creep.memory.w7s6f2 = true;
+        if (!creep.memory.w7s3f1) {
+            creep.travelTo(Game.flags['w7s3f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s3f1'])) {
+                creep.memory.w7s3f1 = true;
             }
             return;
         }
 
-        if (!creep.memory.w7s6f3) {
-            creep.travelTo(Game.flags['w7s6f3']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f3'])) {
-                creep.memory.w7s6f3 = true;
-            }
-            return;
-        }
-        // W8S6 route flag
-        if (!creep.memory.w8s6f1) {
-            creep.travelTo(Game.flags['w8s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
-                creep.memory.w8s6f1 = true;
-            }
-            return;
-        } 
-        // W8S5 route flag
-        if (!creep.memory.w8s5f1) {
-            creep.travelTo(Game.flags['w8s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
-                creep.memory.w8s5f1 = true;
-            }
-            return;
-        } 
-        
-        // W8S4 route flag
-        if (!creep.memory.w8s4f1) {
-            creep.travelTo(Game.flags['w8s4f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s4f1'])) {
-                creep.memory.w8s4f1 = true;
-            }
-            return;
-        } 
-     */   
 /*
-   //w7s5 dismantle     
-        if (!creep.memory.w7s6f4) {
-            creep.travelTo(Game.flags['w7s6f4']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
-                creep.memory.w7s6f4 = true;
-            }
-            return;
-        }
-        
-*/
     /////////////////////////////////////////////////////////////////////////////////////////////
         
         //W10S8 dismantle route flag
@@ -132,7 +61,7 @@ if (!creep.memory.w9s5f1) {
             return;
         } 
 
-//W9S7 dismantler route flag LAST ROOM
+
 
 if (!creep.memory.w9s7f1) {
             creep.travelTo(Game.flags['w9s7f1']);
@@ -140,12 +69,9 @@ if (!creep.memory.w9s7f1) {
                 creep.memory.w9s7f1 = true;
             }
             return;
-        }
-        
-
-     
+        }         
  ////////////////////////////////////////////////////////////////////////////////////////
-        
+    */    
         if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
             if (presious != undefined) { // if there is storage
