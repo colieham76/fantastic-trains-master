@@ -1,6 +1,13 @@
 module.exports = {
     run: function(creep) {
-        creep.say('presious...');     
+        creep.say('presious...');
+        if (!creep.memory.w9s5f1) {
+            creep.travelTo(Game.flags['w9s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
+                creep.memory.w9s5f1 = true;
+            }
+            return;
+        }                  
         if (!creep.memory.w8f5s1) {
             creep.travelTo(Game.flags['w8f5s1']);
             if (creep.pos.isNearTo(Game.flags['w8f5s1'])) {
@@ -69,9 +76,9 @@ if (!creep.memory.w9s7f1) {
                 creep.memory.w9s7f1 = true;
             }
             return;
-        }         
+        }
  ////////////////////////////////////////////////////////////////////////////////////////
-    */    
+    */
         if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
             if (presious != undefined) { // if there is storage
