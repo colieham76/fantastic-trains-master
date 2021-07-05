@@ -57,7 +57,8 @@ module.exports = {
                             creep.travelTo(energy,{maxRooms:1});
                         }
                         else {
-                            let container = creep.pos.findClosestByRange(FIND_STRUCTURES, {filter: s => s.structureType == STRUCTURE_CONTAINER && (s.store[RESOURCE_ENERGY] > 500)});
+                            let container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                                filter: s => s.structureType == STRUCTURE_CONTAINER && (s.store[RESOURCE_ENERGY] > 500)});
                             if (container != undefined) { // if all containers are 0, take energy from storage
                                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                     creep.travelTo(container,{maxRooms:1});
