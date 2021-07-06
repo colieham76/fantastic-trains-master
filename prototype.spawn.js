@@ -40,7 +40,7 @@ Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 1}
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 1, 
-wallRepairer: 1, builder: 1, rampartrepairer: 1, lorry: 1, towerlorry: 1 };
+wallRepairer: 0, builder: 0, rampartrepairer: 1, lorry: 1, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0}
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
