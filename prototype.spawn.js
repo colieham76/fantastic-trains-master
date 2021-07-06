@@ -1134,6 +1134,29 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
     });
 }
 
+StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, home) {
+    var body = [];
+    var NoCarryMoveParts = Math.floor(energy/200);
+
+    for (let i = 0; i < NoCarryMoveParts; i++) {
+        body.push(WORK);
+    }
+    for (let i = 0; i < NoCarryMoveParts; i++) {
+        body.push(CARRY);
+    }
+    for (let i = 0; i < NoCarryMoveParts; i++) {
+        body.push(MOVE);
+    }
+    return this.spawnCreep(body, undefined, { 
+	    
+		    role: 'longDistanceBuilder', 
+		    target: target, 
+		    home: home,
+		    working: false,
+		    spawnTime: 3*body.length
+	    });
+}
+
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
     var body = [];
