@@ -42,6 +42,7 @@ dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 1, 
 wallRepairer: 0, builder: 0, rampartrepairer: 1, lorry: 1, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0}
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0}
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
 Game.spawns.Spawn1.memory.minhealers = {W5S9: 0};
@@ -366,6 +367,21 @@ function () {
             }
         }
 	
+	
+	// if none of the above caused a spawn command check for LongDistanceHarvesters
+        /** @type {Object.<string, number>} */
+        let numberOfLongDistanceBuilders = {};
+        if (name == undefined) {
+            // count the number of long distance harvesters globally
+            for (let roomName in this.memory.minLongDistanceBuilders) {
+                numberOfLongDistanceBuilders[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'longDistanceBuilder' && c.memory.target == roomName);
+
+                if (numberOfLongDistanceBuilders[roomName] < this.memory.minLongDistanceBuilders[roomName]) {
+                    name = this.createLongDistanceBuilder(maxEnergy, room.name, roomName);
+                }
+            }
+        }
 	
 	// if none of the above caused a spawn command check for smallUpgraders
         /** @type {Object.<string, number>} */
