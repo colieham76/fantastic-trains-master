@@ -739,35 +739,24 @@ StructureSpawn.prototype.createtowerLorry =
                 });
 };				
       
-// create a new function for StructureSpawn
 StructureSpawn.prototype.createMiner =
-    function (sourceId, target, RCL, home) {
-        let eCap = Game.rooms[home].memory.ECap;
-        
+    function (sourceId, target, RCL, home) {        
             return this.createCreep([WORK, WORK, WORK, WORK, WORK, MOVE],
                 Spawn.prototype.getCreepName('c2702'), {
                     role: 'miner',
                     serial: Spawn.prototype.getSerial('c2702'),
                     sourceId: sourceId
                 });
-        
-            let body = [];
-            if (RCL == 0) {
-                var NoCarryMoveParts = Math.min(Math.floor((eCap - 700) / 50), 5);
-                let body = [WORK, WORK, WORK, WORK, WORK, CARRY, WORK, MOVE];
-                for (let i = 0; i < NoCarryMoveParts; i++) {
-                    body.push(MOVE);
-                }
-                return this.spawnCreep(body, undefined, {
-                        role: 'miner',
-                        sourceID: sourceID,
-                        target: target,
-                        spawnTime: 3 * body.length,
-                        home: home
-                    });           
-        }
-    }
 
+            if (RCL == 0) {
+                return this.spawnCreep([WORK, WORK, WORK, WORK, WORK, WORK, CARRY, MOVE], undefined, {
+                        role: 'miner',
+                        sourceId: sourceId,
+                        target: target,
+                        home: home
+                    });
+            }
+}
 StructureSpawn.prototype.createDismantler = function(target) {
     var body = [];
     for (let i = 0; i < 25; i++) {
