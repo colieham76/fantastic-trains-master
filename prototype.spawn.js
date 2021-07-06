@@ -1180,6 +1180,26 @@ StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, ho
 	    });
 }
 
+StructureSpawn.prototype.createOnlyMineralMiner = function (target, home) {
+    var body = [];
+    for (let i = 0; i < 18; i++) {
+        body.push(MOVE);
+    }
+    for (let i = 0; i < 18; i++) {
+        body.push(WORK);
+    }
+    for (let i = 0; i < 14; i++) {
+        body.push(CARRY);
+    }
+    return this.spawnCreep(body, undefined, {
+	    role: 'onlyMineralMiner',
+	    target: target,
+	    home: home,
+	    spawnTime: 3 * body.length
+    });
+}
+
+
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
     var body = [];
