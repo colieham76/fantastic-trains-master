@@ -12,6 +12,8 @@ require('myFunctions');
 //c2702 = miner
 //2704 = lorry
 //2705 = towerlorry
+//2706 = smallUpgrader
+//2707 = longDistancelorry
 //dism = dismantler
 
  //  Kill all Creeps
@@ -39,7 +41,7 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 1, 
 wallRepairer: 1, builder: 1, rampartrepairer: 1, lorry: 1, towerlorry: 1 };
-
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0}
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
 Game.spawns.Spawn1.memory.minhealers = {W5S9: 0};
@@ -349,6 +351,22 @@ function () {
         }
 	
 	
+	 // if none of the above caused a spawn command check for LongDistanceHarvesters
+        /** @type {Object.<string, number>} */
+        let numberOfLongDistanceLorrys = {};
+        if (name == undefined) {
+            // count the number of long distance harvesters globally
+            for (let roomName in this.memory.minLongDistanceLorrys) {
+                numberOfLongDistanceLorrys[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'longDistanceLorry' && c.memory.target == roomName);
+
+                if (numberOfLongDistanceLorrys[roomName] < this.memory.minLongDistanceLorrys[roomName]) {
+                    name = this.createLongDistanceLorry(maxEnergy, room.name, roomName);
+                }
+            }
+        }
+	
+	
 	// if none of the above caused a spawn command check for smallUpgraders
         /** @type {Object.<string, number>} */
         let numberOfsmallUpgraders = {};
@@ -518,12 +536,7 @@ function () {
             for (let reserveRoom in this.memory.minNumberOfreservers) {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
-                if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]
-                //  && (Game.rooms.W3S7.controller.reservation = undefined
-                 //       || Game.rooms.W3S7.controller.reservation.ticksToEnd < 3000)
-                 //   || (Game.rooms.W1S7.controller.reservation = undefined
-                 //       ||  Game.rooms.W1S7.controller.reservation.ticksToEnd < 3000)
-                ){
+                if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]){
                     if (Game.time % 750 === 0) {
                         name = this.createReserver(room.name, reserveRoom);
                     }
@@ -1096,6 +1109,27 @@ StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
 	    role: 'antiTransporter', 
 	    resourceType: mineralType,
 	    working: false,
+	    spawnTime: 3*body.length
+    });
+}
+
+StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target) {
+    var body = [];
+    var NoCarryMoveParts = Math.floor((energy-150)/150);
+
+    for (let i = 0; i < (NoCarryMoveParts-1); i++) {
+        body.push(CARRY);
+        body.push(CARRY);
+        body.push(MOVE);
+    }
+    body.push(WORK, MOVE);
+
+    return this.spawnCreep(body, Spawn.prototype.getCreepName('2707'), {	   
+	    role: 'longDistanceLorry',
+	    home: home,
+	    target: target,
+	    working: false,
+	    toCentre: false,
 	    spawnTime: 3*body.length
     });
 }
