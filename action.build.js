@@ -6,7 +6,7 @@ module.exports = {
     run: function (creep) {
         var constructionSite = creep.room.find(FIND_MY_CONSTRUCTION_SITES, c => c.structureType == STRUCTURE_EXTENSION);
         if (!constructionSite) {
-            constructionSite = creep.pos.findClosestByRange(FIND_MY_CONSTRUCTION_SITES);
+            constructionSite = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
         }
         else {
             constructionSite = constructionSite[0]
