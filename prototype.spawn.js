@@ -2,8 +2,8 @@
 
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4',
-		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'towerdrainer2',
-		   'towerdrainer3',
+		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
+		   'towerdrainer3', 
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
 
 require('myFunctions');
@@ -285,7 +285,16 @@ function () {
                     }
                 }
 		    
-		   
+		 // check for rangedattacker order
+               if (role == 'longDistanceBuilder' && this.memory.longDistanceBuilderRoom != undefined) {
+                    // try to spawn a rangedattacker
+                    name = this.createlongDistanceBuilder(this.memory.longDistanceBuilderRoom);
+                    // if that worked
+                    if (name != undefined && _.isString(name)) {
+                        // delete the rangedattacker order
+                        delete this.memory.longDistanceBuilderRoom;
+                    }
+                }  
                    	
 
                 // if no claim or dismantle order was found, check other roles
