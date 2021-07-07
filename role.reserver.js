@@ -1,21 +1,22 @@
 module.exports = {
 	run: function(creep) {
 		
-		if (!creep.memory.W7S5 && creep.room.name === 'W7S5'|| creep.room.name === 'W9S6') {
+		if (!creep.memory.W7S5 && creep.room.name === 'W7S5'|| creep.room.name === 'W9S5'
+			|| creep.room.name === 'W8S5'|| creep.room.name === 'W8S6'
+		) {
 			creep.travelTo(Game.flags['w7s6f4']);
 			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
 				creep.memory.W7S5 = true;
 			}
 			return
 		}
-		else {
+
+		if (creep.room.name ==  'W7S5'){
 			if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
 				creep.travelTo(creep.room.controller);
 			}
-		}	
-		
-		
-		
+		}
+
 		if (!creep.memory.W2S8 && creep.room.name === 'W2S8'|| creep.room.name === 'W3S8') {
 			creep.travelTo(Game.flags['ReserverW2S8']);
 			if (creep.pos.isNearTo(Game.flags['ReserverW2S8'])) {
