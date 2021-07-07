@@ -1160,7 +1160,7 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
 StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, home) {
     var body = [];
     var NoCarryMoveParts = Math.floor(energy/200);
-    NoCarryMoveParts = Math.min(NoCarryMoveParts, Math.floor(50 / 3));
+    NoCarryMoveParts = Math.min(NoCarryMoveParts, Math.floor(20 / 3));
     for (let i = 0; i < NoCarryMoveParts; i++) {
         body.push(WORK);
     }
