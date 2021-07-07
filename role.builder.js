@@ -38,24 +38,25 @@ module.exports = {
             }
             return;
         }*/
-        var actionGetEnergy = require('action.getEnergy');
-        var actionBuild = require('action.build');
-      
-        
-        if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
-            creep.memory.building = false;
-             creep.say('🔄 harvest');
+       var actionGetEnergy = require('action.getEnergy');
+var actionBuild = require('action.build');
+
+module.exports = {
+    run: function(creep) {
+        creep.say('building');
+        if (creep.memory.working == true && creep.carry.energy == 0) {
+            creep.memory.working = false;
         }
-        if (!creep.memory.building && creep.store.getFreeCapacity() === 0) {
-            creep.memory.building = true;
-            creep.say('🚧 build');
+        else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
+            creep.memory.working = true;
         }
 
-         if (creep.memory.working == true) {
+        if (creep.memory.working == true) {
             actionBuild.run(creep);
         }
         else { // finding resources
             actionGetEnergy.run(creep);
         }
     }
+};
 }
