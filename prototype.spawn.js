@@ -42,7 +42,7 @@ dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, 
 wallRepairer: 0, builder: 1, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0}
-Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0}
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1}
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
 Game.spawns.Spawn1.memory.minhealers = {W5S9: 0};
