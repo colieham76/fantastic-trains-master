@@ -11,7 +11,7 @@ module.exports = {
             filter: s => s.structureType == STRUCTURE_CONTAINER
         })[0];
 
-        
+  /*      
         if (!creep.memory.W9S6 && Game.room.name == 'W9S6' || creep.room.name === 'W9S5'){
             creep.travelTo(Game.flags['w9s7f1']);
 			if (creep.pos.isNearTo(Game.flags['w9s7f1'])) {
@@ -19,7 +19,7 @@ module.exports = {
 			}
 			return
 		}
-		/*
+		
         var resourcecontainer = [Game.getObjectById('60e5d2059c340dc68a754ec8'),
                Game.getObjectById('60e5c5bf85a3189d72ba32d3')]
                }
