@@ -7,7 +7,7 @@ module.exports = {
             }
         }
         else {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, true, true, true); // find energy function in myFunctoins
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false, false, false); // find energy function in myFunctoins
             if (resourceID != undefined) {
                 energy = Game.getObjectById(resourceID);
                 if (ifDropped) { // if energy is dropped
