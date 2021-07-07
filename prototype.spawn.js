@@ -1160,14 +1160,8 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
 StructureSpawn.prototype.createLongDistanceBuilder =  function (home, target) {
         return this.createCreep([MOVE, MOVE, MOVE, MOVE,
 				 WORK, WORK, WORK, WORK,
-				 CARRY, CARRY, CARRY, CARRY], 
-				undefined, 
-				{
-		role: 'controllerAttacker',
-		target: 'W7S7' 
-	});
-    };
-    return this.spawnCreep(body, undefined, {	    
+				 CARRY, CARRY, CARRY, CARRY],undefined,
+				{	    
 		    role: 'longDistanceBuilder', 
 		   home: home, 
 	           target: target,
