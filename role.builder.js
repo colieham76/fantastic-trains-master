@@ -58,5 +58,7 @@ module.exports = {
             actionGetEnergy.run(creep);
         }
     }
+}
+    }
 };
 
