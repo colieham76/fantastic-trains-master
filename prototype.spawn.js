@@ -69,7 +69,7 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
 
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1};
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
-
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W7S5: 1};
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1};
 //if (Game.time % 1000 === 0) {
