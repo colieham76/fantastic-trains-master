@@ -10,6 +10,7 @@ var roles = {
     wallRepairer: require('role.wallRepairer'),
    rampartrepairer: require('role.rampartrepairer'),
     longDistanceHarvester: require('role.longDistanceHarvester'),
+     longDistanceBuilder: require('role.longDistanceBuilder'),
     smallUpgrader: require('role.smallUpgrader'),
    rangedattacker: require('role.rangedattacker'),
     claimer: require('role.claimer'),
