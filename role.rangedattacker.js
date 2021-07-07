@@ -18,6 +18,14 @@ module.exports = {
 			return;
 		} 
 	    
+	    if (!creep.memory.W7S5 && creep.room.name === 'W7S5' || creep.room.name === 'W9S6') {
+			creep.moveTo(Game.flags['w7s6f4']);
+			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
+				creep.memory.W7S5 = true;
+			}
+			return;
+		} 
+	    
 	/*    if (!creep.memory.w3s8f1) {
             creep.travelTo(Game.flags['w3s8f1']);
             if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
