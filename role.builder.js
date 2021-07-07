@@ -38,27 +38,30 @@ module.exports = {
             }
             return;
         }*/
-       var actionGetEnergy = require('action.getEnergy');
-var actionBuild = require('action.build');
-
-module.exports = {
-    run: function(creep) {
-        creep.say('building');
-        if (creep.memory.working == true && creep.carry.energy == 0) {
-            creep.memory.working = false;
+      const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
+        
+        if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
+            creep.memory.building = false;
+             creep.say('🔄 harvest');
         }
-        else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
-            creep.memory.working = true;
+        if (!creep.memory.building && creep.store.getFreeCapacity() === 0) {
+            creep.memory.building = true;
+            creep.say('🚧 build');
         }
 
-        if (creep.memory.working == true) {
-            actionBuild.run(creep);
-        }
-        else { // finding resources
-            actionGetEnergy.run(creep);
+        if (creep.memory.building) {
+            if (constructionSites.length > 0) {
+                if (creep.build(constructionSites[0]) === ERR_NOT_IN_RANGE) {
+                    creep.travelTo(constructionSites[0]);
+                }
+            } else {
+                
+                roleUpgrader.run(creep);
+            }
+        } else {
+            if (!creep.memory.building) {
+                (creep.getEnergy(true, true));
+            }
         }
     }
 }
-    }
-};
-
