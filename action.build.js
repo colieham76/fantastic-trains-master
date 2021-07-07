@@ -4,7 +4,7 @@ var actionAvoid = require('action.idle');
 
 module.exports = {
     run: function (creep) {
-        var constructionSite = creep.room.find(FIND_MY_CONSTRUCTION_SITES, c => c.structureType == STRUCTURE_EXTENSION);
+        const constructionSite = creep.room.find(FIND_CONSTRUCTION_SITES);
         if (!constructionSite) {
             constructionSite = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
         }
