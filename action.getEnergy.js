@@ -20,14 +20,14 @@ module.exports = {
           }
         
         
-        
+        */
         
         else { // room level too low, go for resources
           if (creep.harvest(Game.getObjectById(ifDropped)) === ERR_NOT_IN_RANGE) {
               creep.travelTo(Game.getObjectById(ifDropped));
           }
         }
-        */
+        
         
         
     }
