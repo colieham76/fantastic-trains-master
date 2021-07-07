@@ -38,7 +38,9 @@ module.exports = {
             }
             return;
         }*/
-      const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
+        var actionGetEnergy = require('action.getEnergy');
+        var actionBuild = require('action.build');
+      
         
         if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.building = false;
@@ -49,19 +51,11 @@ module.exports = {
             creep.say('🚧 build');
         }
 
-        if (creep.memory.building) {
-            if (constructionSites.length > 0) {
-                if (creep.build(constructionSites[0]) === ERR_NOT_IN_RANGE) {
-                    creep.travelTo(constructionSites[0]);
-                }
-            } else {
-                
-                roleUpgrader.run(creep);
-            }
-        } else {
-            if (!creep.memory.building) {
-                (creep.getEnergy(true, true));
-            }
+         if (creep.memory.working == true) {
+            actionBuild.run(creep);
+        }
+        else { // finding resources
+            actionGetEnergy.run(creep);
         }
     }
 }
