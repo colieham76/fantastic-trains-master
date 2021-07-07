@@ -562,7 +562,7 @@ function () {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
                 if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]){
-                    if (Game.time % 1 === 0) {
+                    if (Game.time % 750 === 0) {
                         name = this.createReserver(room.name, reserveRoom);
                     }
                 }            
