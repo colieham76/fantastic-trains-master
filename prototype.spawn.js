@@ -1160,7 +1160,7 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
 StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, home) {
     var body = [];
     var NoCarryMoveParts = Math.floor(energy/200);
-
+    NoCarryMoveParts = Math.min(NoCarryMoveParts, Math.floor(50 / 3));
     for (let i = 0; i < NoCarryMoveParts; i++) {
         body.push(WORK);
     }
@@ -1170,13 +1170,11 @@ StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, ho
     for (let i = 0; i < NoCarryMoveParts; i++) {
         body.push(MOVE);
     }
-    return this.spawnCreep(body, undefined, { 
-	    
+    return this.spawnCreep(body, undefined, {	    
 		    role: 'longDistanceBuilder', 
 		    target: target, 
 		    home: home,
-		    working: false,
-		    spawnTime: 3*body.length
+		    working: false,		    
 	    });
 }
 
