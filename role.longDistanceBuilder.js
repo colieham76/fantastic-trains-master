@@ -6,7 +6,7 @@ module.exports = {
        
                          
         if (creep.room.name == creep.memory.target) { 
-            creep.say('build here die here');
+            creep.say('building');
             roleBuilder.run(creep);
         }
         else { // go to target room
