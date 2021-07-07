@@ -3,12 +3,7 @@ var actionBuild = require('action.build');
 
 module.exports = {
     run: function(creep) {
-        if (creep.room.name != creep.memory.home) { // if not at home base
-            
-             roleBuilder.run(creep);
-        }
        
-           
                          
         if (creep.room.name == creep.memory.target) { 
             creep.say('build here die here');
