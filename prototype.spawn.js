@@ -378,7 +378,7 @@ function () {
                     c.memory.role == 'longDistanceBuilder' && c.memory.target == roomName);
 
                 if (numberOfLongDistanceBuilders[roomName] < this.memory.minLongDistanceBuilders[roomName]) {
-                    name = this.createLongDistanceBuilder(maxEnergy, room.name, roomName);
+                    name = this.createLongDistanceBuilder(room.name, roomName);
                 }
             }
         }
@@ -1157,23 +1157,20 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
     });
 }
 
-StructureSpawn.prototype.createLongDistanceBuilder = function(energy, target, home) {
-    var body = [];
-    var NoCarryMoveParts = Math.floor(energy/200);
-    NoCarryMoveParts = Math.min(NoCarryMoveParts, Math.floor(20 / 3));
-    for (let i = 0; i < NoCarryMoveParts; i++) {
-        body.push(WORK);
-    }
-    for (let i = 0; i < NoCarryMoveParts; i++) {
-        body.push(CARRY);
-    }
-    for (let i = 0; i < NoCarryMoveParts; i++) {
-        body.push(MOVE);
-    }
+StructureSpawn.prototype.createLongDistanceBuilder =  function (home, target) {
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE,
+				 WORK, WORK, WORK, WORK,
+				 CARRY, CARRY, CARRY, CARRY], 
+				undefined, 
+				{
+		role: 'controllerAttacker',
+		target: 'W7S7' 
+	});
+    };
     return this.spawnCreep(body, undefined, {	    
 		    role: 'longDistanceBuilder', 
-		    target: target, 
-		    home: home,
+		   home: home, 
+	           target: target,
 		    working: false,		    
 	    });
 }
