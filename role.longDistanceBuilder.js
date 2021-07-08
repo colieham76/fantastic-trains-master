@@ -4,7 +4,13 @@ var actionBuild = require('action.build');
 module.exports = {
     run: function(creep) {
        
-                         
+              if (!creep.memory.W9S7) {
+            creep.travelTo(Game.flags['W9S7']);
+            if (creep.pos.isNearTo(Game.flags['W9S7'])) {
+                creep.memory.W9S7 = true;
+            }
+            return;
+        }           
         if (creep.room.name == creep.memory.target) { 
             creep.say('building');
             roleBuilder.run(creep);
