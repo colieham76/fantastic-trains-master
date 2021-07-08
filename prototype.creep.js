@@ -1,7 +1,7 @@
 var roles = {
     
   reserver: require('role.reserver'),
-    
+    remoteMiner: require('role.remoteMiner'),
     harvester: require('role.harvester'),
     upgrader: require('role.upgrader'),
     builder: require('role.builder'),
