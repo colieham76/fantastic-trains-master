@@ -633,7 +633,7 @@ function () {
                 console.log("extractor" + roomName + ": " + numberOfextractors[roomName]);
             }*/
         }	
-};
+}
 
 // create a new function for StructureSpawn
 StructureSpawn.prototype.createCustomCreep =
