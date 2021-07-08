@@ -1,6 +1,11 @@
 module.exports = {
 	run: function(creep) {
 		
+
+if (creep.ticksToLive < 1500) {
+                  creep.suicide();
+               }
+
 		if (!creep.memory.W7S5 && creep.room.name === 'W7S5'|| creep.room.name === 'W9S5'
 			|| creep.room.name === 'W8S5'|| creep.room.name === 'W8S6'
 		) {
