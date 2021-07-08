@@ -13,31 +13,31 @@ module.exports = {
                 creep.memory.w10s8f1 = true;
             }
             return;
-        }
+        }*/
 //W10S5 dismantler route flag
-        if (!creep.memory.w10s5f1) {
-            creep.travelTo(Game.flags['w10s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
-                creep.memory.w10s5f1 = true;
+        if (!creep.memory. w9s5f1) {
+            creep.travelTo(Game.flags['w9s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
+                creep.memory. w9s5f1 = true;
             }
             return;
         }
 //W9S5 dismantler route flag
-        if (!creep.memory.w9s5f1) {
-            creep.travelTo(Game.flags['w9s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
-                creep.memory.w9s5f1 = true;
+        if (!creep.memory.w8s6f1) {
+            creep.travelTo(Game.flags['w8s6f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
+                creep.memory.w8s6f1 = true;
             }
             return;
         }
 //W9S6 dismantler route flag
-        if (!creep.memory.w9s6f1) {
-            creep.travelTo(Game.flags['w9s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
-                creep.memory.w9s6f1 = true;
+        if (!creep.memory.w7s6f3) {
+            creep.travelTo(Game.flags['w7s6f3']);
+            if (creep.pos.isNearTo(Game.flags['w7s6f3'])) {
+                creep.memory.w7s6f3 = true;
             }
             return;
-        }*/
+        }
       const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
         
         if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
