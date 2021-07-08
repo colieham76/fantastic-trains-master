@@ -41,7 +41,7 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 0, 
 wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
-Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 
 //Game.spawns.Spawn6.memory.minLongDistanceLorrys = 
@@ -1198,13 +1198,13 @@ StructureSpawn.prototype.createLongDistanceLorry = function(energy, home, target
     }
     body.push(WORK, MOVE);
 
-    return this.spawnCreep(body, Spawn.prototype.getCreepName('2707'), {	   
-	    role: 'longDistanceLorry',
-	    home: home,
-	    target: target,
-	    working: false,
-	    toCentre: false,
-	    spawnTime: 3*body.length
+    return this.spawnCreep(body, Spawn.prototype.getCreepName('2707'),{
+        role: 'longDistanceLorry',
+        home: home,
+        target: target,
+	working: false,
+	toCentre: false,
+	spawnTime: 3*body.length
     });
 }
 
@@ -1214,11 +1214,11 @@ StructureSpawn.prototype.createLongDistanceBuilder =  function (home, target) {/
 				 WORK, WORK, WORK, WORK, WORK,
 				 CARRY, CARRY, CARRY, CARRY, CARRY,
 				 CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],undefined,
-				{	    
-		    role: 'longDistanceBuilder', 
-		   home: home, 
-	           target: target,
-		    working: false,		    
+				{   
+				    role: 'longDistanceBuilder',
+                    home: home,
+                    target: target,                   
+                    working: false,		    
 	    });
 }
 
