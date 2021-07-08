@@ -36,13 +36,13 @@ Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 0};
-Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 1} 
+Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0} 
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, 
-wallRepairer: 0, builder: 1, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
+wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
-Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 /*
 var resourcecontainer = [Game.getObjectById('5e8199acaffb7347adb866b8'),
     Game.getObjectById('5e81b96edc5ddebb95f3072a'),
@@ -81,9 +81,9 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
 
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1};
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
-Game.spawns.Spawn6.memory.minNumberOfreservers = {W7S5: 1};
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W7S5: 0};
 
-Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1};
+Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
 //if (Game.time % 1000 === 0) {
 Game.spawns.Spawn1.memory.mintowerdrainers1 = {W7S6: 0};
 //}
