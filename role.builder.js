@@ -13,7 +13,7 @@ module.exports = {
                 creep.memory.w10s8f1 = true;
             }
             return;
-        }*/
+        }
 //W10S5 dismantler route flag
         if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
@@ -37,7 +37,7 @@ module.exports = {
                 creep.memory.w7s6f3 = true;
             }
             return;
-        }
+        }*/
       const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
         
         if (creep.memory.building && creep.store[RESOURCE_ENERGY] === 0) {
