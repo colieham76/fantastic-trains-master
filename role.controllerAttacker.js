@@ -2,9 +2,9 @@ module.exports = {
     run: function(creep) {
         creep.say('OMG!😂', true);
         
-        if (creep.ticksToLive < 50) {
-            Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 2} 
-        }      
+    //    if (creep.ticksToLive < 50) {
+     //       Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 2} 
+     //   }      
         
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
