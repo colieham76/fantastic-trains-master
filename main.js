@@ -1,4 +1,11 @@
 module.exports.loop = function() {
+	
+	
+	for (let room in Game.rooms) {
+	if (Game.rooms[room].memory.remoteMiningEnabled == undefined) {
+		Game.rooms[room].memory.remoteMiningEnabled = false;
+	}
+	}
 
 //Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
 //Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
