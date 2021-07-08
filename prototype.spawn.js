@@ -619,7 +619,7 @@ function () {
 					}
 				}
 			}
-
+	}
 	
   // print name to console if spawning was a success
         if (name != undefined && _.isString(name)) {
