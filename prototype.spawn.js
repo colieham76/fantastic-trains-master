@@ -42,7 +42,10 @@ dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 1, 
 wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
-Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
+
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7, '60e5d2059c340dc68a754ec8'};
+
 /*
 var resourcecontainer = [Game.getObjectById('5e8199acaffb7347adb866b8'),
     Game.getObjectById('5e81b96edc5ddebb95f3072a'),
@@ -584,7 +587,7 @@ function () {
             }
         }
 	
-	if (room.memory.remoteMiningEnabled == true) {
+	
 			for (let roomName in Game.rooms) {
 				if (
 					Game.rooms[roomName].controller != undefined &&
@@ -619,7 +622,7 @@ function () {
 					}
 				}
 			}
-	}
+	
 	
   // print name to console if spawning was a success
         if (name != undefined && _.isString(name)) {
