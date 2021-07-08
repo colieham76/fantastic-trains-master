@@ -204,44 +204,25 @@ function () {
                 }
             }
         }
-
-	for (let roomName in Game.rooms) {
-				if (
-					Game.rooms[roomName].controller != undefined &&
-					Game.rooms[roomName].controller.my != true
-				) {
-					let sources = Game.rooms[roomName].find(FIND_SOURCES);
-					for (let source of sources) {
-						let creepsAtTarget = _.filter(
-							Game.creeps,
-							(c) => c.memory.target == Game.rooms[roomName].name
-						);
-						if (
-							!_.some(
-								creepsAtTarget,
-								(c) =>
-									c.memory.role == 'remoteMiner' &&
-									c.memory.sourceId == source.id
-							)
-						) {
-							let containers = source.pos.findInRange(FIND_STRUCTURES, 1, {
-								filter: (s) => s.structureType == STRUCTURE_CONTAINER,
-							});
-
-							if (containers.length > 0) {
-								name = this.createRemoteMiner(
-									Game.rooms[roomName].name,
-									source.id
-								);
-								break;
-							}
-						}
-					}
-				}
-			}
-	
-	
-	
+        for (let roomName in Game.rooms) {
+            if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
+                let sources = Game.rooms[roomName].find(FIND_SOURCES);
+                for (let source of sources) {
+                    let creepsAtTarget = _.filter(Game.creeps,
+                        (c) => c.memory.target == Game.rooms[roomName].name);
+                    if (!_.some(creepsAtTarget,
+                        (c) => c.memory.role == 'remoteMiner' && c.memory.sourceId == source.id)) {
+                        let containers = source.pos.findInRange(FIND_STRUCTURES, 1, {
+                            filter: (s) => s.structureType == STRUCTURE_CONTAINER,
+                        });
+                        if (containers.length > 0) {
+                            name = this.createRemoteMiner(Game.rooms[roomName].name, source.id);
+                            break;
+                        }
+                    }
+                }
+            }
+        }	
         // if none of the above caused a spawn command check for other roles
 
         if (name === undefined) {
