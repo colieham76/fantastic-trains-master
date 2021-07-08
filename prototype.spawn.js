@@ -374,7 +374,7 @@ function () {
         }
 	
 	
-	 // if none of the above caused a spawn command check for LongDistanceHarvesters
+	 // if none of the above caused a spawn command check for LongDistanceLorries
         /** @type {Object.<string, number>} */
         let numberOfLongDistanceLorrys = {};
         if (name == undefined) {
@@ -390,7 +390,7 @@ function () {
         }
 	
 	
-	// if none of the above caused a spawn command check for LongDistanceHarvesters
+	// if none of the above caused a spawn command check for LongDistanceBuilders
         /** @type {Object.<string, number>} */
         let numberOfLongDistanceBuilders = {};
         if (name == undefined) {
@@ -404,6 +404,8 @@ function () {
                 }
             }
         }
+	
+	
 	
 	// if none of the above caused a spawn command check for smallUpgraders
         /** @type {Object.<string, number>} */
@@ -580,7 +582,46 @@ function () {
                     }
                 }            
             }
-        } 
+        }
+	
+	if (room.memory.remoteMiningEnabled == true) {
+			for (let roomName in Game.rooms) {
+				if (
+					Game.rooms[roomName].controller != undefined &&
+					Game.rooms[roomName].controller.my != true
+				) {
+					let sources = Game.rooms[roomName].find(FIND_SOURCES);
+					for (let source of sources) {
+						let creepsAtTarget = _.filter(
+							Game.creeps,
+							(c) => c.memory.target == Game.rooms[roomName].name
+						);
+						if (
+							!_.some(
+								creepsAtTarget,
+								(c) =>
+									c.memory.role == 'remoteMiner' &&
+									c.memory.sourceId == source.id
+							)
+						) {
+							let containers = source.pos.findInRange(FIND_STRUCTURES, 1, {
+								filter: (s) => s.structureType == STRUCTURE_CONTAINER,
+							});
+
+							if (containers.length > 0) {
+								name = this.createRemoteMiner(
+									Game.rooms[roomName].name,
+									source.id
+								);
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
   // print name to console if spawning was a success
         if (name != undefined && _.isString(name)) {
             console.log(this.name + " spawned new creep: " + name + " (" + Game.creeps[name].memory.role + ")");
@@ -1212,6 +1253,20 @@ StructureSpawn.prototype.createOnlyMineralMiner = function (target, home) {
     });
 }
 
+StructureSpawn.prototype.createRemoteMiner = function (roomName, sourceId) {
+	return this.spawnCreep(
+		[WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+		'remoteMiner_' + Game.time,
+		{
+			memory: {
+				role: 'remoteMiner',
+				target: roomName,
+				sourceId: sourceId,
+				home: this.room.name,
+			},
+		}
+	);
+};
 
 /*
 StructureSpawn.prototype.createUltimateWarrior = function(target) {
