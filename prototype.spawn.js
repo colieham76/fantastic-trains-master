@@ -205,7 +205,8 @@ function () {
             }
         }
         for (let roomName in Game.rooms) {
-            if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
+            //if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
+		    if (Game.rooms[roomName].controller.my != true) {
                 let sources = Game.rooms[roomName].find(FIND_SOURCES);
                 for (let source of sources) {
                     let creepsAtTarget = _.filter(Game.creeps,
