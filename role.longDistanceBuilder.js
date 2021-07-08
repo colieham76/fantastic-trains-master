@@ -3,6 +3,12 @@ var actionBuild = require('action.build');
 
 module.exports = {
     run: function(creep) {
+
+
+if (creep.ticksToLive < 1500) {
+                   creep.suicide();
+            }
+
        
               if (!creep.memory.W9S7) {
             creep.travelTo(Game.flags['W9S7']);
