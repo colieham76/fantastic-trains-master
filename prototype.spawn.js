@@ -44,7 +44,7 @@ wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 
-Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7}, ['60e5d2059c340dc68a754ec8'];
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {'W9S7'], ['60e5d2059c340dc68a754ec8']};
 
 /*
 var resourcecontainer = [Game.getObjectById('5e8199acaffb7347adb866b8'),
