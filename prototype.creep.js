@@ -11,6 +11,7 @@ var roles = {
    rampartrepairer: require('role.rampartrepairer'),
     longDistanceHarvester: require('role.longDistanceHarvester'),
      longDistanceBuilder: require('role.longDistanceBuilder'),
+    longDistanceLorry: require('role.longDistanceLorry'),
     smallUpgrader: require('role.smallUpgrader'),
    rangedattacker: require('role.rangedattacker'),
     claimer: require('role.claimer'),
