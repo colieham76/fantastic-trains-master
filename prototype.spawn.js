@@ -39,12 +39,12 @@ Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerl
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0} 
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
-Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 1, 
+Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 0, 
 wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 
-Game.spawns.Spawn6.memory.minLongDistanceLorrys = {'W9S7'], ['60e5d2059c340dc68a754ec8']};
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {['W9S7'], ['60e5d2059c340dc68a754ec8']};
 
 /*
 var resourcecontainer = [Game.getObjectById('5e8199acaffb7347adb866b8'),
