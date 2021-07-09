@@ -12,8 +12,8 @@ module.exports.loop = function() {
 Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
 Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
 Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
-	Game.rooms.W9S7.createConstructionSite(4, 4, STRUCTURE_CONTAINER);	
-	Game.rooms.W9S7.createConstructionSite(4, 12, STRUCTURE_CONTAINER);
+	//Game.rooms.W9S7.createConstructionSite(4, 4, STRUCTURE_CONTAINER);	
+	//Game.rooms.W9S7.createConstructionSite(4, 12, STRUCTURE_CONTAINER);
 
     Game.rooms.W9S6.createConstructionSite(39, 2, STRUCTURE_RAMPART);
     Game.rooms.W9S6.createConstructionSite(41, 2, STRUCTURE_RAMPART);
