@@ -1187,7 +1187,7 @@ StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
     });
 }
 
-StructureSpawn.prototype.createLongDistanceLorry = function (home, target) {
+StructureSpawn.prototype.createLongDistanceLorry = function (energy, home, target) {
     var body = [];
     var NoCarryMoveParts = Math.floor((energy-150)/150);
 
@@ -1215,7 +1215,7 @@ StructureSpawn.prototype.createLongDistanceBuilder =  function (home, target) {/
 				 CARRY, CARRY, CARRY, CARRY, CARRY,
 				 CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],undefined,
 				{   
-				    role: 'longDistanceBuilder',
+		    role: 'longDistanceBuilder',
                     home: home,
                     target: target,                   
                     working: false,		    
