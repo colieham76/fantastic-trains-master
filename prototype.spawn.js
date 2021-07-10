@@ -332,6 +332,18 @@ function () {
                 }  
                    	
 
+    
+		 // check for rangedattacker order
+               if (role == 'longDistanceLorry' && this.memory.longDistanceLorryRoom != undefined) {
+                    // try to spawn a rangedattacker
+                    name = this.createlongDistanceLorry(this.memory.longDistanceLorryRoom);
+                    // if that worked
+                    if (name != undefined && _.isString(name)) {
+                        // delete the rangedattacker order
+                        delete this.memory.longDistanceLorryRoom;
+                    }
+                }  
+
                 // if no claim or dismantle order was found, check other roles
                 else if (numberOfCreeps[role] < this.memory.minCreeps[role]) {
                     if (role == 'lorry') {
