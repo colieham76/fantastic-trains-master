@@ -41,8 +41,8 @@ Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 2, repairer: 0, 
 wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
-Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
-Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 1};
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 
 //Game.spawns.Spawn6.memory.minLongDistanceLorrys = 
 
@@ -206,7 +206,7 @@ function () {
         }
         for (let roomName in Game.rooms) {
             if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
-		    if (Game.rooms[roomName].controller.my != true) {
+		   // if (Game.rooms[roomName].controller.my != true) {
                 let sources = Game.rooms[roomName].find(FIND_SOURCES);
                 for (let source of sources) {
                     let creepsAtTarget = _.filter(Game.creeps,
