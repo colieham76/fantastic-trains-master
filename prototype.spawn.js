@@ -1294,3 +1294,35 @@ StructureSpawn.prototype.createUltimateWarrior = function(target) {
         }});
 }
 */
+StructureSpawn.prototype.createextractor =
+  function (energy, numberOfbigWorkParts, home, target, sourceIndex) {
+  // create a body
+    var bigbody = [];
+    for (let i = 0; i < numberOfbigWorkParts; i++) {
+    bigbody.push(WORK);
+    }
+
+  // 150 = 100 (cost of WORK) + 50 (cost of MOVE)
+    energy -= 150 * numberOfbigWorkParts;
+    var numberOfBigBodyParts = Math.floor(energy / 100);
+
+  // creep not too big more than 60 parts
+    numberOfBigBodyParts = Math.min(numberOfBigBodyParts, Math.floor((50 - numberOfbigWorkParts * 2) / 2));
+
+    for (let i = 0; i < numberOfBigBodyParts; i++) {
+    bigbody.push(CARRY);
+    }
+    for (let i = 0; numberOfbigWorkParts + numberOfbigWorkParts; i++) {
+    bigbody.push(MOVE);
+}
+
+  // create extractor
+	
+  return this.createCreep(bigbody, undefined, {role: 'extractor',
+                                              home: home,
+                                              target: target,
+                                              sourceIndex: sourceIndex,
+                                              working: false
+                                              });
+	
+}; 
