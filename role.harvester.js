@@ -46,7 +46,7 @@ module.exports = {
                 }
             }  ////To here
 
-            }
+         //   }
         }
         // if creep is supposed to harvest energy from source
         else {
