@@ -42,10 +42,9 @@ module.exports = {
                     // move towards it
                     creep.travelTo(structure);
                 }
-            }
+            }  *///To here
 
-            } *///To here
-///////////////////////
+            }
         }
         // if creep is supposed to harvest energy from source
         else {
