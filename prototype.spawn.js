@@ -355,6 +355,9 @@ function () {
                     if (role == 'towerlorry') {
                         name = this.createtowerLorry(250);
                     }
+			if (role == 'extractor') {
+                        name = this.createextractor(150);
+                    }
 			if (role == 'antiTransporter') {
                         name = this.createAntiTransporter(energy);
                     }
