@@ -663,8 +663,6 @@ let numberOfextractors = {};
             for (let roomName in numberOfextractors) {
                 console.log("extractor" + roomName + ": " + numberOfextractors[roomName]);
             }*/
-        }	
-}
 
 // create a new function for StructureSpawn
 StructureSpawn.prototype.createCustomCreep =
