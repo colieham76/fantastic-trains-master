@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'extractor',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
 		   'towerdrainer3', 
@@ -34,12 +34,12 @@ Game.spawns.W7S8.memory.minsmallUpgraders = {W7S8: 1};
 Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W8S8: 3};
 Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 1}
 
-Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 1, lorry: 3, towerlorry: 1,
+Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 3, towerlorry: 1,
                                          rampartrepairer: 0};
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0} 
-Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0,
+Game.spawns.Spawn5.memory.minCreeps = {harvester: 0, upgrader: 0, wallRepairer: 0,
 dismantler: 0, antiTransporter: 0};
-Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 0, repairer: 0, 
+Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 0, 
 wallRepairer: 0, builder: 1, rampartrepairer: 0, lorry: 2, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
@@ -75,7 +75,7 @@ Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W2S8: 2};
 Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, dismantler: 0};
 Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 2};
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 1, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 1, dismantler: 0};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 2};
 Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 2};
@@ -103,8 +103,8 @@ Game.spawns.Spawn1.memory.mintowerdrainers5 = {W5S9: 0};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 0};
 //}
-Game.spawns.Spawn7.memory.minCreeps = {harvester: 0, towerlorry: 1, upgrader: 3,
-				       rampartrepairer: 1, lorry: 3, builder: 0};
+Game.spawns.Spawn7.memory.minCreeps = {harvester: 0, towerlorry: 1, upgrader: 0,
+				       rampartrepairer: 0, lorry: 2, builder: 1};
 /*
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
 
@@ -464,6 +464,33 @@ function () {
         }
 	
 	
+// if none of the above caused a spawn command check for extractors
+        /** @type {Object.<string, number>} */
+let numberOfextractors = {};
+        if (name == undefined) {
+         
+// count the number of extractors globally
+        for (let roomName in this.memory.minextractors) {
+              numberOfextractors[roomName] = _.sum(Game.creeps, (c) =>
+                  c.memory.role == 'extractor' && c.memory.target == roomName);
+            
+          if (numberOfextractors[roomName] < this.memory.minextractors[roomName]) {
+                    name = this.createextractor(maxEnergy, 10, room.name, roomName, 0);
+                }
+            }
+        }
+
+  // print name to console if spawning was a success
+        if (name != undefined && _.isString(name)) {
+            console.log(this.name + " spawned new creep: " + name + " (" + Game.creeps[name].memory.role + ")");
+            for (let role of listOfRoles) {
+                console.log(role + ": " + numberOfCreeps[role]);
+            }
+            for (let roomName in numberOfextractors) {
+                console.log("extractor" + roomName + ": " + numberOfextractors[roomName]);
+            }
+        }
+};
 	
 	    // if none of the above caused a spawn command check for towerdrainers
         /** @type {Object.<string, number>} */
