@@ -1352,4 +1352,4 @@ StructureSpawn.prototype.createextractor =
                                               sourceIndex: sourceIndex,
                                               working: false
                                               });
-};
+}
