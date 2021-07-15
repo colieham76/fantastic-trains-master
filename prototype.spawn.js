@@ -1326,4 +1326,5 @@ StructureSpawn.prototype.createextractor =
                                               target: target,
                                               sourceIndex: sourceIndex,
                                               working: false
-                                              };
+                                              });
+}
