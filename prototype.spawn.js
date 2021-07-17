@@ -721,7 +721,7 @@ StructureSpawn.prototype.createcontrollerAttacker =
 				undefined, 
 				{
 		role: 'controllerAttacker',
-		target: 'W7S7' 
+		target: 'W9S5' 
 	});
     };
 
