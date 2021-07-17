@@ -101,7 +101,7 @@ Game.spawns.W7S8.memory.mintowerdrainers4 = {W5S9: 0};
 
 Game.spawns.Spawn1.memory.mintowerdrainers5 = {W5S9: 0};
 //if (Game.time % 1300 === 0) {
-Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 1};
+Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 1, towerlorry: 1, upgrader: 1, wallRepairer: 0,
 				       rampartrepairer: 0, lorry: 2, builder: 0};
