@@ -2,9 +2,9 @@ module.exports = {
     run: function(creep) {
         creep.say('OMG!😂', true);
         
-        if (creep.ticksToLive < 50) {
+     /*   if (creep.ticksToLive < 50) {
            Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 2} 
-        }      
+        }    */  
         
             
         if (creep.room.name == creep.memory.target) { // if in target room
