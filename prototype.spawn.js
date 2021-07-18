@@ -208,6 +208,7 @@ function () {
                 }
             }
         }
+	/*
         for (let roomName in Game.rooms) {
             if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
 		   // if (Game.rooms[roomName].controller.my != true) {
@@ -228,6 +229,7 @@ function () {
                 }
             }
         }	
+	*/
         // if none of the above caused a spawn command check for other roles
 
         if (name === undefined) {
