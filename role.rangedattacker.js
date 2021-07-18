@@ -57,6 +57,7 @@ if (!creep.memory.w9s5f1) {
         }
 	    
 	    //w8s5f1  route flag
+	    /*
 if (!creep.memory.w8s5f1) {
             creep.travelTo(Game.flags['w8s5f1']);
             if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
@@ -64,7 +65,7 @@ if (!creep.memory.w8s5f1) {
             }
             return;
         }
-	           
+	     */      
 		var attacked;
 		var targets = [];
 	        //attack within range	
