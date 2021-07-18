@@ -1,23 +1,15 @@
 var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
-     //   creep.say('💕', true);
+        creep.say('💕', true);
 
-      if (creep.ticksToLive < 350) {
-Game.spawns.Spawn1.memory.minhealers = {W5S10: 2};
-}  
+      if (creep.ticksToLive < 150) {
+          Game.spawns.Spawn1.memory.minhealers = {W9S5: 2};
+      }  
         
-     /*    if(creep.room.name == 'W3S8'){
-            creep.memory.drainerspawn == true;
-        }
-        if(creep.memory.healerspawn){
-             Game.spawns.Spawn4.memory.mintowerdrainers2 = {W7S6: 1}
-            creep.memory.drainerspawn = false;
-        }*/
+    
        /* 
-        var rallypos = new RoomPosition(29,48,'W7S6');
-
-
+        
 //if (creep.ticksToLive < 1500) {
 //                    creep.suicide();
 //            }
@@ -89,15 +81,16 @@ Game.spawns.Spawn1.memory.minhealers = {W5S10: 2};
         }
         */
 
-        //W10S8 dismantle route flag
- /*       if (!creep.memory.w10s8f1) {
+  //W10S8 route flag
+        
+        if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
                 creep.memory.w10s8f1 = true;
             }
             return;
         }
-//W10S5 dismantler route flag
+//W10S5  route flag
         if (!creep.memory.w10s5f1) {
             creep.travelTo(Game.flags['w10s5f1']);
             if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
@@ -105,7 +98,7 @@ Game.spawns.Spawn1.memory.minhealers = {W5S10: 2};
             }
             return;
         }
-//W9S5 dismantler route flag
+//W9S5  route flag
 if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
             if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
@@ -113,65 +106,11 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         }
-//W9S6 dismantler route flag
-        if (!creep.memory.w9s6f1) {
-            creep.travelTo(Game.flags['w9s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
-                creep.memory.w9s6f1 = true;
-            }
-            return;
-        } 
-*/
-      
-      
-      if (!creep.memory.w3s8f3) {
-            creep.travelTo(Game.flags['w3s8f3']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
-                creep.memory.w3s8f3 = true;
-            }
-            return;
-        }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
-            creep.travelTo(Game.flags['w5s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
-                creep.memory.w5s7f1 = true;
-            }
-            return;
-        }
-        
-        if (!creep.memory.w5s7f2) {
-            creep.travelTo(Game.flags['w5s7f2']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
-                creep.memory.w5s7f2 = true;
-            }
-            return;
-        }
-//w7s6 dismantle
-        if (!creep.memory.w7s6f1) {
-            creep.travelTo(Game.flags['w7s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
-                creep.memory.w7s6f1 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w7s6f2) {
-            creep.travelTo(Game.flags['w7s6f2']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f2'])) {
-                creep.memory.w7s6f2 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w7s6f3) {
-            creep.travelTo(Game.flags['w7s6f3']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f3'])) {
-                creep.memory.w7s6f3 = true;
-            }
-            return;
-        }     
+           
         
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(17, 1, 'W5S10'));   
+          creep.travelTo(new RoomPosition(47, 44, 'W9S5'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
