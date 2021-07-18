@@ -1,6 +1,8 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');
+        
+     /*   
         if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
             if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
@@ -30,8 +32,8 @@ module.exports = {
             }
             return;
         }
+*/
 
-/*
     /////////////////////////////////////////////////////////////////////////////////////////////
         
         //W10S8 dismantle route flag
@@ -59,6 +61,8 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         }
+        
+  /*      
 //W9S6 dismantler route flag
         if (!creep.memory.w9s6f1) {
             creep.travelTo(Game.flags['w9s6f1']);
