@@ -63,7 +63,7 @@ if(resourcecontainer[0].store[RESOURCE_ENERGY] > 1200){
 
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
 //if (Game.time % 50 === 0) {
-Game.spawns.Spawn1.memory.minhealers = {W5S9: 0};
+Game.spawns.Spawn1.memory.minhealers = {W9S5: 1};
 //}
 Game.spawns.W7S8.memory.minhealers2 = {W5S9: 0};
 
