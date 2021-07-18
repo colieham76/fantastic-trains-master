@@ -27,9 +27,9 @@ module.exports = {
 		} 
 	*/   
 	    
-	if (creep.ticksToLive < 150) {
+	/*if (creep.ticksToLive < 150) {
            Game.spawns.Spawn1.memory.mincontrollerattackers = {W9S5: 2} 
-        }     
+        }   */  
 	    
 //W10S5 dismantler route flag	    
 	     if (!creep.memory.w10s8f1) {
