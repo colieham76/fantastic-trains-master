@@ -24,6 +24,7 @@ Game.rooms.W7S6.createConstructionSite(29, 47, STRUCTURE_RAMPART);
     Game.rooms.W9S6.createConstructionSite(39, 2, STRUCTURE_RAMPART);
     Game.rooms.W9S6.createConstructionSite(41, 2, STRUCTURE_RAMPART);
     Game.rooms.W9S6.createConstructionSite(43, 2, STRUCTURE_RAMPART);
+	 Game.rooms.W9S6.createConstructionSite(21, 3, STRUCTURE_RAMPART);
 	
 		// clear memory
         for (let name in Memory.creeps) {
