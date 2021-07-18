@@ -83,7 +83,17 @@ if (!creep.memory.w9s7f1) {
         }
  ////////////////////////////////////////////////////////////////////////////////////////
     */
-        if (Game.flags['Dismantle'] != undefined) {
+        
+
+if (!creep.memory.w8s6f1) {
+            creep.travelTo(Game.flags['w8s6f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
+                creep.memory. w8s6f1 = true;
+            }
+            return;
+        }
+
+if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
             if (presious != undefined) { // if there is storage
                 if (creep.dismantle(presious) == ERR_NOT_IN_RANGE) {
