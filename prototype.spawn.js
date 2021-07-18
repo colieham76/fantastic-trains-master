@@ -91,18 +91,18 @@ Game.spawns.Spawn6.memory.minNumberOfreservers = {W7S5: 0};
 
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn1.memory.mintowerdrainers1 = {W7S6: 0};
+Game.spawns.Spawn1.memory.mintowerdrainers1 = {W9S5: 1};
 //}
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.W7S8.memory.mintowerdrainers2 = {W5S9: 0};
+Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S5: 0};
 //}
-Game.spawns.Spawn1.memory.mintowerdrainers3 = {W5S9: 0};
+Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 0};
 
-Game.spawns.W7S8.memory.mintowerdrainers4 = {W5S9: 0};
+Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 0};
 
-Game.spawns.Spawn1.memory.mintowerdrainers5 = {W5S9: 0};
+Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 0};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
