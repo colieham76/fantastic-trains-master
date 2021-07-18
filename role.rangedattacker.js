@@ -2,7 +2,7 @@ module.exports = {
 // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
-
+/*
 		if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
 			creep.travelTo(Game.flags['W3S7']);
 			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
@@ -25,7 +25,7 @@ module.exports = {
 			}
 			return;
 		} 
-	    
+	*/    
 //W10S5 dismantler route flag	    
 	     if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
