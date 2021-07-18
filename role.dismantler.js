@@ -32,7 +32,7 @@ module.exports = {
             }
             return;
         }
-*/
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -61,7 +61,7 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         }
-        
+      */  
   /*      
 //W9S6 dismantler route flag
         if (!creep.memory.w9s6f1) {
