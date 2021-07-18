@@ -62,8 +62,8 @@ module.exports = {
         }
         
         */
-/*
 //W10S8 dismantle route flag
+        
         if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
@@ -86,63 +86,7 @@ if (!creep.memory.w9s5f1) {
                 creep.memory.w9s5f1 = true;
             }
             return;
-        }
-//W9S6 dismantler route flag
-        if (!creep.memory.w9s6f1) {
-            creep.travelTo(Game.flags['w9s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
-                creep.memory.w9s6f1 = true;
-            }
-            return;
-        } 
-
-*/
-
-
-if (!creep.memory.w3s8f3) {
-            creep.travelTo(Game.flags['w3s8f3']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
-                creep.memory.w3s8f3 = true;
-            }
-            return;
-        }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
-            creep.travelTo(Game.flags['w5s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
-                creep.memory.w5s7f1 = true;
-            }
-            return;
-        }
-        
-        if (!creep.memory.w5s7f2) {
-            creep.travelTo(Game.flags['w5s7f2']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
-                creep.memory.w5s7f2 = true;
-            }
-            return;
-        }
-//w7s6 dismantle
-        if (!creep.memory.w7s6f1) {
-            creep.travelTo(Game.flags['w7s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
-                creep.memory.w7s6f1 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w7s6f2) {
-            creep.travelTo(Game.flags['w7s6f2']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f2'])) {
-                creep.memory.w7s6f2 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w7s6f3) {
-            creep.travelTo(Game.flags['w7s6f3']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f3'])) {
-                creep.memory.w7s6f3 = true;
-            }
-            return;
-        }     
+        }   
         
 
         if (!creep.memory.recycled) {
@@ -169,4 +113,3 @@ if (!creep.memory.w3s8f3) {
 
     }
 }
-
