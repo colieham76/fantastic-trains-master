@@ -1082,6 +1082,8 @@ StructureSpawn.prototype.createrangedattacker =
 		RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK,  
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
+		MOVE, MOVE, MOVE, MOVE, MOVE,
+		MOVE, MOVE, MOVE, MOVE, MOVE
 	], undefined, { role: 'rangedattacker',
 	      homeRm: homeRm,
 	      target: target, 
