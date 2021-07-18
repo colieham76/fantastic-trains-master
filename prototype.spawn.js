@@ -1073,9 +1073,13 @@ StructureSpawn.prototype.createrangedattacker =
         let homeRm = this.room.name;
 
         return this.createCreep([
-ATTACK, ATTACK, ATTACK, ATTACK,
-MOVE, MOVE, MOVE, MOVE, MOVE,
-], undefined, { role: 'rangedattacker',
+		RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK  
+		RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK  
+		RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK  
+		RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK  
+		ATTACK, ATTACK, ATTACK, ATTACK,
+		MOVE, MOVE, MOVE, MOVE, MOVE,
+	], undefined, { role: 'rangedattacker',
 	      homeRm: homeRm,
 	      target: target, 
 	  getBoostkh: false
