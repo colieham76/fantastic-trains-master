@@ -315,7 +315,7 @@ function () {
                     }
                 }
 		    
-		        // check for rangedattacker order
+		        // check for controller attacker order
                if (role == 'controllerAttacker' && this.memory.controllerAttackerRoom != undefined) {
                     // try to spawn a rangedattacker
                     name = this.createcontrollerAttacker(this.memory.controllerAttackerRoom);
@@ -326,7 +326,7 @@ function () {
                     }
                 }
 		    
-		 // check for rangedattacker order
+		 // check for long distance builder order
                if (role == 'longDistanceBuilder' && this.memory.longDistanceBuilderRoom != undefined) {
                     // try to spawn a rangedattacker
                     name = this.createlongDistanceBuilder(this.memory.longDistanceBuilderRoom);
@@ -339,7 +339,7 @@ function () {
                    	
 
     
-		 // check for rangedattacker order
+		 // check forstance lorry order
                if (role == 'longDistanceLorry' && this.memory.longDistanceLorryRoom != undefined) {
                     // try to spawn a rangedattacker
                     name = this.createlongDistanceLorry(this.memory.longDistanceLorryRoom);
