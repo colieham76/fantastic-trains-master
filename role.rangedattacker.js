@@ -26,67 +26,7 @@ module.exports = {
 			return;
 		} 
 	    
-	/*    if (!creep.memory.w3s8f1) {
-            creep.travelTo(Game.flags['w3s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
-                creep.memory.w3s8f1 = true;
-            }
-            return;
-        }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w3s8f2) {
-            creep.travelTo(Game.flags['w3s8f2']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f2'])) {
-                creep.memory.w3s8f2 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w3s8f3) {
-            creep.travelTo(Game.flags['w3s8f3']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
-                creep.memory.w3s8f3 = true;
-            }
-            return;
-        }
-
-        if (!creep.memory.w3s8f1) {
-            creep.travelTo(Game.flags['w3s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w3s8f1'])) {
-                creep.memory.w3s8f1 = true;
-            }
-            return;
-        }
-        if (creep.room.name !== creep.memory.target && !creep.memory.w5s7f1) {
-            creep.travelTo(Game.flags['w5s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
-                creep.memory.w5s7f1 = true;
-            }
-            return;
-        }
-        
-        if (!creep.memory.w5s7f2) {
-            creep.travelTo(Game.flags['w5s7f2']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f2'])) {
-                creep.memory.w5s7f2 = true;
-            }
-            return;
-        }
-
-        if (!creep.memory.w5s7f3) {
-            creep.travelTo(Game.flags['w5s7f3']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f3'])) {
-                creep.memory.w5s7f3 = true;
-            }
-            return;
-        }
-
-        if (!creep.memory.w5s7f4) {
-            creep.travelTo(Game.flags['w5s7f4']);
-            if (creep.pos.isNearTo(Game.flags['w5s7f4'])) {
-                creep.memory.w5s7f4 = true;
-            }
-            return;
-        }*/
-	    
+	           
 		var attacked;
 		var targets = [];
 	        //attack within range	
@@ -117,30 +57,8 @@ module.exports = {
 		}
     }
 };
-/*	    
-	    
-        //   }
 
-	    if (creep.room.name == 'W63N63') {	    
-		if (!creep.memory.A1) {
-	            creep.moveTo(Game.flags['A1']);
-	            if (creep.pos.isNearTo(Game.flags['A1'])) {
-	                creep.memory.A1 = true;
-	            }
-	            return;
-	         }
-	    } 
-	    
-	     if (creep.room.name == 'W62N62') {
-		    if (!creep.memory.A5) {
-	            creep.moveTo(Game.flags['A5']);
-	            if (creep.pos.isNearTo(Game.flags['A5'])) {
-	                creep.memory.A5 = true;
-	            }
-	            return;
-	         }
-	    }
-	   
+/*	   
         if (creep.memory.getBoostkh) {
             if (creep.room.name == 'W17N88') {
 
@@ -163,8 +81,6 @@ module.exports = {
                 return;
             }
         }
-
- 
 
   // if in target room
         if (creep.room.name == creep.memory.target) {
@@ -191,67 +107,5 @@ module.exports = {
                                  || s.structureType == STRUCTURE_CONTAINER
                                  || s.structureType == STRUCTURE_NUKER
                             )});
-          //    STRUCTURE_CONTROLLER: "controller",
-                
-            if(dismantler) {
-                if(creep.dismantle(dismantler) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(dismantler);
-                }
-            }
-        }
-
-
-        var attacked;
-        var targets = [];
-        //attack within range
-
-//attack creeps in range (ranged)
-        if (creep.getActiveBodyparts(RANGED_ATTACK)) {
-            targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 40);
-            if (targets.length > 0) {
-                attacked = creep.rangedAttack(targets[0]);
-                if (attacked == ERR_NOT_IN_RANGE)
-                    creep.moveTo(targets[0]);
-
-            }
-  // flags for route finding to W19N81 end here 
-
-      /*  var spawn = Game.spawns['Spawn20'];
-        var renewCounter = 10;
-        
-        for (let e = 0, F = renewCounter; e < F; e++) {
-
-        if (spawn.renewCreep(creep) == ERR_NOT_IN_RANGE) {
-           creep.moveTo(spawn[e]);
-        }
-        else 
-
-           if (spawn.renewCreep(creep) == OK) break;
-            
-            creep.memory.renewed = true;
-        }
-
-
-
-      		 if(creep.hits < creep.memory.lastHits) {
-            Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
-            }
-        creep.memory.lastHits = creep.hits;
-
-       if(creep.hits < 1) {
-            Game.notify('Ranged attacker '+creep+' has been killed at '+creep.pos+'! at tick number'+Game.time+'!', 180);
-            }
-         
-            
-        var targetHeal = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
-            filter: function (object) {
-                return object.hits < object.hitsMax;
-            }
-        });
-        if (targetHeal) {
-            if (creep.pos.isNearTo(targetHeal)) {
-                creep.heal(targetHeal);
-            }
-        }
-        }*/
-
+                                                   
+    */
