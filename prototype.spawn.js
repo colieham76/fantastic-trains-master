@@ -62,9 +62,9 @@ if(resourcecontainer[0].store[RESOURCE_ENERGY] > 1200){
 }
 */
 
-Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 1};
+Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 0};
 //if (Game.time % 50 === 0) {
-Game.spawns.Spawn1.memory.minhealers = {W9S5: 1};
+Game.spawns.Spawn1.memory.minhealers = {W9S5: 0};
 //}
 Game.spawns.W7S8.memory.minhealers2 = {W5S9: 0};
 
@@ -81,7 +81,7 @@ Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 1};
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
-Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 1};
+Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 0};
 Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 0};
 
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
@@ -101,9 +101,9 @@ Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S5: 0};
 //}
 Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 0};
 
-Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 1};
+Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 0};
 
-Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 1};
+Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 0};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
