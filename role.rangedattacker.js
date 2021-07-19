@@ -2,6 +2,11 @@ module.exports = {
 // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
+	    
+	 if (creep.ticksToLive < 150) {
+         Game.spawns.Spawn7.memory.minrangedattackers = {W9S5: 2} 
+        }   
+	    
 /*
 		if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
 			creep.travelTo(Game.flags['W3S7']);
