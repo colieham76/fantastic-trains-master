@@ -19,14 +19,20 @@ if (!creep.memory.w9s5f1) {
         if (creep.hits > 0.9*creep.hitsMax) { // if full health
             let myNurseName = findMyHero(creep.memory.uniqueString, 'healer');
             let myNurse = Game.creeps[myNurseName];
-            //if (creep.pos.findInRange(FIND_MY_CREEPS, 1, {filter: s => ((s.memory.role=='healer')&&(s.memory.uniqueString==creep.memory.uniqueString))}).length>0) {
-            if ((creep.pos.getRangeTo(myNurse)<2)||(creep.pos.x==0)||(creep.pos.y==0)||(creep.pos.x==49)||(creep.pos.y==49)) {
+            //if (creep.pos.findInRange(FIND_MY_CREEPS, 1, {
+            //filter: s => ((s.memory.role=='healer')
+            //&&(s.memory.uniqueString==creep.memory.uniqueString))}).length>0) {
+            if ((creep.pos.getRangeTo(myNurse)<2)||(creep.pos.x==0)
+                ||(creep.pos.y==0)
+                ||(creep.pos.x==49)
+                ||(creep.pos.y==49)) {
                 if (creep.room.name != creep.memory.target) { // if not in target room
                    creep.travelTo(Game.flags[creep.memory.target]);
                 }
                 else { // in target room
                     if (Game.flags[creep.memory.target+'attack'] != undefined) { // && creep.getActiveBodyparts(ATTACK)>0) {
                         creep.travelTo(Game.flags[creep.memory.target+'attack']); // gether at flag's position
+                        
                         let target = Game.flags[creep.memory.target+'attack'].pos.findInRange(FIND_STRUCTURES, 0)[0];
 
                         //var target = Game.getObjectById(Game.flags['attack'].room.lookAt(2,17)[0]['structure'].id);
@@ -42,7 +48,8 @@ if (!creep.memory.w9s5f1) {
                         }
                     }
                     else {
-                        let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {filter: c => ((c.pos.getRangeTo(creep) < 2))});
+                        let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+                            filter: c => ((c.pos.getRangeTo(creep) < 48))});
                         if (target) {
                             if (creep.attack(target) == ERR_NOT_IN_RANGE) {
                                 creep.rangedAttackattack(target);
