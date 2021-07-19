@@ -100,9 +100,9 @@ Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S5: 0};
 //}
 Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 0};
 
-Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 0};
+Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 1};
 
-Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 0};
+Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 1};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
