@@ -63,7 +63,8 @@ if (!creep.memory.w9s5f1) {
                                 creep.travelTo(target)
                             }
                             else {
-                                let core = creep.room.find(FIND_STRUCTURES, {filter:c => c.structureType==STRUCTURE_SPAWN})[0];
+                                let core = creep.room.find(FIND_STRUCTURES, {
+                                    filter:c => c.structureType==STRUCTURE_SPAWN})[0];
                                 if (core) {
                                     creep.travelTo(core);
                                     creep.attack(core);
