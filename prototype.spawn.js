@@ -381,9 +381,9 @@ function () {
                     c.memory.role == 'rangedattacker' && c.memory.target == roomName);
 
                 if (numberOfRangedAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
-           			 if (Game.time % 1300 === 0) {       
+           		//	 if (Game.time % 300 === 0) {       
   name = this.createrangedattacker(room.name, roomName)}
-}
+//}
             }
         }
 	
