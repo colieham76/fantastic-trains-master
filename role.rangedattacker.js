@@ -5,36 +5,9 @@ module.exports = {
 	    
 	 if (creep.ticksToLive < 150) {
          Game.spawns.Spawn7.memory.minrangedattackers = {W9S5: 2} 
-        }   
+        }  
 	    
-/*
-		if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
-			creep.travelTo(Game.flags['W3S7']);
-			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
-				creep.memory.W3S7 = true;
-			}
-			return;
-		}
-		if (!creep.memory.W1S7 && creep.room.name === 'W1S7' || creep.room.name === 'W1S8') {
-			creep.moveTo(Game.flags['W1S7']);
-			if (creep.pos.isNearTo(Game.flags['W1S7'])) {
-				creep.memory.W1S7 = true;
-			}
-			return;
-		} 
-	    
-	    if (!creep.memory.W7S5 && creep.room.name === 'W7S5' || creep.room.name === 'W9S6') {
-			creep.moveTo(Game.flags['w7s6f4']);
-			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
-				creep.memory.W7S5 = true;
-			}
-			return;
-		} 
-	*/   
-	    
-	/*if (creep.ticksToLive < 150) {
-           Game.spawns.Spawn1.memory.mincontrollerattackers = {W9S5: 2} 
-        }   */  
+
 	    
 //W10S5 dismantler route flag	    
 	/*     if (!creep.memory.w10s8f1) {
@@ -62,7 +35,7 @@ if (!creep.memory.w9s5f1) {
         }
 	    */
 	    //w8s5f1  route flag
-/*	    
+	    
 if (!creep.memory.w8s6f1) {
             creep.travelTo(Game.flags['w8s6f1']);
             if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
@@ -71,7 +44,7 @@ if (!creep.memory.w8s6f1) {
             return;
         }
 	          
-	*/	var attacked;
+		var attacked;
 		var targets = [];
 	        //attack within range	
 		// attack creeps in range (ranged)
