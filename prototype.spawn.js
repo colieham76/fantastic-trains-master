@@ -26,7 +26,7 @@ for(var name in Game.creeps) {
 //Game.spawns.Spawn2.memory.captainRoom = ['captain', 'W2S8']
 
 
-Game.spawns.Spawn7.memory.rangedattackerRoom = {'W9S5': 1};
+//Game.spawns.Spawn7.memory.rangedattackerRoom = {'W9S5': 0};
 
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, builder: 0, lorry: 2, towerlorry: 1, dismantler: 0,
     upgrader: 0, extractor: 0};
@@ -106,8 +106,8 @@ Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 1};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
-Game.spawns.Spawn7.memory.minCreeps = {harvester: 1, towerlorry: 1, upgrader: 0, wallRepairer: 0,
-				       rampartrepairer: 0, lorry: 1, builder: 0, dismantler: 1};
+Game.spawns.Spawn7.memory.minCreeps = {harvester: 1, towerlorry: 1, upgrader: 2, wallRepairer: 0,
+				       rampartrepairer: 0, lorry: 1, builder: 0, dismantler: 0};
 /*
 Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
 
