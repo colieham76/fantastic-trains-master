@@ -7,7 +7,10 @@ module.exports = {
      //   var rallypos = new RoomPosition(1,20,'W1S8');
 
 if (creep.ticksToLive < 1500) {
-Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 2}
+
+creep.suicide();
+
+//Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 2}
 }      
         /*
 
