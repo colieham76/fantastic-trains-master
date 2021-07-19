@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection
 
-var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'extractor',
+var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'extractor', 'attacker',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
 		   'towerdrainer3', 
@@ -46,6 +46,7 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, upgrader: 0, repairer: 0,
 wallRepairer: 0, builder: 0, rampartrepairer: 0, lorry: 2, towerlorry: 2 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
+Game.spawns.Spawn6.memory.minattackers = {W9S5: 1};
 
 //Game.spawns.Spawn6.memory.minLongDistanceLorrys = 
 
@@ -399,6 +400,22 @@ function () {
                 if (numberOfcontrollerAttackers[roomName] < this.memory.mincontrollerattackers[roomName]) {
 			// if (Game.time % 1300 === 0) {
                     name = this.createcontrollerAttacker(room.name, roomName)}
+		//}
+            }
+        }
+	
+	// if none of the above caused a spawn command check for rangedattackers
+        /** @type {Object.<string, number>} */
+        let numberOfAttackers = {};
+        if (name == undefined) {
+            // count the number of Attackers globally
+            for (let roomName in this.memory.minattackers) {
+                numberOfAttackers[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'attacker' && c.memory.target == roomName);
+
+                if (numberOfAttackers[roomName] < this.memory.minattackers[roomName]) {
+			// if (Game.time % 1300 === 0) {
+                    name = this.createattacker(room.name, roomName)}
 		//}
             }
         }
@@ -1104,6 +1121,29 @@ StructureSpawn.prototype.createrangedattacker =
 	//	MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE
 	], undefined, { role: 'rangedattacker',
+	      homeRm: homeRm,
+	      target: target, 
+	  getBoostkh: false
+	      });
+    };
+
+
+StructureSpawn.prototype.createattacker =
+    function (home, target, getBoostkh) {
+
+        let homeRm = this.room.name;
+
+        return this.createCreep([
+		ATTACK, ATTACK, ATTACK, ATTACK,
+		ATTACK, ATTACK, ATTACK, ATTACK,
+		ATTACK, ATTACK, ATTACK, ATTACK,  
+		ATTACK, ATTACK, ATTACK, ATTACK,
+		MOVE, MOVE, MOVE, MOVE, MOVE,
+		MOVE, MOVE, MOVE, MOVE, MOVE,
+		MOVE, MOVE, MOVE, MOVE, MOVE
+		MOVE, MOVE, MOVE, MOVE, MOVE
+		
+	], undefined, { role: 'attacker',
 	      homeRm: homeRm,
 	      target: target, 
 	  getBoostkh: false
