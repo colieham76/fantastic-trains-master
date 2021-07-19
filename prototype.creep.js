@@ -1,5 +1,5 @@
 var roles = {
-    
+    attacker: require('role.attacker'),
   reserver: require('role.reserver'),
     remoteMiner: require('role.remoteMiner'),
     harvester: require('role.harvester'),
