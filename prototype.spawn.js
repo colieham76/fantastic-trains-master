@@ -17,12 +17,12 @@ require('myFunctions');
 //dism = dismantler
 
  //  Kill all Creeps
-
+/*
 for(var name in Game.creeps) { 
           Game.creeps[name].suicide(); 
          } 
 
-
+*/
 //Game.spawns.Spawn2.memory.captainRoom = ['captain', 'W2S8']
 
 
