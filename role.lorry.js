@@ -1,4 +1,4 @@
-   module.exports = {
+       module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
@@ -14,17 +14,30 @@
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
-                true, true); // find energy function in myFunctions
-            if (resourceID !== undefined) {
-                energy = Game.getObjectById(resourceID);
-                if (ifDropped) { // if energy is dropped
-                    if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(energy);
+
+            if (creep.room.name === 'W7S6') {
+                creep.moveTo(31, 31, {visualizePathStyle: {stroke: '#ffaa00'}});
+                if (creep.pos == 31, 31) {
+                    const upgradeContainer = Game.getObjectById('60f7d1093bd3cc14ace13cfa');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
+                        }
                     }
-                } else { // energy is from container, storage or link
-                    if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(energy);
+                }
+            } else {
+                var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
+                    true, true); // find energy function in myFunctions
+                if (resourceID !== undefined) {
+                    energy = Game.getObjectById(resourceID);
+                    if (ifDropped) { // if energy is dropped
+                        if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
+                            creep.moveTo(energy);
+                        }
+                    } else { // energy is from container, storage or link
+                        if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                            creep.moveTo(energy);
+                        }
                     }
                 }
             }
@@ -53,3 +66,4 @@
         */
     }
 };     
+   
