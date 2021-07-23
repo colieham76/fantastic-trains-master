@@ -119,7 +119,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	require('funcAlly');
 	require('myTrading');
 	require('functionWar');
-	
+	var linkController = require('link-controller');
 	var Traveler = require('Traveler');
 	
 	//const profiler = require('screeps-profiler');
