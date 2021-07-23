@@ -1,4 +1,4 @@
-module.exports = {
+   module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
@@ -14,7 +14,7 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, true,
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
                 true, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
@@ -28,9 +28,6 @@ module.exports = {
                     }
                 }
             }
-
-
-
         }
 
         else {
@@ -46,14 +43,13 @@ module.exports = {
                 }
             }
         }
-
+/*
         var terminal = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
             filter: s => s.structureType == STRUCTURE_TERMINAL && s.store[RESOURCE_ENERGY] <= 150000
         });
-
         if (creep.transfer(terminal, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
             creep.moveTo(terminal);
         } 
-        
+        */
     }
-};        
+};     
