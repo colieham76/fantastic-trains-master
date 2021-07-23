@@ -32,7 +32,7 @@
                 }
             }
         
-
+}
         else {
 
 if (creep.room.name === 'W7S6') {
