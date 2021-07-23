@@ -10,7 +10,7 @@ var linkController = {
         const upgradeLinkEnergyNeeded = upgradeLink.energyCapacity - upgradeLink.energy;
         const upgradeLinkEnergyNeeded2 = upgradeLink2.energyCapacity - upgradeLink2.energy;
         
-    if (Game.time % 50 == 0) {    
+    if (Game.time % 5 == 0) {    
         if (link.energy >= upgradeLinkEnergyNeeded) {
             link.transferEnergy(upgradeLink, upgradeLinkEnergyNeeded)
         }
