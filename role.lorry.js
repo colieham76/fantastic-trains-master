@@ -15,17 +15,7 @@
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working !== true) {
 
-            if (creep.room.name === 'W7S6') {
-                creep.moveTo(31, 31, {visualizePathStyle: {stroke: '#ffaa00'}});
-                if (creep.pos == 31, 31) {
-                    const upgradeContainer = Game.getObjectById('60f7d1093bd3cc14ace13cfa');
-                    if (upgradeContainer.energy > 0) {
-                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                            creep.travelTo(upgradeContainer);
-                        }
-                    }
-                }
-            } else {
+           
                 var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
                     true, true); // find energy function in myFunctions
                 if (resourceID !== undefined) {
@@ -41,9 +31,23 @@
                     }
                 }
             }
-        }
+        
 
         else {
+
+if (creep.room.name === 'W7S6') {
+                creep.moveTo(31, 31, {visualizePathStyle: {stroke: '#ffaa00'}});
+                if (creep.pos == 31, 31) {
+                    const upgradeContainer = Game.getObjectById('60f7d1093bd3cc14ace13cfa');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
+                        }
+                    }
+                }
+            } 
+}
+
             var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                 filter: (s) => (s.structureType === STRUCTURE_SPAWN
                     || s.structureType === STRUCTURE_EXTENSION
