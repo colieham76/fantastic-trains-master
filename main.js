@@ -124,9 +124,9 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	
 
 
-              const uploadLink1 = Game.getObjectById('60f7cd829709c9966154d996');
+              const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');
               linkController.run(uploadLink1);
-              const uploadLink2 = Game.getObjectById('60f7d1093bd3cc14ace13cfa'); // loc at controller
+              const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996'); // loc at controller
               linkController.run(uploadLink2);
 
 	//const profiler = require('screeps-profiler');
