@@ -33,7 +33,7 @@
             }
         
 }
-        else {
+     //   else {
 
 if (creep.room.name === 'W7S6') {
                 creep.moveTo(31, 31, {visualizePathStyle: {stroke: '#ffaa00'}});
@@ -46,7 +46,7 @@ if (creep.room.name === 'W7S6') {
                     }
                 }
             } 
-}
+//}
 
             var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                 filter: (s) => (s.structureType === STRUCTURE_SPAWN
