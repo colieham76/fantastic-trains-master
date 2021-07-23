@@ -123,9 +123,10 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 	var Traveler = require('Traveler');
 	
 
-              const uploadLink1 = Game.getObjectById('5ce1c52121d3291b20e3af0a');
+
+              const uploadLink1 = Game.getObjectById('60f7cd829709c9966154d996');
               linkController.run(uploadLink1);
-              const uploadLink2 = Game.getObjectById('5cd838b075aed476c9a27d1d'); // loc at controller
+              const uploadLink2 = Game.getObjectById('60f7d1093bd3cc14ace13cfa'); // loc at controller
               linkController.run(uploadLink2);
 
 	//const profiler = require('screeps-profiler');
