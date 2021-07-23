@@ -3,8 +3,8 @@ var linkController = {
 
     run: function(link) {
 
-        const upgradeLink = Game.getObjectById('5ce1cb25e632af2dff382150'); //remote mining link in W71N69
-        const upgradeLink2 = Game.getObjectById('5ce056a7074ed46fed3a9deb'); //remote mining link in W62N61
+        const upgradeLink = Game.getObjectById('60f7cd829709c9966154d996'); //remote mining link in W71N69
+        const upgradeLink2 = Game.getObjectById('60f7d1093bd3cc14ace13cfa'); //remote mining link in W62N61
         const upgradeLink3 = Game.getObjectById('5cd80e21c7f85a307d113390'); //remote mining link in W65N63
         const upgradeLink4 = Game.getObjectById('5cf9681768cf3e6212e434db'); //remote mining link in W62N69
         const upgradeLink5 = Game.getObjectById('5cd6e9f0a4ceff307ee438f1'); //remote mining link in W61N68
