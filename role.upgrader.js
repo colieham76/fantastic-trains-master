@@ -6,8 +6,10 @@ module.exports = {
             creep.memory.working = false;
         } else if (!creep.memory.working && creep.store.energy == creep.store.getCapacity()) {
             creep.memory.working = true;
-        }        
-        //W10S8 upgrader route flag        
+        }  
+        
+        //W10S8 upgrader route flag   
+        /*
         if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
@@ -45,6 +47,7 @@ module.exports = {
             }
             return;
         }
+        */
         if (creep.memory.working == true) {
             if (creep.transfer(creep.room.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(creep.room.controller);
