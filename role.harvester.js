@@ -2,11 +2,6 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function(creep) {
-        
-       /* if (creep.ticksToLive < 1500) {
-            creep.suicide();
-        }
-        */
         if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.working = false;
             creep.say('🔄 harvest');
@@ -21,7 +16,7 @@ module.exports = {
             
             // specific harvester task - take dropped energy and put into storage only
 //remove comment slash from here
-
+/*
             if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
@@ -30,14 +25,14 @@ module.exports = {
                         creep.moveTo(storage, {visualizePathStyle: {stroke: '#fcfafa'}});
                     }
                 }
-
+*/
             // to here     
                 ////////////////////////////
          // normal harvester code - find closest spawn, remove comment slashes below and insert comment slash to exclude bracket line 50
          // extension or tower which is not full
 ////////////////
 // from here
-            /*
+            
          var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                               
                     filter: (s) => (s.structureType === STRUCTURE_EXTENSION
@@ -52,8 +47,8 @@ module.exports = {
                     creep.travelTo(structure);
                 }
             }  ////To here - remove comment slash for bracket line 50 to switch on dropped resource utiliser
-*/
-           }
+
+       //     }
         }
         // if creep is supposed to harvest energy from source
         else {
