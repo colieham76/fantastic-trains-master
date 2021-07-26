@@ -27,19 +27,14 @@ module.exports = {
                 }
                 
                 
-                                        if (creep.room.find(FIND_MY_STRUCTURES, { 
-                                            filter: s => s.structureType == STRUCTURE_LINK }).length > 0) {
-                                            let link = Game.flags['link' + creep.room.name].pos.findInRange(FIND_MY_STRUCTURES, 1, {
-                                                filter: s => s.structureType == STRUCTURE_LINK });
-                                            if (link.length > 0 && link[0].energy > 0) {
-                                                //console.log(creep.withdraw(link, RESOURCE_ENERGY))
-                                                if (creep.withdraw(link[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                                    creep.travelTo(link[0]);
-                                                   
-                                                }
-                                            }
-                                        }
-                                   
+                                       var links = creep.pos.findInRange(FIND_MY_STRUCTURES, 1, {
+                                           filter: {
+                                               structureType: STRUCTURE_LINK }
+                                       })
+                                       if (links.length != 0) {
+                                           creep.withdraw(links[0], RESOURCE_ENERGY);
+                                           return;
+                                       }
                 
 
             // to here     
