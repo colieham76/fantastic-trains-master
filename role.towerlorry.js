@@ -46,7 +46,16 @@ module.exports = {
                         creep.withdraw(lenergy[0], RESOURCE_ENERGY);
                     }
                 }
-                ///////////////////////////////
+                /////////////////////////////// 
+                /*
+                var targetLink = creep.pos.findClosestByPath(FIND_MY_STRUCTURES,{
+                    filter: (i) => (i.structureType == STRUCTURE_LINK) &&
+                    i.store.getUsedCapacity(RESOURCE_ENERGY) > 0
+                });
+                if(targetLink && creep.withdraw(targetLink, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(targetLink);
+                }
+                */                       
                 let tombstones = creep.room.find(FIND_TOMBSTONES, {
                     filter: c => _.sum(c.store) > 0
                 });
