@@ -27,7 +27,7 @@ module.exports = {
                 }
                 
                 
-                                       var links = creep.pos.findInRange(FIND_MY_STRUCTURES, 1, {
+                                       var links = creep.pos.findInRange(FIND_MY_STRUCTURES, 10, {
                                            filter: {
                                                structureType: STRUCTURE_LINK }
                                        })
