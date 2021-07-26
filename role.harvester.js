@@ -58,6 +58,17 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
+            
+           var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, { 
+            filter: (i) =>  (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400) 
+               && (i.id != '60f7d1093bd3cc14ace13cfa')
+               });
+            if (targets) {
+				if (creep.withdraw(targets, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(targets, {visualizePathStyle: {stroke: '#ffffff'}});
+				}
+			}
+            
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
             });
