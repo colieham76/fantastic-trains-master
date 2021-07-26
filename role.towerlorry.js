@@ -27,6 +27,8 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
+             /////////////////////////////////////
+                /*
             let lenergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
                 filter:  c => _.sum(c.store) > 0
             });
@@ -34,7 +36,7 @@ module.exports = {
                 creep.travelTo(lenergy);
             }
             else {
-                /////////////////////////////////////
+               
                 creep.memory.lenergy = null;
                 lenergy = creep.pos.findClosestByPath(STRUCTURE_LINK, {
                     filter: source => source.energy > 0
@@ -46,8 +48,9 @@ module.exports = {
                         creep.withdraw(lenergy[0], RESOURCE_ENERGY);
                     }
                 }
+                */
                 /////////////////////////////// 
-                /*
+                
                 var targetLink = creep.pos.findClosestByPath(FIND_MY_STRUCTURES,{
                     filter: (i) => (i.structureType == STRUCTURE_LINK) &&
                     i.store.getUsedCapacity(RESOURCE_ENERGY) > 0
@@ -55,7 +58,7 @@ module.exports = {
                 if(targetLink && creep.withdraw(targetLink, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targetLink);
                 }
-                */                       
+                //////////////////////                      
                 let tombstones = creep.room.find(FIND_TOMBSTONES, {
                     filter: c => _.sum(c.store) > 0
                 });
