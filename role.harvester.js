@@ -22,14 +22,11 @@ module.exports = {
                 var storage = creep.room.storage;
                 for (const resourceType in creep.store) {
                     if (creep.transfer(storage, resourceType) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(storage, {visualizePathStyle: {stroke: '#fcfafa'}});
-                    }
+                        creep.moveTo(storage, {visualizePathStyle: {stroke: '#fcfafa'}});                    }
                 }
                 
                 
-         var link = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { filter: (s) => s.structureType == STRUCTURE_LINK });
-            if (link && link.energy < link.energyCapacity && link.pos.getRangeTo(creep.pos) <= 10)
-                creep.withdraw(link, RESOURCE_ENERGY);
+       
 */
             // to here     
                 ////////////////////////////
@@ -57,16 +54,7 @@ module.exports = {
         //   }
         }
         // if creep is supposed to harvest energy from source
-        else {
-            
-           var targets = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { 
-            filter: (i) =>  (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400) 
-               && (i.id != '60f7d1093bd3cc14ace13cfa')
-               });          
-		if (creep.withdraw(targets, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-			creep.moveTo(targets, {visualizePathStyle: {stroke: '#ffffff'}});
-		}
-			
+        else { 
             
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
