@@ -29,7 +29,7 @@ module.exports = {
                 
                                         if (creep.room.find(FIND_MY_STRUCTURES, { 
                                             filter: s => s.structureType == STRUCTURE_LINK }).length > 0) {
-                                            let link = Game.flags['link' + creep.room.name].pos.findInRange(FIND_STRUCTURES, 1, {
+                                            let link = Game.flags['link' + creep.room.name].pos.findInRange(FIND_MY_STRUCTURES, 1, {
                                                 filter: s => s.structureType == STRUCTURE_LINK });
                                             if (link.length > 0 && link[0].energy > 0) {
                                                 //console.log(creep.withdraw(link, RESOURCE_ENERGY))
