@@ -16,7 +16,7 @@ module.exports = {
             
             // specific harvester task - take dropped energy and put into storage only
 //remove comment slash from here
-/*
+
             if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
@@ -25,14 +25,30 @@ module.exports = {
                         creep.moveTo(storage, {visualizePathStyle: {stroke: '#fcfafa'}});
                     }
                 }
-*/
+                
+                
+                                        if (creep.room.find(FIND_STRUCTURES, { 
+                                            filter: s => s.structureType == STRUCTURE_LINK }).length > 0) {
+                                            let link = Game.flags['link' + creep.room.name].pos.findInRange(FIND_STRUCTURES, 1, {
+                                                filter: s => s.structureType == STRUCTURE_LINK });
+                                            if (link.length > 0 && link[0].energy > 0) {
+                                                //console.log(creep.withdraw(link, RESOURCE_ENERGY))
+                                                if (creep.withdraw(link[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                                                    creep.travelTo(link[0]);
+                                                   
+                                                }
+                                            }
+                                        }
+                                    
+                
+
             // to here     
                 ////////////////////////////
          // normal harvester code - find closest spawn, remove comment slashes below and insert comment slash to exclude bracket line 50
          // extension or tower which is not full
 ////////////////
 // from here
-            
+           /* 
          var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                               
                     filter: (s) => (s.structureType === STRUCTURE_EXTENSION
@@ -46,9 +62,10 @@ module.exports = {
                     // move towards it
                     creep.travelTo(structure);
                 }
-            }  ////To here - remove comment slash for bracket line 50 to switch on dropped resource utiliser
-
-       //     }
+            }  ////To here - remove comment slash for bracket line 67 to switch on dropped resource utiliser
+            */
+//slashes on next line
+           }
         }
         // if creep is supposed to harvest energy from source
         else {
