@@ -26,8 +26,8 @@ module.exports = {
                     }
                 }
                 
-                /*
-                                        if (creep.room.find(FIND_STRUCTURES, { 
+                
+                                        if (creep.room.find(FIND_MY_STRUCTURES, { 
                                             filter: s => s.structureType == STRUCTURE_LINK }).length > 0) {
                                             let link = Game.flags['link' + creep.room.name].pos.findInRange(FIND_STRUCTURES, 1, {
                                                 filter: s => s.structureType == STRUCTURE_LINK });
@@ -39,7 +39,7 @@ module.exports = {
                                                 }
                                             }
                                         }
-                  */                  
+                                   
                 
 
             // to here     
