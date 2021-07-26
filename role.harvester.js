@@ -49,7 +49,7 @@ module.exports = {
          // extension or tower which is not full
 ////////////////
 // from here
-           
+    /*       
          var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                               
                     filter: (s) => (s.structureType === STRUCTURE_EXTENSION
@@ -64,7 +64,7 @@ module.exports = {
                     creep.travelTo(structure);
                 }
             }  ////To here - remove comment slash for bracket line 67 to switch on dropped resource utiliser
-            
+            */
 //slashes on next line
            }
         }
