@@ -60,7 +60,7 @@ module.exports = {
                             filter: source => source.energy > 0
                         });
                 
-                if (lenergy[0]) {
+                if (lenergy) {
                             if (creep.withdraw(lenergy[0], RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                                 creep.moveTo(lenergy[0]);
                             } else {
