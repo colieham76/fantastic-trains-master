@@ -108,7 +108,7 @@ Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 0};
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 0, towerlorry: 1, upgrader: 0, wallRepairer: 0,
-				       rampartrepairer: 0, lorry: 2, builder: 2, dismantler: 0};
+				       rampartrepairer: 0, lorry: 2, builder: 3, dismantler: 0};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 1};
 
 /*
