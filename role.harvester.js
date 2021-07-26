@@ -12,6 +12,17 @@ module.exports = {
         }
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working === true) {
+            
+            var containers = creep.room.find(FIND_STRUCTURES, {
+                    filter: (s) => {
+                        return (s.structureType == STRUCTURE_LINK) && (s.id == '8a0e52c9b253dfb')
+                    }
+                });
+                var source = creep.pos.findClosestByPath(containers);
+                if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(source);
+                }
+            
             /////////////////////////
             
             // specific harvester task - take dropped energy and put into storage only
