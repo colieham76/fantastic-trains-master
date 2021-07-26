@@ -74,6 +74,7 @@ module.exports = {
                         }
                     }
                 }
+}
                 else {
                     creep.getEnergy(false, false);}
             }
