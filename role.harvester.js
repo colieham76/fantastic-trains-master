@@ -13,7 +13,15 @@ module.exports = {
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working === true) {
             
-            var containers = creep.room.find(FIND_STRUCTURES, {
+           
+            
+            /////////////////////////
+            
+            // specific harvester task - take dropped energy and put into storage only
+//remove comment slash from here
+/*
+
+ var containers = creep.room.find(FIND_STRUCTURES, {
                     filter: (s) => {
                         return (s.structureType == STRUCTURE_LINK) && (s.id == '60f7d1093bd3cc14ace13cfa')
                     }
@@ -22,12 +30,8 @@ module.exports = {
                 if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(source);
                 }
-            
-            /////////////////////////
-            
-            // specific harvester task - take dropped energy and put into storage only
-//remove comment slash from here
-/*
+
+
             if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
