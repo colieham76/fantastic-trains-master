@@ -27,15 +27,9 @@ module.exports = {
                 }
                 
                 
-                                       var links = creep.pos.findInRange(FIND_MY_STRUCTURES, 10, {
-                                           filter: {
-                                               structureType: STRUCTURE_LINK }
-                                       })
-                                       if (links.length != 0) {
-                                           creep.withdraw(links[0], RESOURCE_ENERGY);
-                                           return;
-                                       }
-                
+         var link = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { filter: (s) => s.structureType == STRUCTURE_LINK });
+            if (link && link.energy < link.energyCapacity && link.pos.getRangeTo(creep.pos) <= 10)
+                creep.withdraw(link, RESOURCE_ENERGY);
 
             // to here     
                 ////////////////////////////
