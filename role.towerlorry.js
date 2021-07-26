@@ -75,11 +75,11 @@ module.exports = {
                     }
                 }
 }
-}
+
                 else {
                     creep.getEnergy(false, false);}
             }
             creep.getEnergy(false, true)
         }
     }
-}
+
