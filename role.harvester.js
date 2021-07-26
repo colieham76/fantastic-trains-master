@@ -19,7 +19,7 @@ module.exports = {
             
             // specific harvester task - take dropped energy and put into storage only
 //remove comment slash from here
-/*
+
 
  var containers = creep.room.find(FIND_STRUCTURES, {
                     filter: (s) => {
@@ -42,7 +42,7 @@ module.exports = {
                 
                 
        
-*/
+
             // to here     
                 ////////////////////////////
          // normal harvester code - find closest spawn, remove comment slashes below and insert comment slash to exclude bracket line 50
@@ -66,7 +66,7 @@ module.exports = {
             }  ////To here - remove comment slash for bracket line 67 to switch on dropped resource utiliser
             
 //slashes on next line
-        //   }
+           }
         }
         // if creep is supposed to harvest energy from source
         else { 
