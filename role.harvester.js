@@ -15,7 +15,7 @@ module.exports = {
             
             var containers = creep.room.find(FIND_STRUCTURES, {
                     filter: (s) => {
-                        return (s.structureType == STRUCTURE_LINK) && (s.id == '8a0e52c9b253dfb')
+                        return (s.structureType == STRUCTURE_LINK) && (s.id == '60f7d1093bd3cc14ace13cfa')
                     }
                 });
                 var source = creep.pos.findClosestByPath(containers);
