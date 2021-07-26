@@ -42,18 +42,34 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else { 
             
+           
             
             // if there is no storage (which could be possible after destroyed), try picking up some energy
-        let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
+        let lenergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
             filter:  c => _.sum(c.store) > 0  
         });
-        if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-            creep.travelTo(energy);
+        if (creep.pickup(lenergy) === ERR_NOT_IN_RANGE) {
+            creep.travelTo(lenergy);
         }
             
             
             else {
-            
+                
+                creep.memory.lenergy = null;
+             lenergy = creep.pos.findClosestByPath(STRUCTURE_LINK, {
+                            filter: source => source.energy > 0
+                        });
+                
+                if (lenergy[0]) {
+                            if (creep.withdraw(lenergy[0], RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                                creep.moveTo(lenergy[0]);
+                            } else {
+                                creep.withdraw(lenergy[0], RESOURCE_ENERGY);
+                            }
+                        }                  
+                
+                
+                
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
             });
