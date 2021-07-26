@@ -59,7 +59,7 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else {
             
-           var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, { 
+           var targets = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { 
             filter: (i) =>  (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400) 
                && (i.id != '60f7d1093bd3cc14ace13cfa')
                });
