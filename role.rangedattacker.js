@@ -4,7 +4,7 @@ module.exports = {
     run: function (creep) {
 	    
 	 if (creep.ticksToLive < 150) {
-         Game.spawns.Spawn7.memory.minrangedattackers = {W9S5: 2} 
+         Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 2} 
         }  
 	    
 
@@ -35,15 +35,15 @@ if (!creep.memory.w9s5f1) {
         }
 	    */
 	    //w8s5f1  route flag
-	    
-if (!creep.memory.w8s6f1) {
+	/*    
+      if (!creep.memory.w8s6f1) {
             creep.travelTo(Game.flags['w8s6f1']);
             if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
                 creep.memory.w8s6f1 = true;
             }
             return;
         }
-	          
+	  */        
 		var attacked;
 		var targets = [];
 	        //attack within range	
