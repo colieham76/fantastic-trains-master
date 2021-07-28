@@ -3,7 +3,7 @@ module.exports = {
    
  run: function(creep) {
 
- if (creep.ticksToLive < 1500) {
+ if (creep.ticksToLive < 150) {
 
 creep.suicide();
 }
