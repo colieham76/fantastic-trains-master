@@ -26,7 +26,7 @@ for(var name in Game.creeps) {
 //Game.spawns.Spawn2.memory.captainRoom = ['captain', 'W2S8']
 
 
-Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
+Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 2};
 
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, harvester: 0,
 				       builder: 0, lorry: 1, towerlorry: 1,
