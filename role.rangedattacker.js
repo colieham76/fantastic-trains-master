@@ -46,7 +46,7 @@ if (!creep.memory.w8s5f1) {
             return;
         }
 	    
-	    
+	    /*
 	         
 		var attacked;
 		var targets = [];
@@ -76,6 +76,108 @@ if (!creep.memory.w8s5f1) {
 				creep.travelTo(hostileStructure);
 			}		
 		}
+	    
+	    */
+	    
+	    
+	     /**
+     *
+     * @returns {Creep|Structure|null}
+     * @private
+     */
+    _getTarget: function()
+    {
+        let creep = this.creep;
+
+        let target = null;
+        if(creep.memory.target == undefined)
+        {
+            target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+		    filter: c => { return c.getActiveBodyparts(RANGED_ATTACK); }});
+            let closeTarget = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS, {filter: c => {
+		    return c.getActiveBodyparts(ATTACK); }});
+
+            if(target != null && closeTarget != null)
+            {
+                let targetRange = creep.pos.getRangeTo(target);
+                let closeRange = creep.pos.getRangeTo(closeTarget);
+                if(targetRange > 3
+		   || closeRange < targetRange)closeTarget = target;
+	    }
+
+            if(target == null && closeTarget != null)
+                target = closeTarget;
+
+            if(target == null || target == undefined)
+                target = creep.pos.findClosestByPath(FIND_HOSTILE_SPAWNS);
+
+           /* if(target == null || target == undefined)
+                target = creep.pos.findClosestByPath(FIND_HOSTILE_STRUCTURES, {
+			filter: s => { 
+				return s.structureType != STRUCTURE_CONTROLLER;
+			}});*/
+
+            if(target == null || target == undefined)
+                target = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS);
+
+            if(target != null && target != undefined)
+                creep.memory.target = target.id;
+            else
+	    {
+		    creep.memory.target = undefined;
+		    return null;
+	    }
+	}
+        else
+	{
+		target = Game.getObjectById(creep.memory.target);
+		if(target == null || target == undefined)
+		{
+			creep.memory.target = undefined;
+			return this._getTarget();
+		}
+		else
+		{
+			if(creep.memory.sameTarget == undefined
+			   || creep.memory.sameTarget.id != target.id)creep.memory.sameTarget = {
+				id: target.id, times: 0};
+			else
+				creep.memory.sameTarget.times++;
+			if(creep.memory.sameTarget >= 20)
+			{
+				creep.memory.target = undefined;
+				return this._getTarget();
+			}
+		}
+	}
+        return target;
+    },
+
+    _invertDir: function(dir)
+    {
+        switch(dir)
+        {
+            case TOP:
+                return BOTTOM;
+            case TOP_LEFT:
+                return BOTTOM_RIGHT;
+            case LEFT:
+                return RIGHT;
+            case BOTTOM_LEFT:
+                return TOP_RIGHT;
+            case BOTTOM:
+                return TOP;
+            case BOTTOM_RIGHT:
+                return TOP_LEFT;
+            case RIGHT:
+                return LEFT;
+            case TOP_RIGHT:
+                return BOTTOM_LEFT;
+        }
+
+        return TOP;
+    },
+	    
     }
 };
 
