@@ -89,7 +89,7 @@ Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 1};
 
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1};
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
-Game.spawns.Spawn6.memory.minNumberOfreservers = {W8S5: 1};
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 1};
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
 //if (Game.time % 1000 === 0) {
