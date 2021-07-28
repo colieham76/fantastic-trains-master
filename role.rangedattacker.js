@@ -26,14 +26,6 @@ module.exports = {
             return;
         }
 	*/
-//W9S5 dismantler route flag
-if (!creep.memory.W8S5f1) {
-            creep.travelTo(Game.flags['W8S5f1']);
-            if (creep.pos.isNearTo(Game.flags['W8S5f1'])) {
-                creep.memory.W8S5f1 = true;
-            }
-            return;
-        }
 	    
 	    //w8s5f1  route flag
 	   
@@ -44,6 +36,17 @@ if (!creep.memory.W8S5f1) {
             }
             return;
         }
+	    
+//W9S5 dismantler route flag
+if (!creep.memory.W8S5f1) {
+            creep.travelTo(Game.flags['W8S5f1']);
+            if (creep.pos.isNearTo(Game.flags['W8S5f1'])) {
+                creep.memory.W8S5f1 = true;
+            }
+            return;
+        }
+	    
+	    
 	         
 		var attacked;
 		var targets = [];
