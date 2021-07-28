@@ -86,7 +86,8 @@ if (!creep.memory.w8s5f1) {
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.attack(targets);
 		}
-	    else if {
+	    /*
+	     if {
 		    target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
 			    filter: c => {
 				    return c.getActiveBodyparts(ATTACK);
@@ -98,6 +99,7 @@ if (!creep.memory.w8s5f1) {
                                 creep.move(dir);
                             }
 	    }
+	    */
 
 		if(creep.hits < creep.memory.lastHits) {
 			Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
