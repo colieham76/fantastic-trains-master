@@ -38,10 +38,10 @@ module.exports = {
         }
 	    
 //W9S5 dismantler route flag
-if (!creep.memory.W8S5f1) {
-            creep.travelTo(Game.flags['W8S5f1']);
-            if (creep.pos.isNearTo(Game.flags['W8S5f1'])) {
-                creep.memory.W8S5f1 = true;
+if (!creep.memory.w8s5f1) {
+            creep.travelTo(Game.flags['w8s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
+                creep.memory.w8s5f1 = true;
             }
             return;
         }
