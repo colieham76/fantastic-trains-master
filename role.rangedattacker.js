@@ -91,7 +91,7 @@ if (!creep.memory.w8s5f1) {
 			    filter: c => {
 				    return c.getActiveBodyparts(ATTACK);
 			    }});
-		    (target.getActiveBodyparts(ATTACK) > 0 && creep.pos.inRangeTo(target.pos, 2))
+		    target.getActiveBodyparts(ATTACK) > 0 && creep.pos.inRangeTo(target.pos, 2)
                             {
                                 let dir = creep.pos.getDirectionTo(target.pos);
                                 dir = this._invertDir(dir);
