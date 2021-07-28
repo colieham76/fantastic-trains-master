@@ -7,7 +7,30 @@ module.exports = {
          Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 2} 
         }  
 	    
+  _invertDir: function(dir)
+    {
+        switch(dir)
+        {
+            case TOP:
+                return BOTTOM;
+            case TOP_LEFT:
+                return BOTTOM_RIGHT;
+            case LEFT:
+                return RIGHT;
+            case BOTTOM_LEFT:
+                return TOP_RIGHT;
+            case BOTTOM:
+                return TOP;
+            case BOTTOM_RIGHT:
+                return TOP_LEFT;
+            case RIGHT:
+                return LEFT;
+            case TOP_RIGHT:
+                return BOTTOM_LEFT;
+        }
 
+        return TOP;
+    },
 	    
 //W10S5 dismantler route flag	    
 	/*     if (!creep.memory.w10s8f1) {
@@ -63,6 +86,19 @@ if (!creep.memory.w8s5f1) {
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.attack(targets);
 		}
+	    else if {
+		    target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+			    filter: c => {
+				    return c.getActiveBodyparts(ATTACK);
+			    }});
+		    (target.getActiveBodyparts(ATTACK) > 0 && creep.pos.inRangeTo(target.pos, 2))
+                            {
+                                let dir = creep.pos.getDirectionTo(target.pos);
+                                dir = this._invertDir(dir);
+                                creep.move(dir);
+                            }
+	    }
+
 		if(creep.hits < creep.memory.lastHits) {
 			Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
 		}
