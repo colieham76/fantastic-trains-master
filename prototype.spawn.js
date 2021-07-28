@@ -982,9 +982,9 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
-	for (let i = 0; i < 4; i++) {
-        body.push(ATTACK);
-    }
+//	for (let i = 0; i < 4; i++) {
+//        body.push(ATTACK);
+//    }
     return this.createCreep(body,
         undefined,
         {
@@ -1008,9 +1008,9 @@ StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
-	for (let i = 0; i < 4; i++) {
-        body.push(ATTACK);
-    }
+//	for (let i = 0; i < 4; i++) {
+//        body.push(ATTACK);
+//    }
     return this.createCreep(body,
         undefined,
         {
@@ -1034,9 +1034,9 @@ StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
     for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
-	for (let i = 0; i < 4; i++) {
-        body.push(ATTACK);
-    }
+//	for (let i = 0; i < 4; i++) {
+//        body.push(ATTACK);
+//    }
     return this.createCreep(body,
         undefined,
         {
