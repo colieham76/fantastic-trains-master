@@ -108,10 +108,10 @@ module.exports = {
 			}
 		}
 		
-		if (!creep.memory.W8S6f1 && creep.room.name === 'W8S6'|| creep.room.name === 'W7S5') {
-			creep.travelTo(Game.flags['W8S6f1']);
-			if (creep.pos.isNearTo(Game.flags['W8S6f1'])) {
-				creep.memory.W8S6f1 = true;
+		if (!creep.memory.W7S6f1 && creep.room.name === 'W7S6'|| creep.room.name === 'W8S6') {
+			creep.travelTo(Game.flags['W7S6f1']);
+			if (creep.pos.isNearTo(Game.flags['W7S6f1'])) {
+				creep.memory.W7S6f1 = true;
 			}
 			return		
 		}
