@@ -43,16 +43,11 @@ module.exports = {
                     // move towards it
                     creep.moveTo(target);
                 }
-            }
-            // if we can't fine one
-            else {
-                // look for construction sites
-                roleBuilder.run(creep);
-            }
+            }           
         }
         // if creep is supposed to get energy
         else {
-            creep.getEnergy(true, true);
+            creep.getEnergy(false, true);
         }
     }
 };
