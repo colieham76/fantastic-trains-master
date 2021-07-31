@@ -110,6 +110,9 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 ////////////////////////////////////////////////////////////////////////////////////////
 //MYang2017
 
+	require('./prototype_creep_fight');//tooAngel kiting attacker test
+	require('./prototype_roomPosition'); //tooAngel kiting attacker test
+
 	require('prototype.spawn');
         require('prototype_creep_heal');
         require('functionSpawn');
