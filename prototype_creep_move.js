@@ -8,6 +8,7 @@
  * @param {number} range - How close to get to the target
  * @return {object} - Response from PathFinder.search
  **/
+/*
 Creep.prototype.searchPath = function(target, range=1) {
   let costMatrixCallback;
   if (this.room.memory.misplacedSpawn) {
@@ -32,7 +33,7 @@ Creep.prototype.searchPath = function(target, range=1) {
   }
   return search;
 };
-
+*/
 Creep.prototype.moveMy = function(target) {
   if (this.pos.isEqualTo(target)) {
     return true;
@@ -133,7 +134,7 @@ const getCreepsAtPosition = function(position, creep) {
   const creeps = pos.lookFor('creep');
   return creeps;
 };
-
+/*
 Creep.prototype.moveCreepCheckRoleAndTarget = function(creep, direction) {
   const role = this.memory.role;
 
@@ -163,7 +164,7 @@ Creep.prototype.moveCreepCheckRoleAndTarget = function(creep, direction) {
     return true;
   }
 };
-
+*/
 Creep.prototype.moveCreep = function(position, direction) {
   if (position.isBorder(-1)) {
     return false;
