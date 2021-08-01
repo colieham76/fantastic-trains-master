@@ -57,7 +57,7 @@ Room.prototype._findPropertyFilterCacheTwo = function(findTarget, property, time
   }
   return localFindCache[key];
 };
-
+*/
 Room.prototype._findPropertyFilterCacheOne = function(findTarget, property, properties, timeSpan, inverse) {
   const key = `${this.name} ${findTarget} ${property} ${properties} ${inverse}`;
   if (!localFindCache[key] || localFindCache[key].time < Game.time + timeSpan) {
@@ -80,7 +80,7 @@ Room.prototype._findPropertyFilterResolveOutdatedCacheOne = function(cache) {
   cache.result = cache.result.map((o) => Game.getObjectById(o.id)).filter((o) => o);
   cache.resolveTime = Game.time;
 };
-
+/*
 Room.prototype.closestSpawn = function(target) {
   const pathLength = {};
   const roomsMy = findMyRoomsSortByDistance(target);
@@ -111,7 +111,7 @@ Room.prototype.closestSpawn = function(target) {
   const shortest = _.sortBy(pathLength, global.utils.returnLength);
   return _.first(shortest).room;
 };
-*/
+
 Room.prototype.getEnergyCapacityAvailable = function() {
   let offset = 0;
   if (this.memory.misplacedSpawn && this.controller.level === 4) {
@@ -187,7 +187,7 @@ Room.test = function() {
     }
   }
 };
-
+*/
 /**
  * returns resources from structure
  *
