@@ -6,7 +6,7 @@
  * Attacks source keeper, move away when hits below 'threshold'
  * If no source keeper is available move to position where the next will spawn
  */
-
+/*
 roles.atkeeper = {};
 
 roles.atkeeper.settings = {
@@ -58,6 +58,7 @@ roles.atkeeper.action = function(creep) {
     }
     return false;
   };
+  */
   const fightRangedInvaders = function(creep) {
     if (creep.getActiveBodyparts(RANGED_ATTACK) === 0) {
       return false;
@@ -68,7 +69,7 @@ roles.atkeeper.action = function(creep) {
     }
     return false;
   };
-
+/*
   if (creep.room.name === creep.memory.routing.targetRoom) {
     if (!fightRangedInvaders(creep)) {
       moveToCenter(creep);
@@ -88,3 +89,4 @@ roles.atkeeper.action = function(creep) {
 
   return moveToCenter(creep);
 };
+*/
