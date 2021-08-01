@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const {findMyRoomsSortByDistance} = require('./helper_findMyRooms');
 
 Room.structureHasEnergy = (structure) => structure.store && structure.store.energy || structure.energy;
@@ -19,7 +19,7 @@ Room.prototype.nearestRoomName = function(roomsNames, limit) {
   };
   return _.min(roomsNames, sortByLinearDistance);
 };
-
+*/
 /**
  * use a static array for filter a find.
  *
@@ -46,7 +46,7 @@ Room.prototype.findPropertyFilter = function(findTarget, property, properties, o
 };
 
 const localFindCache = {};
-
+/*
 Room.prototype._findPropertyFilterCacheTwo = function(findTarget, property, timeSpan) {
   const key = `${this.name} ${findTarget} ${property}`;
   if (!localFindCache[key] || localFindCache[key].time < Game.time + timeSpan) {
@@ -111,7 +111,7 @@ Room.prototype.closestSpawn = function(target) {
   const shortest = _.sortBy(pathLength, global.utils.returnLength);
   return _.first(shortest).room;
 };
-
+*/
 Room.prototype.getEnergyCapacityAvailable = function() {
   let offset = 0;
   if (this.memory.misplacedSpawn && this.controller.level === 4) {
