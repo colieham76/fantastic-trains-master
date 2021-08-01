@@ -169,14 +169,14 @@ Creep.prototype.moveCreep = function(position, direction) {
   if (position.isBorder(-1)) {
     return false;
   }
-
+/*
   const creeps = getCreepsAtPosition(position, this);
   if (creeps.length > 0 && creeps[0].memory) {
     const creep = creeps[0];
     if (this.moveCreepCheckRoleAndTarget(creep, direction)) {
       return true;
     }
-  }
+  }*/
 };
 
 Creep.prototype.preMoveExtractorSourcer = function(directions) {
