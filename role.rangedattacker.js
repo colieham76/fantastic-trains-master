@@ -2,52 +2,30 @@ module.exports = {
 // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
-	    
-	 if (creep.ticksToLive < 150) {
-         Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 2} 
-        }  
-	    
 
-	    
-//W10S5 dismantler route flag	    
-	/*     if (!creep.memory.w10s8f1) {
-            creep.travelTo(Game.flags['w10s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
-                creep.memory.w10s8f1 = true;
-            }
-            return;
-        }
-//W10S5 dismantler route flag
-        if (!creep.memory.w10s5f1) {
-            creep.travelTo(Game.flags['w10s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {"
-                creep.memory.w10s5f1 = true;
-            }
-            return;
-        }
-	*/
-	    
-	    //w8s5f1  route flag
-	   
-      if (!creep.memory.w8s6f1) {
-            creep.travelTo(Game.flags['w8s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
-                creep.memory.w8s6f1 = true;
-            }
-            return;
-        }
-	    
-//W9S5 dismantler route flag
-if (!creep.memory.w8s5f1) {
-            creep.travelTo(Game.flags['w8s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
-                creep.memory.w8s5f1 = true;
-            }
-            return;
-        }
-	    
-	    
-	         
+		if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
+			creep.travelTo(Game.flags['W3S7']);
+			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
+				creep.memory.W3S7 = true;
+			}
+			return;
+		}
+		if (!creep.memory.W1S7 && creep.room.name === 'W1S7' || creep.room.name === 'W1S8') {
+			creep.moveTo(Game.flags['W1S7']);
+			if (creep.pos.isNearTo(Game.flags['W1S7'])) {
+				creep.memory.W1S7 = true;
+			}
+			return;
+		}
+
+		if (!creep.memory.W7S5 && creep.room.name === 'W7S5' || creep.room.name === 'W9S6') {
+			creep.moveTo(Game.flags['w7s6f4']);
+			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
+				creep.memory.W7S5 = true;
+			}
+			return;
+		}
+
 		var attacked;
 		var targets = [];
 	        //attack within range	
@@ -61,7 +39,7 @@ if (!creep.memory.w8s5f1) {
 			}	
 		}
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
-			creep.attack(targets);
+			creep.rangedAttack(targets);
 		}
 		if(creep.hits < creep.memory.lastHits) {
 			Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
@@ -72,7 +50,7 @@ if (!creep.memory.w8s5f1) {
 		}       
 		let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
 		if (hostileStructure) {
-			if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
+			if (creep.rangedAttack(hostileStructure) === ERR_NOT_IN_RANGE) {
 				creep.travelTo(hostileStructure);
 			}		
 		}
