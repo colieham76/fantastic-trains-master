@@ -104,29 +104,29 @@ module.exports = {
                                     Game.spawns.Spawn6.memory.rangedattackerRoom = 'W63N68'
                                 }
                             }*/
-/*
+
 
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 
-                    if (creep.room.name === 'W1S7' && Game.time % 100 === 0) {
+                    if (creep.room.name === 'W1S7' && Game.time % 10 === 0) {
                       if (invaderCreep) {
                         Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S7';
                         Game.spawns.Spawn5.memory.rangedattackerRoom = 'W1S7'
                       }
                     }
-                    if (creep.room.name === 'W3S7' && Game.time % 100 === 0) {
+                    if (creep.room.name === 'W3S7' && Game.time % 10 === 0) {
                       if (invaderCreep) {
                         Game.spawns.Spawn3.memory.rangedattackerRoom = 'W3S7';
                         Game.spawns.Spawn4.memory.rangedattackerRoom = 'W3S7'
                       }
                     }
-                    if (creep.room.name === 'W1S9' && Game.time % 100 === 0) {
+                    if (creep.room.name === 'W1S9' && Game.time % 10 === 0) {
                       if (invaderCreep) {
                         Game.spawns.Spawn5.memory.rangedattackerRoom = 'W1S9';
                         Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S9'
                       }
                     }
-                */
+                
             }
             // if not in target room
             else {
