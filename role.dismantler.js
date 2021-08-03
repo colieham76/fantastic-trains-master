@@ -1,94 +1,14 @@
-module.exports = {
+
+  module.exports = {
     run: function(creep) {
-        creep.say('presious...');
-        
-     /*   
-        if (!creep.memory.w9s5f1) {
-            creep.travelTo(Game.flags['w9s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
-                creep.memory.w9s5f1 = true;
-            }
-            return;
-        }                  
-        if (!creep.memory.w8f5s1) {
-            creep.travelTo(Game.flags['w8f5s1']);
-            if (creep.pos.isNearTo(Game.flags['w8f5s1'])) {
-                creep.memory.w8f5s1 = true;
-            }
-            return;
-        }
-        if (!creep.memory.w7s4f1) {
-            creep.travelTo(Game.flags['w7s4f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s4f1'])) {
-                creep.memory.w7s4f1 = true;
-            }
-            return;
-        }
-        
-        if (!creep.memory.w7s3f1) {
-            creep.travelTo(Game.flags['w7s3f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s3f1'])) {
-                creep.memory.w7s3f1 = true;
-            }
-            return;
-        }
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////
-        
-        //W10S8 dismantle route flag
-        
-        if (!creep.memory.w10s8f1) {
-            creep.travelTo(Game.flags['w10s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
-                creep.memory.w10s8f1 = true;
-            }
-            return;
-        }
-//W10S5 dismantler route flag
-        if (!creep.memory.w10s5f1) {
-            creep.travelTo(Game.flags['w10s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
-                creep.memory.w10s5f1 = true;
-            }
-            return;
-        }
-//W9S5 dismantler route flag
-if (!creep.memory.w9s5f1) {
-            creep.travelTo(Game.flags['w9s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
-                creep.memory.w9s5f1 = true;
-            }
-            return;
-        }
-      */  
-  /*      
-//W9S6 dismantler route flag
-        if (!creep.memory.w9s6f1) {
-            creep.travelTo(Game.flags['w9s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
-                creep.memory.w9s6f1 = true;
-            }
-            return;
-        } 
-
-
-
-if (!creep.memory.w9s7f1) {
-            creep.travelTo(Game.flags['w9s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s7f1'])) {
-                creep.memory.w9s7f1 = true;
-            }
-            return;
-        }
- ////////////////////////////////////////////////////////////////////////////////////////
-    */
+        creep.say('presious...');       
+    
         
 
-if (!creep.memory.w8s6f1) {
-            creep.travelTo(Game.flags['w8s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
-                creep.memory. w8s6f1 = true;
+if (!creep.memory.w7s7f1) {
+            creep.travelTo(Game.flags['w7s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w7s7f1'])) {
+                creep.memory. w7s7f1 = true;
             }
             return;
         }
@@ -132,3 +52,4 @@ if (Game.flags['Dismantle'] != undefined) {
         }
     }       
 }
+
