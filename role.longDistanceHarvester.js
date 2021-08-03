@@ -108,6 +108,14 @@ module.exports = {
 
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 
+                   if (creep.room.name === 'W9S5' && Game.time % 10 === 0) {
+                      if (invaderCreep) {
+                        Game.spawns.Spawn6.memory.rangedattackerRoom = 'W9S5';
+                       // Game.spawns.Spawn5.memory.rangedattackerRoom = 'W1S7'
+                      }
+                    }
+                
+                
                     if (creep.room.name === 'W1S7' && Game.time % 10 === 0) {
                       if (invaderCreep) {
                         Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S7';
