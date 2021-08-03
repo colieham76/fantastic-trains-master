@@ -5,10 +5,18 @@
     
         
 
-if (!creep.memory.w7s7f1) {
-            creep.travelTo(Game.flags['w7s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s7f1'])) {
-                creep.memory. w7s7f1 = true;
+//W9S5  route flag
+if (!creep.memory.w9s5f1) {
+            creep.travelTo(Game.flags['w9s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
+                creep.memory.w9s5f1 = true;
+            }
+            return;
+        }
+           if (!creep.memory.w8s5f1) {
+            creep.travelTo(Game.flags['w8s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
+                creep.memory.w8s5f1 = true;
             }
             return;
         }
