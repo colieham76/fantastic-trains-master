@@ -53,7 +53,7 @@ module.exports = {
 	        //attack within range	
 		// attack creeps in range (ranged)
 		if (creep.getActiveBodyparts(MOVE)) {
-			targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 40);
+			targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 48);
 			if (targets.length > 0) {
 				attacked = creep.rangedAttack(targets[0]);
 				if (attacked == ERR_NOT_IN_RANGE)
