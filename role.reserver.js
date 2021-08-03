@@ -9,7 +9,7 @@ module.exports = {
 		if (!creep.memory.W9S5 && creep.room.name === 'W9S5'|| creep.room.name === 'W9S6') {
 			creep.travelTo(Game.flags['ReserverW9S5']);
 			if (creep.pos.isNearTo(Game.flags['ReserverW9S5'])) {
-				creep.memory.ReserverW9S5 = true;
+				creep.memory.W9S5 = true;
 			}
 			return
 		}
