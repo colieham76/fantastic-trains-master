@@ -6,12 +6,12 @@ module.exports = {
     run: function (creep) {
         
      
-
+/*
  if (creep.ticksToLive < 1500) {
 
 creep.suicide();
-
-//Game.spawns.W7S8.memory.mintowerdrainers1 = {W9S5: 2}
+*/
+Game.spawns.Spawn6.memory.mintowerdrainers1 = {W8S5: 2}
   } 
         /*
          var rallypos = new RoomPosition(17,48,'W9S6');
@@ -65,31 +65,21 @@ creep.suicide();
         }
         
         */
-//W10S8 dismantle route flag
-        
-        if (!creep.memory.w10s8f1) {
-            creep.travelTo(Game.flags['w10s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
-                creep.memory.w10s8f1 = true;
-            }
-            return;
-        }
-//W10S5 dismantler route flag
-        if (!creep.memory.w10s5f1) {
-            creep.travelTo(Game.flags['w10s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
-                creep.memory.w10s5f1 = true;
-            }
-            return;
-        }
-//W9S5 dismantler route flag
+//W9S5  route flag
 if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
             if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
                 creep.memory.w9s5f1 = true;
             }
             return;
-        }   
+        }
+           if (!creep.memory.w8s5f1) {
+            creep.travelTo(Game.flags['w8s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
+                creep.memory.w8s5f1 = true;
+            }
+            return;
+        } 
         
 
         if (!creep.memory.recycled) {
