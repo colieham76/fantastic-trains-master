@@ -32,7 +32,7 @@ module.exports = {
 			}
 			return;
 		}
-	    
+	/*    
 	    //new ranged attack code
 	     const fightRangedInvaders = function(creep) {
     if (creep.getActiveBodyparts(RANGED_ATTACK) === 0) {
@@ -45,9 +45,9 @@ module.exports = {
     return false;
   };
 	    
+	*/    
 	    
-	    
-/* existing attack code
+// existing attack code
 		var attacked;
 		var targets = [];
 	        //attack within range	
@@ -63,7 +63,7 @@ module.exports = {
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.rangedAttack(targets);
 		}
-*/	    
+	    
 	    
 	    
 	    /*
