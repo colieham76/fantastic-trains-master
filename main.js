@@ -95,10 +95,11 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 } else if (spawn.room.terminal && spawn.room.terminal.hits < spawn.room.terminal.hitsMax) {
         spawn.room.controller.activateSafeMode();
 }
+/*
 // useful console commands
-//Game.spawns.Spawn3.memory.captainRoom = 'W2S8'
-//Game.spawns.Spawn3.memory.firstMateRoom = 'W2S8'
-//Game.spawns.Spawn3.memory.crewRoom = 'W2S8'
+Game.spawns.Spawn6.memory.captainRoom = 'W9S5'
+Game.spawns.Spawn6.memory.firstMateRoom = 'W9S5'
+Game.spawns.Spawn6.memory.crewRoom = 'W9S5'
 //Game.spawns.Spawn3.memory.crewRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.firstMateRoom = 'W2S8'
 //Game.spawns.Spawn2.memory.crewRoom = 'W2S8'
@@ -107,6 +108,7 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 //Game.spawns.Spawn2.memory.dismantleRoom = 'W3S7'
 //Game.creeps['Jackson'].memory.target = 'W11N88'
 //Game.spawns.Spawn2.memory.mincontrollerattackers = {W2S8: 1}  controller attacker
+*/
 ////////////////////////////////////////////////////////////////////////////////////////
 //MYang2017
 
