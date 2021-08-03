@@ -67,13 +67,13 @@ if(resourcecontainer[0].store[RESOURCE_ENERGY] > 1200){
 
 Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 0};
 //if (Game.time % 50 === 0) {
-Game.spawns.Spawn1.memory.minhealers = {W9S5: 0};
+Game.spawns.Spawn6.memory.minhealers = {W8S5: 1};
 //}
-Game.spawns.W7S8.memory.minhealers2 = {W5S9: 0};
+Game.spawns.Spawn6.memory.minhealers2 = {W8S5: 0};
 
-Game.spawns.Spawn1.memory.minhealers3 = {W5S9: 0};
+Game.spawns.Spawn6.memory.minhealers3 = {W8S5: 0};
 
-Game.spawns.W7S8.memory.minhealers4 = {W5S9: 0};
+Game.spawns.Spawn6.memory.minhealers4 = {W8S5: 0};
 
 
 Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
@@ -93,18 +93,18 @@ Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S5: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0};
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn1.memory.mintowerdrainers1 = {W9S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers1 = {W8S5: 0};
 //}
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers2 = {W8S5: 0};
 //}
-Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers3 = {W8S5: 0};
 
-Game.spawns.W7S8.memory.mintowerdrainers4 = {W9S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers4 = {W9S5: 0};
 
-Game.spawns.Spawn1.memory.mintowerdrainers5 = {W9S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
 //if (Game.time % 1300 === 0) {
 Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 //}
