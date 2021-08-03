@@ -52,7 +52,7 @@ module.exports = {
 		var targets = [];
 	        //attack within range	
 		// attack creeps in range (ranged)
-		if (creep.getActiveBodyparts(HEAL)) {
+		if (creep.getActiveBodyparts(MOVE)) {
 			targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 40);
 			if (targets.length > 0) {
 				attacked = creep.rangedAttack(targets[0]);
@@ -60,9 +60,10 @@ module.exports = {
 					creep.moveTo(targets[0]);
 			}	
 		}
+	    /*
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.rangedAttack(targets);
-		}
+		}*/
 	    
 	    
 	    
