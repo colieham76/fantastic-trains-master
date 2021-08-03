@@ -6,17 +6,14 @@ module.exports = {
 //                  creep.suicide();
 //               }
 
-		if (!creep.memory.W7S5 && creep.room.name === 'W7S5'|| creep.room.name === 'W9S5'
-			|| creep.room.name === 'W8S5'|| creep.room.name === 'W8S6'
-		) {
-			creep.travelTo(Game.flags['w7s6f4']);
-			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
-				creep.memory.W7S5 = true;
+		if (!creep.memory.W9S5 && creep.room.name === 'W9S5'|| creep.room.name === 'W9S6') {
+			creep.travelTo(Game.flags['ReserverW9S5']);
+			if (creep.pos.isNearTo(Game.flags['ReserverW9S5'])) {
+				creep.memory.ReserverW9S5 = true;
 			}
 			return
 		}
-
-		if (creep.room.name ==  'W7S5'){
+		else {
 			if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
 				creep.travelTo(creep.room.controller);
 			}
