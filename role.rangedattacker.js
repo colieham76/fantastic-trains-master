@@ -38,7 +38,7 @@ module.exports = {
     if (creep.getActiveBodyparts(RANGED_ATTACK) === 0) {
       return false;
     }
-    const hostile = creep.pos.findClosestByRangePropertyFilter(FIND_HOSTILE_CREEPS);
+    const hostile = creep.pos.findClosestByRangePropertyFilter(FIND_HOSTILE_CREEPS, 40);
     if (hostile) {
       return creep.fightRanged(hostile);
     }
