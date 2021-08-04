@@ -7,6 +7,7 @@ var roles = {
     builder: require('role.builder'),
     repairer: require('role.repairer'),
     dismantler: require('role.dismantler'),
+    dismantler: require('role.dismantler2'),
     wallRepairer: require('role.wallRepairer'),
    rampartrepairer: require('role.rampartrepairer'),
     longDistanceHarvester: require('role.longDistanceHarvester'),
