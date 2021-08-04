@@ -93,7 +93,7 @@ Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S5: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0};
 Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
 //if (Game.time % 1000 === 0) {
-Game.spawns.Spawn6.memory.mintowerdrainers1 = {W8S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers1 = {W8S5: 1};
 //}
 
 //if (Game.time % 1000 === 0) {
