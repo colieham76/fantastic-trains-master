@@ -82,13 +82,15 @@ module.exports = {
                 let targetDirection = this.pos.getDirectionTo(target.pos);
                 let moveDirection;
                 
-                if(targetDirection <= 4)
+                if(targetDirection <= 4){
                     moveDirection = targetDirection + 4;
+		}
                 else
+		{
                     moveDirection = targetDirection - 4;
-                
-                this.move(moveDirection);
-                    
+		}
+		    this.move(moveDirection);
+		}   
             }	    
 	}  
 	    /*
