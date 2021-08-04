@@ -871,6 +871,25 @@ StructureSpawn.prototype.createDismantler = function(target) {
     });
 }
 
+StructureSpawn.prototype.createDismantler2 = function(target) {
+    var body = [];
+    for (let i = 0; i < 25; i++) {
+        body.push(WORK);
+    }
+    for (let i = 0; i < 25; i++) {
+        body.push(MOVE);
+    }
+    return this.spawnCreep(body, Spawn.prototype.getCreepName('dis2'), { 
+        memory: {
+        role: 'dismantler',
+            target: target,
+            boosted: false,
+            serial: Spawn.prototype.getSerial('dis2'),
+            spawnTime: 3*body.length
+        }
+    });
+}
+
 StructureSpawn.prototype.createReserver =
     function (target) {
         return this.createCreep([CLAIM, CLAIM, MOVE], undefined, {
