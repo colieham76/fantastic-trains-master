@@ -26,6 +26,14 @@ if (!creep.memory.w9s5f1) {
             return;
         }
 
+ if (!creep.memory.w8s4f1) {
+            creep.travelTo(Game.flags['w8s4f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s4f1'])) {
+                creep.memory.w8s4f1 = true;
+            }
+            return;
+        }
+
 if (Game.flags['Dismantle'] != undefined) {
             let presious = getTargetByFlag('Dismantle','structure');
             if (presious != undefined) { // if there is storage
