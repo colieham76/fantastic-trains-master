@@ -3,12 +3,12 @@
     run: function(creep) {
         creep.say('presious...');       
     
-
+/*
  if (creep.ticksToLive < 1500) {
 creep.suicide();
 }
   
-        
+     */   
 
 //W9S5  route flag
 if (!creep.memory.w9s5f1) {
