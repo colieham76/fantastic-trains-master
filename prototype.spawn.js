@@ -901,23 +901,23 @@ StructureSpawn.prototype.createReserver =
 StructureSpawn.prototype.createCaptain = function (groupName) {
     var body = [];
 
-    for (let i = 0; i < 2; i++) {
-        //for (let i = 0; i < 10; i++) {
+    //for (let i = 0; i < 2; i++) {
+       for (let i = 0; i < 10; i++) {
         body.push(TOUGH);
     }
 
-    for (let i = 0; i < 8; i++) {
-   //     for (let i = 0; i < 21; i++) {
+   // for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 21; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 6; i++) {
+    //for (let i = 0; i < 6; i++) {
      //   for (let i = 0; i < 10; i++) {
-        body.push(WORK);
-    }
+    //    body.push(WORK);
+   // }
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 10; i++) {
      //   for (let i = 0; i < 1; i++) {
-        body.push(ATTACK);
+        body.push(RANGED_ATTACK);
     }
 
     return this.createCreep(body,
@@ -935,16 +935,16 @@ StructureSpawn.prototype.createCaptain = function (groupName) {
 StructureSpawn.prototype.createFirstMate = function(groupName, boostMat) {
     var body = [];
 
-    for (let i = 0; i < 2; i++) {
-     //   for (let i = 0; i < 12; i++) {
+    //for (let i = 0; i < 2; i++) {
+       for (let i = 0; i < 12; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 3; i++) {
-      //  for (let i = 0; i < 10; i++) {
+    //for (let i = 0; i < 3; i++) {
+       for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
-   for (let i = 0; i < 1; i++) {
-      //  for (let i = 0; i < 6; i++) {
+   //for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 6; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
@@ -963,16 +963,16 @@ StructureSpawn.prototype.createFirstMate = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
     var body = [];
-    for (let i = 0; i < 2; i++) {
-    //for (let i = 0; i < 12; i++) {
+    //for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 12; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 3; i++) {
-    //for (let i = 0; i < 10; i++) {
+   // for (let i = 0; i < 3; i++) {
+   for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 1; i++) {
-    //for (let i = 0; i < 6; i++) {
+    //for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(HEAL);
     }
     return this.createCreep(body,
