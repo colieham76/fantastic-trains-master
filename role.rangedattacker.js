@@ -65,7 +65,7 @@ module.exports = {
 			creep.rangedAttack(targets);
 		}
 		*/ 
-		 
+		 /*
 		 else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(RANGED_ATTACK) > 0) {
 		 let result = this.rangedAttack(target);
 		 if(result == ERR_NOT_IN_RANGE){
@@ -92,7 +92,7 @@ module.exports = {
 		    this.move(moveDirection);
 		}   
             }	    
-	}  
+	}  */
 	    /*
 		if(creep.hits < creep.memory.lastHits) {
 			Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
