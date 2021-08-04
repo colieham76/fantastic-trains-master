@@ -98,7 +98,7 @@ Game.spawns.Spawn6.memory.mintowerdrainers1 = {W8S5: 1};
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.Spawn6.memory.mintowerdrainers2 = {W8S5: 0};
+Game.spawns.Spawn6.memory.mintowerdrainers2 = {W8S5: 1};
 //}
 Game.spawns.Spawn6.memory.mintowerdrainers3 = {W8S5: 0};
 
@@ -973,13 +973,13 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 11; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
         body.push(HEAL);
     }
 //	for (let i = 0; i < 4; i++) {
@@ -999,7 +999,7 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(TOUGH);
     }
     for (let i = 0; i < 11; i++) {
