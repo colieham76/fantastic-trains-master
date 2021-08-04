@@ -1191,10 +1191,10 @@ StructureSpawn.prototype.createsmallUpgrader =
 
 StructureSpawn.prototype.createhealer = function(home, target) {
       var body = [];
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(HEAL);
       }
 
