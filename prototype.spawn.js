@@ -4,7 +4,7 @@ var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporte
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
 		   'towerdrainer3', 
-                   'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler'];
+                   'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler', 'dismantler2'];
 
 require('myFunctions');
 //c = longDistanceHarvester
