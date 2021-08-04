@@ -63,10 +63,34 @@ module.exports = {
 	    /*
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.rangedAttack(targets);
-		}*/
-	    
-	    
-	    
+		}
+		*/ 
+		 
+		 else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(RANGED_ATTACK) > 0) {
+		 let result = this.rangedAttack(target);
+		 if(result == ERR_NOT_IN_RANGE){
+            
+            this.travelTo(target, { range: 3, movingTarget: true });
+        }
+        else if(result == OK){
+            let range = this.pos.getRangeTo(target.pos);
+            
+            //Very basic kiting, just moves in opposite direction of the creep
+            //Does not account for walls or other 
+            if(range < 3){
+                
+                let targetDirection = this.pos.getDirectionTo(target.pos);
+                let moveDirection;
+                
+                if(targetDirection <= 4)
+                    moveDirection = targetDirection + 4;
+                else
+                    moveDirection = targetDirection - 4;
+                
+                this.move(moveDirection);
+                    
+            }	    
+	}  
 	    /*
 		if(creep.hits < creep.memory.lastHits) {
 			Game.notify('Ranged attacker '+creep+' has been attacked at '+creep.pos+'! at tick number'+Game.time+'!', 180);
