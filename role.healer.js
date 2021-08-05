@@ -4,7 +4,7 @@ module.exports = {
         creep.say('💕', true);
 
       if (creep.ticksToLive < 50) {
-          Game.spawns.Spawn6.memory.minhealers = {W8S5: 2};
+          Game.spawns.Spawn1.memory.minhealers = {W9S3: 2};
       }  
         
     
@@ -81,26 +81,32 @@ module.exports = {
         }
         */
 
+ if (!creep.memory.w10s8f1) {
+            creep.travelTo(Game.flags['w10s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
+                creep.memory.w10s8f1 = true;
+            }
+            return;
+        }
+      if (!creep.memory.w10s2f1) {
+            creep.travelTo(Game.flags['w10s2f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s2f1'])) {
+                creep.memory.w10s2f1 = true;
+            }
+            return;
+        }
+      if (!creep.memory.w9s3f1) {
+            creep.travelTo(Game.flags['w9s3f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s3f1'])) {
+                creep.memory.w9s3f1 = true;
+            }
+            return;
+        }
 
-//W9S5  route flag
-if (!creep.memory.w9s5f1) {
-            creep.travelTo(Game.flags['w9s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
-                creep.memory.w9s5f1 = true;
-            }
-            return;
-        }
-           if (!creep.memory.w8s5f1) {
-            creep.travelTo(Game.flags['w8s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
-                creep.memory.w8s5f1 = true;
-            }
-            return;
-        }
         
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(27, 1, 'W8S5'));   
+          creep.travelTo(new RoomPosition(7, 1, 'W9S3'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
