@@ -407,7 +407,7 @@ function () {
 
                 if (numberOfcapns[roomName] < this.memory.mincapns[roomName]) {
            		//	 if (Game.time % 300 === 0) {       
- 			 name = this.createcaptain(room.name, roomName)}
+ 			 name = this.createCaptain(room.name, roomName)}
 			//}
             }
         }
@@ -423,7 +423,7 @@ function () {
 
                 if (numberOffirstMates[roomName] < this.memory.minfirstMates[roomName]) {
            		//	 if (Game.time % 300 === 0) {       
- 			 name = this.createfirstMate(room.name, roomName)}
+ 			 name = this.createFirstMate(room.name, roomName)}
 			//}
             }
         }
@@ -439,7 +439,7 @@ function () {
 
                 if (numberOfcrew[roomName] < this.memory.mincrew[roomName]) {
            		//	 if (Game.time % 300 === 0) {       
- 			 name = this.createcrew(room.name, roomName)}
+ 			 name = this.createCrew(room.name, roomName)}
 			//}
             }
         }
