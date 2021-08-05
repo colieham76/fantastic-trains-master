@@ -902,12 +902,12 @@ StructureSpawn.prototype.createCaptain = function (groupName) {
     var body = [];
 
     //for (let i = 0; i < 2; i++) {
-       for (let i = 0; i < 10; i++) {
-        body.push(TOUGH);
-    }
+    //   for (let i = 0; i < 10; i++) {
+    //    body.push(TOUGH);
+    //}
 
    // for (let i = 0; i < 8; i++) {
-        for (let i = 0; i < 21; i++) {
+        for (let i = 0; i < 26; i++) {
         body.push(MOVE);
     }
     //for (let i = 0; i < 6; i++) {
@@ -915,7 +915,7 @@ StructureSpawn.prototype.createCaptain = function (groupName) {
     //    body.push(WORK);
    // }
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 26; i++) {
      //   for (let i = 0; i < 1; i++) {
         body.push(RANGED_ATTACK);
     }
