@@ -2,11 +2,11 @@ module.exports = {
 
    
  run: function(creep) {
-
+/*
  if (creep.ticksToLive < 150) {
 
 creep.suicide();
-}
+}*/
         creep.say('OMG!😨', true);
         if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
