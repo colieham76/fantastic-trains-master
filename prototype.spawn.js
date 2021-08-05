@@ -959,7 +959,7 @@ StructureSpawn.prototype.createCaptain = function (groupName) {
     //}
 
    // for (let i = 0; i < 8; i++) {
-        for (let i = 0; i < 26; i++) {
+        for (let i = 0; i < 25; i++) {
         body.push(MOVE);
     }
     //for (let i = 0; i < 6; i++) {
@@ -967,7 +967,7 @@ StructureSpawn.prototype.createCaptain = function (groupName) {
     //    body.push(WORK);
    // }
 
-    for (let i = 0; i < 26; i++) {
+    for (let i = 0; i < 25; i++) {
      //   for (let i = 0; i < 1; i++) {
         body.push(RANGED_ATTACK);
     }
