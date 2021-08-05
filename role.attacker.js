@@ -15,6 +15,15 @@ creep.suicide();
             }
             return;
         }
+
+if (!creep.memory.w8s5f1) {
+            creep.travelTo(Game.flags['w8s5f1']);
+            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
+                creep.memory.w8s5f1 = true;
+            }
+            return;
+        }
+
         /*if (grouped && healingEnough) {
             // move forward
         }
