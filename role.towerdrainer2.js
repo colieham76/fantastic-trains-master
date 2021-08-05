@@ -8,7 +8,7 @@ if (creep.ticksToLive < 1500) {
 
 creep.suicide();
 }*/
-//Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S5: 2}
+Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 2}
   
 
         /*
