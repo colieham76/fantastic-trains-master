@@ -23,10 +23,10 @@ for(var name in Game.creeps) {
          } 
 
 */
-//Game.spawns.W7S8.memory.captainRoom = ['captain', 'W9S3']
-//Game.spawns.Spawn1.memory.captainRoom = ['captain', 'W9S3']'
-//Game.spawns.W7S8.memory.firstMateRoom = ['firstMate', 'W9S3']
-//Game.spawns.Spawn1.memory.crewRoom = ['crew', 'W9S3']
+Game.spawns.W7S8.memory.captainRoom = ['captain', 'W9S3']
+Game.spawns.Spawn1.memory.captainRoom = ['captain', 'W9S3']'
+Game.spawns.W7S8.memory.firstMateRoom = ['firstMate', 'W9S3']
+Game.spawns.Spawn1.memory.crewRoom = ['crew', 'W9S3']
 
 Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
 
