@@ -72,7 +72,7 @@ creep.suicide();
         }
         
         */
-        
+ /*       
   //W9S5  route flag
 if (!creep.memory.w9s5f1) {
             creep.travelTo(Game.flags['w9s5f1']);
@@ -88,6 +88,29 @@ if (!creep.memory.w9s5f1) {
             }
             return;
         } 
+   */
+        if (!creep.memory.w10s8f1) {
+            creep.travelTo(Game.flags['w10s8f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
+                creep.memory.w10s8f1 = true;
+            }
+            return;
+        }
+      if (!creep.memory.w10s2f1) {
+            creep.travelTo(Game.flags['w10s2f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s2f1'])) {
+                creep.memory.w10s2f1 = true;
+            }
+            return;
+        }
+      if (!creep.memory.w9s3f1) {
+            creep.travelTo(Game.flags['w9s3f1']);
+            if (creep.pos.isNearTo(Game.flags['w9s3f1'])) {
+                creep.memory.w9s3f1 = true;
+            }
+            return;
+        }
+ 
         
         
      if (!creep.memory.recycled) {
