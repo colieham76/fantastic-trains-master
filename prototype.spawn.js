@@ -23,8 +23,8 @@ for(var name in Game.creeps) {
          } 
 
 */
-Game.spawns.W7S8.memory.captainRoom = {'W9S3': 1}
-Game.spawns.Spawn1.memory.captainRoom = {'W9S3': 1}
+Game.spawns.W7S8.memory.mincapns = {'W9S3': 1}
+Game.spawns.Spawn1.memory.mincapns = {'W9S3': 1}
 Game.spawns.W7S8.memory.minfirstMates = {'W9S3': 1}
 Game.spawns.Spawn1.memory.mincrew = {'W9S3': 2}
 
