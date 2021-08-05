@@ -45,7 +45,7 @@ if (!creep.memory.w8s5f1) {
                     creep.travelTo(Game.flags[creep.memory.target]);
                 }
                 else {//if in target room
-                    if (Game.flags[creep.memory.target+'attack'] != undefined){ // && (creep.getActiveBodyparts(WORK)>0) {
+                    if (Game.flags[creep.memory.target+'attack'] != undefined) && (creep.getActiveBodyparts(WORK)>0) {
                         creep.travelTo(Game.flags[creep.memory.target+'attack']);    // gether at flag's position
                         let target = Game.flags[creep.memory.target+'attack'].pos.findInRange(FIND_STRUCTURES, 0)[0];
 
