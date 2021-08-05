@@ -15,15 +15,6 @@ creep.suicide();
             }
             return;
         }
-
-if (!creep.memory.w8s5f1) {
-            creep.travelTo(Game.flags['w8s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s5f1'])) {
-                creep.memory.w8s5f1 = true;
-            }
-            return;
-        }
-
         /*if (grouped && healingEnough) {
             // move forward
         }
@@ -45,7 +36,7 @@ if (!creep.memory.w8s5f1) {
                     creep.travelTo(Game.flags[creep.memory.target]);
                 }
                 else {//if in target room
-                    if (creep.getActiveBodyparts(WORK)>0) {
+                    if (Game.flags[creep.memory.target+'attack'] != undefined){ // && (creep.getActiveBodyparts(WORK)>0) {
                         creep.travelTo(Game.flags[creep.memory.target+'attack']);    // gether at flag's position
                         let target = Game.flags[creep.memory.target+'attack'].pos.findInRange(FIND_STRUCTURES, 0)[0];
 
