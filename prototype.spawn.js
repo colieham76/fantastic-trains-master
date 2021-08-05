@@ -23,10 +23,10 @@ for(var name in Game.creeps) {
          } 
 
 */
-Game.spawns.W7S8.memory.captainRoom = ['captain', 'W9S3']
-Game.spawns.Spawn1.memory.captainRoom = ['captain', 'W9S3']
-Game.spawns.W7S8.memory.firstMateRoom = ['firstMate', 'W9S3']
-Game.spawns.Spawn1.memory.crewRoom = ['crew', 'W9S3']
+Game.spawns.W7S8.memory.captainRoom = {'W9S3': 1}
+Game.spawns.Spawn1.memory.captainRoom = {'W9S3': 1}
+Game.spawns.W7S8.memory.minfirstMates = {'W9S3': 1}
+Game.spawns.Spawn1.memory.mincrew = {'W9S3': 2}
 
 Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
 
@@ -322,6 +322,8 @@ function () {
                     }
                 }
 		    
+		   
+		    
 		        // check for controller attacker order
                if (role == 'controllerAttacker' && this.memory.controllerAttackerRoom != undefined) {
                     // try to spawn a rangedattacker
@@ -389,8 +391,56 @@ function () {
 
                 if (numberOfRangedAttackers[roomName] < this.memory.minrangedattackers[roomName]) {
            		//	 if (Game.time % 300 === 0) {       
-  name = this.createrangedattacker(room.name, roomName)}
-//}
+  				name = this.createrangedattacker(room.name, roomName)}
+				//}
+            }
+        }
+	
+	// if none of the above caused a spawn command check for captains
+        /** @type {Object.<string, number>} */
+        let numberOfcapns = {};
+        if (name == undefined) {
+            // count the number of long distance harvesters globally
+            for (let roomName in this.memory.mincapns) {
+                numberOfcapns[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'captain' && c.memory.target == roomName);
+
+                if (numberOfcapns[roomName] < this.memory.mincapns[roomName]) {
+           		//	 if (Game.time % 300 === 0) {       
+ 			 name = this.createcaptain(room.name, roomName)}
+			//}
+            }
+        }
+	
+	// if none of the above caused a spawn command check for captains
+        /** @type {Object.<string, number>} */
+        let numberOffirstMates = {};
+        if (name == undefined) {
+            // count the number of long distance harvesters globally
+            for (let roomName in this.memory.minfirstMates) {
+                numberOffirstMates[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'firstMate' && c.memory.target == roomName);
+
+                if (numberOffirstMates[roomName] < this.memory.minfirstMates[roomName]) {
+           		//	 if (Game.time % 300 === 0) {       
+ 			 name = this.createfirstMate(room.name, roomName)}
+			//}
+            }
+        }
+	
+	// if none of the above caused a spawn command check for captains
+        /** @type {Object.<string, number>} */
+        let numberOfcrew = {};
+        if (name == undefined) {
+            // count the number of crew globally
+            for (let roomName in this.memory.mincrew) {
+                numberOfcrew[roomName] = _.sum(Game.creeps, (c) =>
+                    c.memory.role == 'crew' && c.memory.target == roomName);
+
+                if (numberOfcrew[roomName] < this.memory.mincrew[roomName]) {
+           		//	 if (Game.time % 300 === 0) {       
+ 			 name = this.createcrew(room.name, roomName)}
+			//}
             }
         }
 	
