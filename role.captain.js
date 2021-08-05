@@ -93,7 +93,7 @@ console.log('captain arrived at target room...')
                                 let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
                                     filter: c => ((c.pos.getRangeTo(creep) < 2))});
                                 if (target) {
-                                    if (creep.attack(target) == ERR_NOT_IN_RANGE) {
+                                    if (creep.rangedAttack(target) == ERR_NOT_IN_RANGE) {
                                         creep.moveTo(target)
                                     }
                                 }
