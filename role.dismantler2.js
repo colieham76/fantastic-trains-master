@@ -16,20 +16,14 @@ creep.suicide();
             }
             return;
         }
-      if (!creep.memory.w10s2f1) {
-            creep.travelTo(Game.flags['w10s2f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s2f1'])) {
-                creep.memory.w10s2f1 = true;
+      if (!creep.memory.w10s3f1) {
+            creep.travelTo(Game.flags['w10s3f1']);
+            if (creep.pos.isNearTo(Game.flags['w10s3f1'])) {
+                creep.memory.w10s3f1 = true;
             }
             return;
         }
-      if (!creep.memory.w9s2f1) {
-            creep.travelTo(Game.flags['w9s2f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s2f1'])) {
-                creep.memory.w9s2f1 = true;
-            }
-            return;
-        }
+     
 
         if (!creep.memory.w8s4f1) {
             creep.travelTo(Game.flags['w8s4f1']);
