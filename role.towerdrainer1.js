@@ -12,8 +12,9 @@ module.exports = {
 creep.suicide();
 }
 */
+        /*
 Game.spawns.Spawn1.memory.mintowerdrainers1 = {W9S3: 2}
-  
+  */
         /*
          var rallypos = new RoomPosition(17,48,'W9S6');
 
