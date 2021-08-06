@@ -8,9 +8,10 @@ if (creep.ticksToLive < 1500) {
 
 creep.suicide();
 }*/
+/*
 Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 2}
   
-
+*/
         /*
         var rallypos = new RoomPosition(16,48,'E1S16');
 
