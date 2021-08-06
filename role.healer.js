@@ -2,11 +2,11 @@ var selfRenew = require('action.selfRenew');
 module.exports = {
     run: function(creep) {
         creep.say('💕', true);
-
+/*
       if (creep.ticksToLive < 50) {
           Game.spawns.Spawn1.memory.minhealers = {W9S3: 2};
       }  
-        
+  */      
     
        /* 
         
@@ -106,7 +106,7 @@ module.exports = {
         
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(7, 1, 'W9S3'));   
+          creep.travelTo(new RoomPosition(24, 1, 'W9S3'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
