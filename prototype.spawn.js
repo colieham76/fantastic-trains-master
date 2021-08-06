@@ -100,7 +100,7 @@ Game.spawns.W7S8.memory.mintowerdrainers1 = {W9S3: 0};
 
 //if (Game.time % 1000 === 0) {
 
-Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 1};
+Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 0};
 //}
 Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S3: 0};
 
