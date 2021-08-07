@@ -49,7 +49,7 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 2, repairer: 0, d
 wallRepairer: 0, extractor: 0, builder: 0, rampartrepairer: 0, lorry: 1, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
-Game.spawns.Spawn6.memory.minattackers = {W9S5: 0};
+Game.spawns.Spawn5.memory.minattackers = {W4S2: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W8S5: 0};
 //Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S5: 0};
