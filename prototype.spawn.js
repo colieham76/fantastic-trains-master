@@ -1212,7 +1212,7 @@ StructureSpawn.prototype.createattacker =
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
-		ATTACK, ATTACK, ATTACK, ATTACK,
+		//ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,  
 		ATTACK,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
@@ -1220,7 +1220,7 @@ StructureSpawn.prototype.createattacker =
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,		
-		HEAL, HEAL, HEAL
+		HEAL, HEAL
 		
 	], undefined, { role: 'attacker',
 	      homeRm: homeRm,
