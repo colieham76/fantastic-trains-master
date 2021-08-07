@@ -1211,12 +1211,16 @@ StructureSpawn.prototype.createattacker =
         return this.createCreep([
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
-		ATTACK, ATTACK, ATTACK, ATTACK,  
 		ATTACK, ATTACK, ATTACK, ATTACK,
+		ATTACK, ATTACK, ATTACK, ATTACK,
+		ATTACK, ATTACK, ATTACK, ATTACK,  
+		ATTACK,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
-		MOVE, MOVE, MOVE, MOVE, MOVE
+		MOVE, MOVE, MOVE, MOVE, MOVE,
+		MOVE, MOVE, MOVE, MOVE, MOVE,		
+		HEAL, HEAL, HEAL
 		
 	], undefined, { role: 'attacker',
 	      homeRm: homeRm,
