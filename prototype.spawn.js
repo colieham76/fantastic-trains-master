@@ -470,9 +470,9 @@ function () {
                     c.memory.role == 'attacker' && c.memory.target == roomName);
 
                 if (numberOfAttackers[roomName] < this.memory.minattackers[roomName]) {
-			 if (Game.time % 1900 === 0) {
+			// if (Game.time % 1900 === 0) {
                     name = this.createattacker(room.name, roomName)}
-		}
+		//}
             }
         }
 
@@ -1212,7 +1212,7 @@ StructureSpawn.prototype.createattacker =
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
-		//ATTACK, ATTACK, ATTACK, ATTACK,
+		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,  
 		ATTACK,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
@@ -1220,7 +1220,7 @@ StructureSpawn.prototype.createattacker =
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,
 		MOVE, MOVE, MOVE, MOVE, MOVE,		
-		HEAL, HEAL
+		HEAL, HEAL, HEAL
 		
 	], undefined, { role: 'attacker',
 	      homeRm: homeRm,
