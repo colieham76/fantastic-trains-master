@@ -28,7 +28,7 @@ Game.spawns.Spawn1.memory.mincapns = {'W9S3': 0}
 Game.spawns.W7S8.memory.minfirstMates = {'W9S3': 0}
 Game.spawns.Spawn1.memory.mincrew = {'W9S3': 0}
 
-Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
+
 
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, harvester: 1,
 				       builder: 0, lorry: 1, towerlorry: 1,
@@ -40,93 +40,61 @@ Game.spawns.W7S8.memory.minsmallUpgraders = {W7S8: 1};
 Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W8S8: 1};
 Game.spawns.W7S8.memory.minNumberOfreservers = {W8S8: 0}
 
+Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W2S8: 1};
+Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 0};
+Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
+Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 0, towerlorry: 1,
                                          rampartrepairer: 0};
-Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0} 
+
+
+Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1};
+Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0};
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
+                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
+Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 1};
+
+Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, dismantler: 0};
+Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 1};
+Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
+Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 1};
+
+
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 1, upgrader: 0, wallRepairer: 0, lorry: 2,
 dismantler: 0, antiTransporter: 0};
+Game.spawns.Spawn5.memory.minattackers = {W4S2: 0};
+Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1};
+Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
+
+Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 1, upgrader: 2, repairer: 0, dismantler: 0,
 wallRepairer: 0, extractor: 0, builder: 0, rampartrepairer: 0, lorry: 1, towerlorry: 1 };
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
-Game.spawns.Spawn5.memory.minattackers = {W4S2: 0};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S5: 1};
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S5: 1};
 //Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S5: 0};
-//Game.spawns.Spawn6.memory.minLongDistanceLorrys = 
+Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 1}
 
-/*
-var resourcecontainer = [Game.getObjectById('5e8199acaffb7347adb866b8'),
-    Game.getObjectById('5e81b96edc5ddebb95f3072a'),
-    Game.getObjectById('5e8998c986e8361ceb23ae84'),
-    Game.getObjectById('5e9e59b3d8ed18fca4d04d17')]
-var nuker = Game.getObjectById('5ea61bca676028c56d38f956')
-if(resourcecontainer[0].store[RESOURCE_ENERGY] > 1200){
-    var task = addlist(resourcecontainer[0].id,Storage0.id,RESOURCE_ENERGY,2,1)
-    translist.push(task)
-}
-*/
-
-Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W1S9: 0};
-//if (Game.time % 50 === 0) {
 Game.spawns.W7S8.memory.minhealers = {W8S5: 0};
-//}
 Game.spawns.Spawn6.memory.minhealers2 = {W8S5: 0};
-
 Game.spawns.Spawn6.memory.minhealers3 = {W8S5: 0};
-
 Game.spawns.Spawn6.memory.minhealers4 = {W8S5: 0};
 
-
-Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
-Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1};
-Game.spawns.Spawn2.memory.minLongDistanceHarvesters = {W2S8: 1};
-Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, dismantler: 0};
-Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 1};
-Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
-                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
-Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 1};
-Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W3S7: 1};
-
-Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1};
-Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
-Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S5: 1};
-Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0};
-Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0};
-//if (Game.time % 1000 === 0) {
 Game.spawns.W7S8.memory.mintowerdrainers1 = {W9S3: 0};
-//}
-
-//if (Game.time % 1000 === 0) {
-
 Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 0};
-//}
 Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S3: 0};
-
 Game.spawns.Spawn6.memory.mintowerdrainers4 = {W9S5: 0};
-
 Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
-//if (Game.time % 1300 === 0) {
-Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 0};
-//}
+
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 1, towerlorry: 1, upgrader: 1, wallRepairer: 1,
 				       rampartrepairer: 0, lorry: 2, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 1};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W8S6: 1}
+Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0};
+Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
 
-/*
-Game.spawns.Spawn5.memory.mintowerdrainers1 = {W1S8: 1}
-
-
-Game.spawns.Spawn5.memory.mintowerdrainers2 = {W1S8: 1}
-
-Game.spawns.Spawn5.memory.mintowerdrainers3 = {W1S8: 1}
-
-Game.spawns.Spawn5.memory.mintowerdrainers4 = {W1S8: 1}
-
-Game.spawns.Spawn5.memory.mintowerdrainers5 = {W1S8: 1}
-*/
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
 
