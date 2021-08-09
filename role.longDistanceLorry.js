@@ -69,7 +69,11 @@ module.exports = {
                         }
                     }
                     else {
-                        creep.getEnergy(false, true);
+                        // find exit to target room
+                        var exit = creep.room.findExitTo(creep.memory.target);
+                        // move to exit
+                        creep.travelTo(creep.pos.findClosestByRange(exit));
+
                     }
                 }
             }
