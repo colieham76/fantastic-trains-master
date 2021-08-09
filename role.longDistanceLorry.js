@@ -2,6 +2,8 @@
 var linkEnergyTransferAtHome = require('action.linkEnergyTransferAtHome');
 var actionRunAway = require('action.flee');
 
+var actionRepair = require('action.repair');
+
 module.exports = {
     run: function(creep) {
         // repair when walking
