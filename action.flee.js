@@ -1,7 +1,8 @@
 module.exports = {
     run: function(creep) {
         let enemies = creep.pos.findInRange(FIND_HOSTILE_CREEPS,7);
-        let keeperLair = creep.pos.findInRange(FIND_STRUCTURES, 7, { filter: c => c.structureType == STRUCTURE_KEEPER_LAIR && c.ticksToSpawn < 3 });
+        let keeperLair = creep.pos.findInRange(FIND_STRUCTURES, 7, { 
+            filter: c => c.structureType == STRUCTURE_KEEPER_LAIR && c.ticksToSpawn < 3 });
         if (keeperLair) {
             enemies = enemies.concat(keeperLair);
         }
@@ -50,7 +51,9 @@ module.exports = {
                             if (enemies.length > 0) {
                                 // run away from hostile
                                 var range = 6; // range to start dodging
-                                var nearCreeps = creep.pos.findInRange(FIND_HOSTILE_CREEPS, range - 1, { filter: i => i.getActiveBodyparts(ATTACK) > 0 || i.getActiveBodyparts(RANGED_ATTACK) > 0 });
+                                var nearCreeps = creep.pos.findInRange(FIND_HOSTILE_CREEPS, range - 1, { 
+                                    filter: i => i.getActiveBodyparts(ATTACK) > 0 
+                                    || i.getActiveBodyparts(RANGED_ATTACK) > 0 });
                                 if (keeperLair) {
                                     nearCreeps = nearCreeps.concat(keeperLair);
                                 }
