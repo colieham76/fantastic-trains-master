@@ -4,7 +4,7 @@ module.exports = {
     run: function(creep) {
         var mineral = creep.room.find(FIND_MINERALS)[0]
         var mineralContainer =  mineral.pos.findInRange(FIND_STRUCTURES, 1, {
-               filter: s => s.structureType == STRUCTURE_CONTAINER})[0];
+               filter: s => s.structureType == STRUCTURE_CONTAINER})[0],[1];
         if ((mineral)&&(mineralContainer)&&(mineralContainer.hits<0.9*mineralContainer.hitsMax)) { // if there is a  mineral mine (becaue there is container)
             if (creep.repair(mineralContainer) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(mineralContainer);
