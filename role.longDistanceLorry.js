@@ -31,6 +31,9 @@ module.exports = {
                 creep.memory.energyTransferCount = 0;
             }
             if (creep.memory.working == true) {
+
+actionRepair.run(creep);
+
                 if (creep.room.name != creep.memory.home) { // if not at home base
                     //creep.travelTo(Game.flags['link' + creep.memory.home]);
                     creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
