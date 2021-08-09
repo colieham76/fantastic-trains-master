@@ -1,3 +1,6 @@
+var actionRepair = require('action.repair');
+
+
 module.exports = {
 	run: function (creep) {
 		if (creep.room.name == creep.memory.target) {
@@ -13,9 +16,11 @@ module.exports = {
 					creep.moveTo(container);
 				}
 			} else {
+				
 				if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(source);
 				}
+				actionRepair.run(creep);
 			}
 		} else {
 			let exit = creep.room.findExitTo(creep.memory.target);
