@@ -63,13 +63,13 @@ module.exports = {
                             });
                             if (container != undefined) {
                                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                    creep.travelTo(container, {maxRooms: 1});
+                                    creep.travelTo(container, {maxRooms: 2});
                                 }
                             }
                         }
                     }
                     else {
-                        creep.travelTo(new RoomPosition(25, 25, creep.memory.target));
+                        creep.getEnergy(false, true);
                     }
                 }
             }
