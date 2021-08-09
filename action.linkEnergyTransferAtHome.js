@@ -78,7 +78,7 @@ module.exports = {
                     creep.travelTo(structure);
                 }
             }
-        }
+        }/*
         else { // if storage is not defined
             let structure = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { 
                 filter: (s) => ( (s.structureType == STRUCTURE_SPAWN 
@@ -100,6 +100,6 @@ module.exports = {
                     creep.travelTo(centreLinkFlag);
                 }
             }
-        }
+        }*/
     }
 }
