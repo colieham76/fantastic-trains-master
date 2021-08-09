@@ -1377,7 +1377,9 @@ StructureSpawn.prototype.createOnlyMineralMiner = function (target, home) {
 
 StructureSpawn.prototype.createRemoteMiner = function (roomName, sourceId) {
 	return this.spawnCreep(
-		[WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+		[WORK, WORK, WORK, WORK, WORK,
+		 CARRY, CARRY, CARRY,
+		 MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
 		'remoteMiner_' + Game.time,
 		{
 			memory: {
