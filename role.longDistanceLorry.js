@@ -73,6 +73,7 @@ module.exports = {
                         if(containerW9S5c1.hits<0.9*containerW9S5c1.hitsMax){
                             creep.repair(containerW9S5c1)
                         }
+                        actionRepair.run(creep);
                     }
                     else {
                         // find exit to target room
