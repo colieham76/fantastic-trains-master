@@ -60,28 +60,7 @@ module.exports = {
                     creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
                 }
                 else {
-                    if (creep.room.name == creep.memory.target) {
-
-                        var mineral = creep.room.find(FIND_MINERALS)[0]
-                        var container =  this.pos.findClosestByPath(FIND_STRUCTURES, {
-                            filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL &&
-                                s.structureType != STRUCTURE_RAMPART //&& s.structureType != STRUCTURE_ROAD
-                        })[0];
-                        if (mineral) {
-                            this.repair(container);
-                        }
-                        else {
-
-                            var mineral1 = creep.room.find(FIND_MINERALS)[1]
-                            var container1 = this.pos.findClosestByPath(FIND_STRUCTURES, {
-                                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL &&
-                                    s.structureType != STRUCTURE_RAMPART //&& s.structureType != STRUCTURE_ROAD
-                            })[1];
-                            if (mineral1)  {
-                                this.repair(container1);
-                            }
-                        }
-                        
+                    if (creep.room.name == creep.memory.target) {                        
                         let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
                             filter: {
                                 resourceType: RESOURCE_ENERGY
@@ -89,16 +68,10 @@ module.exports = {
                         });
                         if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
                             creep.travelTo(energy, {maxRooms: 1});
-                        } else {
-                            let container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                                filter: s => s.structureType == STRUCTURE_CONTAINER
-                                    && (s.store[RESOURCE_ENERGY] > 500)
-                            });
-                            if (container != undefined) {
-                                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                    creep.travelTo(container, {maxRooms: 2});
-                                }
-                            }
+                        }
+                        const containerW9S5c1 = Game.getObjectById('611234e0bfe232536b07563f')
+                        if(containerW9S5c1.hits<0.9*containerW9S5c1.hitsMax){
+                            creep.repair(containerW9S5c1)
                         }
                     }
                     else {
