@@ -44,7 +44,24 @@ module.exports = {
             }
             if (creep.memory.working == true) {
 
-actionRepair.run(creep);
+                var mineral = creep.room.find(FIND_MINERALS)[0]
+                var container =  mineral.pos.findInRange(FIND_STRUCTURES, 1, {
+                    filter: s => s.structureType == STRUCTURE_CONTAINER})[0];
+                if ((mineral)&&(container)&&(container.hits<0.9*container.hitsMax)) {
+                    actionRepair.run(creep);
+                }
+                else {
+
+                    var mineral1 = creep.room.find(FIND_MINERALS)[1]
+                    var container1 = mineral.pos.findInRange(FIND_STRUCTURES, 1, {
+                        filter: s => s.structureType == STRUCTURE_CONTAINER
+                    })[1];
+                    if ((mineral1) && (container1) && (container1.hits < 0.9 * container1.hitsMax)) {
+                        actionRepair.run(creep);
+                    }
+                }
+
+
 
                 if (creep.room.name != creep.memory.home) { // if not at home base
                     //creep.travelTo(Game.flags['link' + creep.memory.home]);
