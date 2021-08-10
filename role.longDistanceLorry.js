@@ -42,27 +42,7 @@ module.exports = {
                 creep.memory.working = true;
                 creep.memory.energyTransferCount = 0;
             }
-            if (creep.memory.working == true) {
-
-                var mineral = creep.room.find(FIND_MINERALS)[0]
-                var container =  mineral.pos.findInRange(FIND_STRUCTURES, 1, {
-                    filter: s => s.structureType == STRUCTURE_CONTAINER})[0];
-                if ((mineral)&&(container)&&(container.hits<0.9*container.hitsMax)) {
-                    actionRepair.run(creep);
-                }
-                else {
-
-                    var mineral1 = creep.room.find(FIND_MINERALS)[1]
-                    var container1 = mineral.pos.findInRange(FIND_STRUCTURES, 1, {
-                        filter: s => s.structureType == STRUCTURE_CONTAINER
-                    })[1];
-                    if ((mineral1) && (container1) && (container1.hits < 0.9 * container1.hitsMax)) {
-                        actionRepair.run(creep);
-                    }
-                }
-
-
-
+            if (creep.memory.working == true) {          
                 if (creep.room.name != creep.memory.home) { // if not at home base
                     //creep.travelTo(Game.flags['link' + creep.memory.home]);
                     creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
@@ -80,7 +60,28 @@ module.exports = {
                     creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
                 }
                 else {
-                    if (creep.room.name == creep.memory.target) {// if not in target room go to target room, if in:
+                    if (creep.room.name == creep.memory.target) {
+
+                        var mineral = creep.room.find(FIND_MINERALS)[0]
+                        var container =  this.pos.findClosestByPath(FIND_STRUCTURES, {
+                            filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL &&
+                                s.structureType != STRUCTURE_RAMPART //&& s.structureType != STRUCTURE_ROAD
+                        })[0];
+                        if (mineral) {
+                            this.repair(container);
+                        }
+                        else {
+
+                            var mineral1 = creep.room.find(FIND_MINERALS)[1]
+                            var container1 = this.pos.findClosestByPath(FIND_STRUCTURES, {
+                                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL &&
+                                    s.structureType != STRUCTURE_RAMPART //&& s.structureType != STRUCTURE_ROAD
+                            })[1];
+                            if (mineral1)  {
+                                this.repair(container1);
+                            }
+                        }
+                        
                         let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
                             filter: {
                                 resourceType: RESOURCE_ENERGY
