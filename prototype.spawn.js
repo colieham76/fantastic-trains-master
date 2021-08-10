@@ -910,8 +910,12 @@ StructureSpawn.prototype.createDismantler2 = function(target) {
 
 StructureSpawn.prototype.createReserver =
     function (target) {
-        return this.createCreep([CLAIM, CLAIM, MOVE], undefined, {
-        role: 'reserver', target: target 
+        return this.spawnCreep([CLAIM, CLAIM, MOVE], Spawn.prototype.getCreepName('res'), {
+		 memory: {
+			 role: 'reserver',
+			 target: target,
+			 serial: Spawn.prototype.getSerial('res'),
+		 }
         });
     };
 
