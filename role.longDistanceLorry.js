@@ -69,11 +69,14 @@ module.exports = {
                         if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
                             creep.travelTo(energy, {maxRooms: 1});
                         }
+                        /*
                         const containerW9S5c1 = Game.getObjectById('61126c627d7cc169e5d98848')
                         if(containerW9S5c1.hits<0.9*containerW9S5c1.hitsMax){
                             creep.repair(containerW9S5c1)
                         }
                         actionRepair.run(creep);
+                        
+                         */
                     }
                     else {
                         // find exit to target room
@@ -87,3 +90,4 @@ module.exports = {
         }
     }
 };
+
