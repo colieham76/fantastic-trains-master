@@ -18,8 +18,9 @@ module.exports = {
         }           
         if (creep.room.name == creep.memory.target) { 
             creep.say('building');
-            roleBuilder.run(creep);
             actionRepair.run(creep);
+            roleBuilder.run(creep);
+
         }
         else { // go to target room
             var exit = creep.room.findExitTo(creep.memory.target);
@@ -27,3 +28,4 @@ module.exports = {
         }        
     }
 };
+
