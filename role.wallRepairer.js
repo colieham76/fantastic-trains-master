@@ -5,9 +5,9 @@ module.exports = {
     /** @param {Creep} creep */
     run: function(creep) {
         
-   /*      if (creep.ticksToLive < 1500) {
+        if (creep.ticksToLive < 1500) {
 creep.suicide();
-}*/
+}
         
         if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.working = false;
@@ -46,7 +46,7 @@ creep.suicide();
                 // try to repair it, if not in range
                 if (creep.repair(target) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(target);
+                    creep.travelTo(target);
                 }
             }           
         }
