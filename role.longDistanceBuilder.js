@@ -6,9 +6,9 @@ module.exports = {
 //if (creep.ticksToLive < 1500) {
  //                  creep.suicide();
    //         }
-        if (creep.ticksToLive < 50) {
+    /*    if (creep.ticksToLive < 50) {
             Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 2};
-        }
+        }*/
         if (!creep.memory.W9S7) {
             creep.travelTo(Game.flags['W9S7']);
             if (creep.pos.isNearTo(Game.flags['W9S7'])) {
