@@ -94,11 +94,11 @@ global.spawnCreepWithHighestPriority = function(spawnToSpawn, room) {
                     removeElementInArrayByElement(creepInfo, spawnQ);
                 }
                 return;
-            case 'reserver':
+        /*    case 'reserver':
                 if ( !(spawnToSpawn.createReserver(creepMemory.target, creepMemory.big, creepMemory.roomEnergyMax)<0) ) {
                     removeElementInArrayByElement(creepInfo, spawnQ);
                 }
-                return;
+                return;*/
             case 'longDistanceLorry':
                 if ( !(spawnToSpawn.createLongDistanceLorry(creepMemory.energy, creepMemory.home, creepMemory.target)<0) ) {
                     removeElementInArrayByElement(creepInfo, spawnQ);
