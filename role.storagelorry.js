@@ -24,7 +24,7 @@ module.exports = {
             RESOURCE_ENERGY
 
         ];
-        if(creep.room.name == 'W62N61') {
+        if(creep.room.name == 'W7S6') {
             if (creep.memory.working && creep.carryCapacity == _.sum(creep.carry)) {
                 creep.memory.working = false;
             }
@@ -34,17 +34,17 @@ module.exports = {
 
             if (creep.memory.working) {
                 
-                let terStorage = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                    filter: s => s.structureType == STRUCTURE_TERMINAL
-                       // && s.mineralAmount > 1000
-                        && (s.id == '5cfb0b005f90cb12d6d0b9b1')
+                let linkStorage = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                    filter: s => s.structureType == STRUCTURE_LINK
+                        && s.mineralAmount > 300
+                        && (s.id == '60f7d1093bd3cc14ace13cfa')
                 });
-                // if we found right lab
-                if (terStorage != undefined) {
+                // if we found right link
+                if (linkStorage != undefined) {
 
-                    if (creep.withdraw(terStorage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    if (creep.withdraw(linkStorage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         // move towards it
-                        creep.moveTo(terStorage, {visualizePathStyle: visualPath});
+                        creep.moveTo(linkStorage, {visualizePathStyle: visualPath});
                     }
                 }
             }
