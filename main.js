@@ -7,6 +7,18 @@ module.exports.loop = function() {
 	}
 	}
 
+for(let name in Game.creeps){
+        if(Game.creeps[name].memory.role === 'wallRepairer'){
+            Game.creeps[name].suicide();
+            nums++;
+        }
+    }
+    console.log('[notice] -> deleting '+ nums +' creep(s)');
+    return '';
+};
+
+
+
 //Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
 //Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
 Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
