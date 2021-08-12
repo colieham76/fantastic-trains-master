@@ -6,7 +6,7 @@ module.exports.loop = function() {
 		Game.rooms[room].memory.remoteMiningEnabled = false;
 	}
 	}
-
+/*
 for(let name in Game.creeps){
         if(Game.creeps[name].memory.role === 'wallRepairer'){
             Game.creeps[name].suicide();
@@ -16,7 +16,7 @@ for(let name in Game.creeps){
     console.log('[notice] -> deleting '+ nums +' creep(s)');
     return '';
 };
-
+*/
 
 
 //Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
