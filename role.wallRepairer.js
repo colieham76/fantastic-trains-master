@@ -1,5 +1,9 @@
 var roleBuilder = require('role.builder');
 
+if (creep.ticksToLive < 1500) {
+creep.suicide();
+}
+
 module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
@@ -18,9 +22,6 @@ module.exports = {
         // if creep is supposed to repair something
         if (creep.memory.working == true) {
 
-if (creep.ticksToLive < 1500) {
-creep.suicide();
-}
 
 
             // find all walls in the room
