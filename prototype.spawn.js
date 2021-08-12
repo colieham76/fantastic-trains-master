@@ -24,16 +24,6 @@ for(var name in Game.creeps) {
 
 */
 
-for(let name in Game.creeps){
-        if(Game.creeps[name].memory.role === 'wallRepairer'){
-            Game.creeps[name].suicide();
-            nums++;
-        }
-    }
-    console.log('[notice] -> deleting '+ nums +' creep(s)');
-    return '';
-};
-
 Game.spawns.W7S8.memory.mincapns = {'W9S3':0}
 Game.spawns.Spawn1.memory.mincapns = {'W9S3': 0}
 Game.spawns.W7S8.memory.minfirstMates = {'W9S3': 0}
