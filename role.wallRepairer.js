@@ -52,7 +52,7 @@ creep.suicide();
         }
         // if creep is supposed to get energy
         else {
-            creep.getEnergy(false, true);
+            creep.getEnergy(true, false);
         }
     }
 };
