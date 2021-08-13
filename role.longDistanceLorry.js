@@ -48,8 +48,20 @@ module.exports = {
             }
             if (creep.memory.working == true) {          
                 if (creep.room.name != creep.memory.home) { // if not at home base
-                    //creep.travelTo(Game.flags['link' + creep.memory.home]);
-                    creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
+                    var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, false,
+                        true, true); // find energy function in myFunctions
+                    if (resourceID !== undefined) {
+                        energy = Game.getObjectById(resourceID);
+                        if (ifDropped) { // if energy is dropped
+                            if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
+                                creep.moveTo(energy);
+                            }
+                        } else { // energy is from container, storage or link
+                            if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                                creep.moveTo(energy);
+                            }
+                        }
+                    }
                 }
                 else {// creep at home
                     if (creep.memory.working == true && creep.carry.energy == 0) { // < creep.carryCapacity*0.2) {
@@ -94,4 +106,6 @@ module.exports = {
         }
     }
 };
+
+
 
