@@ -1,5 +1,4 @@
-
-//var rolePickuper = require('role.pickuper');
+var rolePickuper = require('role.pickuper');
 var linkEnergyTransferAtHome = require('action.linkEnergyTransferAtHome');
 var actionRunAway = require('action.flee');
 
@@ -7,10 +6,6 @@ var actionRepair = require('action.repair');
 
 module.exports = {
     run: function(creep) {
-
- if (creep.ticksToLive < 50) {
-            Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 2};
-        }
         
         let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 
@@ -91,3 +86,7 @@ module.exports = {
 
                     }
                 }
+            }
+        }
+    }
+};
