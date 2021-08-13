@@ -64,9 +64,10 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
 
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 1}
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, 
-				       upgrader: 2, 
+				       upgrader: 1, 
 				       lorry: 2, 
-				       towerlorry: 1
+				       towerlorry: 1,
+				       builder: 1
 				      };
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 1};
