@@ -2,76 +2,31 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
-        const visualPath = {
-            fill: 'transparent',
-            stroke: '#fe0f0a',
-            lineStyle: 'continuous',
-            strokeWidth: .5,
-            opacity: .3
-        };
-        var terminalVar = creep.room.terminal;
         var storageVar = creep.room.storage;
-        var resourceTypes = [
-
-            /*            RESOURCE_CATALYZED_UTRIUM_ACID, // ATTACK
-                        RESOURCE_CATALYZED_LEMERGIUM_ALKALIDE, // HEAL
-                        RESOURCE_CATALYZED_ZYNTHIUM_ALKALIDE, // MOVE
-                        RESOURCE_CATALYZED_GHODIUM_ALKALIDE, // TOUGH
-                        RESOURCE_CATALYZED_KEANIUM_ALKALIDE, // RANGED ATTACK
-                        RESOURCE_CATALYZED_ZYNTHIUM_ACID, */// DISMANTLE
-
-            //RESOURCE_OXYGEN,
-            RESOURCE_ENERGY
-
-        ];
-        if(creep.room.name == 'W7S6') {
-            if (creep.memory.working && creep.carryCapacity == _.sum(creep.carry)) {
-                creep.memory.working = false;
-            }
-            if (!creep.memory.working && 0 == _.sum(creep.carry)) {
-                creep.memory.working = true;
-            }
-
-            if (creep.memory.working) {
-                
-                let linkStorage = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                    filter: s => s.structureType == STRUCTURE_LINK
-                        && s.mineralAmount > 300
-                        && (s.id == '60f7d1093bd3cc14ace13cfa')
-                });
-                // if we found right link
-                if (linkStorage != undefined) {
-
-                    if (creep.withdraw(linkStorage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        // move towards it
-                        creep.moveTo(linkStorage, {visualizePathStyle: visualPath});
+        if(creep.memory.working && creep.store.energy == 0) {
+            creep.memory.working = false;
+        }
+        else if(!creep.memory.working && creep.store.energy == creep.store.getCapacity()){
+            creep.memory.working = true;
+        }
+        if (creep.room.name == 'W7S6') {
+            creep.moveTo(31, 31, {visualizePathStyle: {stroke: '#ffaa00'}});
+            if (creep.pos == 31, 31) {
+                if (creep.memory.working == false) {
+                    //LINK IN ROOM W7S6
+                    const upgradeContainer = Game.getObjectById('60f7d1093bd3cc14ace13cfa');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
+                        }
                     }
                 }
-            }
-            // else put in terminal or storage
-            else {
-                if (_.sum(creep.carry) > 0)
-                {
+                else{
                     if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
                         creep.moveTo(storageVar);
                     }
                 }
             }
-            /*
-            // Stop ZK production if Terminal Full in Room W11N83
-            var terminalZKFull = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-                filter: function(object) {
-                    return object.structureType == STRUCTURE_TERMINAL && (object.store[RESOURCE_ZYNTHIUM_KEANITE] > 5000);
-                }
-            });
-            if(terminalZKFull) {
-
-                Game.rooms['W17N88'].terminal.send(RESOURCE_ZYNTHIUM_KEANITE, 5000, 'W12N88', 'internal trade ZK')
-                Game.rooms['W17N88'].terminal.send(RESOURCE_ZYNTHIUM, 5000, 'W11N83', 'internal trade')
-                Game.rooms['W11N83'].terminal.send(RESOURCE_KEANIUM, 5000, 'W17N88', 'internal trade K')
-                Game.rooms['W12N88'].terminal.send(RESOURCE_GHODIUM, 5000, 'W11N88', 'internal trade')
-            }*/
         }
-
     }
 }
