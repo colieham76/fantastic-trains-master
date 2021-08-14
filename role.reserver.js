@@ -13,6 +13,11 @@ if (!creep.memory.W9S6 && creep.room.name === 'W9S6'|| creep.room.name === 'W9S7
 			}
 			return
 		}
+		else {
+			if (creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+				creep.travelTo(creep.room.controller);
+			}
+		}
 
 		if (!creep.memory.W9S5 && creep.room.name === 'W9S5'|| creep.room.name === 'W9S6') {
 			creep.travelTo(Game.flags['ReserverW9S5']);
