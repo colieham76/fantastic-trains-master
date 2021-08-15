@@ -3,7 +3,7 @@ module.exports = {
     /** @param {Creep} creep */
     run: function (creep) {
         var storageVar = creep.room.storage;
-        if(creep.memory.working && creep.store.energy == 0) {
+        if(creep.memory.working && creep.store.energy < 600) {
             creep.memory.working = false;
         }
         else if(!creep.memory.working && creep.store.energy == creep.store.getCapacity()){
