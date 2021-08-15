@@ -78,5 +78,10 @@ module.exports = {
 
              creep.getEnergy(false, true)
          }
+         if (creep.memory.working == false) {
+             if (creep.room.name == 'W7S6') {
+                 creep.moveTo(25, 33, {visualizePathStyle: {stroke: '#ffaa00'}});
+             }
+         }
      }
  }
