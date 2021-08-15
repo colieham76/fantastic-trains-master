@@ -27,3 +27,4 @@ if (Game.time % 3 == 0) {
     }
 }
 module.exports = linkController;
+
