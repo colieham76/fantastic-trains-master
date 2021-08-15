@@ -21,7 +21,7 @@ module.exports = {
                         }
                     }
                 }
-                else{
+                 if (Game.time % 100 == 0) {
                     if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
                         creep.moveTo(storageVar);
                     }
