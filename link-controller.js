@@ -10,19 +10,28 @@ var linkController = {
 
         if (Game.time % 3 == 0) {
 
-            console.log('linked')
+
             if (link.energy >= upgradeLinkEnergyNeeded) {
                 link.transferEnergy(upgradeLink, upgradeLinkEnergyNeeded)
             }
-            console.log('linked')
+            console.log('linked1')
 
             if (link.energy >= upgradeLinkEnergyNeeded2) {
                 link.transferEnergy(upgradeLink2, upgradeLinkEnergyNeeded2)
-            }  
-            
+            }
+        }
+
+        if (Game.time % 9 == 0) {
+
+            if (link.energy >= upgradeLinkEnergyNeeded) {
+                link.transferEnergy(upgradeLink, upgradeLinkEnergyNeeded)
+            }
+            console.log('linked1')
+
+
             if (link.energy >= upgradeLinkEnergyNeeded3) {
                 link.transferEnergy(upgradeLink3, upgradeLinkEnergyNeeded3)
-            } 
+            }
         }
     }
 }
