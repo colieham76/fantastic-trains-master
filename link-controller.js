@@ -8,7 +8,7 @@ var linkController = {
         const upgradeLinkEnergyNeeded2 = upgradeLink2.energyCapacity - upgradeLink2.energy;
         const upgradeLinkEnergyNeeded3 = upgradeLink3.energyCapacity - upgradeLink3.energy;
 
-        if (Game.time % 3 == 0) {
+        
 
 
             if (link.energy >= upgradeLinkEnergyNeeded) {
@@ -19,20 +19,10 @@ var linkController = {
             if (link.energy >= upgradeLinkEnergyNeeded2) {
                 link.transferEnergy(upgradeLink2, upgradeLinkEnergyNeeded2)
             }
-        }
-
-        if (Game.time % 9 == 0) {
-
-            if (link.energy >= upgradeLinkEnergyNeeded) {
-                link.transferEnergy(upgradeLink, upgradeLinkEnergyNeeded)
-            }
-            console.log('linked1')
-
-
             if (link.energy >= upgradeLinkEnergyNeeded3) {
                 link.transferEnergy(upgradeLink3, upgradeLinkEnergyNeeded3)
             }
-        }
+        
     }
 }
 module.exports = linkController;
