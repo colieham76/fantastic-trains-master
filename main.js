@@ -142,8 +142,8 @@ const linkController = require('link-controller');
 	
 
 
-              const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// centre
-              linkController.run(uploadLink1);
+        //      const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// centre
+        //      linkController.run(uploadLink1);
              const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996'); // south
               linkController.run(uploadLink2);
 		const uploadLink3 = Game.getObjectById('6102b6bd0351a81429f0d43f'); // east
