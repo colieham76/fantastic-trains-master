@@ -16,11 +16,11 @@ var linkController = {
                 link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded2)
             }
         }       
-        if (Game.time % 20 == 0) {
+        
             if (link.energy >= upgradeLinkEnergyNeeded3) {
-                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded3)
+                link.transferEnergy(upgradeLink3, upgradeLinkEnergyNeeded3)
             }
-        }
+        
     }
 }
 module.exports = linkController;
