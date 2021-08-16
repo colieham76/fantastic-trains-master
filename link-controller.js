@@ -16,12 +16,12 @@ if (Game.time % 1 == 0) {
             }*/
     console.log('linked2') 
             if (link.energy >= upgradeLinkEnergyNeeded2) {
-                link.transferEnergy(upgradeLink2, upgradeLinkEnergyNeeded2)
+                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded2)
             }
          
 
             if (link.energy >= upgradeLinkEnergyNeeded3) {
-                link.transferEnergy(upgradeLink3, upgradeLinkEnergyNeeded3)
+                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded3)
             }
 }
     }
