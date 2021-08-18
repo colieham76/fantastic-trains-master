@@ -1199,6 +1199,42 @@ StructureSpawn.prototype.createattacker =
 	      });
     };
 
+
+//create a new function fo smallHarvester
+StructureSpawn.prototype.createsmallHarvester =
+  function (energy, numberOfsmallWorkPartsh, home, target, sourceIndex) {
+  // create a body
+    var smallbodyh = [];
+    for (let i = 0; i < numberOfsmallWorkPartsh; i++) {
+    smallbodyh.push(WORK);
+    }
+  
+  // 150 = 100 (cost of WORK) + 50 (cost of MOVE)
+    energy -= 150 * numberOfsmallWorkPartsh;
+    var numberOfsmallBodyPartsh = Math.floor(energy / 100);
+    
+  // creep not big
+    numberOfsmallBodyPartsh = Math.min(numberOfsmallBodyPartsh, Math.floor((40 - numberOfsmallWorkPartsh) / 2));
+    
+    for (let i = 0; i < numberOfsmallBodyPartsh; i++) {
+    smallbodyh.push(CARRY);
+    }  
+    for (let i = 0; i < 2; i++) {
+    smallbodyh.push(MOVE);
+}
+   
+  // create smallHarvester
+  return this.createCreep(smallbodyh, Spawn.prototype.getCreepName('2799'), {
+          role: 'smallHarvester',
+	  home: home,
+          serial: Spawn.prototype.getSerial('2799'),
+          target: target,
+	  sourceIndex: sourceIndex,
+	  working: false
+          });
+};
+
+
 //create a new function fo smallupgrader
 StructureSpawn.prototype.createsmallUpgrader =
   function (energy, numberOfsmallWorkParts, home, target, sourceIndex) {
