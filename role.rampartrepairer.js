@@ -11,16 +11,16 @@ module.exports = {
 
         if (creep.memory.working !== true) {
             var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
-                true, true); // find energy function in myFunctions
+                false, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
                 if (ifDropped) { // if energy is dropped
                     if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                        creep.travelTo(energy);
+                        creep.moveTo(energy);
                     }
                 } else { // energy is from container, storage or link
                     if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                        creep.travelTo(energy);
+                        creep.moveTo(energy);
                     }
                 }
             }
@@ -40,4 +40,3 @@ module.exports = {
         }
     }
 };
-
