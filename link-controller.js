@@ -1,3 +1,4 @@
+/*
 var linkController = {
     run: function (link) {
         const upgradeLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa'); //W7S8 centre
@@ -24,3 +25,4 @@ var linkController = {
     }
 }
 module.exports = linkController;
+*/
