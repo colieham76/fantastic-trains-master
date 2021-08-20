@@ -8,12 +8,12 @@ var linkController = {
         const upgradeLinkEnergyNeeded2 = upgradeLink2.energyCapacity - upgradeLink2.energy;
         const upgradeLinkEnergyNeeded3 = upgradeLink3.energyCapacity - upgradeLink3.energy;      
             if (link.energy >= upgradeLinkEnergyNeeded1) {
-                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded2)
+                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded1)
             }
         
             
             if (link.energy >= upgradeLinkEnergyNeeded2) {
-                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded1)
+                link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded2)
             }
                
         /*
