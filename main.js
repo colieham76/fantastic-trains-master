@@ -138,7 +138,7 @@ Game.spawns.Spawn6.memory.crewRoom = 'W9S5'
 	require('myTrading');
 	require('functionWar');
 const linkController = require('link-controller');
-//	var Traveler = require('Traveler');
+	var Traveler = require('Traveler');
 	
 
 
