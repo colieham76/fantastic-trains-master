@@ -68,7 +68,7 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 0,
     lorry: 2, 
     towerlorry: 1,
     builder: 0,
-    rampartrepairer: 1
+    rampartrepairer: 0
 };
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 1, W9S5: 0};
@@ -95,7 +95,7 @@ Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
-				       rampartrepairer: 1, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
+				       rampartrepairer: 0, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
