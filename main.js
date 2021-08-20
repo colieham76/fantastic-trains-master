@@ -6,6 +6,13 @@ module.exports.loop = function() {
 		Game.rooms[room].memory.remoteMiningEnabled = false;
 	}
 	}
+	
+	  const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// centre
+              linkController.run(uploadLink1);
+             const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996'); // south
+              linkController.run(uploadLink2);
+	
+	
 /*
 for(let name in Game.creeps){
         if(Game.creeps[name].memory.role === 'wallRepairer'){
@@ -141,60 +148,7 @@ Game.spawns.Spawn6.memory.crewRoom = 'W9S5'
 	require('functionWar');
 	const linkController = require('link-controller');
 	var Traveler = require('Traveler');
-	try {
-		var centerLink = Game.getObjectById("60f7d1093bd3cc14ace13cfa");
-		var outerlinkIds = [
-			"60f7cd829709c9966154d996",
-			"6102b6bd0351a81429f0d43f"
-		];
-		for (let i in outerlinkIds) {
-			let link = Game.getObjectById(outerlinkIds[i]);
-			if (!link) {
-				continue;
-			}
-			if (link.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
-				if (centerLink.store.getUsedCapacity(RESOURCE_ENERGY) < 25) {
-					link.transferEnergy(centerLink);
-				}
-			}
-		} 
-	}
-		//if (sourceLink.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
-		//    if (upgradeLink.store.getUsedCapacity(RESOURCE_ENERGY) < 20) {
-		//        sourceLink.transferEnergy(upgradeLink);
-		//    } else {
-		//        sourceLink.transferEnergy(centerLink);
-		//    }
-		//}
-		// if (leftLink.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
-		//     if (upgradeLink.store.getUsedCapacity(RESOURCE_ENERGY) < 400) {
-		//         leftLink.transferEnergy(upgradeLink);
-		//     } else {
-		//         leftLink.transferEnergy(centerLink);
-		//     }
-		// }
-
-		//if (centerLink.store.getFreeCapacity(RESOURCE_ENERGY) == 0 &&
-		//   upgradeLink.store.getUsedCapacity(RESOURCE_ENERGY) == 0 &&
-		//   upgradeCont.store.getUsedCapacity(RESOURCE_ENERGY) < 500) {
-		//   centerLink.transferEnergy(upgradeLink);
-		//}
-
-		// var sourceLink1 = Game.getObjectById("5f71ff102b43b1d77070cf7b");
-		// var leftLink1 = Game.getObjectById("5f71f8edc089314e41267de9");
-		// if (sourceLink1.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
-		//     sourceLink1.transferEnergy(leftLink1);
-
-		// }
-		//var sourceLink2 = Game.getObjectById("5f7c0893e99f95f88c6ee992");
-		//var upgradeLink2 = Game.getObjectById("5f7c18468591b317c1e2b422");
-		//if (sourceLink2.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
-		//    sourceLink2.transferEnergy(upgradeLink2);
-		// }
-	catch (error) {
-		console.log(error);
-	}
-
+	
 
 	//const profiler = require('screeps-profiler');
 	//profiler.enable();
