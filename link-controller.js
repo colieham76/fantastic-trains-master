@@ -12,11 +12,11 @@ var linkController = {
             }
         
             
-        /*    if (link.energy >= upgradeLinkEnergyNeeded2) {
+            if (link.energy >= upgradeLinkEnergyNeeded2) {
                 link.transferEnergy(upgradeLink1, upgradeLinkEnergyNeeded2)
             }
                
-        
+        /*
             if (link.energy >= upgradeLinkEnergyNeeded3) {
                 link.transferEnergy(upgradeLink3, upgradeLinkEnergyNeeded3)
             }*/
