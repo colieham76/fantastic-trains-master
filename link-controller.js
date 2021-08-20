@@ -4,7 +4,7 @@ var linkController = {
         const upgradeLink2 = Game.getObjectById('60f7cd829709c9966154d996'); //W7S8
        const upgradeLink3 = Game.getObjectById('6102b6bd0351a81429f0d43f'); //W7S8
         
-        const upgradeLinkEnergyNeeded1 = upgradeLink1.energyCapacity - upgradeLink1.energy*0.8;
+        const upgradeLinkEnergyNeeded1 = upgradeLink1.energyCapacity - upgradeLink1.energy*0.2;
         const upgradeLinkEnergyNeeded2 = upgradeLink2.energyCapacity - upgradeLink2.energy;
         const upgradeLinkEnergyNeeded3 = upgradeLink3.energyCapacity - upgradeLink3.energy;      
             if (link.energy >= upgradeLinkEnergyNeeded1) {
