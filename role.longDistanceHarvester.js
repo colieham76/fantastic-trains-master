@@ -69,7 +69,7 @@ module.exports = {
                 }
                 if(creep.room.name == 'W7S7') {
                     if (invaderStructure) {
-                        if (Game.time % 50 === 0) {
+                        if (Game.time % 250 === 0) {
                             Game.spawns.Spawn7.memory.minattackers = 'W7S7';
                         }
                     }
