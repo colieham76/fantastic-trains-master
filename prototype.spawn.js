@@ -294,7 +294,16 @@ function () {
                     }
                 }
 		    
-		   
+		 // check for attacker order
+               if (role == 'attacker' && this.memory.attackerRoom != undefined) {
+                    // try to spawn attacker
+                    name = this.createattacker(this.memory.attackerRoom);
+                    // if that worked
+                    if (name != undefined && _.isString(name)) {
+                        // delete the rangedattacker order
+                        delete this.memory.attackerRoom;
+                    }
+                }  
 		    
 		        // check for controller attacker order
                if (role == 'controllerAttacker' && this.memory.controllerAttackerRoom != undefined) {
