@@ -3,35 +3,48 @@ module.exports = {
     /** @param {Creep} creep */
     run: function (creep) {
 
-		if (!creep.memory.W9S5 && creep.room.name === 'W9S5'|| creep.room.name === 'W9S6') {
-			creep.travelTo(Game.flags['W9S5']);
-			if (creep.pos.isNearTo(Game.flags['W9S5'])) {
-				creep.memory.W9S5 = true;
-			}
-			return;
-		}
-	    if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
-			creep.travelTo(Game.flags['W3S7']);
-			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
-				creep.memory.W3S7 = true;
-			}
-			return;
-		}
-		if (!creep.memory.W1S7 && creep.room.name === 'W1S7' || creep.room.name === 'W1S8') {
-			creep.moveTo(Game.flags['W1S7']);
-			if (creep.pos.isNearTo(Game.flags['W1S7'])) {
-				creep.memory.W1S7 = true;
-			}
-			return;
-		}
+		 /*
+                if (creep.ticksToLive < 150) {
+                        creep.suicide();
+                                }
+                                */
+        creep.say('OMG!😨', true);
+        if (!creep.memory.W7S7 && creep.room.name === 'W7S7'|| creep.room.name === 'W7S6') {
+            creep.travelTo(Game.flags['W7S7']);
+            if (creep.pos.isNearTo(Game.flags['W7S7'])) {
+                creep.memory.W7S7 = true;
+            }
+            return;
+        }
+        if (!creep.memory.W9S5 && creep.room.name === 'W9S5'|| creep.room.name === 'W9S6') {
+            creep.travelTo(Game.flags['W9S5']);
+            if (creep.pos.isNearTo(Game.flags['W9S5'])) {
+                creep.memory.W9S5 = true;
+            }
+            return;
+        }
+        if (!creep.memory.W3S7 && creep.room.name === 'W3S7'|| creep.room.name === 'W3S8') {
+            creep.travelTo(Game.flags['W3S7']);
+            if (creep.pos.isNearTo(Game.flags['W3S7'])) {
+                creep.memory.W3S7 = true;
+            }
+            return;
+        }
+        if (!creep.memory.W1S7 && creep.room.name === 'W1S7' || creep.room.name === 'W1S8') {
+            creep.moveTo(Game.flags['W1S7']);
+            if (creep.pos.isNearTo(Game.flags['W1S7'])) {
+                creep.memory.W1S7 = true;
+            }
+            return;
+        }
 
-		if (!creep.memory.W7S5 && creep.room.name === 'W7S5' || creep.room.name === 'W9S6') {
-			creep.moveTo(Game.flags['w7s6f4']);
-			if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
-				creep.memory.W7S5 = true;
-			}
-			return;
-		}
+        if (!creep.memory.W7S5 && creep.room.name === 'W7S5' || creep.room.name === 'W9S6') {
+            creep.moveTo(Game.flags['w7s6f4']);
+            if (creep.pos.isNearTo(Game.flags['w7s6f4'])) {
+                creep.memory.W7S5 = true;
+            }
+            return;
+        }
 	/*    
 	    //new ranged attack code
 	     const fightRangedInvaders = function(creep) {
