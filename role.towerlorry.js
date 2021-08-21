@@ -23,7 +23,39 @@ module.exports = {
                  }
                  else{
                      if (creep.room.name == 'W7S6') {
-                         creep.moveTo(25, 33, {visualizePathStyle: {stroke: '#ffaa00'}});
+                         creep.moveTo(25, 33, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+                     if (creep.room.name == 'W9S6') {
+                         creep.moveTo(32, 25, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+                     if (creep.room.name == 'W7S8') {
+                         creep.moveTo(14, 14, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+                     if (creep.room.name == 'W3S8') {
+                         creep.moveTo(21, 30, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+                     if (creep.room.name == 'W1S8') {
+                         creep.moveTo(44, 20, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
                      }
                  }
              }
