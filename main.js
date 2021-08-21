@@ -1,114 +1,49 @@
 module.exports.loop = function() {
-	
-	
 	for (let room in Game.rooms) {
-	if (Game.rooms[room].memory.remoteMiningEnabled == undefined) {
-		Game.rooms[room].memory.remoteMiningEnabled = false;
+		if (Game.rooms[room].memory.remoteMiningEnabled == undefined) {
+			Game.rooms[room].memory.remoteMiningEnabled = false;
+		}
 	}
-	}
-	
-	  const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// centre
-              linkController.run(uploadLink1);
-             const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996'); // south
-              linkController.run(uploadLink2);
-	
-	
-/*
-for(let name in Game.creeps){
-        if(Game.creeps[name].memory.role === 'wallRepairer'){
-            Game.creeps[name].suicide();
-            nums++;
-        }
-    }
-    console.log('[notice] -> deleting '+ nums +' creep(s)');
-    return '';
-};
-*/
-
-
-//Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
-//Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
-Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
-Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
-Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
-	
+	const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// W7S6 centre
+	linkController.run(uploadLink1);
+	const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996');// W7S6 south
+	linkController.run(uploadLink2);
+	const uploadLink3 = Game.getObjectById('6102b6bd0351a81429f0d43f'); // W7S6 east
+	linkController.run(uploadLink3);
+	Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
+	Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
+	Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
 	Game.rooms.W7S6.createConstructionSite(47, 12, STRUCTURE_RAMPART);
-Game.rooms.W7S6.createConstructionSite(2, 22, STRUCTURE_RAMPART);
+	Game.rooms.W7S6.createConstructionSite(2, 22, STRUCTURE_RAMPART);
 	Game.rooms.W7S6.createConstructionSite(45, 35, STRUCTURE_RAMPART);
-Game.rooms.W7S6.createConstructionSite(29, 47, STRUCTURE_RAMPART);
-	
-	//Game.rooms.W9S7.createConstructionSite(4, 4, STRUCTURE_CONTAINER);	
-	//Game.rooms.W9S7.createConstructionSite(12, 4, STRUCTURE_CONTAINER);
-
+	Game.rooms.W7S6.createConstructionSite(29, 47, STRUCTURE_RAMPART);	
     Game.rooms.W9S6.createConstructionSite(39, 2, STRUCTURE_RAMPART);
     Game.rooms.W9S6.createConstructionSite(41, 2, STRUCTURE_RAMPART);
-	Game.rooms.W9S6.createConstructionSite(19, 2, STRUCTURE_RAMPART);
-    		
+	Game.rooms.W9S6.createConstructionSite(19, 2, STRUCTURE_RAMPART);    		
     Game.rooms.W9S6.createConstructionSite(37, 2, STRUCTURE_RAMPART);
-	
-	
-		// clear memory
-        for (let name in Memory.creeps) {
-            if (Game.creeps[name] == undefined) {
-                delete Memory.creeps[name];
-            }
-           // else if (_.isEmpty(Game.creeps[name].memory)) {
-           //     unpackCreepMemory(name);
-          //  }
-        }
-
-        // for each creeps
-
+	// clear memory
+    for (let name in Memory.creeps) {
+    	if (Game.creeps[name] == undefined) {
+    		delete Memory.creeps[name];
+    	}           
+    }
 	// run creep logic
-	for (let name in Game.creeps) 
-
+	for (let name in Game.creeps)
 		Game.creeps[name].runRole();
-
-
 	// find all towers
-        var towers = _.filter(Game.structures, s => s.structureType == STRUCTURE_TOWER);
-        // for each tower
-        for (let tower of towers) {
-                // run tower logic
-                tower.defend();
-        }
-
-        // for each spawn
-        for (let spawnName in Game.spawns) {
-                // run spawn logic
-                Game.spawns[spawnName].spawnCreepsIfNecessary();
-        }
-    /*    
-	if (Game.time % 1400 === 0) {
-        Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 1}
-	
-	Game.spawns.W7S8.memory.minNumberOfreservers = {W7S9: 0}
-	}
-	if (Game.time % 1450 === 0) {
-	Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1}
-	Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 1}
-	//Game.spawns.Spawn1.memory.minNumberOfreservers = {W8S8: 1}
-	}
-	if (Game.time % 1420 === 0) {
-        Game.spawns.Spawn3.memory.minNumberOfreservers = {W3S7: 0}	
-	Game.spawns.W7S8.memory.minNumberOfreservers = {W7S9: 0}
-	}
-	if (Game.time % 1460 === 0) {
-	Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 0}
-	Game.spawns.Spawn2.memory.minNumberOfreservers = {W1S9: 0}
-	Game.spawns.Spawn1.memory.minNumberOfreservers = {W8S8: 0}
-	}
-	
-	*/
+	var towers = _.filter(Game.structures, s => s.structureType == STRUCTURE_TOWER);
+	for (let tower of towers) {               
+		tower.defend();
+	}      
+	for (let spawnName in Game.spawns) {
+		// run spawn logic
+		Game.spawns[spawnName].spawnCreepsIfNecessary();
+	}   
 };
-
-// activate safe mode
-
 var spawn = Game.spawns['Spawn1'];
 var spawn2 = Game.spawns['Spawn2'];
 var spawn3 = Game.spawns['Spawn3'];
 var spawn4 = Game.spawns['Spawn4'];
-
 if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
         spawn.room.controller.activateSafeMode();
 } else if (spawn.hits < spawn.hitsMax) {
@@ -118,6 +53,8 @@ if(spawn.room.storage && spawn.room.storage.hits < spawn.room.storage.hitsMax) {
 }
 /*
 // useful console commands
+//Game.rooms.W1S8.createConstructionSite(12, 28, STRUCTURE_RAMPART);
+//Game.rooms['W7S8'].terminal.send('energy',60000,'W1S8')	
 Game.spawns.Spawn6.memory.captainRoom = 'W9S5'
 Game.spawns.Spawn6.memory.firstMateRoom = 'W9S5'
 Game.spawns.Spawn6.memory.crewRoom = 'W9S5'
