@@ -34,17 +34,6 @@ module.exports = {
 
             }
 
-else{
-                     if (creep.room.name == 'W7S6') {
-                         creep.moveTo(41, 22, {
-                             visualizePathStyle: {
-                                 stroke: '#f1162f'
-                             }
-                         });
-                     }
-            }
-
-
 
         }
 
@@ -59,6 +48,20 @@ else{
                 if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(structure);
                 }
+
+
+else{
+                     if (creep.room.name == 'W7S6') {
+                         creep.moveTo(41, 22, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+            }
+
+
+
             }
             
            
