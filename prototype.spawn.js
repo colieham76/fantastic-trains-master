@@ -1245,11 +1245,10 @@ StructureSpawn.prototype.createsmallHarvester =
     function (target) {
 // create a body
     var smallbodyh = [];
-    var numberOfsmallBodyPartsh = Math.floor(energy / 100);
-    for (let i = 0; i < numberOfsmallBodyPartsh/2; i++) {
+    for (let i = 0; i < 10; i++) {
         smallbodyh.push(CARRY);
     }
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 5; i++) {
         smallbodyh.push(MOVE);
     }
     // create smallHarvester
