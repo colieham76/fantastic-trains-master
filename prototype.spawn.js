@@ -538,9 +538,9 @@ function () {
                 c.memory.role == 'smallHarvester' && c.memory.target == roomName);
 
             if (numberOfsmallHarvesters[roomName] < this.memory.minsmallHarvesters[roomName]) {
-              //  if (Game.time % 5000 === 0) {
+                if (Game.time % 4000 === 0) {
                     name = this.createsmallHarvester(roomName);
-              //  }
+                }
             }
         }
     }
@@ -1245,10 +1245,10 @@ StructureSpawn.prototype.createsmallHarvester =
     function (target) {
 // create a body
     var smallbodyh = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         smallbodyh.push(CARRY);
     }
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         smallbodyh.push(MOVE);
     }
     // create smallHarvester
