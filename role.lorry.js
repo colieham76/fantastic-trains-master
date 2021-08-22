@@ -42,7 +42,7 @@ module.exports = {
                 filter: (s) => (s.structureType === STRUCTURE_SPAWN
                     || s.structureType === STRUCTURE_EXTENSION
                     || s.structureType === STRUCTURE_NUKER)
-                    && s.energy < s.energyCapacity
+                    && s.energy < s.energyCapacity * 0.9
             });
             if (structure !== undefined) {
                 if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
