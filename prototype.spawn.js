@@ -94,6 +94,7 @@ Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 1, W8S6: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0, W7S7: 1};
 Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
+Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 1};
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
 				       rampartrepairer: 0, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
@@ -524,6 +525,25 @@ function () {
                 }
             }
         }
+
+
+    // if none of the above caused a spawn command check for smallHarvesters
+    /** @type {Object.<string, number>} */
+    let numberOfsmallHarvesters = {};
+    if (name == undefined) {
+        // count the number of smallHarvesters globally
+
+        for (let roomName in this.memory.minsmallHarvesters) {
+            numberOfsmallHarvesters[roomName] = _.sum(Game.creeps, (c) =>
+                c.memory.role == 'smallHarvester' && c.memory.target == roomName);
+
+            if (numberOfsmallHarvesters[roomName] < this.memory.minsmallHarvesters[roomName]) {
+              //  if (Game.time % 5000 === 0) {
+                    name = this.createsmallHarvester(roomName);
+              //  }
+            }
+        }
+    }
 	
 	
 	
@@ -1222,36 +1242,26 @@ StructureSpawn.prototype.createattacker =
 
 //create a new function fo smallHarvester
 StructureSpawn.prototype.createsmallHarvester =
-    function (energy, numberOfsmallWorkPartsh, home, target, sourceIndex) {
+    function (target) {
 // create a body
     var smallbodyh = [];
-    for (let i = 0; i < numberOfsmallWorkPartsh; i++) {
-        smallbodyh.push(WORK);
-    }
-// 150 = 100 (cost of WORK) + 50 (cost of MOVE)
-    energy -= 150 * numberOfsmallWorkPartsh;
     var numberOfsmallBodyPartsh = Math.floor(energy / 100);
-    // creep not big
-    numberOfsmallBodyPartsh = Math.min(numberOfsmallBodyPartsh,
-        Math.floor((40 - numberOfsmallWorkPartsh) / 2));   
-    for (let i = 0; i < numberOfsmallBodyPartsh; i++) {
+    for (let i = 0; i < numberOfsmallBodyPartsh/2; i++) {
         smallbodyh.push(CARRY);
-    }  
+    }
     for (let i = 0; i < 2; i++) {
         smallbodyh.push(MOVE);
     }
-    // create smallHarvester        
+    // create smallHarvester
         return this.spawnCreep(smallbodyh,
             spawn.prototype.getCreepName('2799'), {
             memory: {
                 role: 'smallHarvester',
-                home: home,
                 serial: Spawn.prototype.getSerial('2799'),
                 target: target,
-                sourceIndex: sourceIndex,
                 working: false
             }
-        });    
+        });
 };
 
 
