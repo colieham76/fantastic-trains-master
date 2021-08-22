@@ -14,8 +14,6 @@ module.exports = {
             creep.memory.working = true;
             creep.say('offload');
         }
-
-
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working !== true) {
             var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, false,
@@ -31,12 +29,8 @@ module.exports = {
                         creep.moveTo(energy);
                     }
                 }
-
             }
-
-
         }
-
         else {
             var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                 filter: (s) => (s.structureType === STRUCTURE_SPAWN
@@ -48,34 +42,37 @@ module.exports = {
                 if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(structure);
                 }
-
-
-else{
-                     if (creep.room.name == 'W7S6') {
-                         creep.moveTo(41, 22, {
-                             visualizePathStyle: {
-                                 stroke: '#f1162f'
-                             }
-                         });
-                     }
-
-if (creep.room.name == 'W7S8') {
-                         creep.moveTo(10, 26, {
-                             visualizePathStyle: {
-                                 stroke: '#f1162f'
-                             }
-                         });
-                     }
-
-
+                else {
+                    if (creep.room.name == 'W7S6') {
+                        creep.moveTo(41, 22, {
+                            visualizePathStyle: {
+                                stroke: '#f1162f'
+                            }
+                        });
+                    }
+                    if (creep.room.name == 'W7S8') {
+                        creep.moveTo(10, 26, {
+                            visualizePathStyle: {
+                                stroke: '#f1162f'
+                            }
+                        });
+                    }
+                    if (creep.room.name == 'W9S6') {
+                        creep.moveTo(27, 24, {
+                            visualizePathStyle: {
+                                stroke: '#f1162f'
+                            }
+                        });
+                    }
+                    if (creep.room.name == 'W3S8') {
+                        creep.moveTo(14, 31, {
+                            visualizePathStyle: {
+                                stroke: '#f1162f'
+                            }
+                        });
+                    }
+                }
             }
-
-
-
-            }
-            
-           
-            
         }
 /*
         var terminal = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
