@@ -58,6 +58,16 @@ else{
                              }
                          });
                      }
+
+if (creep.room.name == 'W7S8') {
+                         creep.moveTo(10, 26, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+
+
             }
 
 
