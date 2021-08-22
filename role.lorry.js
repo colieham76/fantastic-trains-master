@@ -49,6 +49,17 @@ module.exports = {
                     creep.travelTo(structure);
                 }
             }
+            
+            else{
+                     if (creep.room.name == 'W7S6') {
+                         creep.moveTo(41, 40, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
+            }
+            
         }
 /*
         var terminal = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
