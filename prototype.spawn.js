@@ -88,11 +88,11 @@ Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S3: 0};
 Game.spawns.Spawn6.memory.mintowerdrainers4 = {W9S5: 0};
 Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
 
-Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 0,
+Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 1,
 				       rampartrepairer: 0, lorry: 2, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 1, W8S6: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0, W7S7: 1};
-Game.spawns.Spawn7.memory.minrangedattackers = {'W8S5': 0};
+Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
@@ -783,8 +783,8 @@ StructureSpawn.prototype.createcontrollerAttacker =
 				undefined, 
 				{
 		role: 'controllerAttacker',
-		target: 'W9S5' 
-	});
+		target: target
+				});
     };
 
 /* th_Pion
@@ -870,21 +870,25 @@ StructureSpawn.prototype.createtowerLorry =
       
 StructureSpawn.prototype.createMiner =
     function (sourceId, target, RCL, home) {        
-            return this.createCreep([WORK, WORK, WORK, WORK, WORK, MOVE],
-                Spawn.prototype.getCreepName('c2702'), {
-                    role: 'miner',
-                    serial: Spawn.prototype.getSerial('c2702'),
-                    sourceId: sourceId
-                });
-
-            if (RCL == 0) {
-                return this.spawnCreep([WORK, WORK, WORK, WORK, WORK, WORK, CARRY, MOVE], undefined, {
-                        role: 'miner',
-                        sourceId: sourceId,
-                        target: target,
-                        home: home
-                    });
+    return this.spawnCreep([WORK, WORK, WORK, WORK, WORK, MOVE],
+        Spawn.prototype.getCreepName('c2702'), {
+        memory:{
+            role: 'miner',
+            serial: Spawn.prototype.getSerial('c2702'),
+            sourceId: sourceId
+        }
+    });
+    if (RCL == 0) {
+        return this.spawnCreep([WORK, WORK, WORK, WORK, WORK, WORK, CARRY, MOVE],
+            undefined,{
+            memory:{
+                role: 'miner',
+                sourceId: sourceId,
+                target: target,
+                home: home
             }
+        });
+    }
 }
 StructureSpawn.prototype.createDismantler = function(target) {
     var body = [];
