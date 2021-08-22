@@ -1254,7 +1254,7 @@ StructureSpawn.prototype.createsmallHarvester =
     }
     // create smallHarvester
         return this.spawnCreep(smallbodyh,
-            spawn.prototype.getCreepName('2799'), {
+            Spawn.prototype.getCreepName('2799'), {
             memory: {
                 role: 'smallHarvester',
                 serial: Spawn.prototype.getSerial('2799'),
