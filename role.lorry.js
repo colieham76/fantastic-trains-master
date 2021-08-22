@@ -31,6 +31,17 @@ module.exports = {
                         creep.moveTo(energy);
                     }
                 }
+
+            }
+
+else{
+                     if (creep.room.name == 'W7S6') {
+                         creep.moveTo(41, 22, {
+                             visualizePathStyle: {
+                                 stroke: '#f1162f'
+                             }
+                         });
+                     }
             }
 
 
@@ -50,15 +61,7 @@ module.exports = {
                 }
             }
             
-            else{
-                     if (creep.room.name == 'W7S6') {
-                         creep.moveTo(41, 22, {
-                             visualizePathStyle: {
-                                 stroke: '#f1162f'
-                             }
-                         });
-                     }
-            }
+           
             
         }
 /*
