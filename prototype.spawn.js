@@ -103,6 +103,8 @@ Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0,
 				       rampartrepairer: 0, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
 
+Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 1}
+
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
 
