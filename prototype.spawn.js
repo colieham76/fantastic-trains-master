@@ -1389,15 +1389,15 @@ StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
 }
 
 StructureSpawn.prototype.createLongDistanceLorry = function (energy, home, target) {
-	var body = [];
-	var NoCarryMoveParts = Math.floor((energy-150)/150);
-	for (let i = 0; i < (NoCarryMoveParts-1); i++) {
-		body.push(CARRY);
-		body.push(CARRY);
-		body.push(MOVE);
-	}
-	body.push(WORK, MOVE);
-	return this.spawnCreep(body, Spawn.prototype.getCreepName('2707'),
+	
+	return this.spawnCreep([MOVE, MOVE, MOVE, MOVE,	
+				MOVE, MOVE, MOVE, MOVE,
+				MOVE, MOVE, MOVE, MOVE,
+				MOVE, MOVE, MOVE, MOVE,
+				CARRY, CARRY, CARRY, CARRY,
+				CARRY, CARRY, CARRY, CARRY,
+				CARRY, CARRY, CARRY, CARRY,
+				CARRY, CARRY, CARRY, CARRY],Spawn.prototype.getCreepName('2707'),
 			       {
 		memory: {
 			role: 'longDistanceLorry',
