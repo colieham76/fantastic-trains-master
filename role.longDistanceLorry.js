@@ -37,36 +37,48 @@ module.exports = {
                 creep.memory.working = true;
                 creep.memory.energyTransferCount = 0;
             }
-            if (creep.memory.working == true) {
-                if (creep.room.name != creep.memory.home) { // if not at home base
-                    //creep.travelTo(Game.flags['link' + creep.memory.home]);
-                    creep.travelTo(new RoomPosition(25, 25, creep.memory.home));
-                }
-                else {// creep at home
-                    if (creep.memory.working == true && creep.carry.energy == 0 < creep.carryCapacity*0.2) {
-                        creep.drop(RESOURCE_ENERGY);
-                        creep.memory.working = false;
-                    }
-                    linkEnergyTransferAtHome.run(creep)
-                }
-            }
-            else {
-                if (creep.room.name == creep.memory.target) {
-                    if (creep.memory.working !== true) {
-                        var [resourceID, ifDropped] = evaluateEnergyResources(creep, true, false,
-                            true, true);
-                        if (resourceID !== undefined) {
-                            energy = Game.getObjectById(resourceID);
-                            if (ifDropped) {
-                                if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                                    creep.moveTo(energy);
-                                }
-                            } else {
-                                if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                                    creep.moveTo(energy);
+                    if (creep.memory.working === true) {
+                        if (creep.room.name === creep.memory.home) {
+                            var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                                filter: (s) => (s.structureType === STRUCTURE_SPAWN
+                                        || s.structureType === STRUCTURE_EXTENSION
+                                        || s.structureType === STRUCTURE_LINK
+                                        || s.structureType === STRUCTURE_STORAGE
+                                        // || s.structureType === STRUCTURE_TOWER
+                                    )
+                                    && s.energy < s.energyCapacity
+                            });
+                           
+                            // if we found one
+                            if (structure != undefined) {
+                                // try to transfer energy, if it is not in range
+                                if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                                    // move towards it
+                                    creep.travelTo(structure);
                                 }
                             }
                         }
+                        // if not in home room...
+                        else {
+                            // find exit to home room
+                            var exit = creep.room.findExitTo(creep.memory.home);
+                            // and move to exit
+                            creep.travelTo(creep.pos.findClosestByRange(exit));
+                        }
+                    }
+                    else {
+                        if (creep.room.name == creep.memory.target) {
+                            if (creep.memory.working == false) {
+                        // if there is no storage (which could be possible after destroyed), try picking up some energy
+                        let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
+                            filter: {
+                                resourceType: RESOURCE_ENERGY
+                            }
+                        });
+                        if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
+                            creep.travelTo(energy);
+                        }
+                        creep.getEnergy(true, true);
                     }
                 }
                 else {
