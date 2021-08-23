@@ -70,8 +70,8 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 0,
     builder: 0,
     rampartrepairer: 0
 };
-Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 0};
-Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 1, W9S5: 0};
+Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
+Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 0};
 Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 0, W9S5: 0};
 Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
@@ -90,15 +90,16 @@ Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
 
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 1,
 				       rampartrepairer: 0, lorry: 2, builder: 0, extractor: 0, dismantler: 0};
-Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 1, W8S6: 1};
+Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0, W7S7: 1};
 Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
 Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 1};
+Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 1};
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
 				       rampartrepairer: 0, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
-Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 1};
+Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
@@ -538,9 +539,9 @@ function () {
                 c.memory.role == 'smallHarvester' && c.memory.target == roomName);
 
             if (numberOfsmallHarvesters[roomName] < this.memory.minsmallHarvesters[roomName]) {
-                if (Game.time % 4000 === 0) {
+              //  if (Game.time % 4000 === 0) {
                     name = this.createsmallHarvester(roomName);
-                }
+              //  }
             }
         }
     }
