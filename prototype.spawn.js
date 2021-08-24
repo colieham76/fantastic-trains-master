@@ -32,8 +32,8 @@ Game.spawns.Spawn1.memory.mincrew = {'W9S3': 0}
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, harvester: 0,
 				       builder: 0, lorry: 2, towerlorry: 1,
 				       dismantler: 0, upgrader: 0, extractor: 0};
-Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 1};
-Game.spawns.Spawn1.memory.minNumberOfreservers = {W7S9: 1};
+Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 0};
+Game.spawns.Spawn1.memory.minNumberOfreservers = {W7S9: 0};
 Game.spawns.W7S8.memory.minCreeps = {harvester: 0, rampartrepairer: 0};
 Game.spawns.W7S8.memory.minsmallUpgraders = {W7S8: 1};
 Game.spawns.W7S8.memory.minLongDistanceHarvesters = {W8S8: 1};
@@ -72,7 +72,7 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 0,
 };
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 0};
-Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 0, W9S5: 0};
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 1, W9S5: 0};
 Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
 
@@ -94,7 +94,7 @@ Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 1};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S5: 0, W7S7: 1};
 Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
-Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 1};
+Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 0};
 Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 1};
 Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 1}
 
@@ -102,7 +102,7 @@ Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 1}
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
 				       rampartrepairer: 0, lorry: 0, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
-
+Game.spawns.Spawn8.memory.minsmallHarvesters = {W9S7: 1};
 Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 1}
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
