@@ -53,7 +53,7 @@ module.exports = {
             }
             return;
         }
-	/*    
+	   
 	    //new ranged attack code
 	     const fightRangedInvaders = function(creep) {
     if (creep.getActiveBodyparts(RANGED_ATTACK) === 0) {
@@ -66,7 +66,7 @@ module.exports = {
     return false;
   };
 	    
-	*/    
+	    
 	    
 // existing attack code
 		var attacked;
@@ -81,11 +81,11 @@ module.exports = {
 					creep.moveTo(targets[0]);
 			}	
 		}
-	    /*
+	    
 		else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(ATTACK) > 0) {
 			creep.rangedAttack(targets);
 		}
-		*/ 
+		 
 		 /*
 		 else if(creep.pos.isNearTo(targets) && creep.getActiveBodyParts(RANGED_ATTACK) > 0) {
 		 let result = this.rangedAttack(target);
