@@ -1,7 +1,7 @@
 module.exports.loop = function() {
 	for (let room in Game.rooms) {
 		if (Game.rooms[room].memory.remoteMiningEnabled == undefined) {
-			Game.rooms[room].memory.remoteMiningEnabled = true;
+			Game.rooms[room].memory.remoteMiningEnabled = false;
 		}
 	}
 	const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// W7S6 centre
