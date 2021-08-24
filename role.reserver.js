@@ -7,8 +7,8 @@ module.exports = {
 //               }
 
 		if (creep.room.name === 'W9S6'|| creep.room.name === 'W9S7') {
-			creep.travelTo(Game.flags['ReserverW9S7']);
-			if (creep.pos.isNearTo(Game.flags['ReserverW9S7'])) {
+			creep.travelTo(Game.flags['W9S7']);
+			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
 				creep.memory.W9S7 = true;
 			}
 			return
