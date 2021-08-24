@@ -72,7 +72,7 @@ Game.spawns.Spawn6.memory.minCreeps = {harvester: 0,
 };
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 0};
-Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 1, W9S5: 0};
+Game.spawns.Spawn8.memory.minNumberOfreservers = {W9S7: 1};
 Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
 
@@ -197,7 +197,7 @@ function () {
 	
         for (let roomName in Game.rooms) {
             if (Game.rooms[roomName].controller != undefined && Game.rooms[roomName].controller.my != true) {
-		   // if (Game.rooms[roomName].controller.my != true) {
+		    if (Game.rooms[roomName].controller.my != true) {
                 let sources = Game.rooms[roomName].find(FIND_SOURCES);
                 for (let source of sources) {
                     let creepsAtTarget = _.filter(Game.creeps,
@@ -215,7 +215,7 @@ function () {
                 }
             }
         }	
-	
+	}
         // if none of the above caused a spawn command check for other roles
 
         if (name === undefined) {
