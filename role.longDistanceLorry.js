@@ -8,7 +8,7 @@ module.exports = {
         let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if (creep.room.name === 'W9S7' && Game.time % 10 === 0) {
             if (invaderCreep) {
-                Game.spawns.Spawn6.memory.rangedattackerRoom = 'W9S7';
+                Game.spawns.Spawn6.memory.minattackers = {W9S7: 1};
             }
         }
         // repair when walking
