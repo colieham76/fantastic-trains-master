@@ -48,7 +48,7 @@ if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S
 			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
 				creep.memory.W9S7 = true;
 			}
-			return
+			return;
 		}
 
         if (creep.hits > 0.9 * creep.hitsMax) {
