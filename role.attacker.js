@@ -6,6 +6,7 @@ module.exports = {
                                 }
                                 */
         creep.say('OMG!😨', true);
+/*
         if (!creep.memory.W7S7 && creep.room.name === 'W7S7'|| creep.room.name === 'W7S6') {
             creep.travelTo(Game.flags['W7S7']);
             if (creep.pos.isNearTo(Game.flags['W7S7'])) {
@@ -42,7 +43,7 @@ module.exports = {
             }
             return;
         }
-
+*/
 if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S7') {
 			creep.travelTo(Game.flags['W9S7']);
 			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
