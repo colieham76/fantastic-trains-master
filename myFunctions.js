@@ -13,7 +13,7 @@ global.roles = {};
 
 
 global.myRoomList = function () {
-    return ['W1S8', 'W3S8', 'W7S8', 'W9S6', 'W7S6'] // ['E39S1'] //['E92N11','E91N16','E94N17', 'E97N14', 'E94N22', 'E97N13', 'E99N17', 'E93N24', 'E96N7']
+    return ['W9S6', 'W7S6','W1S8', 'W3S8', 'W7S8' ] // ['E39S1'] //['E92N11','E91N16','E94N17', 'E97N14', 'E94N22', 'E97N13', 'E99N17', 'E93N24', 'E96N7']
     //return ['E92N11','E91N16','E94N17', 'E97N14', 'E94N22', 'E97N13', 'E99N17', 'E93N24','E96N7']
 }
 
