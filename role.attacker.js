@@ -43,14 +43,14 @@ module.exports = {
             return;
         }
 
-       /*
-        if (!creep.memory.w1s7f1) {
-            creep.travelTo(Game.flags['w1s7f1']);
-            if (creep.pos.isNearTo(Game.flags['w1s7f1'])) {
-                creep.memory.w1s7f1 = true;
-            }
-            return;
-        }*/
+if (!creep.memory.W9S7 && creep.room.name === 'W9S7'|| creep.room.name === 'W9S6') {
+			creep.travelTo(Game.flags['W9S7']);
+			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
+				creep.memory.W9S7 = true;
+			}
+			return
+		}
+
         if (creep.hits > 0.9 * creep.hitsMax) {
             let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
             if (hostileStructure) {
