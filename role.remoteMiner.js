@@ -18,7 +18,7 @@ module.exports = {
 					creep.moveTo(source);
 				}
 			}
-			actionRepair.run(creep);
+			//actionRepair.run(creep);
 		} else {
 			let exit = creep.room.findExitTo(creep.memory.target);
 			creep.moveTo(creep.pos.findClosestByRange(exit));
