@@ -8,8 +8,12 @@ module.exports.loop = function() {
 	linkController.run(uploadLink1);
 	const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996');// W7S6 south
 	linkController.run(uploadLink2);
-	//const uploadLink3 = Game.getObjectById('6102b6bd0351a81429f0d43f'); // W7S6 east
-	//linkController.run(uploadLink3);
+	const uploadLink3 = Game.getObjectById('60f28c866ad7ca62d17c9522');// W9S6 centre
+	linkController.run(uploadLink3);
+	const uploadLink4 = Game.getObjectById('60f292a126d700a9af4fa257');// W9S6 left
+	linkController.run(uploadLink4);
+	const uploadLink5 = Game.getObjectById('61191c61d8dc48a4cc22cd7d'); // W9S6 right
+	linkController.run(uploadLink5);
 	Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
 	Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
 	Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
