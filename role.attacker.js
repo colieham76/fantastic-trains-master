@@ -43,7 +43,7 @@ module.exports = {
             return;
         }
 
-if (!creep.memory.W9S7 && creep.room.name === 'W9S7'|| creep.room.name === 'W9S6') {
+if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S7') {
 			creep.travelTo(Game.flags['W9S7']);
 			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
 				creep.memory.W9S7 = true;
