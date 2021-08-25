@@ -27,6 +27,24 @@ module.exports = {
                     }
                 }
             }
+            if (creep.room.name == 'W9S6') {
+            creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
+            if (creep.pos == 25, 35) {
+                if (creep.memory.working == false) {
+                    //LINK IN ROOM W9S6
+                    const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
+                        }
+                    }
+                }
+                 if (Game.time % 100 == 0) {
+                    if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(storageVar);
+                    }
+                }
+            }
         }
     }
 }
