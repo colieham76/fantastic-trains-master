@@ -15,14 +15,14 @@ module.exports = {
        filter: (s) => (s.structureType != STRUCTURE_ROAD
                     && s.structureType != STRUCTURE_WALL
                     && s.structureType != STRUCTURE_RAMPART)
-                    && (s.hits<0.9*s.hitsMax) })
+                    && (s.hits<0.6*s.hitsMax) })
             if (structure == undefined) {
                 structure = creep.pos.findClosestByRange(FIND_STRUCTURES, { 
        filter: (s) => s.hits < 0.6*s.hitsMax && s.structureType == STRUCTURE_ROAD})
             }
             if (structure != undefined) {
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
-                    creep.travelTo(structure);
+                    creep.moveTo(structure);
                 }
             }
          /*   else {
