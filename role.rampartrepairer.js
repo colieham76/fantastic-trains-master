@@ -13,21 +13,21 @@ module.exports = {
                 creep.moveTo(energy);
             }
         }
-    } else {
-    var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
-    if ((runEveryTicks(50) === true)
-        || (target === undefined)) {
-        Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
-    }
-    if (target !== undefined) {
-        creep.say('r');
-        //console.log(creep.room.name,target);
-        if (creep.repair(target) === ERR_NOT_IN_RANGE) {
-            creep.moveTo(target);
-            creep.repair(target)
+        else {
+            var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
+            if ((runEveryTicks(50) === true)
+                || (target === undefined)) {
+                Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
+            }
+            if (target !== undefined) {
+                creep.say('r');
+                //console.log(creep.room.name,target);
+                if (creep.repair(target) === ERR_NOT_IN_RANGE) {                  
+                    creep.moveTo(target);
+                    creep.repair(target)
+                }
+            }
+            creep.getEnergy(true, false);        
         }
     }
-                 creep.getEnergy(true, false);        
-}
-}
 };
