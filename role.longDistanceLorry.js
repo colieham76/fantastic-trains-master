@@ -34,7 +34,7 @@ module.exports = {
                 creep.build(thingUnderFeet);
             }
         }
-        if ((creep.pos.findInRange(FIND_HOSTILE_CREEPS, 5).length > 0)) {
+        if ((creep.pos.findInRange(FIND_HOSTILE_CREEPS, 20).length > 0)) {
             actionRunAway.run(creep);
         }
         else {
@@ -66,7 +66,7 @@ module.exports = {
                                 // try to transfer energy, if it is not in range
                                 if (creep.transfer(structure, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                                     // move towards it
-                                    creep.travelTo(structure);
+                                    creep.moveTo(structure, {reusePath: 100});
                                 }
                             }
                         }
@@ -75,7 +75,7 @@ module.exports = {
                             // find exit to home room
                             var exit = creep.room.findExitTo(creep.memory.home);
                             // and move to exit
-                            creep.travelTo(creep.pos.findClosestByRange(exit));
+                            creep.moveTo(creep.pos.findClosestByRange(exit));
                         }
                     }
                     else {
@@ -88,14 +88,14 @@ module.exports = {
                             }
                         });
                         if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                            creep.travelTo(energy);
+                            creep.moveTo(energy, {reusePath: 100});
                         }
                         creep.getEnergy(true, true);
                     }
                 }
                 else {
                     var exit = creep.room.findExitTo(creep.memory.target);
-                    creep.travelTo(creep.pos.findClosestByRange(exit));
+                    creep.moveTo(creep.pos.findClosestByRange(exit));
                 }
             }
         }
