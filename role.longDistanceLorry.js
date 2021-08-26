@@ -1,5 +1,5 @@
 var rolePickuper = require('role.pickuper');
-var linkEnergyTransferAtHome = require('action.linkEnergyTransferAtHome');
+//var linkEnergyTransferAtHome = require('action.linkEnergyTransferAtHome');
 var actionRunAway = require('action.flee');
 var actionRepair = require('action.repair');
 
