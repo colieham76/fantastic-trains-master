@@ -7,7 +7,7 @@ var linkController = {
         const upgradeLink4 = Game.getObjectById('60f292a126d700a9af4fa257'); //W9S6 bottom left        
         const upgradeLink5 = Game.getObjectById('61191c61d8dc48a4cc22cd7d'); //W9S6 bottom right          
 
-        if (Game.time % 50 == 0) {
+        if (Game.time % 2 == 0) {
             console.log('linked2')
             if (upgradeLink2.store[RESOURCE_ENERGY] >= 1) {
                 upgradeLink2.transferEnergy(upgradeLink1)
