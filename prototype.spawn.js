@@ -507,9 +507,9 @@ function () {
                     c.memory.role == 'longDistanceBuilder' && c.memory.target == roomName);
 
                 if (numberOfLongDistanceBuilders[roomName] < this.memory.minLongDistanceBuilders[roomName]) {
-			 if (Game.time % 2000 === 0) {
+		//	 if (Game.time % 500 === 0) {
                     name = this.createLongDistanceBuilder(room.name, roomName);
-		}
+		//}
                 }
             }
         }
