@@ -1,5 +1,4 @@
 var roleBuilder = require('role.builder');
-var actionBuild = require('action.build');
 var actionRepair = require('action.repair');
 module.exports = {
     run: function(creep) {
