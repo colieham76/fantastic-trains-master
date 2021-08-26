@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, true,
                 false, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
