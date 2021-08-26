@@ -8,35 +8,26 @@ module.exports = {
             creep.memory.working = true;
             creep.say('offload');
         }
-
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, true,
-                false, true); // find energy function in myFunctions
-            if (resourceID !== undefined) {
-                energy = Game.getObjectById(resourceID);
-                if (ifDropped) { // if energy is dropped
-                    if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(energy);
-                    }
-                } else { // energy is from container, storage or link
-                    if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(energy);
-                    }
-                }
-            }
-        } else {
-            var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
-            if ((runEveryTicks(50) === true) || (target === undefined)) {
-                Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
-            }
-            if (target !== undefined) {
-                creep.say('r');
-                //console.log(creep.room.name,target);
-                if (creep.repair(target) === ERR_NOT_IN_RANGE) {
-                    creep.moveTo(target);
-                    creep.repair(target)
-                }
+            if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(energy);
             }
         }
+    } else {
+    var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
+    if ((runEveryTicks(50) === true)
+        || (target === undefined)) {
+        Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
     }
+    if (target !== undefined) {
+        creep.say('r');
+        //console.log(creep.room.name,target);
+        if (creep.repair(target) === ERR_NOT_IN_RANGE) {
+            creep.moveTo(target);
+            creep.repair(target)
+        }
+    }
+                 creep.getEnergy(true, false);        
+}
+}
 };
