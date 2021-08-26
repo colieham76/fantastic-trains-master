@@ -6,11 +6,23 @@ var actionRepair = require('action.repair');
 module.exports = {
     run: function(creep) {
         let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if (creep.room.name === 'W9S7' && Game.time % 10 === 0) {
+        if (creep.room.name === 'W9S7' && Game.time % 50 === 0) {
             if (invaderCreep) {
                 Game.spawns.Spawn6.memory.minattackers = {W9S7: 1};
             }
+            else {
+                Game.spawns.Spawn6.memory.minattackers = {W9S7: 0}; 
+            }
         }
+        if (creep.room.name === 'W7S7' && Game.time % 50 === 0) {
+            if (invaderCreep) {
+                Game.spawns.Spawn7.memory.minattackers = {W7S7: 1};
+            }
+            else {
+                Game.spawns.Spawn7.memory.minattackers = {W7S7: 0}; 
+            }
+        }
+        
         // repair when walking
         let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
         if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
