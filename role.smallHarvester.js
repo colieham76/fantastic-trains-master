@@ -11,31 +11,28 @@ module.exports = {
             creep.say('offload');
         }
         // if creep is supposed to transfer energy to a structure
-        if (creep.memory.working === true) {
-       
- var containers = creep.room.find(FIND_STRUCTURES, {
-                    filter: (s) => {
-                        return (s.structureType == STRUCTURE_LINK) && (s.id == '60f7d1093bd3cc14ace13cfa')
+        if (creep.memory.working === true) {       
+            var containers = creep.room.find(FIND_STRUCTURES, {
+                filter: (s) => {
+                    return (s.structureType == STRUCTURE_LINK) && (s.id == '60f7d1093bd3cc14ace13cfa')
                     }
                 });
                 var source = creep.pos.findClosestByPath(containers);
                 if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(source);
+                    creep.moveTo(source,  {reusePath: 400});
                 }
-
-
             if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
                 for (const resourceType in creep.store) {
                     if (creep.transfer(storage, resourceType) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(storage, {visualizePathStyle: {stroke: '#fcfafa'}});                    }
+                        creep.moveTo(storage, {reusePath: 500});   
+                    }
                 }                             
-           }
+            }
         }
         // if creep is supposed to harvest energy from source
-        else { 
-            
+        else {           
             let tombstones = creep.room.find(FIND_TOMBSTONES, {
                 filter: c => _.sum(c.store) > 0
             });
@@ -56,7 +53,7 @@ module.exports = {
                 filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 999
             });
             if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
-                creep.travelTo(energy);
+                creep.moveTo(energy);
             }
             creep.getEnergy(false, true);
         }
