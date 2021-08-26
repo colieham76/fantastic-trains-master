@@ -9,8 +9,11 @@ var linkController = {
 
         if (Game.time % 50 == 0) {
             console.log('linked2')
-            if (link.store[RESOURCE_ENERGY] >= 1) {
-                link.transferEnergy(upgradeLink1)
+            if (upgradeLink2.store[RESOURCE_ENERGY] >= 1) {
+                upgradeLink2.transferEnergy(upgradeLink1)
+            }
+            else if (upgradeLink6.store[RESOURCE_ENERGY] >=1) {
+                upgradeLink6.transferEnergy(upgradeLink1)
             }
             if (link.store[RESOURCE_ENERGY] >= 1) {
                 link.transferEnergy(upgradeLink3)
