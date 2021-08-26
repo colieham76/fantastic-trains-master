@@ -9,7 +9,7 @@ module.exports.loop = function() {
 	const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996');// W7S6 south
 	linkController.run(uploadLink2);
 	const uploadLink6 = Game.getObjectById('61265ada4687236c8e62022e');// W7S6 left
-	linkController.run(uploadLink2);
+	linkController.run(uploadLink6);
 	const uploadLink3 = Game.getObjectById('60f28c866ad7ca62d17c9522');// W9S6 centre
 	linkController.run(uploadLink3);
 	const uploadLink4 = Game.getObjectById('60f292a126d700a9af4fa257');// W9S6 left
