@@ -57,7 +57,7 @@ module.exports = {
             } 
             else {
                 if (!creep.memory.building) {
-                    (creep.getEnergy(false, true));
+                    (creep.getEnergy(true, true));
                 }                           
             }
         }
