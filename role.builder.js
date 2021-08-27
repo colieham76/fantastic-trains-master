@@ -55,8 +55,11 @@ module.exports = {
                     creep.travelTo(constructionSites[0]);
                 }
             } else {
-                
-                roleUpgrader.run(creep);
+                if (creep.room.name == 'W9S7') {
+                    creep.moveTo(12, 6, {visualizePathStyle: {stroke: '#ffaa00'}});
+                }
+                if (creep.room.name == 'W7S7') {
+                    creep.moveTo(29, 40, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         } else {
             if (!creep.memory.building) {
