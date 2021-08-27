@@ -56,17 +56,9 @@ module.exports = {
                 }
             } 
             else {
-            if (!creep.memory.building) {
-                (creep.getEnergy(true, true));
-            }
-                else {
-                    if (creep.room.name == 'W9S7') {
-                        creep.moveTo(12, 6, {visualizePathStyle: {stroke: '#ffaa00'}});
-                    }
-                    if (creep.room.name == 'W7S7') {
-                        creep.moveTo(29, 40, {visualizePathStyle: {stroke: '#ffaa00'}});
-                    }
-                } 
+                if (!creep.memory.building) {
+                    (creep.getEnergy(true, true));
+                }                           
             }
         }
     }
