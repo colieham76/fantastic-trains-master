@@ -7,7 +7,7 @@ module.exports = {
         if (constructionSite != undefined) {
             if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(constructionSite);
-                creep.build(constructionSite);
+               // creep.build(constructionSite);
             }                
         }
     }
