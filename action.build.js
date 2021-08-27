@@ -34,9 +34,9 @@ module.exports = {
                 if (creep.room.controller.level == 0) { // if not in controlled rooms
                     creep.memory.target = creep.memory.home; // go back home
                 }
-                else {
-                    actionUpgrade.run(creep);
-                }
+               // else {
+                //    actionUpgrade.run(creep);
+                //}
             }
             else {
                 actionRepair.run(creep);
