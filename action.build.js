@@ -6,9 +6,9 @@ module.exports = {
         if (!constructionSite) {
             constructionSite = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
         }
-        else {
+       /* else {
             constructionSite = constructionSite[0]
-        }
+        }*/
         if (constructionSite != undefined) {
             if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(constructionSite);
