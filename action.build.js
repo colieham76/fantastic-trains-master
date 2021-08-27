@@ -14,7 +14,7 @@ module.exports = {
         if (constructionSite != undefined) {
             if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(constructionSite, { maxRooms: 1 });
-                //creep.build(constructionSite);
+                creep.build(constructionSite);
             }
             else {
                 if (((creep.pos.x == 0) || (creep.pos.x == 49)) || ((creep.pos.y == 0) || (creep.pos.y == 49))) {
