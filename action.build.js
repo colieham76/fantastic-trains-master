@@ -2,7 +2,7 @@ var actionRepair = require('action.repair');
 
 module.exports = {
     run: function (creep) {
-        const constructionSite = creep.room.find(FIND_CONSTRUCTION_SITES);
+        const constructionSite = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
        
         if (constructionSite != undefined) {
             if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
