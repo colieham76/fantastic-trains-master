@@ -54,11 +54,13 @@ module.exports = {
                 if (creep.build(constructionSites[0]) === ERR_NOT_IN_RANGE) {
                     creep.travelTo(constructionSites[0]);
                 }
-            } 
-            else {
-                if (!creep.memory.building) {
-                    (creep.getEnergy(true, true));
-                }                           
+            } else {
+                
+                roleUpgrader.run(creep);
+            }
+        } else {
+            if (!creep.memory.building) {
+                (creep.getEnergy(true, true));
             }
         }
     }
