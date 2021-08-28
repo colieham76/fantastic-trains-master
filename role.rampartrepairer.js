@@ -24,7 +24,7 @@ module.exports = {
                 //console.log(creep.room.name,target);
                 if (creep.repair(target) === ERR_NOT_IN_RANGE) {                  
                     creep.moveTo(target);
-                    creep.repair(target)
+                 //   creep.repair(target)
                 }
             }
             creep.getEnergy(true, false);        
