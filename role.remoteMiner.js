@@ -1,11 +1,13 @@
 const actionRepair = require('action.repair');
 module.exports = {
-	run: function (creep) {	
-		let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+	run: function (creep) {			
+		if (creep.room.name == creep.memory.target) {
+			
+			let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
 		if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
 			creep.repair(thingUnderFeet);
 		}
-		else if (creep.room.name == creep.memory.target) {
+			
 				let source = Game.getObjectById(creep.memory.sourceId);
 				let container = source.pos.findInRange(FIND_STRUCTURES, 1, {
 					filter: (s) => s.structureType == STRUCTURE_CONTAINER,
