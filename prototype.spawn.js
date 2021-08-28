@@ -1416,7 +1416,7 @@ StructureSpawn.prototype.createLongDistanceLorry = function (energy, home, targe
 }
 
 StructureSpawn.prototype.createLongDistanceBuilder =  function (home, target) {//LV4
-        return this.createCreep([MOVE, MOVE, MOVE, MOVE,
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
 				 WORK, WORK, WORK, WORK, WORK,
 				 WORK, WORK, WORK, WORK, WORK,
 				 CARRY, CARRY, CARRY, CARRY, CARRY,
