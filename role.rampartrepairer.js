@@ -19,7 +19,7 @@ module.exports = {
                 || (target === undefined)) {
                 Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
             }
-            if (target !== undefined) {
+            if (target != undefined) {
                 creep.say('r');
                 //console.log(creep.room.name,target);
                 if (creep.repair(target) === ERR_NOT_IN_RANGE) {                  
