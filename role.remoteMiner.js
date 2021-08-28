@@ -17,10 +17,10 @@ module.exports = {
 						creep.moveTo(source);
 					}
 				}
-			let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+			/*let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
 			if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
 				creep.repair(thingUnderFeet);
-			}
+			}*/
 		} else {
 			let exit = creep.room.findExitTo(creep.memory.target);
 			creep.moveTo(creep.pos.findClosestByRange(exit));
