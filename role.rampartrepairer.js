@@ -15,7 +15,7 @@ module.exports = {
         }
         else {
             var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
-            if ((runEveryTicks(50) === true)
+            if ((runEveryTicks(20) === true)
                 || (target === undefined)) {
                 Game.rooms[creep.room.name].memory.toBuildRampart = whichRampartToBuild(creep.room).id
             }
