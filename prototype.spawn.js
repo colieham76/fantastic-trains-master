@@ -97,8 +97,8 @@ Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 1, W7S7: 1};
 //Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 //Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
 Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 1};
-Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 1, W8S7: 1};
-Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 1, W8S7: 1};
+Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 1, W8S6: 1};
+Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 1, W8S6: 1};
 
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
