@@ -1,7 +1,7 @@
 var rolePickuper = require('role.pickuper');
 //var linkEnergyTransferAtHome = require('action.linkEnergyTransferAtHome');
 var actionRunAway = require('action.flee');
-var actionRepair = require('action.repair');
+//var actionRepair = require('action.repair');
 
 module.exports = {
     run: function(creep) {
@@ -24,7 +24,7 @@ module.exports = {
         }
         
         // repair when walking
-        let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+      /*  let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
         if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
             creep.repair(thingUnderFeet);
         }
@@ -33,7 +33,7 @@ module.exports = {
             if (thingUnderFeet) {
                 creep.build(thingUnderFeet);
             }
-        }
+        }*/
         if ((creep.pos.findInRange(FIND_HOSTILE_CREEPS, 20).length > 0)) {
             actionRunAway.run(creep);
         }
