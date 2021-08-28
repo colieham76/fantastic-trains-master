@@ -4,24 +4,24 @@ module.exports = {
 		if (creep.room.name == creep.memory.target) {					
 				let source = Game.getObjectById(creep.memory.sourceId);
 				let container = source.pos.findInRange(FIND_STRUCTURES, 1, {
-					filter: (s) => s.structureType == STRUCTURE_CONTAINER,
+					filter: (s) => (s.structureType == STRUCTURE_CONTAINER) && s.energy > 199999
 				})[0];			
 				if (container != undefined) {
 					if (creep.pos.isEqualTo(container.pos)) {
 						creep.harvest(source);
 					} else {
+						let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+						if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
+							creep.repair(thingUnderFeet);
+						}
 						creep.moveTo(container);
 					}
 				} else {
 					if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 						creep.moveTo(source);
 					}
-				}
-			/*let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
-			if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
-				creep.repair(thingUnderFeet);
-			}*/
-		} else {
+				}	
+		} else {	
 			let exit = creep.room.findExitTo(creep.memory.target);
 			creep.moveTo(creep.pos.findClosestByRange(exit));
 		}		
