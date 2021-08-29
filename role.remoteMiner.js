@@ -12,11 +12,14 @@ module.exports = {
 							if (creep.pos.isEqualTo(container.pos)) {
 								creep.harvest(source);
 							}
-						}
-					}
-					else {
+
+else {
 						creep.moveTo(container);
 					}
+
+						}
+					}
+				
 				}
 				else {
 					creep.repair(container);
