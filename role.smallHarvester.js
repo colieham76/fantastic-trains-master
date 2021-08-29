@@ -34,7 +34,7 @@ module.exports = {
             creep.moveTo(29, 30);           
             }
             if (creep.room.name == 'W9S6') {
-            creep.moveTo(24, 36);           
+            creep.moveTo(30, 32);           
             }
         }
         // if creep is supposed to harvest energy from source
