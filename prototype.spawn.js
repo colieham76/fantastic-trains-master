@@ -492,7 +492,9 @@ function () {
                     c.memory.role == 'longDistanceLorry' && c.memory.target == roomName);
 
                 if (numberOfLongDistanceLorrys[roomName] < this.memory.minLongDistanceLorrys[roomName]) {
+			if (Game.time % 1000 === 0) {
                     name = this.createLongDistanceLorry(maxEnergy, room.name, roomName);
+			}				
                 }
             }
         }
