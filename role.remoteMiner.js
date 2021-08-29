@@ -10,9 +10,8 @@ module.exports = {
 			if (container != undefined) {
 				if (creep.pos.isEqualTo(container.pos)) {
 					creep.harvest(source);
-				} else {
 					actionRepair.run(creep);
-				}				
+				}												
 			} else {
 				if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(source);
