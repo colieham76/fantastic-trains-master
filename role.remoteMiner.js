@@ -11,7 +11,12 @@ module.exports = {
 				if (creep.pos.isEqualTo(container.pos)) {
 					creep.harvest(source);
 				} else {
-					creep.moveTo(container);
+					creep.moveTo(container);				
+					let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+					if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
+						creep.repair(thingUnderFeet);
+					}
+					
 				}
 			} else {
 				if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
