@@ -10,13 +10,15 @@ module.exports = {
 			if (container != undefined) {
 				if (creep.pos.isEqualTo(container.pos)) {
 					creep.harvest(source);
-				//	actionRepair.run(creep);
-				}												
+				} else {
+					creep.moveTo(container);
+				}
 			} else {
 				if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(source);
 				}
-			}			
+			}
+			//actionRepair.run(creep);
 		} else {
 			let exit = creep.room.findExitTo(creep.memory.target);
 			creep.moveTo(creep.pos.findClosestByRange(exit));
