@@ -11,10 +11,7 @@ module.exports = {
 				if (creep.pos.isEqualTo(container.pos)) {
 					creep.harvest(source);
 				} else {
-					creep.moveTo(container);				
-					let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
-					if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_CONTAINER) {
-						creep.repair(thingUnderFeet);
+					actionRepair.run(creep);
 					}
 					
 				}
@@ -22,8 +19,7 @@ module.exports = {
 				if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(source);
 				}
-			}
-			//actionRepair.run(creep);
+			}			
 		} else {
 			let exit = creep.room.findExitTo(creep.memory.target);
 			creep.moveTo(creep.pos.findClosestByRange(exit));
