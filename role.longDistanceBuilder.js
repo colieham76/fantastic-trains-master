@@ -25,15 +25,17 @@ module.exports = {
         if (creep.room.name == creep.memory.target) {
             creep.say('building');
           //  actionRepair.run(creep);
-            roleBuilder.run(creep);
-            let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
-            if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
-                creep.repair(thingUnderFeet);
-            }      
+            roleBuilder.run(creep);             
         }
         else { // go to target room
             var exit = creep.room.findExitTo(creep.memory.target);
             creep.travelTo(creep.pos.findClosestByRange(exit));
         }
+        
+        let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
+            if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
+                creep.repair(thingUnderFeet);
+            }   
+        
     }
 };
