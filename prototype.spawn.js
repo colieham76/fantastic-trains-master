@@ -56,7 +56,7 @@ Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 1, W3S7: 0};
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
 
 
-Game.spawns.Spawn5.memory.minCreeps = {harvester: 0, upgrader: 0, wallRepairer: 0, lorry: 2,
+Game.spawns.Spawn5.memory.minCreeps = {harvester: 0, upgrader: 0, wallRepairer: 0, lorry: 1,
 dismantler: 0, antiTransporter: 0};
 Game.spawns.Spawn5.memory.minattackers = {W4S2: 0};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 1};
@@ -65,7 +65,7 @@ Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceLorrys = {W9S7: 1}
 Game.spawns.Spawn6.memory.minCreeps = {harvester: 0, 
     upgrader: 0, 
-    lorry: 2, 
+    lorry: 1, 
     towerlorry: 1,
     builder: 0,
     rampartrepairer: 0,
@@ -1254,10 +1254,10 @@ StructureSpawn.prototype.createsmallHarvester =
     function (target) {
 // create a body
     var smallbodyh = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
         smallbodyh.push(CARRY);
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
         smallbodyh.push(MOVE);
     }
     // create smallHarvester
