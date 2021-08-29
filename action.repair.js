@@ -18,7 +18,7 @@ module.exports = {
                     && (s.hits<0.8*s.hitsMax) })
             if (structure == undefined) {
                 structure = creep.pos.findClosestByRange(FIND_STRUCTURES, { 
-       filter: (s) => s.hits < 0.8*s.hitsMax && s.structureType == STRUCTURE_ROAD})
+       filter: (s) => s.hits < Math.floor(0.8*s.hitsMax) && s.structureType == STRUCTURE_ROAD})
             }
             if (structure != undefined) {
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
