@@ -210,7 +210,8 @@ function () {
                             filter: (s) => s.structureType == STRUCTURE_CONTAINER,
                         });
                         if (containers.length > 0) {
-                            name = this.createRemoteMiner(Game.rooms[roomName].name, source.id);
+                           // name = this.createRemoteMiner(Game.rooms[roomName].name, source.id);
+				name = this.createRemoteMiner(source.id);
                             break;
                         }
                     }
