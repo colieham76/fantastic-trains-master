@@ -20,12 +20,14 @@ module.exports = {
                 return;
             }
         }
+          
         
-        
-        if (creep.room.name == creep.memory.target) {
-            creep.say('building');
-          //  actionRepair.run(creep);
-            roleBuilder.run(creep);             
+        if (creep.room.name == creep.memory.target) {                                    
+            let targets = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
+                if(targets.length > 0) {
+                    creep.say('building');          
+                    roleBuilder.run(creep);            
+                }
         }
         else { // go to target room
             var exit = creep.room.findExitTo(creep.memory.target);
