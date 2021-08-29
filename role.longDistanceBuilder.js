@@ -20,7 +20,7 @@ module.exports = {
                 return;
             }
         }
-        
+        /*
           let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
         if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
             creep.repair(thingUnderFeet);
@@ -30,7 +30,7 @@ module.exports = {
             if (thingUnderFeet) {
                 creep.build(thingUnderFeet);
             }
-        }
+        }*/
         
         if (creep.room.name == creep.memory.target) {
             creep.say('building');
