@@ -74,7 +74,7 @@ wallRepairer: 0
 };
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 0};
-Game.spawns.Spawn8.memory.minNumberOfreservers = {W9S7: 1};
+Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 0};
 Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
 
@@ -106,6 +106,7 @@ Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0,
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
 Game.spawns.Spawn8.memory.minsmallHarvesters = {W9S7: 1};
 Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 1}
+Game.spawns.Spawn8.memory.minNumberOfreservers = {W9S7: 1};
 
 //Game.creeps['Isabelle'].memory.target = 'W79N64'
 //Game.market.outgoingTransactionsarray
