@@ -51,6 +51,15 @@ if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S
 			}
 			return;
 		}
+	    
+	    
+	if (creep.room.name === 'W7S6' || !creep.memory.W8S6 && creep.room.name === 'W8S6') {
+			creep.travelTo(Game.flags['W8S6']);
+			if (creep.pos.isNearTo(Game.flags['W8S6'])) {
+				creep.memory.W8S6 = true;
+			}
+			return;
+		}    
 
         if (creep.hits > 0.9 * creep.hitsMax) {
             let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
