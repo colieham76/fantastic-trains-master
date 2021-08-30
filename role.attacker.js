@@ -51,14 +51,14 @@ module.exports = {
 			}
 			return;
 		}
-	    if (creep.room.name === 'W7S6' || !creep.memory.W7S7 && creep.room.name === 'W7S7') {
+	    if (creep.room.name === 'W7S6' && creep.memory.target === 'W7S7') {
 			creep.travelTo(Game.flags['W7S7']);
 			if (creep.pos.isNearTo(Game.flags['W7S7'])) {
 				creep.memory.W7S7 = true;
 			}
 			return;
 		} 
-	    if (creep.room.name === 'W7S6' || !creep.memory.W8S6 && creep.room.name === 'W8S6') {
+	    if (creep.room.name === 'W7S6' && creep.memory.target === 'W8S6') {
 			creep.travelTo(Game.flags['W8S6']);
 			if (creep.pos.isNearTo(Game.flags['W8S6'])) {
 				creep.memory.W8S6 = true;
