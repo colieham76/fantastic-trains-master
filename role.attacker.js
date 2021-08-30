@@ -44,93 +44,76 @@ module.exports = {
             return;
         }
 */
-if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S7') {
+	    if (creep.room.name === 'W9S6' || !creep.memory.W9S7 && creep.room.name === 'W9S7') {
 			creep.travelTo(Game.flags['W9S7']);
 			if (creep.pos.isNearTo(Game.flags['W9S7'])) {
 				creep.memory.W9S7 = true;
 			}
 			return;
 		}
-	    
-	    
-	if (creep.room.name === 'W7S6' || !creep.memory.W8S6 && creep.room.name === 'W8S6') {
-			creep.travelTo(Game.flags['W8S6']);
-			if (creep.pos.isNearTo(Game.flags['W8S6'])) {
-				creep.memory.W8S6 = true;
-			}
-			return;
-		}    
-if (creep.room.name === 'W7S6' || !creep.memory.W7S7 && creep.room.name === 'W7S7') {
+	    if (creep.room.name === 'W7S6' || !creep.memory.W7S7 && creep.room.name === 'W7S7') {
 			creep.travelTo(Game.flags['W7S7']);
 			if (creep.pos.isNearTo(Game.flags['W7S7'])) {
 				creep.memory.W7S7 = true;
 			}
 			return;
-		}   
-	    
-	    
-        if (creep.hits > 0.9 * creep.hitsMax) {
-            let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
-            if (hostileStructure) {
-                if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
-                    creep.travelTo(hostileStructure);
-                }
-            }
-		
-		
-		
-		
-		 if (creep.room.name == 'W7S6') {
-			 let ruins = Game.rooms[this.room].find(FIND_RUINS);
-			 if(ruins){
-				 creep.memory.W8S6 = false;
-				 creep.travelTo(Game.flags['W7S7']);
-				 if (creep.pos.isNearTo(Game.flags['W7S7'])) {
-					 creep.memory.W7S7 = true;
-				 }
-			 }
-			 return;
-		 }
-			 
-            let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
-                filter: c => ((c.pos.getRangeTo(creep) < 48))
-            });
-            if (target) {
-                if (creep.attack(target) == ERR_NOT_IN_RANGE) {
-                    creep.rangedAttack(target);
-                    creep.attack(target);
-                    creep.travelTo(target);
-                }
-            } else {
-                target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-                if (creep.attack(target) == ERR_NOT_IN_RANGE) {
-                    creep.travelTo(target)
-                } else {
-                    let core = creep.room.find(FIND_STRUCTURES, {
-                        filter: c => c.structureType == STRUCTURE_SPAWN
-                    })[0];
-                    if (core) {
-                        creep.travelTo(core);
-                        creep.attack(core);
-                        creep.rangedAttack(target);
-                    } else {
-                        core = creep.room.find(FIND_STRUCTURES, {
-                            filter: c => c.structureType == STRUCTURE_CONTAINER
-                        })[0];
-                        if (core) {
-                            creep.travelTo(core);
-                            creep.attack(core);
-                            creep.rangedAttack(target);
-                        }
-                    }
-                }
-            }
-        }
-        else {
-            if (!creep.memory.healingAbility) {
-                creep.memory.healingAbility = healingability(creep);
-            }
-            creep.heal(creep);
-        }
+		} 
+	    if (creep.room.name === 'W7S6' || !creep.memory.W8S6 && creep.room.name === 'W8S6') {
+			creep.travelTo(Game.flags['W8S6']);
+			if (creep.pos.isNearTo(Game.flags['W8S6'])) {
+				creep.memory.W8S6 = true;
+			}
+			return;
+		}  	    	        
+	    if (creep.hits > 0.9 * creep.hitsMax) {
+		    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+		    if (hostileStructure) {
+			    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
+				    creep.travelTo(hostileStructure);
+			    }
+		    }				 
+		    let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+			    filter: c => ((c.pos.getRangeTo(creep) < 48))
+		    });
+		    if (target) {
+			    if (creep.attack(target) == ERR_NOT_IN_RANGE) {
+				    creep.rangedAttack(target);
+				    creep.attack(target);
+				    creep.travelTo(target);
+			    }
+		    } 
+		    else {
+			    target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+			    if (creep.attack(target) == ERR_NOT_IN_RANGE) {
+				    creep.travelTo(target)
+			    } 
+			    else {
+				    let core = creep.room.find(FIND_STRUCTURES, {
+					    filter: c => c.structureType == STRUCTURE_SPAWN
+				    })[0];
+				    if (core) {
+					    creep.travelTo(core);
+					    creep.attack(core);
+					    creep.rangedAttack(target);
+				    }
+				    else {
+					    core = creep.room.find(FIND_STRUCTURES, {
+						    filter: c => c.structureType == STRUCTURE_CONTAINER
+					    })[0];
+					    if (core) {
+						    creep.travelTo(core);
+						    creep.attack(core);
+						    creep.rangedAttack(target);
+					    }
+				    }
+			    }
+		    }
+	    }
+	    else {
+		    if (!creep.memory.healingAbility) {
+			    creep.memory.healingAbility = healingability(creep);
+		    }
+		    creep.heal(creep);
+	    }
     }
 }
