@@ -80,10 +80,12 @@ if (creep.room.name === 'W7S6' || !creep.memory.W7S7 && creep.room.name === 'W7S
 		let ruins = Game.rooms[this.room].find(FIND_RUINS);
 		
 		
-		 if (creep.room.name == 'W7S6' && (ruins == true)) {
-			 creep.travelTo(Game.flags['W7S7']);
-			 if (creep.pos.isNearTo(Game.flags['W7S7'])) {
-				 creep.memory.W7S7 = true;
+		 if (creep.room.name == 'W7S6') {
+			 if(ruins){
+				 creep.travelTo(Game.flags['W7S7']);
+				 if (creep.pos.isNearTo(Game.flags['W7S7'])) {
+					 creep.memory.W7S7 = true;
+				 }
 			 }
 			 return;
 		 }
