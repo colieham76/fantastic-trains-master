@@ -26,22 +26,22 @@ module.exports = {
                 if(creep.room.name == 'W9S7') {
                     if (invaderStructure) {
                         if (Game.time % 100 === 0) {
-                            Game.spawns.Spawn6.memory.minattackers = 'W9S7';
+                            Game.spawns.Spawn6.memory.minattackers = {W9S7: 1};
                         }
                     }
                 }
                 if(creep.room.name == 'W8S6') {
                     if (invaderStructure) {
                         if (Game.time % 100 === 0) {
-                            Game.spawns.Spawn7.memory.minattackers = 'W8S6';
+                            Game.spawns.Spawn7.memory.minattackers = {W7S7: 0, W8S6: 1};
                         }
                     }
                 }
         if(creep.room.name == 'W7S7') {
                     if (invaderStructure) {
-                     //   if (Game.time % 100 === 0) {
-                            Game.spawns.Spawn7.memory.minattackers = 'W7S7';
-                      //  }
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn7.memory.minattackers = {W7S7: 1, W8S6: 0};
+                        }
                     }
                 }
         // repair when walking
