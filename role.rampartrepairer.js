@@ -10,19 +10,23 @@ module.exports = {
         }
 
         if (creep.memory.working !== true) {
-            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, false,
-                true, true); // find energy function in myFunctions
+            var [resourceID, ifDropped] = evaluateEnergyResources(creep, false, true,
+                false, true); // find energy function in myFunctions
             if (resourceID !== undefined) {
                 energy = Game.getObjectById(resourceID);
+                /*
                 if (ifDropped) { // if energy is dropped
                     if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
                         creep.travelTo(energy);
                     }
                 } else { // energy is from container, storage or link
+                    */
                     if (creep.withdraw(energy, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                         creep.travelTo(energy);
+                        
                     }
-                }
+               // }
+                
             }
         } else {
             var target = Game.getObjectById(Game.rooms[creep.room.name].memory.toBuildRampart);
