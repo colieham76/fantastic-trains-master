@@ -80,8 +80,9 @@ module.exports = {
 			    let ruins = this.room.find(FIND_RUINS), {
 				    filter: (ruins) =>
 				    ruins.store.getUsedCapacity(RESOURCE_ENERGY) >=
-					    this.store.getFreeCapacity()
-			    });
+					    this.store.getFreeCapacity() / 2,
+		    });
+
 			    
 			    if (ruins.length != 0) {
 				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 1, W7S7: 0}
