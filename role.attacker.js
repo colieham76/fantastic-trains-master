@@ -75,7 +75,9 @@ module.exports = {
 		    if (creep.room.name === 'W8S6') {
 			    let ruins = creep.room.find(FIND_RUINS)			    
 			    if (ruins.length != 0) {
+				    if (Game.time % 4000 === 0) {     
 				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 1}
+				    }
 			    }
 			    else {
 				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
@@ -84,7 +86,9 @@ module.exports = {
 		    if (creep.room.name === 'W7S7') {
 			    let ruins = creep.room.find(FIND_RUINS)			    
 			    if (ruins.length != 0) {
+				    if (Game.time % 4000 === 0) {     
 				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 1, W7S7: 0}
+				    }
 			    }
 			    else {
 				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
