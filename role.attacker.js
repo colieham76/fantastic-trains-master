@@ -72,10 +72,10 @@ module.exports = {
 				    creep.travelTo(hostileStructure);
 			    }
 		    }
-		    if (creep.room.name === 'W8S6' && Game.rooms[this.room].find(FIND_RUINS).length >= 1) {
+		    if (creep.room.name === 'W8S6' && Game.rooms[this.room].find(FIND_RUINS).length > 0) {
 			    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 1}
 		    }
-		    if (creep.room.name === 'W7S7' && Game.rooms[this.room].find(FIND_RUINS).length >= 1) {
+		    if (creep.room.name === 'W7S7' && Game.rooms[this.room].find(FIND_RUINS).length > 0) {
 			    Game.spawns.Spawn7.memory.minattackers = {W8S6: 1, W7S7: 0}
 		    }
 		    
