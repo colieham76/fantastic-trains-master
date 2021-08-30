@@ -77,7 +77,7 @@ module.exports = {
 		    }
 		   
 		    if (creep.room.name === 'W7S7') {
-			    let ruins = this.room.find(FIND_RUINS) {
+			    let ruins = this.room.find(FIND_RUINS), {
 				    filter: (ruins) =>
 				    ruins.store.getUsedCapacity(RESOURCE_ENERGY) >=
 					    this.store.getFreeCapacity()
