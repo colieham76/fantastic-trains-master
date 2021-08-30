@@ -45,14 +45,14 @@ Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 0, towerlorry: 1,
                                          rampartrepairer: 0};
 
-Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 0};
+Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 1, W3S7: 1};
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 2, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
-Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 1};
+Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 0};
 
 Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, dismantler: 0};
-Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 1, W3S7: 0};
+Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 0, W3S7: 0};
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
 
 
@@ -710,7 +710,7 @@ function () {
                 numberOfreservers[reserveRoom] = _.sum(Game.creeps, (c) =>
                     c.memory.role == 'reserver' && c.memory.target == reserveRoom);
                 if (numberOfreservers[reserveRoom] < this.memory.minNumberOfreservers[reserveRoom]){
-                    if (Game.time % 750 === 0) {
+                    if (Game.time % 550 === 0) {
                         name = this.createReserver(room.name, reserveRoom);
                     }
                 }            
