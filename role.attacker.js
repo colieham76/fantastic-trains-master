@@ -77,8 +77,12 @@ if (creep.room.name === 'W7S6' || !creep.memory.W7S7 && creep.room.name === 'W7S
                 }
             }
 		 if (creep.room.name == 'W7S6' && (hostileStructure == undefined)) {
-		     creep.travelTo(Game.flags['W7S7']);
-	}
+			 creep.travelTo(Game.flags['W7S7']);
+			 if (creep.pos.isNearTo(Game.flags['W7S7'])) {
+				 creep.memory.W7S7 = true;
+			 }
+			 return;
+		 }
 			 
             let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
                 filter: c => ((c.pos.getRangeTo(creep) < 48))
