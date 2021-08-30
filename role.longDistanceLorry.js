@@ -39,9 +39,9 @@ module.exports = {
                 }
         if(creep.room.name == 'W7S7') {
                     if (invaderStructure) {
-                        if (Game.time % 100 === 0) {
+                     //   if (Game.time % 100 === 0) {
                             Game.spawns.Spawn7.memory.minattackers = 'W7S7';
-                        }
+                      //  }
                     }
                 }
         // repair when walking
