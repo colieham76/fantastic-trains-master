@@ -71,13 +71,7 @@ module.exports = {
 			}
 			return;
 		}  	    	        
-	    if (creep.hits > 0.9 * creep.hitsMax) {
-		    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
-		    if (hostileStructure) {
-			    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
-				    creep.travelTo(hostileStructure);
-			    }
-		    }
+	   
 		    if (creep.room.name === 'W8S6') {
 			    let ruins = creep.room.find(FIND_RUINS)			    
 			    if (ruins.length != 0) {
@@ -90,6 +84,15 @@ module.exports = {
 			    }
 		    }		   
 		    if (creep.room.name === 'W7S7') {
+
+if (creep.hits > 0.9 * creep.hitsMax) {
+		    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+		    if (hostileStructure) {
+			    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
+				    creep.travelTo(hostileStructure);
+			    }
+		    }
+
 			    let ruins = creep.room.find(FIND_RUINS)			    
 			    if (ruins.length != 0) {
 				    if (Game.time % 4000 === 0) {     
