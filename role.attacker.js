@@ -79,9 +79,8 @@ module.exports = {
 				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
 			    }
 		    }		   
-		    if (creep.room.name === 'W7S7') {
-
-if (creep.hits > 0.9 * creep.hitsMax) {
+		    if (creep.room.name === 'W7S7' || creep.room.name === 'W8S6') {
+                    if (creep.hits > 0.9 * creep.hitsMax) {
 		    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
 		    if (hostileStructure) {
 			    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
