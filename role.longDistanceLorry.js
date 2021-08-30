@@ -22,7 +22,28 @@ module.exports = {
                 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0}; 
             }
         }
-        
+        let invaderStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+                if(creep.room.name == 'W9S7') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn6.memory.minattackers = 'W9S7';
+                        }
+                    }
+                }
+                if(creep.room.name == 'W8S6') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn7.memory.minattackers = 'W8S6';
+                        }
+                    }
+                }
+        if(creep.room.name == 'W7S7') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn7.memory.minattackers = 'W7S7';
+                        }
+                    }
+                }
         // repair when walking
       /*  let thingUnderFeet = creep.room.lookForAt(LOOK_STRUCTURES, creep)[0];
         if (thingUnderFeet && thingUnderFeet.structureType == STRUCTURE_ROAD) {
