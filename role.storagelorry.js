@@ -44,13 +44,14 @@ module.exports = {
                     }
                 }                                                                          
             }           
-        }                       
+        }   
+        const factory1 = Game.getObjectById('611d250166a81f76e1528560');
         const storageToFactory = creep.memory.storageToFactory                    
         if (storageToFactory) {
             creep.say("STF")
             if (creep.memory.isFull == true) {
-                creep.transfer(factory, RESOURCE_ENERGY)
-                creep.moveTo(factory);
+                creep.transfer(factory1, RESOURCE_ENERGY)
+                creep.moveTo(factory1);
                 creep.memory.storageToFactory = false 
             } else {
                 creep.withdraw(storageVar, RESOURCE_ENERGY)
