@@ -40,10 +40,10 @@ module.exports = {
                 creep.moveTo(factory1);
                 creep.memory.storageToFactory = false               
             }
-            else {
-                creep.withdraw(storageVar, RESOURCE_ENERGY)
-                creep.moveTo(storageVar);              
-            }
+         //   else {
+         //       creep.withdraw(storageVar, RESOURCE_ENERGY)
+         //       creep.moveTo(storageVar);              
+         //   }
         }
         else {
           
