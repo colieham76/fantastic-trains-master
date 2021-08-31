@@ -68,7 +68,7 @@ module.exports = {
 
                                 } else {
 
-                                    creep.withdraw(storage, RESOURCE_ENERGY)
+                                    creep.withdraw(storageVar, RESOURCE_ENERGY)
                                 }
                             }
                      
