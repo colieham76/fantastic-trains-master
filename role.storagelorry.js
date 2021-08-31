@@ -36,8 +36,9 @@ module.exports = {
             const storageToFactory = creep.memory.storageToFactory                    
             if (storageToFactory) {
                 creep.say("STF")            
-                creep.transfer(factory1, RESOURCE_ENERGY)
-                creep.moveTo(factory1);
+                 if (creep.transfer(factory1, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                     creep.moveTo(factory1);
+                 }
                 creep.memory.storageToFactory = false               
             }
          //   else {
