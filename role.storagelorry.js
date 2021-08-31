@@ -47,6 +47,32 @@ module.exports = {
                     if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
                         creep.moveTo(storageVar);
                     }
+                     
+                    if (storage 
+                        && storage.store[RESOURCE_ENERGY] >= 80000 
+                        && factory && factory.store[RESOURCE_ENERGY] < 60000 
+                        && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
+                        creep.memory.storageToFactory = true
+                    }
+                     
+                     const storageToFactory = creep.memory.storageToFactory
+                     
+                     if (storageToFactory) {
+
+                                creep.say("STF")
+
+                                if (creep.memory.isFull == true) {
+
+                                    creep.transfer(factory, RESOURCE_ENERGY)
+                                    creep.memory.storageToFactory = false
+
+                                } else {
+
+                                    creep.withdraw(storage, RESOURCE_ENERGY)
+                                }
+                            }
+                     
+                     
                 }
             }
             
