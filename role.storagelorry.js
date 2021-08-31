@@ -49,9 +49,9 @@ module.exports = {
                     }
                      
                     if (storage 
-                        && storage.store[RESOURCE_ENERGY] >= 80000 
-                        && factory && factory.store[RESOURCE_ENERGY] < 60000 
-                        && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
+                        && storage.store[RESOURCE_ENERGY] >= 80000 ){
+                     //   && factory && factory.store[RESOURCE_ENERGY] < 60000 
+                     //   && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
                         creep.memory.storageToFactory = true
                     }
                      
