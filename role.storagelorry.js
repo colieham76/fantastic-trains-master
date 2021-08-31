@@ -32,12 +32,16 @@ module.exports = {
             }
         }
         if (creep.room.name == 'W9S6') {
+            var factory = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                filter: (s) => (s.factory === STRUCTURE_FACTORY)
+                    && s.energy < s.energyCapacity * 0.8
+            });
             const factory1 = Game.getObjectById('611d250166a81f76e1528560');
             const storageToFactory = creep.memory.storageToFactory                    
             if (storageToFactory) {
                 creep.say("STF")            
-                 if (creep.transfer(factory1, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                     creep.moveTo(factory1);
+                 if (creep.transfer(factory, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                     creep.moveTo(factory);
                  }
                 creep.memory.storageToFactory = false               
             }
