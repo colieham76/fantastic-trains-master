@@ -46,7 +46,7 @@ module.exports = {
             }
         }
         else {
-            if (storageToFactory == undefined){
+          
                 creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
                 if (creep.pos == 25, 35) {
                     if (creep.memory.working == false) {                   
@@ -59,7 +59,7 @@ module.exports = {
                         }
                     }                                                                          
                 }
-            }           
+                       
         }                                        
     }
 }
