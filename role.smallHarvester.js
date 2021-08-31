@@ -54,7 +54,7 @@ module.exports = {
                     }
                     else {
                         if (creep.transfer(factory) === ERR_NOT_IN_RANGE) {
-                            creep.moveTo(energy, {reusePath: 500});
+                            creep.moveTo(factory, {reusePath: 500});
                         }
                     }     
                     creep.getEnergy(false, false);
