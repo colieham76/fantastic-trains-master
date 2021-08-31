@@ -45,9 +45,9 @@ module.exports = {
                 creep.moveTo(energy, {reusePath: 500});
             }
             else {              
-                var factory = creep.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
-                });              
+                var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+			filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+		});              
                // for (const resourceType in creep.store) {
                     if (creep.withdraw(storage) === ERR_NOT_IN_RANGE) {
                         creep.moveTo(storage, {reusePath: 500});   
