@@ -48,7 +48,7 @@ module.exports = {
                 }                                              
             }           
         }
-        else {
+       
             if (storageVar 
                 && storageVar.store[RESOURCE_ENERGY] >= 80000 ){
                 //   && factory && factory.store[RESOURCE_ENERGY] < 60000 
@@ -67,6 +67,6 @@ module.exports = {
                     creep.moveTo(storageVar);
                 }
             }             
-        }
+        
     }
 }
