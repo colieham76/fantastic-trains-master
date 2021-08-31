@@ -48,18 +48,15 @@ module.exports = {
                 var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 			filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 		});              
-               // for (const resourceType in creep.store) {
-                    if (creep.withdraw(storage) === ERR_NOT_IN_RANGE) {
-                        creep.moveTo(storage, {reusePath: 500});   
-                    }
-                    else {
-                        if (creep.transfer(factory) === ERR_NOT_IN_RANGE) {
-                            creep.moveTo(factory, {reusePath: 500});
-                        }
-                    }     
-                    creep.getEnergy(false, false);
-                //}
-            }
+              for (var resourceType in creep.store) {
+				if (factory.store.getUsedCapacity() < 10000) {
+					if (creep.transfer(factory, resourceType) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
+					}
+				}
+		      creep.getEnergy(false, false);
+	      }
+	    }
         }
     }
 }
