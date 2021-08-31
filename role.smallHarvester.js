@@ -49,7 +49,7 @@ module.exports = {
                     filter: (structure) => structure.structureType == STRUCTURE_FACTORY
                 });              
                // for (const resourceType in creep.store) {
-                    if (creep.withdraw(storage, resourceType) === ERR_NOT_IN_RANGE) {
+                    if (creep.withdraw(storage) === ERR_NOT_IN_RANGE) {
                         creep.moveTo(storage, {reusePath: 500});   
                     }
                     else {
