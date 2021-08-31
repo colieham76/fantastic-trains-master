@@ -47,26 +47,18 @@ module.exports = {
                     creep.moveTo(storageVar);
                 }                                              
             }           
-        }
-       
-            if (storageVar 
-                && storageVar.store[RESOURCE_ENERGY] >= 80000 ){
-                //   && factory && factory.store[RESOURCE_ENERGY] < 60000 
-                //   && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
-                creep.memory.storageToFactory = true
-            }                   
-            const storageToFactory = creep.memory.storageToFactory                    
-            if (storageToFactory) {
-                creep.say("STF")
-                if (creep.memory.isFull == true) {
-                    creep.transfer(factory, RESOURCE_ENERGY)
-                    creep.moveTo(factory);
-                    creep.memory.storageToFactory = false 
-                } else {
-                    creep.withdraw(storageVar, RESOURCE_ENERGY)
-                    creep.moveTo(storageVar);
-                }
-            }             
-        
+        }                       
+        const storageToFactory = creep.memory.storageToFactory                    
+        if (storageToFactory) {
+            creep.say("STF")
+            if (creep.memory.isFull == true) {
+                creep.transfer(factory, RESOURCE_ENERGY)
+                creep.moveTo(factory);
+                creep.memory.storageToFactory = false 
+            } else {
+                creep.withdraw(storageVar, RESOURCE_ENERGY)
+                creep.moveTo(storageVar);
+            }
+        }                     
     }
 }
