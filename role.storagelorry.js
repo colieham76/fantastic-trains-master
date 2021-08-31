@@ -34,7 +34,7 @@ module.exports = {
         if (creep.room.name == 'W9S6') {
             creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
             if (creep.pos == 25, 35) {
-                if (creep.memory.working == false) {
+                if (creep.memory.working == false) {                   
                     //LINK IN ROOM W9S6
                     const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
                     if (upgradeContainer.energy > 0) {
@@ -44,39 +44,28 @@ module.exports = {
                     }
                 }
                 // if (Game.time % 22 == 0) {
-                    if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(storageVar);
+                if (creep.withdraw(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(storageVar);
+                }                    
+                if (storageVar 
+                    && storageVar.store[RESOURCE_ENERGY] >= 80000 ){
+                    //   && factory && factory.store[RESOURCE_ENERGY] < 60000 
+                    //   && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
+                    creep.memory.storageToFactory = true
+                }                   
+                const storageToFactory = creep.memory.storageToFactory                    
+                if (storageToFactory) {
+                    creep.say("STF")
+                    if (creep.memory.isFull == true) {
+                        creep.transfer(factory, RESOURCE_ENERGY)
+                        creep.moveTo(factory);
+                        creep.memory.storageToFactory = false 
+                    } else {
+                        creep.withdraw(storageVar, RESOURCE_ENERGY)
                     }
-                     
-                    if (storageVar 
-                        && storageVar.store[RESOURCE_ENERGY] >= 80000 ){
-                     //   && factory && factory.store[RESOURCE_ENERGY] < 60000 
-                     //   && factory.store.getFreeCapacity() >= creep.store.getCapacity()) {
-                        creep.memory.storageToFactory = true
-                    }
-                     
-                     const storageToFactory = creep.memory.storageToFactory
-                     
-                     if (storageToFactory) {
-
-                                creep.say("STF")
-
-                                if (creep.memory.isFull == true) {
-
-                                    creep.transfer(factory, RESOURCE_ENERGY)
-                                    creep.moveTo(factory);
-                                    creep.memory.storageToFactory = false
-
-                                } else {
-
-                                    creep.withdraw(storageVar, RESOURCE_ENERGY)
-                                }
-                            }
-                     
-                     
-              //  }
-            }
-            
+                }
+                 //  }
+            }           
         }
     }
 }
