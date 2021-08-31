@@ -39,26 +39,27 @@ module.exports = {
                 creep.transfer(factory1, RESOURCE_ENERGY)
                 creep.moveTo(factory1);
                 creep.memory.storageToFactory = false               
-                else {
-                    creep.withdraw(storageVar, RESOURCE_ENERGY)
-                    creep.moveTo(storageVar);              
-                }
             }
             else {
-                if (storageToFactory == undefined){
-                    creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
-                    if (creep.pos == 25, 35) {
-                        if (creep.memory.working == false) {                   
-                            //LINK IN ROOM W9S6
-                            const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
-                            if (upgradeContainer.energy > 0) {
-                                if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                    creep.travelTo(upgradeContainer);
-                                }
-                            }
-                        }                                                                          
-                    }
-                }           
-            }                                        
+                creep.withdraw(storageVar, RESOURCE_ENERGY)
+                creep.moveTo(storageVar);              
+            }
         }
+        else {
+            if (storageToFactory == undefined){
+                creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
+                if (creep.pos == 25, 35) {
+                    if (creep.memory.working == false) {                   
+                        //LINK IN ROOM W9S6
+                        const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
+                        if (upgradeContainer.energy > 0) {
+                            if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                                creep.travelTo(upgradeContainer);
+                            }
+                        }
+                    }                                                                          
+                }
+            }           
+        }                                        
     }
+}
