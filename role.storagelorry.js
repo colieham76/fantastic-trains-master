@@ -3,9 +3,6 @@ module.exports = {
     /** @param {Creep} creep */
     run: function (creep) {
         var storageVar = creep.room.storage;
-        var terminal = creep.room.terminal
-        var factory = creep.room.factory
-        
         if(creep.memory.working && creep.store.energy < 600) {
             creep.memory.working = false;
         }
@@ -32,39 +29,24 @@ module.exports = {
             }
         }
         if (creep.room.name == 'W9S6') {
-            var factory = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-                filter: (s) => (s.factory === STRUCTURE_FACTORY)
-                    && s.energy < s.energyCapacity * 0.8
-            });
-            const factory1 = Game.getObjectById('611d250166a81f76e1528560');
-            const storageToFactory = creep.memory.storageToFactory                    
-            if (storageToFactory) {
-                creep.say("STF")            
-                 if (creep.transfer(factory, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                     creep.moveTo(factory);
-                 }
-                creep.memory.storageToFactory = false               
-            }
-         //   else {
-         //       creep.withdraw(storageVar, RESOURCE_ENERGY)
-         //       creep.moveTo(storageVar);              
-         //   }
-        }
-        else {
-          
-              //  creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
-              //  if (creep.pos == 25, 35) {
-                    if (creep.memory.working == false) {                   
-                        //LINK IN ROOM W9S6
-                        const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
-                        if (upgradeContainer.energy > 0) {
-                            if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                creep.travelTo(upgradeContainer);
-                            }
+            creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
+            if (creep.pos == 25, 35) {
+                if (creep.memory.working == false) {
+                    //LINK IN ROOM W9S6
+                    const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
                         }
-                    }                                                                          
-               // }
-                       
-        }                                        
+                    }
+                }
+                 if (Game.time % 22 == 0) {
+                    if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(storageVar);
+                    }
+                }
+            }
+            
+        }
     }
 }
