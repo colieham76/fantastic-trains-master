@@ -54,7 +54,7 @@ module.exports = {
 						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
 					}
 				}
-		      creep.getEnergy(false, false);
+		     
 	      }
 	    }
         }
