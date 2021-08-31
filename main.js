@@ -76,7 +76,7 @@ Game.spawns.Spawn6.memory.crewRoom = 'W9S5'
 */
 ////////////////////////////////////////////////////////////////////////////////////////
 //MYang2017
-
+        require('factories';)
 	require('./prototype_creep_fight');//tooAngel kiting attacker test
 	require('./prototype_roomPosition'); //tooAngel kiting attacker test
 	require('./prototype_room_utils'); //tooAngel kiting attacker test
