@@ -64,6 +64,7 @@ module.exports = {
                                 if (creep.memory.isFull == true) {
 
                                     creep.transfer(factory, RESOURCE_ENERGY)
+                                    creep.moveTo(factory);
                                     creep.memory.storageToFactory = false
 
                                 } else {
