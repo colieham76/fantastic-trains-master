@@ -42,10 +42,7 @@ module.exports = {
                             creep.travelTo(upgradeContainer);
                         }
                     }
-                }                
-                if (creep.withdraw(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(storageVar);
-                }                                              
+                }                                                                          
             }           
         }                       
         const storageToFactory = creep.memory.storageToFactory                    
