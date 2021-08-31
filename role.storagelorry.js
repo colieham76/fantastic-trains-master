@@ -42,8 +42,7 @@ module.exports = {
                             creep.travelTo(upgradeContainer);
                         }
                     }
-                }
-                // if (Game.time % 22 == 0) {
+                }                
                 if (creep.withdraw(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
                     creep.moveTo(storageVar);
                 }                    
@@ -62,9 +61,9 @@ module.exports = {
                         creep.memory.storageToFactory = false 
                     } else {
                         creep.withdraw(storageVar, RESOURCE_ENERGY)
+                        creep.moveTo(storageVar);
                     }
-                }
-                 //  }
+                }                
             }           
         }
     }
