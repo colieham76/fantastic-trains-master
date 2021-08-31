@@ -47,8 +47,8 @@ module.exports = {
         }
         else {
           
-                creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
-                if (creep.pos == 25, 35) {
+              //  creep.moveTo(25, 35, {visualizePathStyle: {stroke: '#ffaa00'}});
+              //  if (creep.pos == 25, 35) {
                     if (creep.memory.working == false) {                   
                         //LINK IN ROOM W9S6
                         const upgradeContainer = Game.getObjectById('60f28c866ad7ca62d17c9522');
@@ -58,7 +58,7 @@ module.exports = {
                             }
                         }
                     }                                                                          
-                }
+               // }
                        
         }                                        
     }
