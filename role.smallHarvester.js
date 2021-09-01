@@ -7,9 +7,9 @@ module.exports = {
 		});
 
 		if (creep.store.getFreeCapacity() > 0) {
-			var mineral = creep.pos.findClosestByRange(FIND_MINERALS);
-			if (creep.harvest(mineral) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(mineral, {visualizePathStyle: {stroke: '#ffaa00'}});
+			var storage = creep.room.storage;
+			if (creep.harvest(storage) == ERR_NOT_IN_RANGE) {
+				creep.moveTo(storage, {visualizePathStyle: {stroke: '#ffaa00'}});
 			}
 		}
 		else {
