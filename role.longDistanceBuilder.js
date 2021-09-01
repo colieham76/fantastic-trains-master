@@ -21,7 +21,28 @@ module.exports = {
             }
         }
         
-        
+        let invaderStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+                if(creep.room.name == 'W9S7') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn6.memory.minattackers = {W9S7: 1};
+                        }
+                    }
+                }
+                if(creep.room.name == 'W8S6') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn7.memory.minattackers = {W7S7: 0, W8S6: 1};
+                        }
+                    }
+                }
+        if(creep.room.name == 'W7S7') {
+                    if (invaderStructure) {
+                        if (Game.time % 100 === 0) {
+                            Game.spawns.Spawn7.memory.minattackers = {W7S7: 1, W8S6: 0};
+                        }
+                    }
+                }
         if (creep.room.name == creep.memory.target) {
           //  if (Game.time % 5 === 0) {       
             actionRepair.run(creep);
