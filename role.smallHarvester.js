@@ -25,8 +25,9 @@ module.exports = {
         }
         else {   
              if (creep.room.name == 'W7S6') {
-             //   creep.moveTo(29, 30);           
-           // }
+                creep.moveTo(29, 30);           
+            }
+		if (creep.room.name == 'W9S6') {
          var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 			filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 		});
@@ -47,9 +48,9 @@ module.exports = {
 			}
 		}
             }
-            if (creep.room.name == 'W9S6') {
-                creep.moveTo(30, 32);           
-            }            
+           // if (creep.room.name == 'W9S6') {
+           //     creep.moveTo(30, 32);           
+           // }            
             let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
                 filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 1499
             });
