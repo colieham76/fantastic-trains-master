@@ -15,7 +15,6 @@ if(Game.rooms['W9S6'].storage.store.getUsedCapacity('energy')>=500000){
         factory('W9S6')[0].produce('battery');
     }
 
-	let factories = require('factories')
 	const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// W7S6 centre
 	linkController.run(uploadLink1);
 	const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996');// W7S6 south
