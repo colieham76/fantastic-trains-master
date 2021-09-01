@@ -13,13 +13,15 @@ module.exports = {
                     }
 		}
 		else {
-			//for (var resourceType in creep.store) {
-				if (factory.store.getUsedCapacity() < 10000) {
-					if (creep.transfer(factory, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
-					}
-				}
-			//}
+			 var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
+				 filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+			 })[0];
+			if (factory.store.getUsedCapacity() < 30000) {
+				 var targett = factory				 
+				 }
+			if (creep.transfer(targett,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				creep.moveTo(targett);
+			}
 		}
     }
 }
