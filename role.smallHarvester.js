@@ -8,9 +8,9 @@ module.exports = {
 
 		if (creep.store.getFreeCapacity() > 0) {
 			var storage = creep.room.storage;
-			if (creep.withdraw(storage) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(storage, {visualizePathStyle: {stroke: '#ffaa00'}});
-			}
+			if (creep.withdraw(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.travelTo(storage);
+                    }
 		}
 		else {
 			for (var resourceType in creep.store) {
