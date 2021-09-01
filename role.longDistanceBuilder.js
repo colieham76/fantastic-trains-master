@@ -23,10 +23,10 @@ module.exports = {
         
         
         if (creep.room.name == creep.memory.target) {
-            if (Game.time % 5 === 0) {       
+          //  if (Game.time % 5 === 0) {       
             actionRepair.run(creep);
             creep.say('repair');
-}
+//}
             roleBuilder.run(creep);             
         }
         else { // go to target room
