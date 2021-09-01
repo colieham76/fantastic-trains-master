@@ -4,6 +4,7 @@ module.exports.loop = function() {
 			Game.rooms[room].memory.remoteMiningEnabled = false;
 		}
 	}
+	let factories = require("factories")
 	const uploadLink1 = Game.getObjectById('60f7d1093bd3cc14ace13cfa');// W7S6 centre
 	linkController.run(uploadLink1);
 	const uploadLink2 = Game.getObjectById('60f7cd829709c9966154d996');// W7S6 south
