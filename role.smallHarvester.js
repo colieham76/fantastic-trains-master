@@ -44,6 +44,8 @@ module.exports = {
 						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
 					}
 				}
+			}
+		}
             }
             if (creep.room.name == 'W9S6') {
                 creep.moveTo(30, 32);           
