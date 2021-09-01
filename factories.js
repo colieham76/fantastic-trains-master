@@ -4,9 +4,9 @@ function factories(factory) {
 
         if (factory.store.getUsedCapacity() != factory.store.getCapacity() && factory.cooldown == 0) {
 
-            if (factory.store[RESOURCE_BATTERY] > 0) {
+            if (factory.store[RESOURCE_ENERGY] > 0) {
 
-                factory.produce(RESOURCE_ENERGY)
+                factory.produce(RESOURCE_BATTERY)
             }
         }
     }
