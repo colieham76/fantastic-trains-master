@@ -5,6 +5,12 @@ module.exports.loop = function() {
 		}
 	}
 
+function factory(rn){return Game.rooms[rn].find(FIND_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_FACTORY) ;
+                    }
+        });}
+
 if(Game.rooms['W9S6'].storage.store.getUsedCapacity('energy')>=500000){
         factory('W9S6')[0].produce('battery');
     }
