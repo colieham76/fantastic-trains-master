@@ -96,8 +96,8 @@ module.exports = {
 			    }
 			    else {
 				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
-			    }
-		    }	 */   		    
+			    }*/
+		    }	   		    
 		    let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
 			    filter: c => ((c.pos.getRangeTo(creep) < 48))
 		    });
