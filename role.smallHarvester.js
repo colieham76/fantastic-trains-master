@@ -13,13 +13,13 @@ module.exports = {
                     }
 		}
 		else {
-			for (var resourceType in creep.store) {
+			//for (var resourceType in creep.store) {
 				if (factory.store.getUsedCapacity() < 10000) {
-					if (creep.transfer(factory, resourceType) == ERR_NOT_IN_RANGE) {
+					if (creep.transfer(factory, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
 					}
 				}
-			}
+			//}
 		}
     }
 }
