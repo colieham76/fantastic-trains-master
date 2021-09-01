@@ -12,15 +12,7 @@ module.exports = {
         }
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working === true) {       
-            var containers = creep.room.find(FIND_STRUCTURES, {
-                filter: (s) => {
-                    return (s.structureType == STRUCTURE_LINK) 
-                }
-            });
-            var source = creep.pos.findClosestByPath(containers);
-            if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source,  {reusePath: 400});
-            }
+            
             if(creep.room.storage
                 && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()) {
                 var storage = creep.room.storage;
@@ -31,9 +23,27 @@ module.exports = {
                 }                             
             }                      
         }
-        else {            
-            if (creep.room.name == 'W7S6') {
-                creep.moveTo(29, 30);           
+        else {   
+             if (creep.room.name == 'W7S6') {
+             //   creep.moveTo(29, 30);           
+           // }
+         var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+			filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+		});
+
+		if (creep.store.getFreeCapacity() > 0) {
+			var mineral = creep.pos.findClosestByRange(FIND_MINERALS);
+			if (creep.harvest(mineral) == ERR_NOT_IN_RANGE) {
+				creep.moveTo(mineral, {visualizePathStyle: {stroke: '#ffaa00'}});
+			}
+		}
+		else {
+			for (var resourceType in creep.store) {
+				if (factory.store.getUsedCapacity() < 10000) {
+					if (creep.transfer(factory, resourceType) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
+					}
+				}
             }
             if (creep.room.name == 'W9S6') {
                 creep.moveTo(30, 32);           
