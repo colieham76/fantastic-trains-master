@@ -1067,10 +1067,10 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1093,10 +1093,10 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1119,10 +1119,10 @@ StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1145,10 +1145,10 @@ StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1171,10 +1171,10 @@ StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer5 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
