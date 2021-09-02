@@ -80,15 +80,15 @@ Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
 
 Game.spawns.Spawn3.memory.minhealers = {W4S6: 1};
-Game.spawns.Spawn6.memory.minhealers2 = {W8S5: 0};
-Game.spawns.Spawn6.memory.minhealers3 = {W8S5: 0};
+Game.spawns.Spawn3.memory.minhealers2 = {W4S6: 1};
+Game.spawns.Spawn4.memory.minhealers3 = {W4S6: 1};
 Game.spawns.Spawn6.memory.minhealers4 = {W8S5: 0};
 
 Game.spawns.Spawn4.memory.mintowerdrainers1 = {W4S6: 1};
 Game.spawns.Spawn4.memory.mintowerdrainers2 = {W4S6: 1};
 Game.spawns.Spawn3.memory.mintowerdrainers3 = {W4S6: 1};
-Game.spawns.Spawn6.memory.mintowerdrainers4 = {W9S5: 0};
-Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
+Game.spawns.Spawn3.memory.mintowerdrainers4 = {W9S5: 1};
+Game.spawns.Spawn4.memory.mintowerdrainers5 = {W9S5: 1};
 
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 1,
 				       rampartrepairer: 0, lorry: 1, builder: 0, extractor: 0, dismantler: 0};
