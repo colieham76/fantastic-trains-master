@@ -45,7 +45,7 @@ Game.spawns.Spawn2.memory.minsmallUpgraders = {W1S8: 1};
 Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 0, towerlorry: 1,
                                          rampartrepairer: 1};
 
-Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 0, W3S7: 0};
+Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 0, W3S7: 1};
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 1, wallRepairer: 0,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
@@ -93,7 +93,7 @@ Game.spawns.Spawn4.memory.mintowerdrainers5 = {W9S5: 1};
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 1,
 				       rampartrepairer: 0, lorry: 1, builder: 0, extractor: 0, dismantler: 0};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 1};
-Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 1, W7S7: 1};
+Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 0, W7S7: 0};
 //Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 //Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
 Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 1};
