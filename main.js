@@ -1,7 +1,7 @@
 module.exports.loop = function() {
 	for (let room in Game.rooms) {
 		if (Game.rooms[room].memory.remoteMiningEnabled == undefined) {
-			Game.rooms[room].memory.remoteMiningEnabled = false;
+			Game.rooms[room].memory.remoteMiningEnabled = true;
 		}
 	}
 
