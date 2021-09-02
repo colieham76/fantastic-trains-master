@@ -2,6 +2,9 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function(creep) {
+	     var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
+				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+			    })[0];
 	    if (factory.store.getUsedCapacity() < 30000) {
 		    var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 			    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
@@ -13,9 +16,9 @@ module.exports = {
 			    }
 		    }	
 		    else {
-			    var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
-				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
-			    })[0];
+			   // var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
+			//	    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+			 //   })[0];
 			    if (factory.store.getUsedCapacity() < 30000) {
 				    var targett = factory				 
 				    }
