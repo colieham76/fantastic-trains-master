@@ -79,14 +79,14 @@ Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 
 
 
-Game.spawns.W7S8.memory.minhealers = {W8S5: 0};
+Game.spawns.Spawn3.memory.minhealers = {W4S6: 1};
 Game.spawns.Spawn6.memory.minhealers2 = {W8S5: 0};
 Game.spawns.Spawn6.memory.minhealers3 = {W8S5: 0};
 Game.spawns.Spawn6.memory.minhealers4 = {W8S5: 0};
 
-Game.spawns.W7S8.memory.mintowerdrainers1 = {W9S3: 0};
-Game.spawns.W7S8.memory.mintowerdrainers2 = {W9S3: 0};
-Game.spawns.Spawn1.memory.mintowerdrainers3 = {W9S3: 0};
+Game.spawns.Spawn4.memory.mintowerdrainers1 = {W4S6: 1};
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W4S6: 1};
+Game.spawns.Spawn3.memory.mintowerdrainers3 = {W4S6: 1};
 Game.spawns.Spawn6.memory.mintowerdrainers4 = {W9S5: 0};
 Game.spawns.Spawn6.memory.mintowerdrainers5 = {W9S5: 0};
 
@@ -1067,13 +1067,13 @@ StructureSpawn.prototype.createCrew = function(groupName, boostMat) {
 
 StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
 //	for (let i = 0; i < 4; i++) {
@@ -1093,10 +1093,10 @@ StructureSpawn.prototype.createtowerdrainer1 = function(home, target) {
 
 StructureSpawn.prototype.createtowerdrainer2 = function(home, target) {
     var body = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1122,7 +1122,7 @@ StructureSpawn.prototype.createtowerdrainer3 = function(home, target) {
     for (let i = 0; i < 4; i++) {
         body.push(TOUGH);
     }
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 7; i++) {
         body.push(MOVE);
     }
     for (let i = 0; i < 3; i++) {
@@ -1154,9 +1154,9 @@ StructureSpawn.prototype.createtowerdrainer4 = function(home, target) {
     for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
-	for (let i = 0; i < 4; i++) {
-        body.push(ATTACK);
-    }
+//	for (let i = 0; i < 4; i++) {
+//        body.push(ATTACK);
+//    }
     return this.createCreep(body,
         undefined,
         {
@@ -1180,9 +1180,9 @@ StructureSpawn.prototype.createtowerdrainer5 = function(home, target) {
     for (let i = 0; i < 3; i++) {
         body.push(HEAL);
     }
-	for (let i = 0; i < 2; i++) {
-        body.push(ATTACK);
-    }
+//	for (let i = 0; i < 2; i++) {
+//        body.push(ATTACK);
+//    }
     return this.createCreep(body,
         undefined,
         {
@@ -1332,10 +1332,10 @@ StructureSpawn.prototype.createhealer = function(home, target) {
 
 StructureSpawn.prototype.createhealer2 = function(home, target) {
       var body = [];
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(HEAL);
       }
 
@@ -1350,10 +1350,10 @@ StructureSpawn.prototype.createhealer2 = function(home, target) {
 
 StructureSpawn.prototype.createhealer3 = function(home, target) {
       var body = [];
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(HEAL);
       }
 
@@ -1368,10 +1368,10 @@ StructureSpawn.prototype.createhealer3 = function(home, target) {
 
 StructureSpawn.prototype.createhealer4 = function(home, target) {
       var body = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(MOVE);
       }
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 8; i++) {
           body.push(HEAL);
       }
 
