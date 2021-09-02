@@ -53,7 +53,7 @@ module.exports = {
         }
         //code for distant room
         if (!creep.memory.recycled){
-          creep.travelTo(new RoomPosition(27, 48, 'W4S6'));   
+          creep.travelTo(new RoomPosition(27, 47, 'W4S6'));   
            creep.memory.attaaaacck = true;
         let toHeal = lowestHealthInRoom(creep);
             if (toHeal.hits != toHeal.hitsMax && creep.heal(toHeal) == 0) {
