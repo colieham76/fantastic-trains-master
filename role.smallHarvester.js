@@ -15,10 +15,7 @@ module.exports = {
 				    creep.travelTo(storage);
 			    }
 		    }	
-		    else {
-			   // var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
-			//	    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
-			 //   })[0];
+		    else {		  
 			    if (factory.store.getUsedCapacity() < 30000) {
 				    var targett = factory				 
 				    }
