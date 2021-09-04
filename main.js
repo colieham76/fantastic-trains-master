@@ -28,6 +28,15 @@ if(Game.rooms['W9S6'].storage.store.getUsedCapacity('energy')>=500000){
 	linkController.run(uploadLink4);
 	const uploadLink5 = Game.getObjectById('61191c61d8dc48a4cc22cd7d'); // W9S6 right
 	linkController.run(uploadLink5);
+	const uploadLink7 = Game.getObjectById('6133bb7de4eb6b1fcb87777a'); // W3S8 right
+	linkController.run(uploadLink7);
+	const uploadLink8 = Game.getObjectById('6086741280b5ea172258939e'); // W3S8 right
+	linkController.run(uploadLink8);
+	const uploadLink9 = Game.getObjectById('60b9014573c93ab23eab5fff'); // W3S8 top right
+	linkController.run(uploadLink9);
+	const uploadLink10 = Game.getObjectById('60867ac6b926becd116e7921'); // W3S8 top left
+	linkController.run(uploadLink10);
+
 	Game.rooms.W3S8.createConstructionSite(15, 30, STRUCTURE_RAMPART);
 	Game.rooms.W3S8.createConstructionSite(18, 25, STRUCTURE_RAMPART);
 	Game.rooms.W3S8.createConstructionSite(20, 28, STRUCTURE_RAMPART);
