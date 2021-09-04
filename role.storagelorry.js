@@ -46,7 +46,25 @@ module.exports = {
                     }
                 }
             }
-            
+        }
+        if (creep.room.name == 'W3S8') {
+            creep.moveTo(18, 27, {visualizePathStyle: {stroke: '#ffaa00'}});
+            if (creep.pos == 18, 27) {
+                if (creep.memory.working == false) {
+                    //LINK IN ROOM W3S8
+                    const upgradeContainer = Game.getObjectById('6133bb7de4eb6b1fcb87777a');
+                    if (upgradeContainer.energy > 0) {
+                        if (creep.withdraw(upgradeContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                            creep.travelTo(upgradeContainer);
+                        }
+                    }
+                }
+                if (Game.time % 24 == 0) {
+                    if (creep.transfer(storageVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(storageVar);
+                    }
+                }
+            }
         }
     }
 }
