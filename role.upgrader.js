@@ -2,14 +2,10 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
-        if (creep.memory.working && creep.store.energy == 0) {
-            creep.memory.working = false;
-        } else if (!creep.memory.working && creep.store.energy == creep.store.getCapacity()) {
-            creep.memory.working = true;
-        }  
         
-        // upgrader route flag   
         
+        // upgrader route flag
+
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
@@ -46,7 +42,14 @@ module.exports = {
                 creep.memory.W7S6 = true;
             }
             return;
-        }        
+        }
+
+        if (creep.memory.working && creep.store.energy == 0) {
+            creep.memory.working = false;
+        } else if (!creep.memory.working && creep.store.energy == creep.store.getCapacity()) {
+            creep.memory.working = true;
+        }
+
         if (creep.memory.working == true) {
             if (creep.transfer(creep.room.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(creep.room.controller);
