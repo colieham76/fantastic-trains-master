@@ -28,7 +28,7 @@ if(Game.rooms['W9S6'].storage.store.getUsedCapacity('energy')>=500000){
 	linkController.run(uploadLink4);
 	const uploadLink5 = Game.getObjectById('61191c61d8dc48a4cc22cd7d'); // W9S6 right
 	linkController.run(uploadLink5);
-	const uploadLink7 = Game.getObjectById('6133bb7de4eb6b1fcb87777a'); // W3S8 right
+	const uploadLink7 = Game.getObjectById('6133bb7de4eb6b1fcb87777a'); // W3S8 centre
 	linkController.run(uploadLink7);
 	const uploadLink8 = Game.getObjectById('6086741280b5ea172258939e'); // W3S8 right
 	linkController.run(uploadLink8);
