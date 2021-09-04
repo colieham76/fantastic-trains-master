@@ -5,7 +5,7 @@ module.exports = {
         
         
         // upgrader route flag
-
+/*
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
@@ -42,7 +42,7 @@ module.exports = {
                 creep.memory.W7S6 = true;
             }
             return;
-        }
+        }*/
 
         if (creep.memory.working && creep.store.energy == 0) {
             creep.memory.working = false;
