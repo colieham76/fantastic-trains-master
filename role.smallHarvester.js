@@ -25,7 +25,7 @@ module.exports = {
 		    }	
 	    }
 	    
-	    var factory2 = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
+	    var factory2 = Game.rooms['W3S8'].find(FIND_STRUCTURES, {
 				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 			    })[0];
 	    if (factory2.store.getUsedCapacity() < 40000) {
@@ -33,17 +33,17 @@ module.exports = {
 			    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 		    });
 		    if (creep.store.getFreeCapacity() > 0) {
-			    var storage = creep.room.storage;
-			    if (creep.withdraw(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-				    creep.travelTo(storage);
+			    var storage2 = creep.room.storage;
+			    if (creep.withdraw(storage2,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				    creep.travelTo(storage2);
 			    }
 		    }	
 		    else {		  
 			    if (factory2.store.getUsedCapacity() < 40000) {
-				    var targett = factory2				 
+				    var targett2 = factory2
 				    }
-			    if (creep.transfer(targett,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-				    creep.moveTo(targett);
+			    if (creep.transfer(targett2,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				    creep.moveTo(targett2);
 			    }
 		    }	
 	    }
