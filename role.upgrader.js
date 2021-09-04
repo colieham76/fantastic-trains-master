@@ -8,46 +8,45 @@ module.exports = {
             creep.memory.working = true;
         }  
         
-        //W10S8 upgrader route flag   
-        /*
-        if (!creep.memory.w10s8f1) {
-            creep.travelTo(Game.flags['w10s8f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
-                creep.memory.w10s8f1 = true;
+        // upgrader route flag   
+        
+        if (!creep.memory.w3s8f3) {
+            creep.travelTo(Game.flags['w3s8f3']);
+            if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
+                creep.memory.w3s8f3 = true;
             }
             return;
         }
-        //W10S5 upgrader route flag
-        if (!creep.memory.w10s5f1) {
-            creep.travelTo(Game.flags['w10s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w10s5f1'])) {
-                creep.memory.w10s5f1 = true;
+        if (!creep.memory.w5s7f1) {
+            creep.travelTo(Game.flags['w5s7f1']);
+            if (creep.pos.isNearTo(Game.flags['w5s7f1'])) {
+                creep.memory.w5s7f1 = true;
             }
             return;
         }
-        //W9S5 upgrader route flag
-        if (!creep.memory.w9s5f1) {
-            creep.travelTo(Game.flags['w9s5f1']);
-            if (creep.pos.isNearTo(Game.flags['w9s5f1'])) {
-                creep.memory.w9s5f1 = true;
+        if (!creep.memory.W5S6) {
+            creep.travelTo(Game.flags['W5S6']);
+            if (creep.pos.isNearTo(Game.flags['W5S6'])) {
+                creep.memory.W5S6 = true;
             }
             return;
         }
-        if (!creep.memory.w8s6f1) {
-            creep.travelTo(Game.flags['w8s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w8s6f1'])) {
-                creep.memory. w8s6f1 = true;
+
+         if (!creep.memory.W6S6) {
+            creep.travelTo(Game.flags['W6S6']);
+            if (creep.pos.isNearTo(Game.flags['W6S6'])) {
+                creep.memory.W6S6 = true;
             }
             return;
         }
-        if (!creep.memory.w7s6f1) {
-            creep.travelTo(Game.flags['w7s6f1']);
-            if (creep.pos.isNearTo(Game.flags['w7s6f1'])) {
-                creep.memory. w7s6f1 = true;
+
+         if (!creep.memory.W7S6) {
+            creep.travelTo(Game.flags['W7S6']);
+            if (creep.pos.isNearTo(Game.flags['W7S6'])) {
+                creep.memory.W7S6 = true;
             }
             return;
-        }
-        */
+        }        
         if (creep.memory.working == true) {
             if (creep.transfer(creep.room.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(creep.room.controller);
@@ -61,4 +60,3 @@ module.exports = {
         }
     }
 }
-
