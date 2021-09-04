@@ -5,7 +5,7 @@ module.exports = {
 	     var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
 				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 			    })[0];
-	    if (factory.store.getUsedCapacity() < 30000) {
+	    if (factory.store.getUsedCapacity() < 40000) {
 		    var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 			    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 		    });
@@ -16,7 +16,7 @@ module.exports = {
 			    }
 		    }	
 		    else {		  
-			    if (factory.store.getUsedCapacity() < 30000) {
+			    if (factory.store.getUsedCapacity() < 40000) {
 				    var targett = factory				 
 				    }
 			    if (creep.transfer(targett,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -24,6 +24,30 @@ module.exports = {
 			    }
 		    }	
 	    }
+	    
+	    var factory2 = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
+				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+			    })[0];
+	    if (factory2.store.getUsedCapacity() < 40000) {
+		    var factory2 = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+			    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+		    });
+		    if (creep.store.getFreeCapacity() > 0) {
+			    var storage = creep.room.storage;
+			    if (creep.withdraw(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				    creep.travelTo(storage);
+			    }
+		    }	
+		    else {		  
+			    if (factory2.store.getUsedCapacity() < 40000) {
+				    var targett = factory2				 
+				    }
+			    if (creep.transfer(targett,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				    creep.moveTo(targett);
+			    }
+		    }	
+	    }
+	    
 	    if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
 		    creep.memory.working = false;
 		    creep.say('🔄 harvest');
@@ -61,7 +85,7 @@ module.exports = {
 		    }	   
 		     // if there is no storage (which could be possible after destroyed), try picking up some energy
 		    let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-			    filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 999
+			    filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 1499
 		    });
 		    if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
 			    creep.moveTo(energy);
