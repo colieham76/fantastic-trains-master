@@ -6,9 +6,9 @@ Room.prototype.get = function(roomVar, cache) {
     })[0]
     if (factory) {
         let batteryQuota = 10000 // 10k
-            let batterySellOffers = Game.market.getAllOrders(order => order.type == ORDER_SELL
+            let batterySellOffers = Game.market.getAllOrders(order => order.type == ORDER_BUY
                 && order.resourceType == RESOURCE_BATTERY
-                && order.price <= avgPrice(RESOURCE_BATTERY) * 1.2
+                && order.price <= avgPrice(RESOURCE_BATTERY)
                 && order.amount >= (batteryQuota - terminal.store.getUsedCapacity([RESOURCE_BATTERY])))
         if (terminal.store[RESOURCE_BATTERY] < batteryQuota && batterySellOffers[0]) {
             //console.log("Found order for: "
