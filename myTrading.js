@@ -412,7 +412,7 @@ global.initiateMineralKeepThresholdInRoom = function (room,reassign) {
             "XGH2O": 5000,
             "XGHO2": 5000,
         };*/
-
+/*
         room.memory.mineralThresholds.marketThreshold = {
             "energy": 1000000,
             "power": 1000000,
