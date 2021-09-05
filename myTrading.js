@@ -1,4 +1,4 @@
-/*
+
 let factory = room.find(FIND_MY_STRUCTURES, {
             filter: s => s.structureType == STRUCTURE_FACTORY
         })[0]
@@ -25,7 +25,7 @@ let factory = room.find(FIND_MY_STRUCTURES, {
                 }
             }
         }
-*/
+
 
 
 // send minerals via terminal
@@ -38,7 +38,7 @@ let factory = room.find(FIND_MY_STRUCTURES, {
 
 // deal
 // Game.market.deal('5bc5a76dd4400e0258aa1b48', amountToSell, roomName)
-
+/*
 var idealMineralBuyingPrices = {
   'H': 0.01,
   'O': 0.076,
@@ -1072,3 +1072,4 @@ global.shuffleArray = function (a) {
     }
     return a;
 }
+*/
