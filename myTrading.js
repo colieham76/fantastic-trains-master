@@ -573,7 +573,7 @@ global.initiateMineralKeepThresholdForShooterRoom = function (room,reassign) {
             "XGH2O": 300000,
             "XGHO2": 0,
         };
-
+*/
         /*room.memory.mineralThresholds.storageThreshold = {
             "energy": 600000,
             "power": 100000,
@@ -624,7 +624,7 @@ global.initiateMineralKeepThresholdForShooterRoom = function (room,reassign) {
             "XGH2O": 5000,
             "XGHO2": 5000,
         };*/
-
+/*
         room.memory.mineralThresholds.marketThreshold = {
             "energy": 1300000,
             "power": 1000000,
@@ -696,10 +696,11 @@ global.allMineralsSituation = function (room) {
     for (let mineralType in room.memory.mineralThresholds.storageThreshold) {
         storageSituation[mineralType] = allMyResourceInStorageAndTerminal(room, mineralType);
     }
-    room.memory.mineralThresholds['currentMineralStats'] = storageSituation;
+    room.memory.mineralThresholds['currentMineralStats'] = storageSituation;*/
     /*for (let mineralType in storageSituation) {
         console.log(mineralType + ' ' + storageSituation[mineralType]);
     }*/
+                /*
     return storageSituation
 }
 
@@ -827,11 +828,13 @@ global.superEverthingManagement = function (room) {
                                     let availableMineralAmountToSend = terminal.store[mineralType] - terminalThreshold[mineralType];
                                     if ((availableMineralAmountToSend > 100 && mineralLackageInOtherRoom > 0 && otherRoom.memory.mineralThresholds.currentMineralStats[mineralType] < otherRoomStorageThreshold[mineralType])
                                         && _.sum(terminal.store) < 290000) {
-                                        let spareSpaceInOtherStorage = (300000 - _.sum(otherRoom.terminal.store)) / 2;
+                                        let spareSpaceInOtherStorage = (300000 - _.sum(otherRoom.terminal.store)) / 2;*/
                                         // special case for energy
+                                        
                                         /*if (mineralType == 'energy') {
                                             availableMineralAmountToSend = Math.max(5000, availableMineralAmountToSend);
                                         }*/
+                /*
                                         let amountToSend = Math.min(20000, spareSpaceInOtherStorage, availableMineralAmountToSend, mineralLackageInOtherRoom);
                                         if (amountToSend < 100) {
                                             amountToSend = 100;
@@ -880,12 +883,12 @@ global.superEverthingManagement = function (room) {
                                                 else {
                                                     console.log('no juicy buy orders found for: ' + mineralType)
                                                 }
-                                            }
+                                            }*/
                                             /*else {
                                                 console.log('impossible mistake for minMineralKeep');
                                                 console.log(roomName, mineralType, mineralAmount, minMineralKeep);
                                             }*/
-                                        }
+                                        }/*
                                         else {
                                             // trading compounds/power/X need to be implemented here
                                         }
@@ -967,13 +970,14 @@ global.whereToFill = function (room, mineralType) { // WARNING: market threshold
 
     if (terminal.store[mineralType]<terminalThreshold[mineralType]) {
         return terminal
+        */
         /*if (allMineralStituationObject[mineralType]<storageThreshold[mineralType]) {
             return terminal
         }
         else {
             return terminal
         }*/
-    }
+    }/*
     else if (terminal.store[mineralType]==terminalThreshold[mineralType]) {
         if (allMineralStituationObject[mineralType]<storageThreshold[mineralType]) {
             return storage
@@ -988,10 +992,11 @@ global.whereToFill = function (room, mineralType) { // WARNING: market threshold
     else { // terminal storing over its threshold
         if (allMineralStituationObject[mineralType]<storageThreshold[mineralType]) {
             return storage
-        }
+        }*/
         /*else if (allMineralStituationObject[mineralType]==storageThreshold[mineralType]) {
             return terminal
         }*/
+/*
         else { // all over threshold, put in terminal for transfer/sell
             return terminal
         }
@@ -1027,9 +1032,7 @@ global.whereToTake = function (room, mineralType) { // WARNING: market threshold
                 if (allMineralStituationObject[mineralType]<=storageThreshold[mineralType]) {
                     return terminal
                 }
-                /*else if (allMineralStituationObject[mineralType]==storageThreshold[mineralType]) {
-                    return terminal
-                }*/
+                
                 else { // all over threshold, put in terminal for transfer/sell
                     return storage
                 }
