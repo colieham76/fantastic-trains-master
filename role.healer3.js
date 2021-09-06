@@ -3,6 +3,12 @@ module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
      //   var rallypos = new RoomPosition(1,19,'W1S8');
+      
+        if (creep.ticksToLive < 75) {
+        Game.spawns.Spawn4.memory.minhealers = {W4S6: 2};
+        }   
+        
+        
 
 //if (creep.ticksToLive < 1500) {
 //                    creep.suicide();
