@@ -6,9 +6,9 @@ module.exports = {
 //                    creep.suicide();
 //                }
 
- //   if (creep.ticksToLive < 75) {
-  //  Game.spawns.Spawn4.memory.minhealers2 = {W4S6: 2};
- //   }
+   if (creep.ticksToLive < 75) {
+   Game.spawns.Spawn4.memory.minhealers2 = {W4S6: 2};
+    }
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
