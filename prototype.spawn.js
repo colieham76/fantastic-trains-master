@@ -1228,11 +1228,8 @@ StructureSpawn.prototype.createrangedattacker =
 
 
 StructureSpawn.prototype.createattacker =
-    function (target) {
-
-        let homeRm = this.room.name;
-
-        return this.createCreep([
+    function (home, target) {             
+	return this.createCreep([
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
 		ATTACK, ATTACK, ATTACK, ATTACK,
@@ -1247,7 +1244,7 @@ StructureSpawn.prototype.createattacker =
 		//HEAL, HEAL, HEAL
 		
 	], undefined, { role: 'attacker',
-	      homeRm: homeRm,
+	      home: home,
 	      target: target, 
 	  getBoostkh: false
 	      });
