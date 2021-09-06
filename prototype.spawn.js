@@ -1228,7 +1228,7 @@ StructureSpawn.prototype.createrangedattacker =
 
 
 StructureSpawn.prototype.createattacker =
-    function (home, target, getBoostkh) {
+    function (target) {
 
         let homeRm = this.room.name;
 
