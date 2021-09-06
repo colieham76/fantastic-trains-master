@@ -66,38 +66,35 @@ module.exports = {
 				creep.memory.W8S6 = true;
 			}
 			return;
-		}  	    	        
-	   
-		    if (creep.room.name === 'W8S6') {
-			    let ruins = creep.room.find(FIND_RUINS)			    
-			    if (ruins.length != 0) {
-				    if (Game.time % 10 === 0) {     
+		} 	    	        	   
+	    if (creep.room.name === 'W8S6') {
+		    let ruins = creep.room.find(FIND_RUINS)			    
+		    if (ruins.length != 0) {
+			    if (Game.time % 10 === 0) {     
 				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 1}
-				    }
-			    }
-			    else {
-				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
-			    }
-		    }		   
-		    if (creep.room.name === 'W7S7' || creep.room.name === 'W8S6') {
-                    if (creep.hits > 0.9 * creep.hitsMax) {
-		    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
-		    if (hostileStructure) {
-			    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
-				    creep.travelTo(hostileStructure);
 			    }
 		    }
-
-			/*    let ruins = creep.room.find(FIND_RUINS)			    
-			    if (ruins.length != 0) {
-				    if (Game.time % 4000 === 0) {     
-				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 1, W7S7: 0}
+		    else {
+			    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
+		    }
+	    }
+	     if (creep.room.name === 'W3S8' 
+		&& creep.memory.target === 'W3S7') {
+			creep.travelTo(Game.flags['W3S7']);
+			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
+				creep.memory.W3S7 = true;
+			}
+			return;
+		} 
+	    if (creep.room.name === 'W7S7' || creep.room.name === 'W8S6') {
+		    if (creep.hits > 0.9 * creep.hitsMax) {
+			    let hostileStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+			    if (hostileStructure) {
+				    if (creep.attack(hostileStructure) === ERR_NOT_IN_RANGE) {
+					    creep.travelTo(hostileStructure);
 				    }
-			    }
-			    else {
-				  Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
-			    }*/
-		    }	   		    
+			    }			
+		    }	    
 		    let target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
 			    filter: c => ((c.pos.getRangeTo(creep) < 48))
 		    });
