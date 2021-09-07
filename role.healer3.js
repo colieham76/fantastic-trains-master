@@ -5,7 +5,7 @@ module.exports = {
      //   var rallypos = new RoomPosition(1,19,'W1S8');
       
         if (creep.ticksToLive < 75) {
-        Game.spawns.Spawn4.memory.minhealers = {W4S6: 2};
+        Game.spawns.Spawn4.memory.minhealers3 = {W4S6: 2};
         }   
         
         
