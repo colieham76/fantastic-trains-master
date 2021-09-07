@@ -47,7 +47,7 @@ Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 0, towerl
 
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 0, W3S7: 0};
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0};
-Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 3, wallRepairer: 0, storagelorry: 1,
+Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 3, wallRepairer: 0, storagelorry: 0,
                                        towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 1};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 0};
 Game.spawns.Spawn4.memory.minsmallHarvesters = {W3S8: 0};
@@ -1541,6 +1541,29 @@ StructureSpawn.prototype.createextractor =
               body.push(MOVE);
           }
           // create creep with the created body and the role 'terminalory'
+          return this.spawnCreep(body, Spawn.prototype.getCreepName('2798'), 
+				 { 		  
+		  memory: {
+			role: 'terminalory',			
+			working: false,			
+		}		  		  
+	  });
+ };
+// create a new function for StructureSpawn
+ StructureSpawn.prototype.createstoragelorry =
+      function (energy) {          
+          // create a body with twice as many CARRY as MOVE parts
+          var numberOfParts = Math.floor(energy / 100);
+          // make sure the creep is not too big (more than 50 parts)
+          numberOfParts = Math.min(numberOfParts, Math.floor(50 / 3));
+          var body = [];
+          for (let i = 0; i < numberOfParts * 16; i++) {
+              body.push(CARRY);
+          }
+          for (let i = 0; i < numberOfParts; i++) {
+              body.push(MOVE);
+          }
+          // create creep with the created body and the role 'storagelorry'
           return this.spawnCreep(body, Spawn.prototype.getCreepName('2798'), 
 				 { 		  
 		  memory: {
