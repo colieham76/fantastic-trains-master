@@ -44,7 +44,7 @@ module.exports = {
                 Game.flags['Dismantle'].remove();
             }
         }
-        else {
+    /*    else {
             let core = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
                 filter:c => c.structureType==STRUCTURE_EXTENSION});
             if (core==undefined) {
@@ -61,6 +61,6 @@ module.exports = {
                 creep.travelTo(core);
                 creep.dismantle(core);
             }
-        }
+        }*/
     }       
 }
