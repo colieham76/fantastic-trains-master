@@ -1,7 +1,7 @@
 module.exports = {
     run: function(creep) {
         creep.say('presious...');          
-        /*
+        /*fs
          if (creep.ticksToLive < 1500) {
          creep.suicide();
          }  
