@@ -37,7 +37,8 @@ var roles = {
     healer2: require('role.healer2'),
     healer3: require('role.healer3'),
     healer4: require('role.healer4'),
-    storagelorry: require('role.storagelorry')
+    storagelorry: require('role.storagelorry'),
+    terminalory: require('terminalory')
 };
 
 Creep.prototype.runRole =
