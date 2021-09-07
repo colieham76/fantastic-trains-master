@@ -19,7 +19,7 @@ module.exports = {
     		    });
         */
         
-if (Game.time % 5 === 0) {
+if (Game.time % 500 === 0) {
         let energyAmountInTerminal = myTerminal.store[RESOURCE_ENERGY] === undefined ? 0 :
             myTerminal.store[RESOURCE_ENERGY];
        
@@ -34,10 +34,6 @@ if (Game.time % 5 === 0) {
             if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
     }
 }
-        
-        
-      
-
                                 const visualPath = {
                                     fill: 'transparent',
                                     stroke: '#25ff11',
@@ -69,28 +65,25 @@ if (Game.time % 5 === 0) {
             creep.memory.working = true;
             creep.say('offload');
         }
-        if (creep.memory.working) {
-            let fulStore = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                filter: s => s.structureType == STRUCTURE_STORAGE
-                    && (s.id =='60eed64daf39bb31dcac2cea' /*W9S6*/
-                    //    || s.id == '5d190e8dc3832221db628302'/*W77N69*/
-                    //    || s.id == '5ccd75bdacfe5c75d7e8e3a5'//W62N69
-                    //    || s.id == '5cd8d2ad8078de3919d4ee78'/*W71N69*/
-                     //   || s.id == '5cbf4674792676418a687406'/*W63N64*/
-                    )
+        if (creep.room.name == 'W9S6') {
+            creep.moveTo(26, 36, {
+                visualizePathStyle: {
+                    stroke: '#08ff00'
+                }
             });
-            if (fulStore != undefined) {
-                if (creep.withdraw(fulStore, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(fulStore, {visualizePathStyle: visualPath});
+            if (creep.pos == 26, 36) {
+                if (creep.memory.working == false) {
+                    const storageContainer = Game.getObjectById('60eed64daf39bb31dcac2cea');
+                    if (creep.withdraw(storageContainer, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(storageContainer, {visualizePathStyle: visualPath});
+                    }
+                }
+                if (Game.time % 2 == 0) {
+                    if (creep.transfer(terminalVar, RESOURCE_ENERGY)  == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(terminalVar);
+                    }
                 }
             }
-        }                              
-        else {
-            if (_.sum(creep.store[RESOURCE_ENERGY] === 0)) {
-                if (creep.transfer(terminalVar, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(terminalVar);
-                }
-            }
-        }                               
+        }
     }
 }
