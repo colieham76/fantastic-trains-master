@@ -19,30 +19,19 @@ module.exports = {
     		    });
         */
         
-if (Game.time % 250 === 0) {
+if (Game.time % 5 === 0) {
         let energyAmountInTerminal = myTerminal.store[RESOURCE_ENERGY] === undefined ? 0 :
             myTerminal.store[RESOURCE_ENERGY];
        
     switch (creep.room.name) {
-        case 'W65N63':
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W71N69' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W62N69' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W63N66' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W63N64' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W62N61' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W77N69' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-      //  case 'W79N63' :
-        //    if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-        case 'W61N68' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W79N63');
-                           
+        case 'W9S6':
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+        case 'W7S8' :
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+        case 'W1S8' :
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+        case 'W7S6' :
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
     }
 }
         
@@ -72,39 +61,36 @@ if (Game.time % 250 === 0) {
                                     //RESOURCE_HYDROGEN
                                 ];
 
-                                if (creep.memory.working && creep.carryCapacity == _.sum(creep.carry)) {
-                                    creep.memory.working = false;
-                                }
-                                if (!creep.memory.working && 0 == _.sum(creep.carry)) {
-                                    creep.memory.working = true;
-                                }
-
-                                if (creep.memory.working) {
-                                    // fetch mineral from lab when not working creep is empty
-                                    let fulStore = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                                        filter: s => s.structureType == STRUCTURE_STORAGE
-                                       
-                                            && (s.id =='5d82f7c6e775fc109f338eba' ||
-                                                s.id == '5d190e8dc3832221db628302'/*W77N69*/ || s.id == '5ccd75bdacfe5c75d7e8e3a5'//W62N69
-                                                || s.id == '5cc074052ed00b51d517522e' || s.id == '5cccfaa6acfe5c75d7e8a918' //W61N68
-                                                || s.id == '5cd8d2ad8078de3919d4ee78'/*W71N69*/ || s.id == '5cbf4674792676418a687406'/*W63N64*/)
-                                    });
-                                    // if we found right lab
-                                    if (fulStore != undefined) {
-
-                                        if (creep.withdraw(fulStore, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                            // move towards it
-                                            creep.moveTo(fulStore, {visualizePathStyle: visualPath});
-                                        }
-                                    }
-                                }
-                                // else put in terminal or storage
-                                else {
-                                    if (_.sum(creep.carry) > 0) {
-                                        if (creep.transfer(terminalVar, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                                            creep.moveTo(terminalVar);
-                                        }
-                                    }
-                                }                               
-                            }
+        if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
+            creep.memory.working = false;
+            creep.say('🔄 collect');
+        }
+        if (!creep.memory.working && creep.store.getFreeCapacity() === 0) {
+            creep.memory.working = true;
+            creep.say('offload');
+        }
+        if (creep.memory.working) {
+            let fulStore = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                filter: s => s.structureType == STRUCTURE_STORAGE
+                    && (s.id =='60eed64daf39bb31dcac2cea' /*W9S6*/
+                    //    || s.id == '5d190e8dc3832221db628302'/*W77N69*/
+                    //    || s.id == '5ccd75bdacfe5c75d7e8e3a5'//W62N69
+                    //    || s.id == '5cd8d2ad8078de3919d4ee78'/*W71N69*/
+                     //   || s.id == '5cbf4674792676418a687406'/*W63N64*/
+                    )
+            });
+            if (fulStore != undefined) {
+                if (creep.withdraw(fulStore, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(fulStore, {visualizePathStyle: visualPath});
+                }
+            }
+        }                              
+        else {
+            if (_.sum(creep.store[RESOURCE_ENERGY] === 0)) {
+                if (creep.transfer(terminalVar, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(terminalVar);
+                }
+            }
+        }                               
+    }
 }
