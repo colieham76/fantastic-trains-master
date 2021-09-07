@@ -83,7 +83,7 @@ Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 0};
 Game.spawns.Spawn3.memory.minhealers = {W4S6: 1};
 Game.spawns.Spawn3.memory.minhealers2 = {W4S6: 1};
 Game.spawns.Spawn4.memory.minhealers3 = {W4S6: 1};
-Game.spawns.Spawn6.memory.minhealers4 = {W4S6: 1};
+Game.spawns.Spawn4.memory.minhealers4 = {W4S6: 1};
 
 Game.spawns.Spawn4.memory.mintowerdrainers1 = {W4S6: 1};
 Game.spawns.Spawn4.memory.mintowerdrainers2 = {W4S6: 1};
