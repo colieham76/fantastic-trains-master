@@ -3,7 +3,7 @@
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'extractor', 'attacker',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
-		   'towerdrainer3', 'storagelorry',
+		   'towerdrainer3', 'storagelorry', 'terminalory',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler', 'dismantler2'];
 
 require('myFunctions');
@@ -15,7 +15,7 @@ require('myFunctions');
 //2706 = smallUpgrader
 //2707 = longDistancelorry
 //dism = dismantler
-
+//terminalory 2798
  //  Kill all Creeps
 /*
 for(var name in Game.creeps) { 
@@ -368,6 +368,9 @@ function () {
 			if (role == 'antiTransporter') {
                         name = this.createAntiTransporter(energy);
                     }
+			if (role == 'terminalory') {
+                       name = this.createterminalory(150);
+                         }
 
                     break;
                 }
@@ -1523,3 +1526,26 @@ StructureSpawn.prototype.createextractor =
                                               working: false
                                               });
 }
+// create a new function for StructureSpawn
+ StructureSpawn.prototype.createterminalory =
+      function (energy) {          
+          // create a body with twice as many CARRY as MOVE parts
+          var numberOfParts = Math.floor(energy / 100);
+          // make sure the creep is not too big (more than 50 parts)
+          numberOfParts = Math.min(numberOfParts, Math.floor(50 / 3));
+          var body = [];
+          for (let i = 0; i < numberOfParts * 3; i++) {
+              body.push(CARRY);
+          }
+          for (let i = 0; i < numberOfParts; i++) {
+              body.push(MOVE);
+          }
+          // create creep with the created body and the role 'terminalory'
+          return this.spawnCreep(body, Spawn.prototype.getCreepName('2798'), 
+				 { 		  
+		  memory: {
+			role: 'terminalory',			
+			working: false,			
+		}		  		  
+	  });
+ };
