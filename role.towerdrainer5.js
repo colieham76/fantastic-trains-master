@@ -8,7 +8,7 @@ module.exports = {
 
 //creep.suicide();
 
-Game.spawns.Spawn3.memory.mintowerdrainers5 = {W9S5: 2}
+Game.spawns.Spawn3.memory.mintowerdrainers5 = {W4S6: 2}
 //}      
 
         
