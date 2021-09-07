@@ -19,19 +19,19 @@ module.exports = {
     		    });
         */
         
-if (Game.time % 25 === 0) {
+if (Game.time % 500 === 0) {
         let energyAmountInTerminal = myTerminal.store[RESOURCE_ENERGY] === undefined ? 0 :
             myTerminal.store[RESOURCE_ENERGY];
        
     switch (creep.room.name) {
         case 'W9S6':
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 2000, 'W3S8');
         case 'W7S8' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 2000, 'W3S8');
         case 'W1S8' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 2000, 'W3S8');
         case 'W7S6' :
-            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 3000, 'W3S8');
+            if (energyAmountInTerminal >= 10000) myTerminal.send(RESOURCE_ENERGY, 2000, 'W3S8');
     }
 }
                                 const visualPath = {
