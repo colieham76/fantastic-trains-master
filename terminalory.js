@@ -19,7 +19,7 @@ module.exports = {
     		    });
         */
         
-if (Game.time % 500 === 0) {
+if (Game.time % 25 === 0) {
         let energyAmountInTerminal = myTerminal.store[RESOURCE_ENERGY] === undefined ? 0 :
             myTerminal.store[RESOURCE_ENERGY];
        
