@@ -4,7 +4,7 @@ var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporte
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
 		   'towerdrainer3', 'storagelorry', 'terminalory',
-                   'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantler', 'dismantler2'];
+                   'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantle', 'dismantler2'];
 
 require('myFunctions');
 //c = longDistanceHarvester
@@ -14,7 +14,7 @@ require('myFunctions');
 //2705 = towerlorry
 //2706 = smallUpgrader
 //2707 = longDistancelorry
-//dism = dismantler
+//dism = dismantle
 //terminalory 2798
  //  Kill all Creeps
 /*
@@ -31,7 +31,7 @@ Game.spawns.Spawn1.memory.mincrew = {'W9S3': 0}
 
 Game.spawns.Spawn1.memory.minCreeps = {repairer: 0, harvester: 0,
 				       builder: 0, lorry: 2, towerlorry: 1,
-				       dismantler: 0, upgrader: 0, extractor: 0};
+				       dismantle: 0, upgrader: 0, extractor: 0};
 Game.spawns.Spawn1.memory.minLongDistanceHarvesters = {W7S9: 0};
 Game.spawns.Spawn1.memory.minNumberOfreservers = {W7S9: 0};
 Game.spawns.W7S8.memory.minCreeps = {harvester: 0, rampartrepairer: 0};
@@ -48,17 +48,17 @@ Game.spawns.Spawn2.memory.minCreeps = {repairer: 0, builder: 0, lorry: 0, towerl
 Game.spawns.Spawn3.memory.minNumberOfreservers = {W2S8: 0, W3S7: 0};
 Game.spawns.Spawn3.memory.mincontrollerattackers = {W7S7: 0};
 Game.spawns.Spawn3.memory.minCreeps = {harvester: 0, repairer: 0, builder: 0, lorry: 3, wallRepairer: 0, storagelorry: 0,
-                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantler: 0};
+                                       towerlorry: 1, upgrader: 0, rampartrepairer: 0, extractor: 0, dismantle: 1};
 Game.spawns.Spawn3.memory.minLongDistanceHarvesters = {W3S7: 0};
 Game.spawns.Spawn4.memory.minsmallHarvesters = {W3S8: 0};
 
-Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, lorry: 1, dismantler: 0};
+Game.spawns.Spawn4.memory.minCreeps = {harvester: 0, builder: 0, repairer: 0, upgrader: 0, lorry: 1, dismantle: 0};
 Game.spawns.Spawn4.memory.minLongDistanceHarvesters = {W2S8: 0, W3S7: 0};
 Game.spawns.Spawn4.memory.minsmallUpgraders = {W3S8: 1};
 
 
 Game.spawns.Spawn5.memory.minCreeps = {harvester: 0, upgrader: 0, wallRepairer: 0, lorry: 1,
-dismantler: 0, antiTransporter: 0};
+dismantle: 0, antiTransporter: 0};
 Game.spawns.Spawn5.memory.minattackers = {W4S2: 0};
 Game.spawns.Spawn5.memory.minLongDistanceHarvesters = {W1S7: 0};
 Game.spawns.Spawn5.memory.minNumberOfreservers = {W1S7: 0};
@@ -76,7 +76,7 @@ wallRepairer: 0
 Game.spawns.Spawn6.memory.minLongDistanceBuilders = {W9S7: 1};
 Game.spawns.Spawn6.memory.minLongDistanceHarvesters = {W9S7: 0, W9S5: 0};
 Game.spawns.Spawn6.memory.minNumberOfreservers = {W9S7: 0};
-Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
+Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 0};
 
 
 
@@ -92,7 +92,7 @@ Game.spawns.Spawn3.memory.mintowerdrainers4 = {W4S6: 1};
 Game.spawns.Spawn4.memory.mintowerdrainers5 = {W4S6: 1};
 
 Game.spawns.Spawn7.memory.minCreeps = {harvester: 0,  towerlorry: 1, upgrader: 0, wallRepairer: 0, storagelorry: 0,
-				       rampartrepairer: 0, lorry: 1, builder: 0, extractor: 0, dismantler: 0};
+				       rampartrepairer: 0, lorry: 1, builder: 0, extractor: 0, dismantle: 0};
 Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 0, W7S7: 0};
 //Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
@@ -103,9 +103,9 @@ Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 0, W8S6: 0};
 
 
 Game.spawns.Spawn8.memory.minCreeps = {harvester: 0, towerlorry: 0, upgrader: 0, wallRepairer: 0, storagelorry: 0,
-				       rampartrepairer: 0, lorry: 0, builder: 0, terminalory: 1, dismantler: 0};
+				       rampartrepairer: 0, lorry: 0, builder: 0, terminalory: 1, dismantle: 0};
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
-Game.spawns.Spawn8.memory.minsmallHarvesters = {W9S6: 1};
+Game.spawns.Spawn8.memory.minsmallHarvesters = {W9S7: 0};
 Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 1}
 Game.spawns.Spawn8.memory.minNumberOfreservers = {W9S7: 1};
 
@@ -234,10 +234,10 @@ function () {
                         // delete the claim order
                         delete this.memory.claimRoom;
                     }
-                } else if (role == 'dismantler' && this.memory.dismantleRoom != undefined) {
-                    // try to spawn a dismantler
+                } else if (role == 'dismantle' && this.memory.dismantleRoom != undefined) {
+                    // try to spawn a dismantle
                     if (Game.time % 4000 === 0) {
-                        name = this.createDismantler(this.memory.dismantleRoom);
+                        name = this.createdismantle(this.memory.dismantleRoom);
                     }
                     // if that worked
                     if (name != undefined && _.isString(name)) {
@@ -931,7 +931,7 @@ StructureSpawn.prototype.createMiner =
         });
     }
 }
-StructureSpawn.prototype.createDismantler = function(target) {
+StructureSpawn.prototype.createdismantle = function(target) {
     var body = [];
     for (let i = 0; i < 25; i++) {
         body.push(WORK);
@@ -941,7 +941,7 @@ StructureSpawn.prototype.createDismantler = function(target) {
     }
     return this.spawnCreep(body, Spawn.prototype.getCreepName('dism'), { 
         memory: {
-        role: 'dismantler',
+        role: 'dismantle',
             target: target,
             boosted: false,
             serial: Spawn.prototype.getSerial('dism'),
