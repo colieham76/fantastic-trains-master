@@ -371,6 +371,10 @@ function () {
 			if (role == 'terminalory') {
                        name = this.createterminalory(150);
                          }
+			if (role == 'storagelorry') {
+                       name = this.createstoragelorry(800);
+                         }
+			
 
                     break;
                 }
@@ -1564,10 +1568,10 @@ StructureSpawn.prototype.createextractor =
               body.push(MOVE);
           }
           // create creep with the created body and the role 'storagelorry'
-          return this.spawnCreep(body, Spawn.prototype.getCreepName('2798'), 
+          return this.spawnCreep(body, Spawn.prototype.getCreepName('2797'), 
 				 { 		  
 		  memory: {
-			role: 'terminalory',			
+			role: 'storagelorry',			
 			working: false,			
 		}		  		  
 	  });
