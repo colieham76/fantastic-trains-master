@@ -6,9 +6,9 @@ module.exports = {
            Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 2} 
         }  */    
         
-       if (creep.ticksToLive < 1500) {
-                  creep.suicide();
-          }
+    //   if (creep.ticksToLive < 1500) {
+     //             creep.suicide();
+     //     }
      
         if (creep.room.name == creep.memory.target) { // if in target room
             if (creep.room.controller && !creep.room.controller.my) {
