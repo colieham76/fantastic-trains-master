@@ -3,7 +3,7 @@ module.exports = {
     run: function(creep) {
      //   creep.say('💕', true);
         
-      if (creep.ticksToLive < 75) {
+      if (creep.ticksToLive < 250) {
         Game.spawns.Spawn4.memory.minhealers4 = {W4S6: 2};
         }  
 
