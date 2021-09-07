@@ -1,7 +1,12 @@
 'use strict';
 var selfRenew = require('action.selfRenew');                   
 module.exports = {
-    run: function (creep) {        
+    run: function (creep) { 
+        
+        if (creep.ticksToLive < 30) {
+Game.spawns.Spawn4.memory.mintowerdrainers2 = {W4S6: 2}
+} 
+        
         if (!creep.memory.w3s8f3) {
             creep.travelTo(Game.flags['w3s8f3']);
             if (creep.pos.isNearTo(Game.flags['w3s8f3'])) {
