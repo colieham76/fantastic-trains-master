@@ -8,7 +8,9 @@ module.exports = {
 
 //creep.suicide();
 
+if (creep.ticksToLive < 75) {
 Game.spawns.Spawn3.memory.mintowerdrainers4 = {W4S6: 2}
+}
 //}      
 
         
