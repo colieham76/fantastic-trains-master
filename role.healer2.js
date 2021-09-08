@@ -9,6 +9,10 @@ module.exports = {
    if (creep.ticksToLive < 25) {
    Game.spawns.Spawn4.memory.minhealers2 = {W4S6: 2};
     }
+        else{
+            Game.spawns.Spawn4.memory.minhealers2 = {W4S6: 0};
+        }
+            
         /*
         if (!creep.memory.boosted) { // if creep is not boosted, find a lab to boost
             let labToGo;
