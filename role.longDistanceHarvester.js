@@ -66,8 +66,8 @@ module.exports = {
                             Game.spawns.Spawn3.memory.minattackers = {W3S7: 1};
                         }                                                 
                     }
-                    if (!invaderStructure) {
-                        Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
+                    if (invaderStructure = undefined) {
+                         Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
                     }                   
                 }
                 if(creep.room.name == 'W7S7') {
@@ -76,7 +76,7 @@ module.exports = {
                             Game.spawns.Spawn7.memory.minattackers = {W7S7: 1};
                         }
                     }
-                    if (!invaderStructure) {
+                    if (invaderStructure = undefined) {
                         Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
                     }
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);               
