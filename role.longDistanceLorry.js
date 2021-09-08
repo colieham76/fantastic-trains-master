@@ -10,7 +10,7 @@ module.exports = {
             if (invaderCreep) {
                 Game.spawns.Spawn6.memory.minattackers = {W9S7: 1};
             }
-            else {
+            if (!invaderCreep) {
                 Game.spawns.Spawn6.memory.minattackers = {W9S7: 0}; 
             }
         }
@@ -18,7 +18,7 @@ module.exports = {
             if (invaderCreep) {
                 Game.spawns.Spawn7.memory.minattackers = {W7S7: 1};
             }
-            else {
+           if (!invaderCreep) {
                 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0}; 
             }
         }
