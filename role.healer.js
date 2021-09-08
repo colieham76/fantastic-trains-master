@@ -6,6 +6,10 @@ module.exports = {
         if (creep.ticksToLive < 25) {
         Game.spawns.Spawn4.memory.minhealers = {W4S6: 2};
         }
+        else {
+            Game.spawns.Spawn4.memory.minhealers = {W4S6: 0};
+        }
+            
         
         /*
 //if (creep.ticksToLive < 1500) {
