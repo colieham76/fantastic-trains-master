@@ -58,8 +58,7 @@ module.exports = {
 		    creep.say('offload');
 	    }        
 	    if (creep.memory.working === true) {       	    
-		    if(creep.room.storage
-		       && creep.room.storage.store.getUsedCapacity() < creep.room.storage.store.getCapacity()* 0.001) {
+		    if(creep.room.storage) {
 			    var storage = creep.room.storage;
 			    for (const resourceType in creep.store) {
 				    if (creep.transfer(storage, resourceType) === ERR_NOT_IN_RANGE) {
