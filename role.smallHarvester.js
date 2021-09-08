@@ -2,6 +2,7 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function(creep) {
+	    /*
 	     var factory = Game.rooms['W9S6'].find(FIND_STRUCTURES, {
 				    filter: (structure) => structure.structureType == STRUCTURE_FACTORY
 			    })[0];
@@ -47,7 +48,7 @@ module.exports = {
 			    }
 		    }	
 	    }
-	    
+	    */
 	    if (creep.memory.working && creep.store[RESOURCE_ENERGY] === 0) {
 		    creep.memory.working = false;
 		    creep.say('🔄 harvest');
