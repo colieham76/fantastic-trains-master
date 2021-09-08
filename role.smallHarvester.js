@@ -63,7 +63,7 @@ module.exports = {
 			    var storage = creep.room.storage;
 			    for (const resourceType in creep.store) {
 				    if (creep.transfer(storage, resourceType) === ERR_NOT_IN_RANGE) {
-					    creep.moveTo(storage, {reusePath: 500});   
+					    creep.moveTo(storage);   
 				    }
 			    }                             
 		    }
