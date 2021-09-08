@@ -85,7 +85,7 @@ module.exports = {
 		    }	*/   
 		     // if there is no storage (which could be possible after destroyed), try picking up some energy
 		    let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
-			    filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 1499
+			    filter: (e) => (e.resourceType == RESOURCE_ENERGY)// && e.energy > 1499
 		    });
 		    if (creep.pickup(energy) === ERR_NOT_IN_RANGE) {
 			    creep.moveTo(energy);
