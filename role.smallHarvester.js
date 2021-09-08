@@ -68,7 +68,7 @@ module.exports = {
 		    }
 	    }      
 	    else {           
-		    let tombstones = creep.room.find(FIND_TOMBSTONES, {
+		 /*   let tombstones = creep.room.find(FIND_TOMBSTONES, {
 			    filter: c => _.sum(c.store) > 0
 		    });
 		    if (tombstones.length > 0) {
@@ -82,7 +82,7 @@ module.exports = {
 					    creep.say('RIP ');
 				    }
 			    }
-		    }	   
+		    }	*/   
 		     // if there is no storage (which could be possible after destroyed), try picking up some energy
 		    let energy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES, {
 			    filter: (e) => (e.resourceType == RESOURCE_ENERGY) && e.energy > 1499
