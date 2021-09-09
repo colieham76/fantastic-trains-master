@@ -94,15 +94,18 @@ module.exports = {
                         Game.spawns.Spawn5.memory.minattackers = 'W1S7'
                     }
                 }
-                if (creep.room.name === 'W3S7' && Game.time % 100 === 0) {
+                if (creep.room.name === 'W3S7') {
                     if (invaderCreep) {
+                        if (Game.time % 500 === 0) {
                         Game.spawns.Spawn3.memory.minattackers = {W3S7: 1};
                         Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 1};
+                        }
                     }
-                    if (invaderCreep === undefined) {                   
-                        Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
-                        Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 0};                       
-                    }                       
+                    else 
+                        if (invaderCreep === undefined) {                   
+                            Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
+                            Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 0};                       
+                        }                       
                 }
                 if (creep.room.name === 'W1S9' && Game.time % 10 === 0) {
                     if (invaderCreep) {
