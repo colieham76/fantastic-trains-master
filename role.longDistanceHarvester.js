@@ -64,11 +64,12 @@ module.exports = {
                     if (invaderStructure) {
                         if (Game.time % 500 === 0) {
                             Game.spawns.Spawn3.memory.minattackers = {W3S7: 1};
-                        }                                                 
+                        }
+                        else {
+                            Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
+                        }
+                            
                     }
-                    if (invaderStructure = undefined) {
-                         Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
-                    }                   
                 }
                 if(creep.room.name == 'W7S7') {
                     if (invaderStructure) {
@@ -76,47 +77,37 @@ module.exports = {
                             Game.spawns.Spawn7.memory.minattackers = {W7S7: 1};
                         }
                     }
-                    if (invaderStructure = undefined) {
-                        Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
-                    }
+                    else 
+                        if (invaderStructure === undefined) {                       
+                            Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};                        
+                        }
+                }
                 let invaderCreep = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);               
-                if (creep.room.name === 'W9S5' && Game.time % 10 === 0) {
+                if (creep.room.name === 'W9S5' && Game.time % 100 === 0) {
                     if (invaderCreep) {
-                        Game.spawns.Spawn6.memory.minattackers = {W9S5: 1};
-                    }
-                    if (!invaderCreep) {
-                        Game.spawns.Spawn6.memory.minattackers = {W9S5: 0};
+                        Game.spawns.Spawn6.memory.minattackers = 'W9S5';
                     }
                 }                             
-                if (creep.room.name === 'W1S7' && Game.time % 10 === 0) {
-                    if (invaderCreep) {                       
-                        Game.spawns.Spawn5.memory.minattackers = {W1S7: 1};
-                         Game.spawns.Spawn2.memory.rangedattackerRoom = {W1S7: 1};
-                    }
-                    if (!invaderCreep) {  
-                        Game.spawns.Spawn5.memory.minattackers = {W1S7: 0};
-                         Game.spawns.Spawn2.memory.rangedattackerRoom = {W1S7: 0};
+                if (creep.room.name === 'W1S7' && Game.time % 100 === 0) {
+                    if (invaderCreep) {
+                        Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S7';
+                        Game.spawns.Spawn5.memory.minattackers = 'W1S7'
                     }
                 }
-                if (creep.room.name === 'W3S7' && Game.time % 10 === 0) {
+                if (creep.room.name === 'W3S7' && Game.time % 100 === 0) {
                     if (invaderCreep) {
                         Game.spawns.Spawn3.memory.minattackers = {W3S7: 1};
                         Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 1};
                     }
-                   if (!invaderCreep) {
+                    if (invaderCreep === undefined) {                   
                         Game.spawns.Spawn3.memory.minattackers = {W3S7: 0};
-                        Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 0};
-                    }
-                        
+                        Game.spawns.Spawn4.memory.rangedattackerRoom = {W3S7: 0};                       
+                    }                       
                 }
                 if (creep.room.name === 'W1S9' && Game.time % 10 === 0) {
                     if (invaderCreep) {
-                        Game.spawns.Spawn5.memory.minattackers = {W1S9: 1};
-                        Game.spawns.Spawn2.memory.rangedattackerRoom = {W1S9: 1};
-                    }
-                    if (!invaderCreep) {
-                         Game.spawns.Spawn5.memory.minattackers = {W1S9: 0};
-                        Game.spawns.Spawn2.memory.rangedattackerRoom = {W1S9: 0};
+                        Game.spawns.Spawn5.memory.minattackers = 'W1S9';
+                        Game.spawns.Spawn2.memory.rangedattackerRoom = 'W1S9'
                     }
                 }               
             }
