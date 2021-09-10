@@ -1,10 +1,10 @@
 module.exports = {
     run: function (creep) {
-        /*
+        
                 if (creep.ticksToLive < 150) {
                         creep.suicide();
                                 }
-                                */
+                                
         creep.say('OMG!😨', true);
 /*
         if (!creep.memory.W7S7 && creep.room.name === 'W7S7'|| creep.room.name === 'W7S6') {
@@ -69,7 +69,7 @@ module.exports = {
 		    let ruins = creep.room.find(FIND_RUINS)			    
 		    if (ruins.length != 0) {
 			    if (Game.time % 10 === 0) {     
-				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 1}
+				    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}
 			    }
 		    }
 		    else {
