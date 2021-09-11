@@ -29,8 +29,8 @@ module.exports = {
 
          if (!creep.memory.w9s6f1) {
             creep.travelTo(Game.flags['w9s6f1']);
-            if (creep.pos.isNearTo(Game.flags['W9S6f1'])) {
-                creep.memory.w9s6f1 = true;
+            if (creep.pos.isNearTo(Game.flags['w9s6f1'])) {
+                creep.memory.w9s6f1 = true;p
             }
             return;
         }
