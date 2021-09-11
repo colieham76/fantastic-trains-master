@@ -2,7 +2,8 @@ module.exports = {
     // a function to run the logic for this role
     /** @param {Creep} creep */
     run: function (creep) {
-        
+        // upgrader route flag
+/*
         if (!creep.memory.w10s8f1) {
             creep.travelTo(Game.flags['w10s8f1']);
             if (creep.pos.isNearTo(Game.flags['w10s8f1'])) {
@@ -33,7 +34,7 @@ module.exports = {
             }
             return;
         }
-
+*/
         if (creep.memory.working && creep.store.energy == 0) {
             creep.memory.working = false;
         } else if (!creep.memory.working && creep.store.energy == creep.store.getCapacity()) {
