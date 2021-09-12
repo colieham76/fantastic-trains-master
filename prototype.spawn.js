@@ -105,12 +105,12 @@ Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn8.memory.minCreeps = {
     harvester: 0,
     towerlorry: 0,
-    upgrader: 0,
+    upgrader: 1,
     wallRepairer: 0,
     storagelorry: 0,
-    rampartrepairer: 2,
+    rampartrepairer: 1,
     lorry: 2,
-    builder: 0,
+    builder: 1,
     terminalory: 0,
     dismantle: 0
 };
