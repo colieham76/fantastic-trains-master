@@ -89,9 +89,9 @@ Game.spawns.Spawn7.memory.minCreeps = {
     upgrader: 0,
     wallRepairer: 0,
     storagelorry: 1,
-    rampartrepairer: 0,
+    rampartrepairer: 1,
     lorry: 1,
-    builder: 0,
+    builder: 1,
     extractor: 0,
     dismantle: 0
 };
