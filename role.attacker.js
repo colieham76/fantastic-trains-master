@@ -76,8 +76,7 @@ module.exports = {
 			    Game.spawns.Spawn7.memory.minattackers = {W8S6: 0, W7S7: 0}  
 		    }
 	    }
-	     if (creep.room.name === 'W3S8' 
-		&& creep.memory.target === 'W3S7') {
+	     if (creep.room.name === 'W3S8') {
 			creep.travelTo(Game.flags['W3S7']);
 			if (creep.pos.isNearTo(Game.flags['W3S7'])) {
 				creep.memory.W3S7 = true;
