@@ -86,12 +86,12 @@ Game.spawns.Spawn6.memory.minsmallUpgraders = {W9S6: 1};
 Game.spawns.Spawn7.memory.minCreeps = {
     harvester: 0,
     towerlorry: 1,
-    upgrader: 0,
+    upgrader: 1,
     wallRepairer: 0,
     storagelorry: 1,
-    rampartrepairer: 0,
+    rampartrepairer: 1,
     lorry: 1,
-    builder: 1,
+    builder: 0,
     extractor: 0,
     dismantle: 0
 };
