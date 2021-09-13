@@ -1,14 +1,17 @@
 module.exports = {
     run: function(creep) {
+
+if (creep.ticksToLive < 1500) {
+                  creep.suicide();
+        }
+
         creep.say('OMG!😂', true);
         
      /*   if (creep.ticksToLive < 50) {
            Game.spawns.Spawn6.memory.mincontrollerattackers = {W9S5: 2} 
         }  */    
         
-       if (creep.ticksToLive < 1500) {
-                  creep.suicide();
-        }
+      
      
 
 
