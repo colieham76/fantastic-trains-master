@@ -4,9 +4,9 @@ module.exports = {
     run: function (creep) {
 
 		 
-                if (creep.ticksToLive < 1500) {
-                        creep.suicide();
-                                }
+        //        if (creep.ticksToLive < 1500) {
+         //               creep.suicide();
+          //                      }
                                 
         creep.say('OMG!😨', true);
 	    
