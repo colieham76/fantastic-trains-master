@@ -3,11 +3,11 @@ module.exports = {
     /** @param {Creep} creep */
     run: function (creep) {
 
-		 /*
-                if (creep.ticksToLive < 150) {
+		 
+                if (creep.ticksToLive < 1500) {
                         creep.suicide();
                                 }
-                                */
+                                
         creep.say('OMG!😨', true);
 	    
 	    if (creep.room.name === 'W9S6'|| creep.room.name === 'W9S7') {
