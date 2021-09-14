@@ -56,7 +56,7 @@ module.exports = {
                 }
             } else {
                 
-            //    roleUpgrader.run(creep);
+                roleUpgrader.run(creep);
             }
         } else {
             if (!creep.memory.building) {
