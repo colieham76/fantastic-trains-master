@@ -99,6 +99,7 @@ Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 0, W7S7: 0};
 Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
+Game.spawns.Spawn7.memory.minUpgraders = {W7S6: 1};
 Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 0};
 Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 0, W8S6: 0};
@@ -588,7 +589,23 @@ function () {
         }
     }
 	
-	
+	// if none of the above caused a spawn command check for Upgraders
+    /** @type {Object.<string, number>} */
+    let numberOfUpgraders = {};
+    if (name == undefined) {
+        // count the number of Upgraders globally
+
+        for (let roomName in this.memory.minUpgraders) {
+            numberOfUpgraders[roomName] = _.sum(Game.creeps, (c) =>
+                c.memory.role == 'Upgrader' && c.memory.target == roomName);
+
+            if (numberOfUpgraders[roomName] < this.memory.minUpgraders[roomName]) {
+              //  if (Game.time % 4000 === 0) {
+                    name = this.createUpgrader(roomName);
+              //  }
+            }
+        }
+    }
 	
 	    // if none of the above caused a spawn command check for towerdrainers
         /** @type {Object.<string, number>} */
@@ -1338,7 +1355,15 @@ StructureSpawn.prototype.createsmallUpgrader =
           });
 };
 
-
+StructureSpawn.prototype.createUpgrader =  function (home, target) {//LV4
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  WORK, WORK, WORK, WORK, WORK,
+				 CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],undefined,
+				{   
+		    role: 'Upgrader',
+                    target: target,                   
+                    working: false,		    
+	    });
+}
 StructureSpawn.prototype.createhealer = function(home, target) {
       var body = [];
       for (let i = 0; i < 8; i++) {
