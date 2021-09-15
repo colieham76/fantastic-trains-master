@@ -1,8 +1,8 @@
 var roleBuilder = require('role.builder');
-/*
+
 if (creep.ticksToLive < 1500) {
 creep.suicide();
-}*/
+}
 
 module.exports = {
     // a function to run the logic for this role
