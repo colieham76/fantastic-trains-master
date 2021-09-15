@@ -1355,7 +1355,7 @@ StructureSpawn.prototype.createsmallUpgrader =
           });
 };
 
-StructureSpawn.prototype.createUpgrader =  function (home, target) {//LV4
+StructureSpawn.prototype.createUpgrader =  function (target) {//LV4
         return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  WORK, WORK, WORK, WORK, WORK,
 				 CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],undefined,
 				{   
