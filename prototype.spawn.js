@@ -116,7 +116,7 @@ Game.spawns.Spawn8.memory.minCreeps = {
 };
 Game.spawns.Spawn8.memory.minLongDistanceHarvesters = {W9S5: 0, W9S7: 0};
 Game.spawns.Spawn8.memory.minsmallHarvesters = {W9S7: 1};
-Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 0};
+Game.spawns.Spawn8.memory.minLongDistanceLorrys = {W9S7: 1};
 Game.spawns.Spawn8.memory.minNumberOfreservers = {W9S7: 0};
 
 Game.spawns.Spawn3.memory.minhealers = {W4S6: 0};
