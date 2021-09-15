@@ -4,6 +4,7 @@ var roles = {
     remoteMiner: require('role.remoteMiner'),
     harvester: require('role.harvester'),
     upgrader: require('role.upgrader'),
+    Upgrader: require('role.upgrader'),
     builder: require('role.builder'),
     repairer: require('role.repairer'),
     dismantle: require('role.dismantle'),
