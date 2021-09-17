@@ -99,7 +99,7 @@ Game.spawns.Spawn7.memory.minLongDistanceHarvesters = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn7.memory.minNumberOfreservers = {W8S6: 0, W7S7: 0};
 Game.spawns.Spawn7.memory.minrangedattackers = {W8S5: 0};
 Game.spawns.Spawn7.memory.minattackers = {W7S7: 0};
-Game.spawns.Spawn7.memory.minUpgraders = {W7S6: 1};
+Game.spawns.Spawn7.memory.minUpgraders2 = {W7S6: 1};
 Game.spawns.Spawn7.memory.minsmallHarvesters = {W7S6: 0};
 Game.spawns.Spawn7.memory.minLongDistanceBuilders = {W7S7: 0, W8S6: 0};
 Game.spawns.Spawn7.memory.minLongDistanceLorrys = {W7S7: 0, W8S6: 0};
@@ -595,13 +595,13 @@ function () {
     if (name == undefined) {
         // count the number of Upgraders globally
 
-        for (let roomName in this.memory.minUpgraders) {
+        for (let roomName in this.memory.minUpgraders2) {
             numberOfUpgraders[roomName] = _.sum(Game.creeps, (c) =>
                 c.memory.role == 'Upgrader2' && c.memory.target == roomName);
 
-            if (numberOfUpgraders[roomName] < this.memory.minUpgraders[roomName]) {
+            if (numberOfUpgraders[roomName] < this.memory.minUpgraders2[roomName]) {
               //  if (Game.time % 4000 === 0) {
-                    name = this.createUpgrader(roomName);
+                    name = this.createUpgrader2(roomName);
               //  }
             }
         }
@@ -1355,7 +1355,7 @@ StructureSpawn.prototype.createsmallUpgrader =
           });
 };
 
-StructureSpawn.prototype.createUpgrader =  function (home, target) {//LV4
+StructureSpawn.prototype.createUpgrader2 =  function (home, target) {//LV4
         return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  MOVE, WORK, WORK, WORK, WORK,
 				 CARRY, CARRY, CARRY, CARRY],undefined,
 				{   
@@ -1436,20 +1436,7 @@ StructureSpawn.prototype.createhealer4 = function(home, target) {
 	      target: target
       });
 }	
-StructureSpawn.prototype.createAntiTransporter = function(mineralType) {
-    var body = [];
-    for (let i = 0; i < 10; i++) {
-        body.push(MOVE);
-        body.push(CARRY);
-        body.push(CARRY);
-    }
-    return this.createCreep(body, undefined, {
-	    role: 'antiTransporter', 
-	    resourceType: mineralType,
-	    working: false,
-	    spawnTime: 3*body.length
-    });
-}
+
 
 StructureSpawn.prototype.createLongDistanceLorry = function (energy, home, target) {
 	
