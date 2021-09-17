@@ -3,7 +3,7 @@
 var listOfRoles = ['harvester', 'lorry', 'towerlorry','claimer', 'antiTransporter', 'extractor', 'attacker',
 		   'rampartrepairer', 'towerdrainer1', 'healer', 'healer3', 'healer2', 'healer4', 'remoteMiner',
 		  'firstMate', 'captain', 'crew', 'mugger', 'rangedattacker', 'longDistanceBuilder', 'towerdrainer2',
-		   'towerdrainer3', 'storagelorry', 'terminalory', 'Upgrader',
+		   'towerdrainer3', 'storagelorry', 'terminalory', 'Upgrader2',
                    'towerdrainer4', 'towerdrainer5', 'upgrader', 'repairer', 'builder', 'wallRepairer', 'dismantle', 'dismantler2'];
 
 require('myFunctions');
@@ -597,7 +597,7 @@ function () {
 
         for (let roomName in this.memory.minUpgraders) {
             numberOfUpgraders[roomName] = _.sum(Game.creeps, (c) =>
-                c.memory.role == 'Upgrader' && c.memory.target == roomName);
+                c.memory.role == 'Upgrader2' && c.memory.target == roomName);
 
             if (numberOfUpgraders[roomName] < this.memory.minUpgraders[roomName]) {
               //  if (Game.time % 4000 === 0) {
@@ -1359,7 +1359,7 @@ StructureSpawn.prototype.createUpgrader =  function (home, target) {//LV4
         return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  MOVE, WORK, WORK, WORK, WORK,
 				 CARRY, CARRY, CARRY, CARRY],undefined,
 				{   
-		    role: 'Upgrader',
+		    role: 'Upgrader2',
                     home: home,
 			target: target,                   
                     working: false,		    
