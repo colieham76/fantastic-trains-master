@@ -1356,8 +1356,8 @@ StructureSpawn.prototype.createsmallUpgrader =
 };
 
 StructureSpawn.prototype.createUpgrader =  function (home, target) {//LV4
-        return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  WORK, WORK, WORK, WORK, WORK,
-				 CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],undefined,
+        return this.createCreep([MOVE, MOVE, MOVE, MOVE, MOVE,  MOVE, WORK, WORK, WORK, WORK,
+				 CARRY, CARRY, CARRY, CARRY],undefined,
 				{   
 		    role: 'Upgrader',
                     home: home,
