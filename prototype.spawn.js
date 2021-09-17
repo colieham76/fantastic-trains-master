@@ -591,15 +591,15 @@ function () {
 	
 	// if none of the above caused a spawn command check for Upgraders
     /** @type {Object.<string, number>} */
-    let numberOfUpgraders = {};
+    let numberOfUpgraders2 = {};
     if (name == undefined) {
         // count the number of Upgraders globally
 
         for (let roomName in this.memory.minUpgraders2) {
-            numberOfUpgraders[roomName] = _.sum(Game.creeps, (c) =>
+            numberOfUpgraders2[roomName] = _.sum(Game.creeps, (c) =>
                 c.memory.role == 'Upgrader2' && c.memory.target == roomName);
 
-            if (numberOfUpgraders[roomName] < this.memory.minUpgraders2[roomName]) {
+            if (numberOfUpgraders2[roomName] < this.memory.minUpgraders2[roomName]) {
               //  if (Game.time % 4000 === 0) {
                     name = this.createUpgrader2(roomName);
               //  }
